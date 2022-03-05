@@ -1,7 +1,30 @@
+/* Resetting */
 /* Differences I noticed between the browsers
 List item of menu, in Mozilla doesn't have the indent of chrome and Edge
 List item of nav, in Mozilla, doesn't have a bullet (correct?)
 Date inputs differ a lot between three
 so does option
 
- */
+*/
+
+/* Content Accessibility */
+p, blockquote {
+     max-width: 80ch;
+}
+
+p {
+    line-height: 1.5;
+    margin: 2em 0;
+}
+
+table {
+    display: block;
+    overflow: auto;
+}
+
+/* Dark mode */
+/* Responsive */
+/* Table */
+/* Media */
+/* Form */
+/* Text */
