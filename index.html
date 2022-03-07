@@ -11,15 +11,23 @@
 <body>
     <header>
         <h1>Header in H1</h1>
+        <menu>
+            <li>List item of Menu</li>
+        </menu>
     </header>
     <main>
+        <nav>
+            <ol>
+                <li><a href="">Li of nav</a></li>
+            </ol>
+        </nav>
         <article>
             <h2>This is an article, bla, bla in h1</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto odio aliquid voluptas laborum?
             </p>
+            <hr>
             <p>
-                <a href="#">This is a link</a>
                 This is <s>not</s> a <samp>samp</samp> <span>paragraph</span>. <q>This is an inline quotation element</q>. <small>Small</small>
                 <strong>Strong</strong><sub>Sub</sub><sup>Sup</sup><time datetime="2018-07-07T20:00:00">July 3rd</time><u>underline</u><var>variable</var> A <dfn id="def-validator">dfn tag</dfn> is an element used to indicate the term being defined within the context of a definition phrase or sentence. <em>Em</em>. <del>Delete</del>. <ins>Ins</ins>. <kbd>KBD</kbd>. <i>Itallic</i>
                 <b>this is bold</b>
@@ -27,6 +35,17 @@
                 <cite>Citation</cite>
                 <code>Code</code>. <noscript>Noscript</noscript>
             </p>
+            <figure>
+                <img src="./dummy-profile-pic-male.jpg" alt="">
+                <figcaption>figcaption</figcaption>
+            </figure>
+            <dl>
+                <dt>Defitiontion Term</dt>
+                <dd>Definition Description</dd>
+            </dl>
+            <ul>
+                <li>List item</li>
+            </ul>
             <blockquote>Blockquote</blockquote>
             <pre>this
                 is
@@ -52,41 +71,10 @@
                     </optgroup>
                 </select>
             </fieldset>
-            <progress></progress>
         </form>
         <!-- Region -->
-        <section>Section
-            <h2>This is a section title in h1</h2>
-            <dl>
-                <dt>Defitiontion Term</dt>
-                <dd>Definition Description</dd>
-            </dl>
-            <details>
-                <summary>Summary</summary>
-                Something small enough to escape casual notice.
-            </details>
-            <ul>
-                <li>List item</li>
-            </ul>
-            <menu>
-                <li>List item of Menu</li>
-            </menu>
-            <nav>
-                <ol>
-                    <li>Li of nav</li>
-                </ol>
-            </nav>
-            <figure>
-                <img src="./dummy-profile-pic-male.jpg" alt="">
-                <figcaption>figcaption</figcaption>
-            </figure>
-            <hr>
-            <picture>
-                <img src="./dummy-profile-pic-male.jpg" alt="">
-            </picture>
-        </section>
         <table>
-            <caption>Caption</caption>
+            <caption>Table caption</caption>
             <thead>
                 <tr>
                     <th>Table header</th>
@@ -479,11 +467,21 @@
                 </tr>
             </tfoot>
         </table>
-    <div>Div</div>
+        <picture>
+            <img src="./dummy-profile-pic-male.jpg" alt="">
+        </picture>
+        <div>Div</div>
     </main>
     <aside>
         <h2>Aside h1</h2>
     </aside>
+    <section>Section
+        <h2>This is a section title in h1</h2>
+        <details>
+            <summary>Summary</summary>
+            Something small enough to escape casual notice.
+        </details>
+    </section>
     <footer>
         <address>Address</address>
     </footer>

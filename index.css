@@ -7,8 +7,12 @@ so does option
 
 */
 
+body {
+    font-family: sans-serif;
+}
+
 /* Content Accessibility */
-p, blockquote {
+p, blockquote, form {
      max-width: 80ch;
 }
 
