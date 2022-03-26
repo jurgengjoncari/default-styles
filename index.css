@@ -9,6 +9,8 @@ so does option
 
 body {
     margin: 0 auto;
+    box-sizing: border-box;
+    line-height: 1.5;
     font-family:
         system-ui,
         /* macOS 10.11-10.12 */ -apple-system,
@@ -29,11 +31,6 @@ a {
 }
 
 /* Content Accessibility */
-body * {
-    box-sizing: border-box;
-    line-height: 1.5;
-}
-
 p, blockquote {
     max-width: 80ch;
     margin: 2em 0;
