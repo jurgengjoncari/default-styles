@@ -8,27 +8,90 @@ so does option
 */
 
 body {
-    font-family: sans-serif;
+    margin: 0 auto;
+    font-family:
+        system-ui,
+        /* macOS 10.11-10.12 */ -apple-system,
+        /* Windows 6+ */ "Segoe UI",
+        /* Android 4+ */ "Roboto",
+        /* Ubuntu 10.10+ */ "Ubuntu",
+        /* Gnome 3+ */ "Cantarell",
+        /* KDE Plasma 5+ */ "Noto Sans",
+        /* fallback */ sans-serif,
+        /* macOS emoji */ "Apple Color Emoji",
+        /* Windows emoji */ "Segoe UI Emoji",
+        /* Windows emoji */ "Segoe UI Symbol",
+        /* Linux emoji */ "Noto Color Emoji";
+}
+
+a {
+    line-height: 44px;
 }
 
 /* Content Accessibility */
-p, blockquote, form {
-     max-width: 80ch;
-}
-
-p {
+body * {
+    box-sizing: border-box;
     line-height: 1.5;
-    margin: 2em 0;
 }
 
-table {
-    display: block;
-    overflow: auto;
+p, blockquote {
+    max-width: 80ch;
+    margin: 2em 0;
 }
 
 /* Dark mode */
 /* Responsive */
 /* Table */
+table {
+    display: block;
+    overflow: auto;
+}
+
 /* Media */
+iframe, img, input, video, select, textarea {
+    height: auto;
+    max-width: 100%;
+}
+
+:where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+  
 /* Form */
 /* Text */
+code,
+kbd,
+samp,
+pre {
+    font-family:
+        ui-monospace,
+        /* macOS 10.10+ */ "Menlo",
+        /* Windows 6+ */ "Consolas",
+        /* Android 4+ */ "Roboto Mono",
+        /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+        /* KDE Plasma 5+ */ "Noto Mono",
+        /* KDE Plasma 4+ */ "Oxygen Mono",
+        /* Linux/OpenOffice fallback */ "Liberation Mono",
+        /* fallback */ monospace,
+        /* macOS emoji */ "Apple Color Emoji",
+        /* Windows emoji */ "Segoe UI Emoji",
+        /* Windows emoji */ "Segoe UI Symbol",
+        /* Linux emoji */ "Noto Color Emoji";
+}
+
+/* My personal input */
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+dl dd {
+    margin-inline-start: 44px;
+}
+
+dt {
+    font-weight: 600;
+}
