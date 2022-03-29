@@ -101,3 +101,8 @@ dl dd {
 dt {
     font-weight: 600;
 }
+
+nav > ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
