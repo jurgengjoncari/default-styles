@@ -1,0 +1,20 @@
+{
+  "name": "default-styles",
+  "version": "1.0.0",
+  "description": "In this project, I've included an HTML file with (almost) all the elements, for testing purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurgengjoncari/default-styles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jurgengjoncari/default-styles/issues"
+  },
+  "homepage": "https://github.com/jurgengjoncari/default-styles#readme"
+}
