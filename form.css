@@ -1,0 +1,335 @@
+/* ============================================
+   Form Styles - Minimal approach
+   ============================================ */
+
+/* List elements in forms */
+dl li,
+form ul li {
+    list-style-type: none;
+}
+
+/* Form container */
+form {
+    max-width: 85ch;
+    margin: 1.5em 0;
+}
+
+form ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 1em 0;
+}
+
+/* ============================================
+   THE GOOD
+   Form, fieldset, legend
+   Single-line text inputs (text, url, email...)
+   Multi-line textareas
+   Buttons (both input and button elements)
+   Labels and output
+   ============================================ */
+
+button,
+input,
+select,
+input[type="file"]::-webkit-file-upload-button {
+    font-family: inherit;
+    letter-spacing: inherit;
+    font-size: 100%;
+    color: inherit;
+    height: 30px;
+    background: none;
+    border: 1px solid rgb(128, 128, 128);
+    max-width: 85ch;
+}
+
+/* Text cursor for text inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+textarea,
+select {
+    cursor: text;
+}
+
+/* Disabled state */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Input placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    color: rgb(119, 119, 119);
+    opacity: 1;
+}
+
+/* Text selection */
+input::selection,
+textarea::selection {
+    background-color: rgb(200, 221, 255);
+    color: rgb(0, 0, 0);
+}
+
+button,
+input[type="file"] {
+    width: fit-content;
+}
+
+button {
+    cursor: pointer;
+    user-select: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgb(0, 102, 204);
+    outline-offset: 2px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+label {
+    display: inline-block;
+    line-height: 44px;
+    cursor: pointer;
+}
+
+fieldset {
+    border: 1px solid rgb(128, 128, 128);
+    padding: 1em;
+    margin: 1em 0;
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 0.5em;
+    margin-left: -0.5em;
+}
+
+output {
+    display: inline-block;
+    line-height: 44px;
+}
+
+textarea {
+    height: auto;
+    width: fit-content;
+    max-width: 85ch;
+}
+
+/* ============================================
+   THE BAD
+   Checkboxes and radio buttons
+   Search input
+   ============================================ */
+
+ul label {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio;
+    appearance: radio;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin: 0 14px;
+    user-select: none;
+    cursor: pointer;
+}
+
+input[type="search"] {
+    appearance: textfield;
+}
+
+/* ============================================
+   THE UGLY
+   Dropdown widgets (select, option, optgroup, datalist)
+   Color input
+   Date-related controls
+   Range input
+   File input
+   Progress and meter
+   ============================================ */
+
+.select-wrapper {
+    position: relative;
+}
+
+input[type="number"] {
+    text-align: end;
+}
+
+input[type="color"] {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    height: 44px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    border: 0;
+    display: block;
+    height: auto;
+    user-select: none;
+}
+
+input[type="range"] {
+    height: 2px;
+    padding: 0;
+    margin-block: 20px;
+    cursor: pointer;
+}
+
+optgroup {
+    font-weight: 600;
+    font-style: normal;
+}
+
+option {
+    padding: 0.5em;
+}
+
+datalist {
+    display: none;
+}
+
+progress {
+    width: 100%;
+    max-width: 85ch;
+    height: 1.5em;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #f0f0f0;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(128, 128, 128);
+}
+
+progress::-moz-progress-bar {
+    background-color: rgb(128, 128, 128);
+}
+
+meter {
+    width: 100%;
+    max-width: 85ch;
+    height: 1.5em;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    button,
+    input,
+    select,
+    input[type="file"]::-webkit-file-upload-button {
+        border-color: rgb(96, 96, 96);
+        background-color: #2d2d2d;
+        color: #e4e4e4;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: rgb(176, 176, 176);
+    }
+
+    input::selection,
+    textarea::selection {
+        background-color: rgb(60, 120, 180);
+        color: #e4e4e4;
+    }
+
+    fieldset {
+        border-color: rgb(96, 96, 96);
+    }
+
+    textarea {
+        background-color: #2d2d2d;
+        color: #e4e4e4;
+        border-color: rgb(96, 96, 96);
+    }
+
+    select {
+        background-color: #2d2d2d;
+        color: #e4e4e4;
+    }
+
+    option {
+        background-color: #2d2d2d;
+        color: #e4e4e4;
+    }
+
+    optgroup {
+        color: #e4e4e4;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        accent-color: rgb(102, 179, 255);
+    }
+
+    input[type="color"] {
+        background-color: #2d2d2d;
+        border-color: rgb(96, 96, 96);
+    }
+
+    input[type="range"] {
+        accent-color: rgb(102, 179, 255);
+    }
+
+    progress {
+        border-color: rgb(96, 96, 96);
+        background-color: #333333;
+    }
+
+    progress::-webkit-progress-bar {
+        background-color: #333333;
+    }
+
+    progress::-webkit-progress-value {
+        background-color: rgb(102, 179, 255);
+    }
+
+    progress::-moz-progress-bar {
+        background-color: rgb(102, 179, 255);
+    }
+
+    meter {
+        accent-color: rgb(102, 179, 255);
+    }
+}
