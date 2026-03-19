@@ -1,20 +1,18 @@
-/* ============================================
-   Default Styles - Comprehensive stylesheet
-   for consistent cross-browser styling
-   ============================================ */
+/* Resetting */
+/* Differences I noticed between the browsers
+List item of menu, in Mozilla doesn't have the indent of chrome and Edge
+List item of nav, in Mozilla, doesn't have a bullet (correct?)
+Date inputs differ a lot between three
+so does option
 
-/* 1. CORE RESETS & NORMALIZATION */
-html {
-    height: 100vh;
-    scroll-behavior: smooth;
-    color-scheme: dark light;
+*/
+
+body * {
+    box-sizing: border-box;
 }
 
 body {
-    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family:
         system-ui,
         /* macOS 10.11-10.12 */ -apple-system,
@@ -28,173 +26,39 @@ body {
         /* Windows emoji */ "Segoe UI Emoji",
         /* Windows emoji */ "Segoe UI Symbol",
         /* Linux emoji */ "Noto Color Emoji";
-    color: #1a1a1a;
-    background-color: #ffffff;
-    line-height: 1.6;
 }
 
-/* Box sizing for all elements */
-body * {
-    box-sizing: border-box;
-}
-
-/* Text selection styling */
-::selection {
-    background-color: rgb(200, 221, 255);
-    color: rgb(0, 0, 0);
-}
-
-/* User select control */
-h1, h2, h3, h4, h5, h6,
-button,
+/* Content Accessibility */
 a {
-    user-select: none;
+    line-height: 44px;
 }
 
-button {
-    -webkit-user-select: none;
-}
-
-/* Remove default margins and padding */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, dt, ol, ul, li,
-figure, figcaption,
-hr {
-    margin: 0;
-    padding: 0;
-}
-
-/* 2. HEADINGS */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
-    margin: 1.5em 0 0.5em 0;
-}
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
-
-/* 3. CONTENT ACCESSIBILITY */
 p, blockquote {
-    line-height: 1.6;
+    line-height: 1.5;
     max-width: 80ch;
-    margin: 1em 0;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: #cccccc;
     margin: 2em 0;
 }
 
-/* 4. LISTS */
-ol, ul {
-    margin: 1em 0;
-    padding-left: 2em;
+/* Dark mode */
+/* Responsive */
+/* Table */
+table {
+    display: block;
+    overflow: auto;
 }
 
-li {
-    margin: 0.5em 0;
+/* Media */
+iframe, img, input, video, select, textarea {
+    height: auto;
+    max-width: 100%;
 }
 
-dl {
-    margin: 1em 0;
+:where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
 }
-
-dt {
-    font-weight: 600;
-    margin-top: 0.5em;
-}
-
-dd {
-    margin-inline-start: 2em;
-    margin-bottom: 0.5em;
-}
-
-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-menu li {
-    display: inline-block;
-    margin: 0 0.5em 0 0;
-}
-
-/* 5. TEXT-LEVEL SEMANTICS */
-a {
-    color: #0066cc;
-    text-decoration: underline;
-    cursor: pointer;
-    line-height: 44px;
-    outline-offset: 2px;
-}
-
-a:visited {
-    color: #663399;
-}
-
-a:hover {
-    color: #0052a3;
-}
-
-a:active {
-    color: #004080;
-}
-
-a:focus-visible {
-    outline: 2px solid #0066cc;
-    border-radius: 2px;
-}
-
-strong, b {
-    font-weight: 600;
-}
-
-em, i {
-    font-style: italic;
-}
-
-small {
-    font-size: 0.875em;
-}
-
-mark {
-    background-color: #ffff00;
-    color: #000000;
-}
-
-u {
-    text-decoration: underline;
-}
-
-s, del {
-    text-decoration: line-through;
-}
-
-ins {
-    background-color: #ccffcc;
-    text-decoration: none;
-}
-
-sub {
-    vertical-align: sub;
-    font-size: 0.83em;
-}
-
-sup {
-    vertical-align: super;
-    font-size: 0.83em;
-}
-
-/* 6. CODE & PREFORMATTED TEXT */
+  
+/* Form */
+/* Text */
 code,
 kbd,
 samp,
@@ -215,331 +79,17 @@ pre {
         /* Linux emoji */ "Noto Color Emoji";
 }
 
-code, kbd, samp {
-    background-color: #f4f4f4;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
+/* My personal input */
+html {
+    height: 100vh;
 }
 
-pre {
-    background-color: #f4f4f4;
-    padding: 1em;
-    border-radius: 4px;
-    overflow-x: auto;
-    margin: 1em 0;
-    line-height: 1.5;
+body {
+    height: 100%;
 }
 
-pre code {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
-}
-
-/* 7. MEDIA */
-img {
-    height: auto;
-    max-width: 100%;
-    display: block;
-    border-radius: 4px;
-}
-
-figure {
-    margin: 1em 0;
-}
-
-figcaption {
-    font-size: 0.875em;
-    color: #666666;
-    margin-top: 0.5em;
-    font-style: italic;
-}
-
-video, audio, iframe {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-:where(audio, canvas, iframe, img, svg, video) {
-    vertical-align: middle;
-}
-
-/* 8. TABLES */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5em 0;
-    font-size: 0.95em;
-    display: table;
-    overflow: auto;
-}
-
-caption {
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
-
-thead {
-    background-color: #f4f4f4;
-}
-
-th {
-    padding: 0.75em;
-    text-align: left;
-    font-weight: 600;
-    border-bottom: 2px solid #cccccc;
-}
-
-td {
-    padding: 0.75em;
-    border-bottom: 1px solid #eeeeee;
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #fafafa;
-}
-
-tfoot {
-    font-weight: 600;
-    border-top: 2px solid #cccccc;
-}
-
-/* Responsive table scroll on small screens */
-@media (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    
-    table caption {
-        white-space: normal;
-    }
-}
-
-/* 9. BLOCKQUOTE */
-blockquote {
-    margin: 1em 0;
-    padding-left: 1em;
-    border-left: 4px solid #0066cc;
-    color: #666666;
-    font-style: italic;
-}
-
-/* 10. QUOTED TEXT */
-q, cite {
-    font-style: italic;
-}
-
-q::before {
-    content: '"';
-}
-
-q::after {
-    content: '"';
-}
-
-/* 11. SEMANTIC ELEMENTS */
-time {
-    /* time element styling */
-}
-
-var {
-    font-style: italic;
-    font-family: inherit;
-}
-
-dfn {
-    font-style: italic;
-    font-weight: 600;
-    cursor: help;
-}
-
-abbr {
-    text-decoration: underline dotted;
-    cursor: help;
-}
-
-/* Bidirectional text */
-bdo {
-    unicode-bidi: bidi-override;
-}
-
-/* 12. SECTIONS & LANDMARKS */
-header, footer {
-    margin: 0;
-    padding: 1em 0;
-}
-
-nav {
-    margin: 1em 0;
-}
-
-nav ol, nav ul {
-    padding-left: 1.5em;
-}
-
-nav li {
-    margin: 0.25em 0;
-}
-
-main {
-    display: block;
-}
-
-article {
-    display: block;
-    margin: 1em 0;
-}
-
-aside {
-    display: block;
-    margin: 1em 0;
-}
-
-section {
-    display: block;
-    margin: 1em 0;
-}
-
-/* 13. RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    body {
-        padding: 0 1em;
-    }
-    
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.25rem; }
-    h4 { font-size: 1.1rem; }
-    
-    p, blockquote {
-        max-width: 100%;
-    }
-    
-    img {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.25rem; }
-    h3 { font-size: 1.1rem; }
-    h4 { font-size: 1rem; }
-    
-    ol, ul {
-        padding-left: 1.5em;
-    }
-    
-    table {
-        font-size: 0.85em;
-    }
-    
-    th, td {
-        padding: 0.5em;
-    }
-}
-
-/* 14. DARK MODE */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #e4e4e4;
-        background-color: #000;
-    }
-    
-    hr {
-        background-color: #444444;
-    }
-    
-    a {
-        color: #66b3ff;
-    }
-    
-    a:visited {
-        color: #cc99ff;
-    }
-    
-    a:hover {
-        color: #80c3ff;
-    }
-    
-    a:active {
-        color: #4d9ed9;
-    }
-    
-    code, kbd, samp {
-        background-color: #2d2d2d;
-        color: #e4e4e4;
-    }
-    
-    pre {
-        background-color: #2d2d2d;
-        color: #e4e4e4;
-    }
-    
-    mark {
-        background-color: #664400;
-        color: #ffff99;
-    }
-    
-    ins {
-        background-color: #2d4d2d;
-        color: #99ff99;
-    }
-    
-    thead {
-        background-color: #2d2d2d;
-    }
-    
-    th {
-        border-bottom-color: #555555;
-    }
-    
-    td {
-        border-bottom-color: #333333;
-    }
-    
-    tbody tr:nth-child(odd) {
-        background-color: #242424;
-    }
-    
-    tfoot {
-        border-top-color: #555555;
-    }
-    
-    blockquote {
-        color: #999999;
-        border-left-color: #66b3ff;
-    }
-    
-    figcaption {
-        color: #999999;
-    }
-}
-
-/* 15. FOCUS & ACCESSIBILITY */
-:focus-visible {
-    outline: 2px solid #0066cc;
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :focus-visible {
-        outline-color: #66b3ff;
-    }
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
+dl dd {
+    margin-inline-start: 44px;
 }
 
 dt {
