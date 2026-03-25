@@ -1,0 +1,96 @@
+/* Design and Theming */
+
+@import 'variables.css';
+
+/* Color and contrast */
+body {
+    color: var(--white-60);
+    background-color: var(--black);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-medium);
+}
+
+/* Links */
+a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--blue-light);
+}
+
+a:hover:not(:focus) {
+    color: var(--blue-hover);
+}
+
+/* Form elements - visual styling */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    border: var(--border-width-thin) solid var(--white-50);
+    border-radius: var(--radius-xs);
+    padding: var(--size-sm) var(--size-md);
+    transition: border-color 0.2s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-color: var(--blue);
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: var(--red);
+}
+
+/* Checkbox and radio styling */
+[type="checkbox"],
+[type="radio"] {
+    cursor: pointer;
+}
+
+/* Button styling */
+button:not(:disabled):hover {
+    background-color: var(--blue-hover);
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* Text selection visibility */
+::selection {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: var(--white-50);
+    opacity: 1;
+}
+
+/* Error message styling */
+.error,
+[role="alert"] {
+    border-left: var(--border-width-thicker) solid var(--red);
+    padding: var(--size-sm) var(--size-md);
+    margin: var(--size-md) 0;
+    background-color: rgba(255, 0, 0, 0.1);
+    color: var(--red);
+}
+
+/* Success message styling */
+.success {
+    border-left: var(--border-width-thicker) solid var(--green);
+    padding: var(--size-sm) var(--size-md);
+    margin: var(--size-md) 0;
+    background-color: rgba(1, 230, 0, 0.1);
+    color: var(--green);
+}
+
+/* Mark styling */
+mark {
+    background-color: var(--yellow);
+    color: var(--black);
+}

@@ -1,0 +1,75 @@
+@import 'variables.css';
+
+/* Dark Mode Theme - OLED Optimized */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* 🎨 Dark Mode Semantic Variables */
+        --bg-primary: var(--black);
+        --bg-secondary: var(--black-dark);
+        
+        --text-primary: var(--white);
+        --text-secondary: var(--white-60);
+        --text-tertiary: var(--white-50);
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-primary);
+    }
+
+    a {
+        color: var(--blue-light);
+
+        &:hover {
+            color: var(--blue-hover);
+        }
+    }
+
+    input, textarea, select {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--text-secondary);
+
+        &:focus {
+            background-color: var(--bg-secondary);
+            border-color: var(--blue);
+        }
+    }
+
+    code, kbd, samp, pre {
+        background-color: var(--bg-secondary);
+    }
+
+    code {
+        color: var(--magenta);
+    }
+
+    table {
+        border-color: var(--text-tertiary);
+
+        th {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        
+        td {
+            border-color: var(--text-tertiary);
+        }
+    }
+
+    button {
+        background-color: var(--blue);
+        color: var(--text-primary);
+        border-color: var(--blue);
+
+        &:hover {
+            background-color: var(--blue-hover);
+            border-color: var(--blue-hover);
+        }
+    }
+}
+

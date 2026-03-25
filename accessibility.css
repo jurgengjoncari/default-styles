@@ -1,0 +1,123 @@
+/* Accessibility Best Practices */
+
+/* 1. Focus Styles - Ensure keyboard navigation is visible */
+:focus-visible {
+    outline: var(--border-width-thick) solid var(--blue);
+    outline-offset: var(--size-xs);
+}
+
+/* 2. Skip to Main Content Link */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--black);
+    color: var(--white);
+    padding: var(--size-sm);
+    z-index: 100;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* 3. Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 4. High Contrast Mode Support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* 5. Disabled form element states */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 6. Visually hide content for screen readers only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* 7. Touch target size - minimum 44x44px for touch devices */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    min-height: auto;
+    min-width: auto;
+}
+
+/* 8. Focus states for invalid inputs */
+input:invalid:focus-visible,
+textarea:invalid:focus-visible,
+select:invalid:focus-visible {
+    outline: var(--border-width-thin) solid var(--red);
+}
+
+/* 9. Required field indicator */
+input:required::after,
+select:required::after,
+textarea:required::after {
+    content: " *";
+    color: var(--red);
+}
+
+label[data-required]::after {
+    content: " *";
+    color: var(--red);
+}
+
+/* 10. Max-width constraints for readability */
+p,
+blockquote,
+pre,
+code,
+ol,
+ul,
+menu,
+dl,
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+select,
+textarea,
+form,
+fieldset,
+progress,
+meter {
+    max-width: 80ch;
+}
+
+article,
+section {
+    max-width: 80ch;
+}

@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://unpkg.com/sanitize.css"> -->
-    <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="style.css">
     <title>Webpage Template</title>
 </head>
 <body>
     <header>
-        <h1>Header in H1</h1>
+        <h1>Display text</h1>
         <menu>
             <li>List item of Menu</li>
         </menu>
@@ -29,19 +30,37 @@
             </p>
             <hr>
             <p>
-                This is <s>not</s> a <samp>samp</samp> <span>paragraph</span>. <q>This is an inline quotation element</q>. <small>Small</small>
-                <strong>Strong</strong><sub>Sub</sub><sup>Sup</sup><time datetime="2018-07-07T20:00:00">July 3rd</time><u>underline</u><var>variable</var> A <dfn id="def-validator">dfn tag</dfn> is an element used to indicate the term being defined within the context of a definition phrase or sentence. <em>Em</em>. <del>Delete</del>. <ins>Ins</ins>. <kbd>KBD</kbd>. <i>Itallic</i>
-                <b>this is bold</b>
-                <bdo dir="rtl">Bidirectional</bdo>
-                <cite>Citation</cite>
-                <code>Code</code>. <mark>Highlighted text</mark>. <abbr title="Abbreviation">Abbr</abbr>. <noscript>Noscript</noscript>
+                <s>S(trike) is for indicating text that has been struck through</s> 
+                <samp>Samp is sample output from a computer program</samp> 
+                <span>Span is a generic inline container for phrasing content</span>. 
+                <q>This is an inline quotation element</q>. 
+                <small>Small is for fine print or side comments</small>
+                <strong>Strong is for importance or emphasis</strong>
+                <sub>Sub is for subscript text</sub>
+                <sup>Sup is for superscript text</sup>
+                <time datetime="2018-07-07T20:00:00">July 3rd</time>
+                <u>Underline is for text that should be underlined</u>
+                <var>Variable is for representing variables in mathematical expressions or programming contexts</var>
+                A <dfn id="def-validator">dfn tag</dfn> is an element used to indicate the term being defined within the context of a definition phrase or sentence.
+                <em>Em is for emphasizing text</em>. 
+                <del>Delete is for indicating text that has been deleted</del>. 
+                <ins>Ins is for indicating text that has been inserted</ins>. 
+                <kbd>KBD</kbd> is for indicating keyboard input. 
+                <i>Itallic is for indicating text in an alternate voice or mood</i>
+                <b>Bold is for indicating strong importance</b>
+                <bdo dir="rtl">Bidirectional is for overriding the current text direction</bdo>
+                <cite>Cite is for referencing the title of a work</cite>
+                <code>Code is for displaying code snippets</code>. 
+                <mark>Highlighted text</mark>. 
+                <abbr title="Abbreviation">Abbr</abbr>. 
+                <noscript>Noscript is for providing alternative content for users who have disabled JavaScript</noscript>
             </p>
             <dl>
-                <dt>Defitiontion Term</dt>
+                <dt>Definition Term</dt>
                 <dd>Definition Description</dd>
             </dl>
             <ul>
-                <li>List item</li>
+                <li>Unordered list item</li>
             </ul>
             <blockquote>Blockquote</blockquote>
             <pre>this
@@ -56,11 +75,15 @@
             <fieldset>
                 <legend>HTML element represents a caption for the content of its parent fieldset.</legend>
                 <button>Press</button>
-                <input type="text">
+                <label for="text">Text</label>
+                <input id="text" type="text">
                 <label for="checkbox">Label for checkbox</label>
                 <input id="checkbox" type="checkbox">
-                <input type="color">
-                <input type="date">
+                <label for="color">Color</label>
+                <input id="color" type="color">
+                <label for="date">Date</label>
+                <input id="date" type="date">
+                <label for="select">Select</label>
                 <select name="select" id="select">
                     <optgroup label="Optgroup">
                         <option value="option">Option</option>
@@ -123,7 +146,8 @@
         
         <!-- Heading Levels h4-h6 -->
         <section>
-            <h2>Heading Levels (H4-H6)</h2>
+            <h1>This is an H1</h1>
+            <h2>This is an H2</h2>
             <h3>This is an H3</h3>
             <p>Content under h3</p>
             <h4>This is an H4</h4>

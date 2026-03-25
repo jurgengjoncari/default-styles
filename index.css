@@ -7,37 +7,9 @@ so does option
 
 */
 
-body * {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family:
-        system-ui,
-        /* macOS 10.11-10.12 */ -apple-system,
-        /* Windows 6+ */ "Segoe UI",
-        /* Android 4+ */ "Roboto",
-        /* Ubuntu 10.10+ */ "Ubuntu",
-        /* Gnome 3+ */ "Cantarell",
-        /* KDE Plasma 5+ */ "Noto Sans",
-        /* fallback */ sans-serif,
-        /* macOS emoji */ "Apple Color Emoji",
-        /* Windows emoji */ "Segoe UI Emoji",
-        /* Windows emoji */ "Segoe UI Symbol",
-        /* Linux emoji */ "Noto Color Emoji";
-}
-
-/* Content Accessibility */
-a {
-    line-height: 44px;
-}
-
-p, blockquote {
-    line-height: 1.5;
-    max-width: 80ch;
-    margin: 2em 0;
-}
+@import "reset.css";
+@import "accessibility.css";
+@import "normalize.css";
 
 /* Dark mode */
 /* Responsive */
@@ -89,11 +61,11 @@ body {
 }
 
 dl dd {
-    margin-inline-start: 44px;
+    margin-inline-start: var(--size-xl);
 }
 
 dt {
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 nav > ul {
