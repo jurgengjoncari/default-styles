@@ -20,57 +20,39 @@ body {
         /* Linux emoji */ "Noto Color Emoji";
 }
 
-header, main, footer, article, section, aside, form, nav {
-    display: block;
-}
-
-p {
+div, main, footer, article, section, aside, form, nav, h1, h2, h3, h4, h5, h6, p {
     display: block;
 }
 
 /* Headings */
 h1 {
-    display: block;
     font-size: var(--font-size-display);
 }
 
-div {
-    display: block;
-}
-
 h2 {
-    display: block;
     font-size: var(--font-size-4xl);
 }
 
 h3 {
-    display: block;
     font-size: var(--font-size-3xl);
 }
 
 h4 {
-    display: block;
     font-size: var(--font-size-xxl);
 }
 
 h5 {
-    display: block;
     font-size: var(--font-size-xl);
 }
 
 h6 {
-    display: block;
     font-size: var(--font-size-lg);
 }
 
 /* Thematic break */
 hr {
-    box-sizing: content-box;
-    height: 0;
     overflow: visible;
 }
-
-/* Links */
 
 /* Text semantics */
 abbr[title] {
@@ -87,7 +69,20 @@ code,
 kbd,
 samp,
 pre {
-    font-family: monospace, monospace;
+    font-family:
+        ui-monospace,
+        /* macOS 10.10+ */ "Menlo",
+        /* Windows 6+ */ "Consolas",
+        /* Android 4+ */ "Roboto Mono",
+        /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+        /* KDE Plasma 5+ */ "Noto Mono",
+        /* KDE Plasma 4+ */ "Oxygen Mono",
+        /* Linux/OpenOffice fallback */ "Liberation Mono",
+        /* fallback */ monospace,
+        /* macOS emoji */ "Apple Color Emoji",
+        /* Windows emoji */ "Segoe UI Emoji",
+        /* Windows emoji */ "Segoe UI Symbol",
+        /* Linux emoji */ "Noto Color Emoji";
 }
 
 pre {
@@ -184,14 +179,12 @@ menu,
 ol,
 ul {
     display: block;
-    list-style: none;
 }
 
 menu li,
 ol li,
 ul li {
     display: list-item;
-    list-style: none;
 }
 
 /* Definition lists */
@@ -208,66 +201,53 @@ dl dd {
     display: block;
 }
 
-dl li {
-    list-style-type: none;
-}
-
 /* Block quotes */
 blockquote {
     display: block;
 }
 
 q {
-    quotes: none;
+    quotes: "“" "”" "‘" "’";
 }
 
 /* Tables */
 table {
     display: table;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-table caption {
-    display: table-caption;
-    text-align: left;
-}
-
-table thead {
-    display: table-header-group;
-}
-
-table tbody {
-    display: table-row-group;
-}
-
-table tfoot {
-    display: table-footer-group;
-}
-
-table tr {
-    display: table-row;
-}
-
-table th,
-table td {
-    display: table-cell;
-    text-align: left;
-    vertical-align: top;
-}
-
-table th {
-    font-weight: bold;
+    
+    caption {
+        display: table-caption;
+        text-align: left;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+    
+    tbody {
+        display: table-row-group;
+    }
+    
+    tfoot {
+        display: table-footer-group;
+    }
+    
+    tr {
+        display: table-row;
+    }
+    
+    th,
+    td {
+        display: table-cell;
+    }
+    
+    th {
+        font-weight: bold;
+    }
 }
 
 /* Forms */
 fieldset {
     display: block;
-}
-
-form {
-    max-width: 85ch;
 }
 
 button,
@@ -344,10 +324,12 @@ fieldset legend {
 }
 
 [type="checkbox"] {
+    appearance: checkbox;
     -webkit-appearance: checkbox;
 }
 
 [type="radio"] {
+    appearance: radio;
     -webkit-appearance: radio;
 }
 
@@ -356,7 +338,6 @@ fieldset legend {
     height: 1em;
     position: relative;
 }
-    
 
 .select-wrapper {
     position: relative;
@@ -374,15 +355,13 @@ fieldset legend {
 [type="file"] {
     border: 0;
     height: auto;
-}
-
-[type="search"] {
     appearance: auto;
     -webkit-appearance: auto;
 }
 
-[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+[type="search"], [type="search"]::-webkit-search-decoration {
+    appearance: auto;
+    -webkit-appearance: auto;
 }
 
 ::-webkit-file-upload-button {
@@ -419,4 +398,25 @@ noscript {
 
 script {
     display: none;
+}
+
+dialog {
+    display: none;
+}
+
+dialog[open] {
+    display: block;
+    position: fixed;
+    margin: auto;
+    box-shadow: var(--shadow-lg);
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+dialog::backdrop {
+    background-color: var(--black-50);
 }

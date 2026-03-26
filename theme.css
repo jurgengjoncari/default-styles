@@ -71,5 +71,11 @@
             border-color: var(--text-secondary);
         }
     }
+
+    dialog {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        border-color: var(--text-secondary);
+    }
 }
 
