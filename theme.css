@@ -22,10 +22,10 @@
     }
 
     a {
-        color: var(--blue-light);
+        color: var(--text-primary);
 
         &:hover {
-            color: var(--blue-hover);
+            color: var(--text-secondary);
         }
     }
 
@@ -62,13 +62,13 @@
     }
 
     button {
-        background-color: var(--blue);
-        color: var(--text-primary);
-        border-color: var(--blue);
+        background-color: var(--text-primary);
+        color: var(--bg-primary);
+        border-color: var(--text-primary);
 
         &:hover {
-            background-color: var(--blue-hover);
-            border-color: var(--blue-hover);
+            background-color: var(--text-secondary);
+            border-color: var(--text-secondary);
         }
     }
 }

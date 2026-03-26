@@ -63,13 +63,11 @@ textarea:disabled {
 }
 
 /* 7. Touch target size - minimum 44x44px for touch devices */
-button,
-a,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-    min-height: 2.75rem;
-    min-width: 2.75rem;
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea,
+button {
+    padding: var(--size-sm) var(--size-md);
 }
 
 input[type="checkbox"],

@@ -200,6 +200,10 @@ dl dd {
     display: block;
 }
 
+dl li {
+    list-style-type: none;
+}
+
 /* Block quotes */
 blockquote {
     display: block;
@@ -250,9 +254,10 @@ table th {
 }
 
 /* Forms */
-button,
-input,
-/* Forms */
+form {
+    max-width: 85ch;
+}
+
 button,
 input,
 select,
@@ -274,6 +279,29 @@ input {
 button,
 select {
     text-transform: none;
+}
+
+button,
+input,
+select,
+input[type="file"]::-webkit-file-upload-button {
+    font-family: inherit;
+    letter-spacing: inherit;
+    font-size: 100%;
+    color: inherit;
+    height: 30px;
+    background: none;
+    border: 1px solid rgb(128, 128, 128);
+    max-width: 85ch;
+}
+
+button, input[type="file"] {
+    width: fit-content;
+}
+
+label {
+    display: inline-block;
+    line-height: 44px;
 }
 
 button,
@@ -309,18 +337,51 @@ fieldset legend {
     display: table;
 }
 
-[type="checkbox"],
+[type="checkbox"] {
+    -webkit-appearance: checkbox;
+}
+
 [type="radio"] {
-    width: 1rem;
-    height: 1rem;
-    appearance: auto;
-    -webkit-appearance: auto;
+    -webkit-appearance: radio;
+}
+
+[type="checkbox"], [type="radio"] {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin: 0 14px;
 }
     
+
+.select-wrapper {
+    position: relative;
+}
+
+[type="number"] {
+    text-align: end;
+}
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
     height: auto;
+}
+
+[type="color"] {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    height: 44px;
+}
+
+[type="file"] {
+    border: 0;
+    height: auto;
+}
+
+[type="range"] {
+    height: 2px;
+    padding: 0;
+    margin-block: 20px;
 }
 
 [type="search"] {

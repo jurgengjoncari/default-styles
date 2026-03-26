@@ -27,11 +27,18 @@ a:hover:not(:focus) {
 /* Form elements - visual styling */
 input:not([type="checkbox"]):not([type="radio"]),
 select,
-textarea {
+textarea,
+button {
     border: var(--border-width-thin) solid var(--white-50);
     border-radius: var(--radius-xs);
-    padding: var(--size-sm) var(--size-md);
     transition: border-color 0.2s ease;
+}
+
+input[type="color"] {
+    padding: var(--size-sm);
+    width: var(--size-md);
+    height: var(--size-md);
+    border-radius: 50%;
 }
 
 input:not([type="checkbox"]):not([type="radio"]):focus-visible,
@@ -48,13 +55,6 @@ textarea:invalid {
 /* Checkbox and radio styling */
 [type="checkbox"],
 [type="radio"] {
-    cursor: pointer;
-}
-
-/* Button styling */
-button:not(:disabled):hover {
-    background-color: var(--blue-hover);
-    color: var(--white);
     cursor: pointer;
 }
 
