@@ -27,6 +27,9 @@
             <h2>Below is an article, the title is in H2</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto odio aliquid voluptas laborum?
+                <br>
+                <br>
+                This is text with line breaks above using the &lt;br&gt; element.
             </p>
             <hr>
             <p>
@@ -97,6 +100,50 @@
                 
                 <label for="meter">Meter:</label>
                 <meter id="meter" value="6" min="0" max="10"></meter>
+                
+                <label for="textarea">Textarea</label>
+                <textarea id="textarea" placeholder="Enter your message"></textarea>
+                
+                <label for="file">File</label>
+                <input id="file" type="file">
+                
+                <label for="number">Number</label>
+                <input id="number" type="number" min="0" max="100">
+                
+                <label for="range">Range</label>
+                <input id="range" type="range" min="0" max="100">
+                
+                <label for="search">Search</label>
+                <input id="search" type="search" placeholder="Search...">
+                
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="user@example.com">
+                
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="••••••••">
+                
+                <label for="month">Month</label>
+                <input id="month" type="month">
+                
+                <label for="datetime">Datetime-local</label>
+                <input id="datetime" type="datetime-local">
+                
+                <label for="time">Time</label>
+                <input id="time" type="time">
+                
+                <label for="week">Week</label>
+                <input id="week" type="week">
+                
+                <label for="datalist">Datalist</label>
+                <input id="datalist" type="text" list="datalist-options" placeholder="Choose from list...">
+                <datalist id="datalist-options">
+                    <option value="Option 1"></option>
+                    <option value="Option 2"></option>
+                    <option value="Option 3"></option>
+                </datalist>
+                
+                <label for="output">Output</label>
+                <output id="output" name="output">0</output>
             </fieldset>
         </form>
         <!-- Region -->
@@ -144,6 +191,15 @@
                 <source src="audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
+            <h3>Canvas</h3>
+            <canvas id="canvas" width="320" height="240" style="border: 1px solid #ccc;">Your browser does not support the canvas element.</canvas>
+            <h3>SVG</h3>
+            <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="#3333FF" />
+                <circle cx="80" cy="80" r="20" fill="#ffffff" />
+                <circle cx="120" cy="80" r="20" fill="#ffffff" />
+                <path d="M 80 130 Q 100 140 120 130" stroke="#ffffff" stroke-width="2" fill="none" />
+            </svg>
         </section>
         
         <!-- Heading Levels h4-h6 -->
@@ -171,6 +227,14 @@
             <summary>Click to expand</summary>
             <p>This is the detailed content that appears when you click the summary.</p>
         </details>
+        
+        <h3>Dialog</h3>
+        <button onclick="document.getElementById('dialog').showModal()">Open Dialog</button>
+        <dialog id="dialog">
+            <h3>Dialog Box</h3>
+            <p>This is a modal dialog element.</p>
+            <button onclick="document.getElementById('dialog').close()">Close</button>
+        </dialog>
     </section>
     <footer>
         <address>Address</address>
