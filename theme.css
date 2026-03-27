@@ -1,81 +1,26 @@
 @import 'variables.css';
 
-/* Dark Mode Theme - OLED Optimized */
+/* Semantic Color Tokens */
+:root {
+    --bg-elevated: var(--color-12);
+    --text-disabled: var(--color-24);
+    --border: var(--color-50);
+    --text-muted: var(--gray);
+    --text: var(--color-60);
+    --text-high: var(--color-87);
+    --color-primary: var(--blue);
+    --color-button: var(--blue);
+    --color-link: var(--blue);
+    --color-link-visited: var(--blue-light);
+}
+
+/* Dark Mode — accent overrides only (palette vars handled in variables.css) */
 @media (prefers-color-scheme: dark) {
     :root {
-        /* 🎨 Dark Mode Semantic Variables */
-        --bg-primary: var(--black);
-        --bg-secondary: var(--black-dark);
-        
-        --text-primary: var(--white);
-        --text-secondary: var(--white-60);
-        --text-tertiary: var(--white-50);
-    }
-
-    body {
-        background-color: var(--bg-primary);
-        color: var(--text-primary);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--text-primary);
-    }
-
-    a {
-        color: var(--text-primary);
-
-        &:hover {
-            color: var(--text-secondary);
-        }
-    }
-
-    input, textarea, select {
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-        border-color: var(--text-secondary);
-
-        &:focus {
-            background-color: var(--bg-secondary);
-            border-color: var(--blue);
-        }
-    }
-
-    code, kbd, samp, pre {
-        background-color: var(--bg-secondary);
-    }
-
-    code {
-        color: var(--magenta);
-    }
-
-    table {
-        border-color: var(--text-tertiary);
-
-        th {
-            background-color: var(--bg-secondary);
-            color: var(--text-primary);
-        }
-        
-        td {
-            border-color: var(--text-tertiary);
-        }
-    }
-
-    button {
-        background-color: var(--text-primary);
-        color: var(--bg-primary);
-        border-color: var(--text-primary);
-
-        &:hover {
-            background-color: var(--text-secondary);
-            border-color: var(--text-secondary);
-        }
-    }
-
-    dialog {
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-        border-color: var(--text-secondary);
+        --color-primary: var(--color-87);
+        --color-button: var(--color-87);
+        --color-link: var(--color-87);
+        --color-link-visited: var(--color-60);
     }
 }
 

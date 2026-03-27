@@ -2,36 +2,62 @@
 
 @import 'variables.css';
 
-/* Color and contrast */
 body {
-    color: var(--white-60);
-    background-color: var(--black);
     font-size: var(--font-size-md);
-    line-height: var(--line-height-medium);
+    color: var(--color-70);
+    background-color: var(--bg);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-87);
 }
 
 /* Links */
 a {
-    color: var(--blue);
-    text-decoration: underline;
-}
+    color: var(--color-70);
 
-a:visited {
-    color: var(--blue-light);
-}
+    &:visited {
+        color: var(--color-70);
+    }
 
-a:hover:not(:focus) {
-    color: var(--blue-hover);
+    &:hover:not(:focus) {
+        color: var(--color-87);
+    }
 }
 
 /* Form elements - visual styling */
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
 select,
-textarea,
-button {
-    border: var(--border-width-thin) solid var(--white-50);
-    border-radius: var(--radius-xs);
+textarea {
+    border: var(--border-width-thin) solid var(--color-38);
     transition: border-color 0.2s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea {
+    border-radius: var(--radius-xs);
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    border-radius: var(--radius-xs);
+    color: var(--color-70);
+    background-color: var(--color-38);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled) {
+        background-color: var(--color-50);
+    }
+    &:focus-visible,
+    &:focus {
+        color: var(--bg);
+        background-color: var(--color-70);
+    }
+    &:disabled {
+        background-color: var(--color-24);
+    }
 }
 
 input[type="color"] {
@@ -44,7 +70,7 @@ input[type="color"] {
 input:not([type="checkbox"]):not([type="radio"]):focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    border-color: var(--blue);
+    border-color: var(--color-24);
 }
 
 input:invalid,
@@ -60,14 +86,63 @@ textarea:invalid {
 
 /* Text selection visibility */
 ::selection {
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: var(--color-87);
+    color: var(--bg);
 }
 
 /* Placeholder text styling */
 ::placeholder {
-    color: var(--white-50);
+    color: var(--color-38);
     opacity: 1;
+}
+
+/* Code blocks */
+code, kbd, samp, pre {
+    background-color: var(--bg-elevated);
+}
+
+code {
+    color: var(--magenta);
+}
+
+/* Tables */
+table {
+    border-color: var(--color-38);
+}
+
+th {
+    background-color: var(--bg-elevated);
+    color: var(--color-87);
+}
+
+td {
+    border-color: var(--color-38);
+}
+
+hr {
+    border-color: var(--color-38);
+}
+
+blockquote {
+    border-left: var(--border-width-thicker) solid var(--color-38);
+    padding: var(--size-sm) var(--size-md);
+    color: var(--color-38);
+}
+
+fieldset {
+    border-color: var(--color-38);
+}
+
+/* Dialog */
+dialog {
+    &[open] {
+        background-color: var(--bg);
+        border-color: var(--color-38);
+    }
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.50);
+    }
 }
 
 /* Error message styling */
@@ -92,5 +167,5 @@ textarea:invalid {
 /* Mark styling */
 mark {
     background-color: var(--yellow);
-    color: var(--black);
+    color: black;
 }

@@ -37,7 +37,6 @@ h6 {
     font-size: var(--font-size-lg);
 }
 
-/* Thematic break */
 hr {
     overflow: visible;
 }
@@ -70,7 +69,6 @@ small {
     font-size: 80%;
 }
 
-/* Subscript and superscript */
 sub,
 sup {
     font-size: 75%;
@@ -230,12 +228,21 @@ input,
 select,
 textarea {
     font-size: 100%;
-    line-height: 1.15;
 }
 
 button:not(:disabled),
 a {
     cursor: pointer;
+}
+
+[type="text"],
+[type="search"],
+[type="url"],
+[type="tel"],
+[type="email"],
+[type="password"],
+textarea {
+    cursor: text;
 }
 
 button,
@@ -389,8 +396,4 @@ dialog[open] {
     inset-inline-end: 0;
     width: fit-content;
     height: fit-content;
-}
-
-dialog::backdrop {
-    background-color: var(--black-50);
 }

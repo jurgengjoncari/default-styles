@@ -1,8 +1,12 @@
 /* Accessibility Best Practices */
 
+body {
+    line-height: var(--line-height-medium);
+}
+
 /* 1. Focus Styles - Ensure keyboard navigation is visible */
 :focus-visible {
-    outline: var(--border-width-thick) solid var(--blue);
+    outline: var(--border-width-thick) solid var(--color-87);
     outline-offset: var(--size-xs);
 }
 
@@ -11,8 +15,8 @@
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--black);
-    color: var(--white);
+    background: var(--text-high);
+    color: var(--bg);
     padding: var(--size-sm);
     z-index: 100;
 }
@@ -34,9 +38,11 @@
 
 /* 4. High Contrast Mode Support */
 @media (prefers-contrast: more) {
-    body {
-        color: #000;
-        background-color: #fff;
+    :root {
+        --text: var(--black);
+        --text-high: var(--black);
+        --bg: var(--white);
+        --border: var(--black);
     }
 }
 
@@ -45,7 +51,8 @@ button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-    opacity: 0.5;
+    color: var(--text-disabled);
+    border-color: var(--text-disabled);
     cursor: not-allowed;
 }
 
@@ -67,7 +74,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
 select,
 textarea,
 button {
-    padding: var(--size-sm) var(--size-md);
+    padding: var(--size-sm);
 }
 
 input[type="checkbox"],
