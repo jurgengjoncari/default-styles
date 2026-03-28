@@ -15,7 +15,7 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--color-focus);
+    background: var(--color-action);
     color: var(--bg);
     padding: var(--size-sm);
     z-index: 100;
@@ -39,9 +39,8 @@ body {
 /* 4. High Contrast Mode Support */
 @media (prefers-contrast: more) {
     :root {
-        --color-default: var(--color-focus);
-        --color-emphasis: var(--color-focus);
-        --color-subtle: var(--color-focus);
+        --color-default: var(--color-emphasis);
+        --color-subtle: var(--color-emphasis);
         --bg: #ffffff;
     }
 }
@@ -51,7 +50,6 @@ button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-    color: var(--color-disabled);
     border-color: var(--color-disabled);
     cursor: not-allowed;
 }

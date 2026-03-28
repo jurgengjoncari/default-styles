@@ -144,12 +144,13 @@
             <form action="post">
 
                 <h3>Buttons</h3>
-                <button>Enabled</button>
+                <button>Button</button>
+                <button class="hover">Hover</button>
+                <button class="focus">Focus</button>
+                <button class="active">Active</button>
                 <button disabled>Disabled</button>
-                <input type="button" value="input[button]">
-                <input type="reset" value="input[reset]">
-                <input type="submit" value="input[submit]">
-                <input type="button" value="input[button] disabled" disabled>
+                <button class="hover focus">Hover + Focus</button>
+                <button class="active focus">Active + Focus</button>
 
                 <h3>Text Inputs</h3>
                 <label for="text">Text (filled)</label>
@@ -363,9 +364,15 @@
             <p style="color: var(--color-subtle);">subtle (40%) — borders, placeholders</p>
             <p style="color: var(--color-muted);">muted (55%) — secondary text, captions</p>
             <p style="color: var(--color-default);">default (70%) — body text</p>
-            <p style="color: var(--color-hover);">hover (80%) — hovered elements</p>
             <p style="color: var(--color-emphasis);">emphasis (90%) — headings, important</p>
-            <p style="color: var(--color-focus);">focus (100%) — maximum visibility</p>
+
+            <h3>Interactive Colors</h3>
+            <p style="color: var(--color-action);">action — links, buttons</p>
+            <p style="color: var(--color-hover);">hover — hovered interactive</p>
+            <p style="color: var(--color-focus);">focus — focused interactive</p>
+            <p style="color: var(--color-active);">active — pressed interactive</p>
+            <p style="color: var(--color-visited);">visited — visited links</p>
+            <p style="color: var(--color-disabled);">disabled — gray</p>
         </section>
     </main>
 

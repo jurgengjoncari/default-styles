@@ -1,30 +1,4 @@
 :root {
-    /* 🎨 Colors — Light mode (black on white) */
-    --bg: #ffffff;
-    --color-surface: rgba(0, 0, 0, 0.10);
-    --color-disabled: rgba(0, 0, 0, 0.25);
-    --color-subtle: rgba(0, 0, 0, 0.40);
-    --color-muted: rgba(0, 0, 0, 0.55);
-    --color-default: rgba(0, 0, 0, 0.70);
-    --color-hover: rgba(0, 0, 0, 0.80);
-    --color-emphasis: rgba(0, 0, 0, 0.90);
-    --color-focus: rgba(0, 0, 0, 1);
-
-    &[data-theme="dark"] {
-        --bg: #000000;
-        --color-surface: rgba(255, 255, 255, 0.10);
-        --color-disabled: rgba(255, 255, 255, 0.25);
-        --color-subtle: rgba(255, 255, 255, 0.40);
-        --color-muted: rgba(255, 255, 255, 0.55);
-        --color-default: rgba(255, 255, 255, 0.70);
-        --color-hover: rgba(255, 255, 255, 0.80);
-        --color-emphasis: rgba(255, 255, 255, 0.90);
-        --color-focus: rgba(255, 255, 255, 1);
-    }
-}
-
-:root {
-
     /* 🎨 Colors — Accent */
     --blue: #3333FF;
     --blue-light: #8A8AFF;
@@ -33,6 +7,43 @@
     --yellow: #d0cc00;
     --red: #ff0000;
     --magenta: #ff00ff;
+
+    /* 🎨 Colors — grayscale */
+    --color-gray: #767676;
+
+    /* Text track */
+    --bg: #ffffff;
+    --color-surface: rgba(0, 0, 0, 0.10);
+    --color-disabled: var(--color-gray);
+    --color-subtle: rgba(0, 0, 0, 0.40);
+    --color-muted: rgba(0, 0, 0, 0.55);
+    --color-default: rgba(0, 0, 0, 0.70);
+    --color-emphasis: rgba(0, 0, 0, 0.90);
+
+    /* Interactive track */
+    --color-action: rgba(51, 51, 255, 0.80);
+    --color-hover: rgba(51, 51, 255, 0.90);
+    --color-focus: rgba(0, 0, 255, 1);
+    --color-active: rgba(51, 51, 255, 0.70);
+    --color-visited: rgba(51, 51, 255, 0.55);
+
+    &[data-theme="dark"] {
+        /* Text track */
+        --bg: #000000;
+        --color-surface: rgba(255, 255, 255, 0.20);
+        --color-disabled: var(--color-gray);
+        --color-subtle: rgba(255, 255, 255, 0.40);
+        --color-muted: rgba(255, 255, 255, 0.55);
+        --color-default: rgba(255, 255, 255, 0.70);
+        --color-emphasis: rgba(255, 255, 255, 0.90);
+
+        /* Interactive track */
+        --color-action: rgba(255, 255, 255, 0.80);
+        --color-hover: rgba(255, 255, 255, 0.90);
+        --color-focus: rgba(255, 255, 255, 1);
+        --color-active: rgba(255, 255, 255, 0.70);
+        --color-visited: rgba(255, 255, 255, 0.55);
+    }
 
     /* 📏 Sizing */
     --size-none: 0;
