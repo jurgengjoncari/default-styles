@@ -41,6 +41,10 @@ hr {
     overflow: visible;
 }
 
+a:not(:disabled) {
+    cursor: pointer;
+}
+
 /* Text semantics */
 abbr[title] {
     border-bottom: none;
@@ -230,9 +234,17 @@ textarea {
     font-size: 100%;
 }
 
-button:not(:disabled),
-a {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
     cursor: pointer;
+    appearance: button;
+    -webkit-appearance: button;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 [type="text"],
@@ -266,10 +278,6 @@ input[type="file"]::-webkit-file-upload-button {
 
 button, input[type="file"] {
     width: fit-content;
-}
-
-label {
-    display: inline-block;
 }
 
 button,

@@ -6,7 +6,7 @@ body {
 
 /* 1. Focus Styles - Ensure keyboard navigation is visible */
 :focus-visible {
-    outline: var(--border-width-thick) solid var(--color-87);
+    outline: var(--border-width-thick) solid var(--color-focus);
     outline-offset: var(--size-xs);
 }
 
@@ -15,7 +15,7 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--text-high);
+    background: var(--color-focus);
     color: var(--bg);
     padding: var(--size-sm);
     z-index: 100;
@@ -39,10 +39,10 @@ body {
 /* 4. High Contrast Mode Support */
 @media (prefers-contrast: more) {
     :root {
-        --text: var(--black);
-        --text-high: var(--black);
-        --bg: var(--white);
-        --border: var(--black);
+        --color-default: var(--color-focus);
+        --color-emphasis: var(--color-focus);
+        --color-subtle: var(--color-focus);
+        --bg: #ffffff;
     }
 }
 
@@ -51,8 +51,8 @@ button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-    color: var(--text-disabled);
-    border-color: var(--text-disabled);
+    color: var(--color-disabled);
+    border-color: var(--color-disabled);
     cursor: not-allowed;
 }
 

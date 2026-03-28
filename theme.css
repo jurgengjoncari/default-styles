@@ -1,26 +1,17 @@
 @import 'variables.css';
 
-/* Semantic Color Tokens */
+/* Semantic Color Tokens — accent colors + dark mode overrides */
 :root {
-    --bg-elevated: var(--color-12);
-    --text-disabled: var(--color-24);
-    --border: var(--color-50);
-    --text-muted: var(--gray);
-    --text: var(--color-60);
-    --text-high: var(--color-87);
     --color-primary: var(--blue);
     --color-button: var(--blue);
     --color-link: var(--blue);
     --color-link-visited: var(--blue-light);
-}
 
-/* Dark Mode — accent overrides only (palette vars handled in variables.css) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-primary: var(--color-87);
-        --color-button: var(--color-87);
-        --color-link: var(--color-87);
-        --color-link-visited: var(--color-60);
+    &[data-theme="dark"] {
+        --color-primary: var(--color-emphasis);
+        --color-button: var(--color-emphasis);
+        --color-link: var(--color-emphasis);
+        --color-link-visited: var(--color-default);
     }
 }
 

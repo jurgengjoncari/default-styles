@@ -11,187 +11,341 @@
 </head>
 <body>
     <header>
-        <h1>Display text</h1>
-        <menu>
-            <li>List item of Menu</li>
-        </menu>
-    </header>
-    <main>
+        <h1>Default Styles</h1>
+        <button onclick="toggleTheme()" id="theme-toggle">☾</button>
         <nav>
             <ol>
-                <li><a href="">Li of nav</a></li>
+                <li><a href="#text">Text</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#interactive">Interactive</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#contrast">Contrast</a></li>
             </ol>
         </nav>
-        <article>
-            <h2>Below is an article, the title is in H2</h2>
+    </header>
+
+    <main>
+        <!-- Text Content -->
+        <section id="text">
+            <h2>Text Content</h2>
+
+            <h3>Headings</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <h3>Paragraph</h3>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto odio aliquid voluptas laborum?
-                <br>
-                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto odio aliquid voluptas laborum?
+                <br><br>
                 This is text with line breaks above using the &lt;br&gt; element.
             </p>
-            <hr>
+
+            <h3>Inline Semantics</h3>
             <p>
-                <s>S(trike) is for indicating text that has been struck through</s> 
-                <samp>Samp is sample output from a computer program</samp> 
-                <span>Span is a generic inline container for phrasing content</span>. 
-                <q>This is an inline quotation element</q>. 
-                <small>Small is for fine print or side comments</small>
-                <strong>Strong is for importance or emphasis</strong>
-                <sub>Sub is for subscript text</sub>
-                <sup>Sup is for superscript text</sup>
-                <time datetime="2018-07-07T20:00:00">July 3rd</time>
-                <u>Underline is for text that should be underlined</u>
-                <var>Variable is for representing variables in mathematical expressions or programming contexts</var>
-                A <dfn id="def-validator">dfn tag</dfn> is an element used to indicate the term being defined within the context of a definition phrase or sentence.
-                <em>Em is for emphasizing text</em>. 
-                <del>Delete is for indicating text that has been deleted</del>. 
-                <ins>Ins is for indicating text that has been inserted</ins>. 
-                <kbd>KBD</kbd> is for indicating keyboard input. 
-                <i>Itallic is for indicating text in an alternate voice or mood</i>
-                <b>Bold is for indicating strong importance</b>
-                <bdo dir="rtl">Bidirectional is for overriding the current text direction</bdo>
-                <cite>Cite is for referencing the title of a work</cite>
-                <code>Code is for displaying code snippets</code>. 
-                <mark>Highlighted text</mark>. 
-                <abbr title="Abbreviation">Abbr</abbr>. 
-                <noscript>Noscript is for providing alternative content for users who have disabled JavaScript</noscript>
+                <strong>Strong</strong> ·
+                <em>Emphasis</em> ·
+                <b>Bold</b> ·
+                <i>Italic</i> ·
+                <u>Underline</u> ·
+                <s>Strikethrough</s> ·
+                <del>Deleted</del> ·
+                <ins>Inserted</ins> ·
+                <mark>Highlighted</mark> ·
+                <small>Small</small> ·
+                <sub>Subscript</sub> ·
+                <sup>Superscript</sup> ·
+                <code>Code</code> ·
+                <kbd>Keyboard</kbd> ·
+                <samp>Sample output</samp> ·
+                <var>Variable</var> ·
+                <cite>Citation</cite> ·
+                <dfn id="def-validator">Definition</dfn> ·
+                <abbr title="Abbreviation">Abbr</abbr> ·
+                <time datetime="2026-03-28">March 28th</time> ·
+                <q>Inline quote</q> ·
+                <bdo dir="rtl">Reversed text</bdo> ·
+                <span>Span</span>
             </p>
+
+            <h3>Lists</h3>
+            <ul>
+                <li>Unordered list item</li>
+                <li>Another item</li>
+            </ul>
+            <ol>
+                <li>Ordered list item</li>
+                <li>Another item</li>
+            </ol>
+            <menu>
+                <li>Menu item</li>
+            </menu>
             <dl>
                 <dt>Definition Term</dt>
                 <dd>Definition Description</dd>
             </dl>
-            <ul>
-                <li>Unordered list item</li>
-            </ul>
-            <blockquote>Blockquote</blockquote>
-            <pre>this
-                is
-                    preformated
 
-                text
-            </pre>
-        </article>
-        <!-- Form -->
-        <form action="post">
-            <fieldset>
-                <legend>HTML element represents a caption for the content of its parent fieldset.</legend>
-                <button>Press</button>
-                <label for="text">Text</label>
-                <input id="text" type="text">
-                <input id="checkbox" type="checkbox">
-                <label for="checkbox">Label for checkbox</label>
-                <input id="radio" type="radio">
-                <label for="radio">Label for radio</label>
-                <label for="color">Color</label>
-                <input id="color" type="color">
-                <label for="date">Date</label>
-                <input id="date" type="date">
-                <label for="select">Select</label>
-                <select name="select" id="select">
-                    <optgroup label="Optgroup">
-                        <option value="option">Option</option>
-                        <option value="">Second option</option>
-                    </optgroup>
-                </select>
-                <label for="progress">Progress:</label>
-                <progress id="progress" value="70" max="100"></progress>
-                
-                <label for="meter">Meter:</label>
-                <meter id="meter" value="6" min="0" max="10"></meter>
-                
-                <label for="textarea">Textarea</label>
-                <textarea id="textarea" placeholder="Enter your message"></textarea>
-                
-                <label for="file">File</label>
-                <input id="file" type="file">
-                
-                <label for="number">Number</label>
-                <input id="number" type="number" min="0" max="100">
-                
-                <label for="range">Range</label>
-                <input id="range" type="range" min="0" max="100">
-                
-                <label for="search">Search</label>
-                <input id="search" type="search" placeholder="Search...">
-                
+            <h3>Block Text</h3>
+            <blockquote>Blockquote — quoted text from another source</blockquote>
+            <pre>this
+    is
+        preformatted
+    text</pre>
+            <hr>
+            <address>Address element — contact information</address>
+        </section>
+
+        <!-- Links -->
+        <section id="links">
+            <h2>Links</h2>
+            <p>
+                <a href="https://example.com">Normal link (likely visited)</a> ·
+                <a href="https://example.com/never-visited-abc123">Unvisited link</a> ·
+                <a href="#target-element">Anchor link (to :target below)</a>
+            </p>
+            <h3 id="target-element">:target element</h3>
+            <p>This heading becomes the :target when you click the anchor link above.</p>
+        </section>
+
+        <!-- Tables -->
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Table caption</caption>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Body cell 1</td>
+                        <td>Body cell 2</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Footer 1</td>
+                        <td>Footer 2</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Forms -->
+        <section id="forms">
+            <h2>Forms</h2>
+            <form action="post">
+
+                <h3>Buttons</h3>
+                <button>Enabled</button>
+                <button disabled>Disabled</button>
+                <input type="button" value="input[button]">
+                <input type="reset" value="input[reset]">
+                <input type="submit" value="input[submit]">
+                <input type="button" value="input[button] disabled" disabled>
+
+                <h3>Text Inputs</h3>
+                <label for="text">Text (filled)</label>
+                <input id="text" type="text" value="Filled text">
+
+                <label for="text-placeholder">Text (placeholder)</label>
+                <input id="text-placeholder" type="text" placeholder="Placeholder text">
+
+                <label for="text-disabled">Text (disabled)</label>
+                <input id="text-disabled" type="text" value="Cannot edit" disabled>
+
+                <label for="text-readonly">Text (read-only)</label>
+                <input id="text-readonly" type="text" value="Read only" readonly>
+
+                <label for="text-required">Text (required, empty = invalid)</label>
+                <input id="text-required" type="text" required>
+
+                <label for="text-invalid">Text (invalid — pattern: digits only)</label>
+                <input id="text-invalid" type="text" pattern="[0-9]+" value="abc">
+
                 <label for="email">Email</label>
                 <input id="email" type="email" placeholder="user@example.com">
-                
+
                 <label for="password">Password</label>
                 <input id="password" type="password" placeholder="••••••••">
-                
+
+                <label for="search">Search</label>
+                <input id="search" type="search" placeholder="Search...">
+
+                <label for="number">Number</label>
+                <input id="number" type="number" min="0" max="100">
+
+                <label for="url">URL</label>
+                <input id="url" type="url" placeholder="https://...">
+
+                <label for="tel">Telephone</label>
+                <input id="tel" type="tel" placeholder="+1 234 567 8900">
+
+                <h3>Date &amp; Time</h3>
+                <label for="date">Date</label>
+                <input id="date" type="date">
+
                 <label for="month">Month</label>
                 <input id="month" type="month">
-                
-                <label for="datetime">Datetime-local</label>
-                <input id="datetime" type="datetime-local">
-                
-                <label for="time">Time</label>
-                <input id="time" type="time">
-                
+
                 <label for="week">Week</label>
                 <input id="week" type="week">
-                
+
+                <label for="time">Time</label>
+                <input id="time" type="time">
+
+                <label for="datetime">Datetime-local</label>
+                <input id="datetime" type="datetime-local">
+
+                <h3>Checkboxes</h3>
+                <input id="cb-unchecked" type="checkbox">
+                <label for="cb-unchecked">Unchecked</label>
+
+                <input id="cb-checked" type="checkbox" checked>
+                <label for="cb-checked">Checked</label>
+
+                <input id="cb-disabled" type="checkbox" disabled>
+                <label for="cb-disabled">Disabled</label>
+
+                <input id="cb-checked-disabled" type="checkbox" checked disabled>
+                <label for="cb-checked-disabled">Checked + disabled</label>
+
+                <h3>Radio Buttons</h3>
+                <input id="radio-a" name="radio-group" type="radio">
+                <label for="radio-a">Unchecked</label>
+
+                <input id="radio-b" name="radio-group" type="radio" checked>
+                <label for="radio-b">Checked</label>
+
+                <input id="radio-c" name="radio-disabled" type="radio" disabled>
+                <label for="radio-c">Disabled</label>
+
+                <input id="radio-d" name="radio-disabled2" type="radio" checked disabled>
+                <label for="radio-d">Checked + disabled</label>
+
+                <h3>Select</h3>
+                <label for="select">Normal</label>
+                <select id="select">
+                    <optgroup label="Group A">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </optgroup>
+                    <optgroup label="Group B">
+                        <option>Option 3</option>
+                    </optgroup>
+                </select>
+
+                <label for="select-disabled">Disabled</label>
+                <select id="select-disabled" disabled>
+                    <option>Cannot change</option>
+                </select>
+
+                <h3>Textarea</h3>
+                <label for="textarea">Normal (placeholder)</label>
+                <textarea id="textarea" placeholder="Enter your message"></textarea>
+
+                <label for="textarea-disabled">Disabled</label>
+                <textarea id="textarea-disabled" disabled>Cannot edit</textarea>
+
+                <label for="textarea-readonly">Read-only</label>
+                <textarea id="textarea-readonly" readonly>Read only content</textarea>
+
+                <h3>Other Inputs</h3>
+                <label for="color">Color</label>
+                <input id="color" type="color">
+
+                <label for="file">File</label>
+                <input id="file" type="file">
+
+                <label for="range">Range</label>
+                <input id="range" type="range" min="0" max="100">
+
                 <label for="datalist">Datalist</label>
                 <input id="datalist" type="text" list="datalist-options" placeholder="Choose from list...">
                 <datalist id="datalist-options">
-                    <option value="Option 1"></option>
-                    <option value="Option 2"></option>
-                    <option value="Option 3"></option>
+                    <option value="Option 1">
+                    <option value="Option 2">
+                    <option value="Option 3">
                 </datalist>
-                
+
+                <h3>Progress &amp; Meter</h3>
+                <label for="progress">Progress (70%)</label>
+                <progress id="progress" value="70" max="100"></progress>
+
+                <label for="meter">Meter (6/10)</label>
+                <meter id="meter" value="6" min="0" max="10"></meter>
+
+                <h3>Output</h3>
                 <label for="output">Output</label>
-                <output id="output" name="output">0</output>
-            </fieldset>
-        </form>
-        <!-- Region -->
-        <table>
-            <caption>Table caption</caption>
-            <thead>
-                <tr>
-                    <th>Table header</th>
-                    <th>another one</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>First body</td>
-                    <td>Second body</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>foot</td>
-                    <td>second foot</td>
-                </tr>
-            </tfoot>
-        </table>
-        <div>Div</div>
-        
-        <!-- Media Section -->
-        <section>
-            <h2>Media Elements</h2>
+                <output id="output" name="output">42</output>
+
+                <h3>Fieldset &amp; Legend</h3>
+                <fieldset>
+                    <legend>Legend inside a fieldset</legend>
+                    <label for="fieldset-input">Input inside fieldset</label>
+                    <input id="fieldset-input" type="text" placeholder="Grouped input">
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Interactive Elements -->
+        <section id="interactive">
+            <h2>Interactive Elements</h2>
+
+            <h3>Details / Summary</h3>
+            <details>
+                <summary>Closed — click to expand</summary>
+                <p>This content appears when you click the summary.</p>
+            </details>
+            <details open>
+                <summary>Open — already expanded</summary>
+                <p>This content is visible by default.</p>
+            </details>
+
+            <h3>Dialog</h3>
+            <button onclick="document.getElementById('dialog').showModal()">Open Dialog</button>
+            <dialog id="dialog">
+                <h3>Dialog Box</h3>
+                <p>This is a modal dialog element.</p>
+                <button onclick="document.getElementById('dialog').close()">Close</button>
+            </dialog>
+        </section>
+
+        <!-- Media -->
+        <section id="media">
+            <h2>Media</h2>
+
             <figure>
-                <img src="./dummy-profile-pic-male.jpg" alt="">
-                <figcaption>figcaption</figcaption>
+                <img src="./dummy-profile-pic-male.jpg" alt="Dummy profile picture">
+                <figcaption>Figure with figcaption</figcaption>
             </figure>
+
             <picture>
-                <img src="./dummy-profile-pic-male.jpg" alt="">
+                <img src="./dummy-profile-pic-male.jpg" alt="Picture element">
             </picture>
+
             <h3>Video</h3>
             <video controls width="320" height="240">
                 <source src="movie.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            
+
             <h3>Audio</h3>
             <audio controls>
                 <source src="audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
+
             <h3>Canvas</h3>
-            <canvas id="canvas" width="320" height="240" style="border: 1px solid #ccc;">Your browser does not support the canvas element.</canvas>
+            <canvas id="canvas" width="320" height="240">Your browser does not support the canvas element.</canvas>
+
             <h3>SVG</h3>
             <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="100" cy="100" r="80" fill="#3333FF" />
@@ -200,43 +354,44 @@
                 <path d="M 80 130 Q 100 140 120 130" stroke="#ffffff" stroke-width="2" fill="none" />
             </svg>
         </section>
-        
-        <!-- Heading Levels h4-h6 -->
-        <section>
-            <h1>This is an H1</h1>
-            <h2>This is an H2</h2>
-            <h3>This is an H3</h3>
-            <p>Content under h3</p>
-            <h4>This is an H4</h4>
-            <p>Content under h4</p>
-            <h5>This is an H5</h5>
-            <p>Content under h5</p>
-            <h6>This is an H6</h6>
-            <p>Content under h6 (smallest heading)</p>
+
+        <!-- Contrast Levels -->
+        <section id="contrast">
+            <h2>Contrast Levels</h2>
+            <p style="color: var(--color-surface);">surface (10%) — subtle backgrounds only</p>
+            <p style="color: var(--color-disabled);">disabled (25%) — de-emphasized, WCAG-exempt</p>
+            <p style="color: var(--color-subtle);">subtle (40%) — borders, placeholders</p>
+            <p style="color: var(--color-muted);">muted (55%) — secondary text, captions</p>
+            <p style="color: var(--color-default);">default (70%) — body text</p>
+            <p style="color: var(--color-hover);">hover (80%) — hovered elements</p>
+            <p style="color: var(--color-emphasis);">emphasis (90%) — headings, important</p>
+            <p style="color: var(--color-focus);">focus (100%) — maximum visibility</p>
         </section>
     </main>
+
     <aside>
-        <h2>Aside h1</h2>
+        <h2>Aside</h2>
+        <p>Sidebar content</p>
     </aside>
-    <section>
-        <h2>Interactive Elements</h2>
-        
-        <h3>Details/Summary</h3>
-        <details>
-            <summary>Click to expand</summary>
-            <p>This is the detailed content that appears when you click the summary.</p>
-        </details>
-        
-        <h3>Dialog</h3>
-        <button onclick="document.getElementById('dialog').showModal()">Open Dialog</button>
-        <dialog id="dialog">
-            <h3>Dialog Box</h3>
-            <p>This is a modal dialog element.</p>
-            <button onclick="document.getElementById('dialog').close()">Close</button>
-        </dialog>
-    </section>
+
     <footer>
-        <address>Address</address>
+        <address>Address element in footer</address>
+        <p><small>&lt;noscript&gt; would appear here if JS is disabled</small></p>
+        <noscript>JavaScript is disabled.</noscript>
     </footer>
+    <script>
+        function toggleTheme() {
+            const root = document.documentElement;
+            const current = root.getAttribute('data-theme');
+            const btn = document.getElementById('theme-toggle');
+            if (current === 'dark') {
+                root.removeAttribute('data-theme');
+                btn.textContent = '\u263e';
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                btn.textContent = '\u2600';
+            }
+        }
+    </script>
 </body>
 </html>
