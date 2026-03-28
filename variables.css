@@ -73,15 +73,15 @@
         /* Windows emoji */ "Segoe UI Symbol",
         /* Linux emoji */ "Noto Color Emoji";
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
+    --font-size-xs: 0.64rem;
+    --font-size-sm: 0.8rem;
     --font-size-md: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.5rem;
-    --font-size-xxl: 1.75rem;
-    --font-size-3xl: 2rem;
-    --font-size-4xl: 2.5rem;
-    --font-size-display: 2.75rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.563rem;
+    --font-size-xxl: 1.953rem;
+    --font-size-3xl: 2.441rem;
+    --font-size-4xl: 3.052rem;
+    --font-size-display: 3.815rem;
 
     --font-weight-light: 300;
     --font-weight-normal: 400;

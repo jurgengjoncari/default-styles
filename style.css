@@ -43,7 +43,8 @@ textarea {
 button, input[type="button"], input[type="reset"], input[type="submit"] {
     border-radius: var(--radius-xs);
     color: var(--color-emphasis);
-    background-color: var(--color-muted);
+    background-color: var(--color-subtle);
+    backdrop-filter: blur(8px);
     transition: background-color 0.2s ease, border-color 0.2s ease;
 
     &:hover:not(:disabled),
