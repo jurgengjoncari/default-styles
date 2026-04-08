@@ -4,13 +4,19 @@ body {
     line-height: var(--line-height-medium);
 }
 
-/* 1. Focus Styles - Ensure keyboard navigation is visible */
-:focus-visible {
-    outline: var(--border-width-thick) solid var(--color-focus);
-    outline-offset: var(--size-xs);
+/* Text selection visibility */
+::selection {
+    background-color: var(--color-emphasis);
+    color: var(--bg);
 }
 
-/* 2. Skip to Main Content Link */
+/* Focus Styles - Ensure keyboard navigation is visible */
+:focus-visible, .focus {
+    outline: var(--border-width-thick) solid var(--color-focus);
+    outline-offset: var(--size-3xs);
+}
+
+/* Skip to Main Content Link */
 .skip-to-main {
     position: absolute;
     top: -40px;
@@ -25,7 +31,7 @@ body {
     top: 0;
 }
 
-/* 3. Reduced Motion Support */
+/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -36,7 +42,7 @@ body {
     }
 }
 
-/* 4. High Contrast Mode Support */
+/* High Contrast Mode Support */
 @media (prefers-contrast: more) {
     :root {
         --color-default: var(--color-emphasis);
@@ -45,16 +51,18 @@ body {
     }
 }
 
-/* 5. Disabled form element states */
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled {
-    border-color: var(--color-disabled);
-    cursor: not-allowed;
+/* Disabled form element states */
+button,
+input,
+select,
+textarea {
+    &:disabled {
+        color: var(--color-disabled);
+        cursor: not-allowed;
+    }
 }
 
-/* 6. Visually hide content for screen readers only */
+/* Visually hide content for screen readers only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -67,11 +75,13 @@ textarea:disabled {
     border-width: 0;
 }
 
-/* 7. Touch target size - minimum 44x44px for touch devices */
+/* Touch target size - minimum 44x44px for touch devices */
 input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
 select,
 textarea,
-button {
+button,
+audio[controls]::-webkit-media-controls-play-button,
+audio[controls]::-webkit-media-controls-mute-button {
     padding: var(--size-sm);
 }
 
@@ -81,27 +91,21 @@ input[type="radio"] {
     min-width: auto;
 }
 
-/* 8. Focus states for invalid inputs */
-input:invalid:focus-visible,
-textarea:invalid:focus-visible,
-select:invalid:focus-visible {
-    outline: var(--border-width-thin) solid var(--red);
-}
-
-/* 9. Required field indicator */
-input:required::after,
-select:required::after,
-textarea:required::after {
-    content: " *";
-    color: var(--red);
+/* Focus states for invalid inputs and required field indicator */
+input,
+textarea,
+select {
+    &:invalid:focus-visible {
+        outline: var(--border-width-thin) solid var(--red-text);
+    }
 }
 
 label[data-required]::after {
     content: " *";
-    color: var(--red);
+    color: var(--red-text);
 }
 
-/* 10. Max-width constraints for readability */
+/* Max-width constraints for readability */
 p,
 blockquote,
 pre,

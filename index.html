@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        })();
+    </script>
     <!-- <link rel="stylesheet" href="https://unpkg.com/sanitize.css"> -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
@@ -146,15 +152,15 @@
                 <h3>Buttons</h3>
                 <button>Button</button>
                 <button class="hover">Hover</button>
-                <button class="focus">Focus</button>
                 <button class="active">Active</button>
                 <button disabled>Disabled</button>
+                <button class="focus">Focus</button>
                 <button class="hover focus">Hover + Focus</button>
                 <button class="active focus">Active + Focus</button>
 
                 <h3>Text Inputs</h3>
-                <label for="text">Text (filled)</label>
-                <input id="text" type="text" value="Filled text">
+                <label for="filled-text">Text (filled)</label>
+                <input id="filled-text" type="text" value="Filled text">
 
                 <label for="text-placeholder">Text (placeholder)</label>
                 <input id="text-placeholder" type="text" placeholder="Placeholder text">
@@ -373,6 +379,42 @@
             <p style="color: var(--color-active);">active — pressed interactive</p>
             <p style="color: var(--color-visited);">visited — visited links</p>
             <p style="color: var(--color-disabled);">disabled — gray</p>
+
+            <h3>Accent Colors</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Text on page background</th>
+                        <th>Text on accent background</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: var(--blue-text);">Blue text</td>
+                        <td style="background: var(--blue-bg); color: var(--blue-text);">Text on blue-bg</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--cyan-text);">Cyan text</td>
+                        <td style="background: var(--cyan-bg); color: var(--cyan-text);">Text on cyan-bg</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--green-text);">Green text</td>
+                        <td style="background: var(--green-bg); color: var(--green-text);">Text on green-bg</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--yellow-text);">Yellow text</td>
+                        <td style="background: var(--yellow-bg); color: var(--yellow-text);">Text on yellow-bg</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--red-text);">Red text</td>
+                        <td style="background: var(--red-bg); color: var(--red-text);">Text on red-bg</td>
+                    </tr>
+                    <tr>
+                        <td style="color: var(--magenta-text);">Magenta text</td>
+                        <td style="background: var(--magenta-bg); color: var(--magenta-text);">Text on magenta-bg</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
 
@@ -387,18 +429,29 @@
         <noscript>JavaScript is disabled.</noscript>
     </footer>
     <script>
+        function getCurrentTheme() {
+            const root = document.documentElement;
+            return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        }
+
+        function syncThemeToggleIcon() {
+            const btn = document.getElementById('theme-toggle');
+            if (!btn) {
+                return;
+            }
+
+            btn.textContent = getCurrentTheme() === 'dark' ? '\u2600' : '\u263e';
+        }
+
         function toggleTheme() {
             const root = document.documentElement;
-            const current = root.getAttribute('data-theme');
-            const btn = document.getElementById('theme-toggle');
-            if (current === 'dark') {
-                root.removeAttribute('data-theme');
-                btn.textContent = '\u263e';
-            } else {
-                root.setAttribute('data-theme', 'dark');
-                btn.textContent = '\u2600';
-            }
+            const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+
+            root.setAttribute('data-theme', nextTheme);
+            syncThemeToggleIcon();
         }
+
+        syncThemeToggleIcon();
     </script>
 </body>
 </html>

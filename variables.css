@@ -1,48 +1,46 @@
 :root {
-    /* 🎨 Colors — Accent */
-    --blue: #3333FF;
-    --blue-light: #8A8AFF;
-    --cyan: #00ffff;
-    --green: #01e600;
-    --yellow: #d0cc00;
-    --red: #ff0000;
-    --magenta: #ff00ff;
 
     /* 🎨 Colors — grayscale */
+    --white: #ffffff;
     --color-gray: #767676;
+    --black: #000000;
 
-    /* Text track */
-    --bg: #ffffff;
-    --color-surface: rgba(0, 0, 0, 0.10);
-    --color-disabled: var(--color-gray);
-    --color-subtle: rgba(0, 0, 0, 0.40);
-    --color-muted: rgba(0, 0, 0, 0.55);
-    --color-default: rgba(0, 0, 0, 0.70);
-    --color-emphasis: rgba(0, 0, 0, 0.90);
+    color-scheme: light;
 
-    /* Interactive track */
-    --color-action: rgba(51, 51, 255, 0.80);
-    --color-hover: rgba(51, 51, 255, 0.90);
-    --color-focus: rgba(0, 0, 255, 1);
-    --color-active: rgba(51, 51, 255, 0.70);
-    --color-visited: rgba(51, 51, 255, 0.55);
+    /* 🎨 Colors — Accent text (WCAG AA 4.5:1+ on white) */
+    --blue-text: #1a44cc;
+    --cyan-text: #0a6b6b;
+    --green-text: #15703a;
+    --yellow-text: #7c6400;
+    --red-text: #c42020;
+    --magenta-text: #99198a;
+
+    /* 🎨 Colors — Accent backgrounds (pair with dark text) */
+    --blue-bg: #dce5ff;
+    --cyan-bg: #d5f5f5;
+    --green-bg: #dcfce7;
+    --yellow-bg: #fef9c3;
+    --red-bg: #fee2e2;
+    --magenta-bg: #fae8ff;
 
     &[data-theme="dark"] {
-        /* Text track */
-        --bg: #000000;
-        --color-surface: rgba(255, 255, 255, 0.20);
-        --color-disabled: var(--color-gray);
-        --color-subtle: rgba(255, 255, 255, 0.40);
-        --color-muted: rgba(255, 255, 255, 0.55);
-        --color-default: rgba(255, 255, 255, 0.70);
-        --color-emphasis: rgba(255, 255, 255, 0.90);
+        color-scheme: dark;
 
-        /* Interactive track */
-        --color-action: rgba(255, 255, 255, 0.80);
-        --color-hover: rgba(255, 255, 255, 0.90);
-        --color-focus: rgba(255, 255, 255, 1);
-        --color-active: rgba(255, 255, 255, 0.70);
-        --color-visited: rgba(255, 255, 255, 0.55);
+        /* Accent text (WCAG AA 4.5:1+ on black) */
+        --blue-text: #6b8aff;
+        --cyan-text: #5ce0d0;
+        --green-text: #4ade80;
+        --yellow-text: #facc15;
+        --red-text: #f87171;
+        --magenta-text: #e879f9;
+
+        /* Accent backgrounds (dark tints, pair with light text) */
+        --blue-bg: #172554;
+        --cyan-bg: #0a2e2e;
+        --green-bg: #052e16;
+        --yellow-bg: #352a04;
+        --red-bg: #450a0a;
+        --magenta-bg: #3b0740;
     }
 
     /* 📏 Sizing */
@@ -57,7 +55,7 @@
     --size-xxl: 4.25rem;
 
     /* ✍️ Typography */
-    --font-family-base: system-ui,
+    --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,
         /* macOS 10.11-10.12 */ -apple-system,
         /* Windows 6+ */ "Segoe UI",
         /* Android 4+ */ "Roboto",
@@ -112,7 +110,7 @@
     --radius-lg: 1rem;
     --radius-xl: 1.625rem;
     --radius-xxl: 2.625rem;
-    --radius-round: 50%;
+    --radius-round: 9999px;
 
     --border-width-none: 0;
     --border-width-thin: 0.0625rem;

@@ -60,12 +60,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
         color: var(--bg);
         background-color: var(--color-active);
     }
-    &:focus-visible,
-    &:focus,
-    &.focus {
-        color: var(--bg);
-        background-color: var(--color-focus);
-    }
     &:disabled {
         color: var(--bg);
         background-color: var(--color-disabled);
@@ -85,7 +79,7 @@ input[type="color"] {
     padding: var(--size-sm);
     width: var(--size-md);
     height: var(--size-md);
-    border-radius: 50%;
+    border-radius: var(--radius-round);
 }
 
 input:not([type="checkbox"]):not([type="radio"]):focus-visible,
@@ -96,25 +90,19 @@ textarea:focus-visible {
 
 input:invalid,
 textarea:invalid {
-    border-color: var(--red);
+    border-color: var(--red-text);
 }
 
-/* Checkbox and radio styling */
-[type="checkbox"],
-[type="radio"] {
-    cursor: pointer;
-}
-
-/* Text selection visibility */
-::selection {
-    background-color: var(--color-action);
-    color: var(--bg);
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea,
+button {
+    padding-inline: var(--size-md);
 }
 
 /* Placeholder text styling */
 ::placeholder {
     color: var(--color-subtle);
-    opacity: 1;
 }
 
 /* Code blocks */
@@ -123,7 +111,7 @@ code, kbd, samp, pre {
 }
 
 code {
-    color: var(--magenta);
+    color: var(--magenta-text);
 }
 
 /* Tables */
@@ -169,24 +157,24 @@ dialog {
 /* Error message styling */
 .error,
 [role="alert"] {
-    border-left: var(--border-width-thicker) solid var(--red);
+    border-left: var(--border-width-thicker) solid var(--red-text);
     padding: var(--size-sm) var(--size-md);
     margin: var(--size-md) 0;
-    background-color: rgba(255, 0, 0, 0.1);
-    color: var(--red);
+    background-color: var(--red-bg);
+    color: var(--red-text);
 }
 
 /* Success message styling */
 .success {
-    border-left: var(--border-width-thicker) solid var(--green);
+    border-left: var(--border-width-thicker) solid var(--green-text);
     padding: var(--size-sm) var(--size-md);
     margin: var(--size-md) 0;
-    background-color: rgba(1, 230, 0, 0.1);
-    color: var(--green);
+    background-color: var(--green-bg);
+    color: var(--green-text);
 }
 
 /* Mark styling */
 mark {
-    background-color: var(--yellow);
-    color: black;
+    background-color: var(--yellow-bg);
+    color: var(--color-emphasis);
 }
