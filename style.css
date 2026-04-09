@@ -20,11 +20,9 @@ a {
     &:visited {
         color: var(--color-visited);
     }
-
     &:hover {
         color: var(--color-hover);
     }
-
     &:active {
         color: var(--color-active);
     }
@@ -52,17 +50,14 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 
     &:hover:not(:disabled),
     &.hover:not(:disabled) {
-        color: var(--bg);
         background-color: var(--color-hover);
     }
     &:active:not(:disabled),
     &.active:not(:disabled) {
-        color: var(--bg);
         background-color: var(--color-active);
     }
     &:disabled {
-        color: var(--bg);
-        background-color: var(--color-disabled);
+        color: var(--color-disabled);
     }
 }
 
