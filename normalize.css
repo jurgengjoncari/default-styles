@@ -134,14 +134,6 @@ img {
     border-style: none;
 }
 
-figure {
-    display: block;
-}
-
-figure figcaption {
-    display: block;
-}
-
 picture {
     display: contents;
 }
@@ -277,14 +269,6 @@ input[type="file"]::-webkit-file-upload-button {
 
 button, input[type="file"] {
     width: fit-content;
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-    appearance: button;
-    -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,

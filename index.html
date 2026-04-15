@@ -18,7 +18,7 @@
 <body>
     <header>
         <h1>Default Styles</h1>
-        <button onclick="toggleTheme()" id="theme-toggle">☾</button>
+        <button onclick="toggleTheme()" id="theme-toggle" aria-label="Toggle dark mode">☾</button>
         <nav>
             <ol>
                 <li><a href="#text">Text</a></li>
@@ -366,19 +366,19 @@
         <section id="contrast">
             <h2>Contrast Levels</h2>
             <p style="color: var(--color-surface);">surface (10%) — subtle backgrounds only</p>
-            <p style="color: var(--color-disabled);">disabled (25%) — de-emphasized, WCAG-exempt</p>
+            <p style="color: var(--color);">disabled (25%) — de-emphasized, WCAG-exempt</p>
             <p style="color: var(--color-subtle);">subtle (40%) — borders, placeholders</p>
             <p style="color: var(--color-muted);">muted (55%) — secondary text, captions</p>
-            <p style="color: var(--color-default);">default (70%) — body text</p>
+            <p style="color: var(--color);">default (70%) — body text</p>
             <p style="color: var(--color-emphasis);">emphasis (90%) — headings, important</p>
 
             <h3>Interactive Colors</h3>
-            <p style="color: var(--color-action);">action — links, buttons</p>
-            <p style="color: var(--color-hover);">hover — hovered interactive</p>
-            <p style="color: var(--color-focus);">focus — focused interactive</p>
-            <p style="color: var(--color-active);">active — pressed interactive</p>
-            <p style="color: var(--color-visited);">visited — visited links</p>
-            <p style="color: var(--color-disabled);">disabled — gray</p>
+            <p style="color: var(--background-color);">action — links, buttons</p>
+            <p style="color: var(--background-color);">hover — hovered interactive</p>
+            <p style="color: var(--outline-color);">focus — focused interactive</p>
+            <p class="active" style="color: var(--background-color);">active — pressed interactive</p>
+            <p style="color: var(--color);">visited — visited links</p>
+            <p style="color: var(--color);">disabled — gray</p>
 
             <h3>Accent Colors</h3>
             <table>

@@ -7,12 +7,12 @@ body {
 /* Text selection visibility */
 ::selection {
     background-color: var(--color-emphasis);
-    color: var(--bg);
+    color: var(--background-color);
 }
 
 /* Focus Styles - Ensure keyboard navigation is visible */
 :focus-visible, .focus {
-    outline: var(--border-width-thick) solid var(--color-focus);
+    outline: var(--border-width-thick) solid var(--outline-color);
     outline-offset: var(--size-3xs);
 }
 
@@ -21,8 +21,8 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--color-action);
-    color: var(--bg);
+    background: var(--background-color);
+    color: var(--color-emphasis);
     padding: var(--size-sm);
     z-index: 100;
 }
@@ -45,9 +45,21 @@ body {
 /* High Contrast Mode Support */
 @media (prefers-contrast: more) {
     :root {
-        --color-default: var(--color-emphasis);
-        --color-subtle: var(--color-emphasis);
-        --bg: #ffffff;
+        --color: #000000;
+        --color-subtle: #000000;
+        --color-muted: #000000;
+        --color-emphasis: #000000;
+        --color-surface: #e0e0e0;
+        --background-color: #ffffff;
+    }
+
+    :root[data-theme="dark"] {
+        --color: #ffffff;
+        --color-subtle: #ffffff;
+        --color-muted: #ffffff;
+        --color-emphasis: #ffffff;
+        --color-surface: #333333;
+        --background-color: #000000;
     }
 }
 
@@ -57,7 +69,6 @@ input,
 select,
 textarea {
     &:disabled {
-        color: var(--color-disabled);
         cursor: not-allowed;
     }
 }

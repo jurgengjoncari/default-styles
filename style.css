@@ -4,8 +4,8 @@
 
 body {
     font-size: var(--font-size-md);
-    color: var(--color-default);
-    background-color: var(--bg);
+    color: var(--color);
+    background-color: var(--background-color);
 }
 
 /* Headings */
@@ -15,16 +15,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Links */
 a {
-    color: var(--color-action);
+    color: var(--color);
+    text-decoration: underline;
 
-    &:visited {
-        color: var(--color-visited);
-    }
     &:hover {
-        color: var(--color-hover);
+        color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-hover));
     }
+
     &:active {
-        color: var(--color-active);
+        color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-active));
     }
 }
 
@@ -43,21 +42,23 @@ textarea {
 }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
+    --_bg: var(--color-surface);
     border-radius: var(--radius-xs);
-    background-color: var(--color-surface);
+    background-color: var(--_bg);
     backdrop-filter: blur(8px);
     transition: background-color 0.2s ease, border-color 0.2s ease;
 
     &:hover:not(:disabled),
     &.hover:not(:disabled) {
-        background-color: var(--color-hover);
+        background-color: color-mix(in oklch, var(--_bg), var(--color-emphasis) var(--interaction-hover));
     }
     &:active:not(:disabled),
     &.active:not(:disabled) {
-        background-color: var(--color-active);
+        background-color: color-mix(in oklch, var(--_bg), transparent var(--interaction-active));
     }
-    &:disabled {
-        color: var(--color-disabled);
+
+    &.primary {
+        --_bg: var(--blue-text);
     }
 }
 
@@ -72,15 +73,15 @@ label {
 
 input[type="color"] {
     padding: var(--size-sm);
-    width: var(--size-md);
-    height: var(--size-md);
+    min-width: 44px;
+    min-height: 44px;
     border-radius: var(--radius-round);
 }
 
 input:not([type="checkbox"]):not([type="radio"]):focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    border-color: var(--color-action);
+    border-color: var(--background-color);
 }
 
 input:invalid,
@@ -93,6 +94,15 @@ select,
 textarea,
 button {
     padding-inline: var(--size-md);
+}
+
+/* Accent color for native form controls */
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+meter,
+progress {
+    accent-color: var(--blue-text);
 }
 
 /* Placeholder text styling */
@@ -119,12 +129,16 @@ th {
     color: var(--color-emphasis);
 }
 
+th,
 td {
+    padding: var(--size-sm);
     border-color: var(--color-subtle);
 }
 
 hr {
-    border-color: var(--color-subtle);
+    border: none;
+    height: var(--border-width-thin);
+    background-color: var(--color-subtle);
 }
 
 blockquote {
@@ -140,13 +154,17 @@ fieldset {
 /* Dialog */
 dialog {
     &[open] {
-        background-color: var(--bg);
+        background-color: var(--color-surface);
         border-color: var(--color-subtle);
     }
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0.50);
     }
+}
+
+:root[data-theme="dark"] dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.80);
 }
 
 /* Error message styling */
@@ -172,4 +190,27 @@ dialog {
 mark {
     background-color: var(--yellow-bg);
     color: var(--color-emphasis);
+}
+
+/* Print styles */
+@media print {
+    :root {
+        color-scheme: light;
+        --background-color: #ffffff;
+        --color: #000000;
+        --color-emphasis: #000000;
+        --color-subtle: #666666;
+        --color-muted: #444444;
+        --color-surface: #f0f0f0;
+    }
+
+    .skip-to-main,
+    #theme-toggle {
+        display: none;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        color: var(--color-muted);
+    }
 }

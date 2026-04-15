@@ -1,43 +1,47 @@
 /* Semantic Color Tokens — accent colors + dark mode overrides */
 :root {
     /* Text track */
-    --bg: #ffffff;
+    --background-color: #ffffff;
+    --color: rgba(0, 0, 0, 0.70);
     --color-surface: rgba(0, 0, 0, 0.10);
-    --color-disabled: var(--color-gray);
     --color-subtle: rgba(0, 0, 0, 0.40);
     --color-muted: rgba(0, 0, 0, 0.55);
-    --color-default: rgba(0, 0, 0, 0.70);
     --color-emphasis: rgba(0, 0, 0, 0.90);
+    --outline-color: rgba(0, 0, 0, 1);
 
-    /* Interactive track */
-    --color-action: rgba(51, 51, 255, 0.80);
-    --color-hover: rgba(0, 0, 0, 0.15);
-    --color-active: rgba(0, 0, 0, 0.25);
-    --color-focus: rgba(0, 0, 0, 1);
-    --color-visited: rgba(51, 51, 255, 0.55);
+    & button:disabled,
+    & input:disabled,
+    & select:disabled,
+    & textarea:disabled {
+        --color: var(--color-gray);
+    }
 
-    &[data-theme="light"] {
-        color-scheme: light;
+    & a:visited {
+        --color: #4040bf;
     }
 
     &[data-theme="dark"] {
         color-scheme: dark;
 
         /* Text track */
-        --bg: #000000;
+        --background-color: #000000;
+        --color: rgba(255, 255, 255, 0.70);
         --color-surface: rgba(255, 255, 255, 0.20);
-        --color-disabled: var(--color-gray);
         --color-subtle: rgba(255, 255, 255, 0.40);
         --color-muted: rgba(255, 255, 255, 0.55);
-        --color-default: rgba(255, 255, 255, 0.70);
         --color-emphasis: rgba(255, 255, 255, 0.90);
+        --outline-color: rgba(255, 255, 255, 1);
 
-        /* Interactive track */
-        --color-action: rgba(255, 255, 255, 0.80);
-        --color-hover: rgba(255, 255, 255, 0.25);
-        --color-active: rgba(255, 255, 255, 0.20);
-        --color-focus: rgba(255, 255, 255, 1);
-        --color-visited: rgba(255, 255, 255, 0.55);
+        & button:disabled,
+        & input:disabled,
+        & select:disabled,
+        & textarea:disabled {
+            --color: var(--color-gray);
+        }
+
+        & a:visited {
+            --color: #a0a0ff;
+        }
     }
 }
 
