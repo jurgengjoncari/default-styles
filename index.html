@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Webpage Template</title>
 </head>
+
 <body>
     <header>
         <h1>Default Styles</h1>
@@ -47,7 +49,9 @@
 
             <h3>Paragraph</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto odio aliquid voluptas laborum?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate
+                cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto
+                odio aliquid voluptas laborum?
                 <br><br>
                 This is text with line breaks above using the &lt;br&gt; element.
             </p>
@@ -157,6 +161,20 @@
                 <button class="focus">Focus</button>
                 <button class="hover focus">Hover + Focus</button>
                 <button class="active focus">Active + Focus</button>
+                <button class="transparent">Transparent</button>
+                <button class="outline">Outline</button>
+                <button class="fill">Fill</button>
+
+                <h4>Dynamic color button</h4>
+                <label for="dynamic-button-color">Choose a button color</label>
+                <input id="dynamic-button-color" type="color" value="#1a44cc">
+                <div id="dynamic-button-demo">
+                    <button type="button" class="button--dynamic">Button</button>
+                    <button type="button" class="button--dynamic hover">Hover preview</button>
+                    <button type="button" class="button--dynamic active">Pressed preview</button>
+                    <button type="button" class="button--dynamic focus">Focus preview</button>
+                    <button type="button" class="button--dynamic" disabled>Disabled</button>
+                </div>
 
                 <h3>Text Inputs</h3>
                 <label for="filled-text">Text (filled)</label>
@@ -451,7 +469,55 @@
             syncThemeToggleIcon();
         }
 
+        const dynamicButtonColor = document.getElementById('dynamic-button-color');
+        const dynamicButtonDemo = document.getElementById('dynamic-button-demo');
+
+        function getColorLuminance(color) {
+            const [red, green, blue] = [1, 3, 5]
+                .map((offset) => Number.parseInt(color.slice(offset, offset + 2), 16) / 255)
+                .map((channel) =>
+                    channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4
+                );
+
+            return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+        }
+
+        function getContrastingTextColor(color) {
+            const luminance = getColorLuminance(color);
+            const blackContrast = (luminance + 0.05) / 0.05;
+            const whiteContrast = 1.05 / (luminance + 0.05);
+
+            return blackContrast >= whiteContrast ? '#000000' : '#ffffff';
+        }
+
+        function mixColors(color, target, amount) {
+            const channels = [1, 3, 5].map((offset) => {
+                const start = Number.parseInt(color.slice(offset, offset + 2), 16);
+                const end = Number.parseInt(target.slice(offset, offset + 2), 16);
+                return Math.round(start + (end - start) * amount).toString(16).padStart(2, '0');
+            });
+
+            return `#${channels.join('')}`;
+        }
+
+        function updateDynamicButtonColor() {
+            const color = dynamicButtonColor.value;
+            const stateColor = getColorLuminance(color) > 0.179 ? '#000000' : '#ffffff';
+            const hoverColor = mixColors(color, stateColor, 0.12);
+            const activeColor = mixColors(color, stateColor, 0.24);
+
+            dynamicButtonDemo.style.setProperty('--button-bg', color);
+            dynamicButtonDemo.style.setProperty('--button-text', getContrastingTextColor(color));
+            dynamicButtonDemo.style.setProperty('--button-hover-bg', hoverColor);
+            dynamicButtonDemo.style.setProperty('--button-hover-text', getContrastingTextColor(hoverColor));
+            dynamicButtonDemo.style.setProperty('--button-active-bg', activeColor);
+            dynamicButtonDemo.style.setProperty('--button-active-text', getContrastingTextColor(activeColor));
+        }
+
+        dynamicButtonColor.addEventListener('input', updateDynamicButtonColor);
+        updateDynamicButtonColor();
         syncThemeToggleIcon();
     </script>
 </body>
+
 </html>

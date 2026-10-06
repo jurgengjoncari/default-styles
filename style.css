@@ -9,7 +9,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--color-emphasis);
 }
 
@@ -41,33 +46,62 @@ textarea {
     border-radius: var(--radius-xs);
 }
 
-button, input[type="button"], input[type="reset"], input[type="submit"] {
-    --_bg: var(--color-surface);
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
     border-radius: var(--radius-xs);
-    background-color: var(--_bg);
+    background-color: var(--color-surface);
     backdrop-filter: blur(8px);
     transition: background-color 0.2s ease, border-color 0.2s ease;
 
-    &:hover:not(:disabled),
-    &.hover:not(:disabled) {
-        background-color: color-mix(in oklch, var(--_bg), var(--color-emphasis) var(--interaction-hover));
-    }
-    &:active:not(:disabled),
-    &.active:not(:disabled) {
-        background-color: color-mix(in oklch, var(--_bg), transparent var(--interaction-active));
-    }
+    &:not(:disabled) {
 
-    &.primary {
-        --_bg: var(--blue-text);
+        &:hover,
+        &.hover {
+            background-color: color-mix(in oklch, var(--color-surface), var(--color-emphasis) var(--interaction-hover));
+        }
+
+        &:active,
+        &.active {
+            background-color: color-mix(in oklch, var(--color-surface), transparent var(--interaction-active));
+        }
     }
+    
+    &.outline {
+        border: var(--border-width-thin) solid var(--color);
+    }
+}
+
+.button--dynamic {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button.button--dynamic:not(:disabled):hover,
+button.button--dynamic:not(:disabled).hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+button.button--dynamic:not(:disabled):active,
+button.button--dynamic:not(:disabled).active {
+    background-color: var(--button-active-bg);
+    color: var(--button-active-text);
+}
+
+button.button--dynamic:disabled {
+    opacity: 0.55;
 }
 
 label {
     display: block;
 }
 
-[type="checkbox"] + label,
-[type="radio"] + label {
+[type="checkbox"]+label,
+[type="radio"]+label {
     display: inline;
 }
 
@@ -111,7 +145,10 @@ progress {
 }
 
 /* Code blocks */
-code, kbd, samp, pre {
+code,
+kbd,
+samp,
+pre {
     background-color: var(--color-surface);
 }
 
@@ -190,27 +227,4 @@ dialog {
 mark {
     background-color: var(--yellow-bg);
     color: var(--color-emphasis);
-}
-
-/* Print styles */
-@media print {
-    :root {
-        color-scheme: light;
-        --background-color: #ffffff;
-        --color: #000000;
-        --color-emphasis: #000000;
-        --color-subtle: #666666;
-        --color-muted: #444444;
-        --color-surface: #f0f0f0;
-    }
-
-    .skip-to-main,
-    #theme-toggle {
-        display: none;
-    }
-
-    a[href]::after {
-        content: " (" attr(href) ")";
-        color: var(--color-muted);
-    }
 }

@@ -43,5 +43,14 @@
             --color: #a0a0ff;
         }
     }
+
+    .transparent, .outline {
+        --color-surface: transparent;
+    }
+
+    .fill {
+        --color-surface: var(--color);
+        --color: var(--background-color);
+    }
 }
 
