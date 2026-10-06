@@ -5,28 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        (function () {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-        })();
-    </script>
+    <script src="js/components/theme-selector.js"></script>
     <!-- <link rel="stylesheet" href="https://unpkg.com/sanitize.css"> -->
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="examples/demo.css">
     <title>Webpage Template</title>
 </head>
 
 <body>
     <header>
         <h1>Default Styles</h1>
-        <div class="header-controls">
-            <button onclick="toggleTheme()" id="theme-toggle" aria-label="Toggle dark mode">☾</button>
-            <label id="control-radius-label" for="control-radius">
-                Control radius
-                <input id="control-radius" type="range" min="0" max="25" step="1" value="4">
-                <output id="control-radius-value" for="control-radius">4px</output>
-            </label>
+        <div class="floating-panel" data-floating-panel>
+            <button type="button" id="floating-panel-trigger" class="floating-panel__trigger"
+                data-floating-panel-trigger aria-controls="settings-panel"
+                aria-expanded="false" aria-label="Open appearance settings">
+                <svg class="demo-settings-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor"
+                        stroke-width="1.6" stroke-linecap="round" />
+                    <circle cx="9" cy="6" r="2" fill="var(--background-color)" stroke="currentColor"
+                        stroke-width="1.6" />
+                    <circle cx="15" cy="12" r="2" fill="var(--background-color)" stroke="currentColor"
+                        stroke-width="1.6" />
+                    <circle cx="11" cy="18" r="2" fill="var(--background-color)" stroke="currentColor"
+                        stroke-width="1.6" />
+                </svg>
+            </button>
+            <div class="floating-panel__content settings-panel" id="settings-panel" data-floating-panel-content
+                aria-hidden="true" inert>
+                <div class="floating-panel__header" data-floating-panel-drag-handle aria-hidden="true">
+                    <span>Appearance settings</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <circle cx="8" cy="6" r="1" fill="currentColor" />
+                        <circle cx="16" cy="6" r="1" fill="currentColor" />
+                        <circle cx="8" cy="12" r="1" fill="currentColor" />
+                        <circle cx="16" cy="12" r="1" fill="currentColor" />
+                        <circle cx="8" cy="18" r="1" fill="currentColor" />
+                        <circle cx="16" cy="18" r="1" fill="currentColor" />
+                    </svg>
+                </div>
+                <div class="settings-panel__item">
+                    <fieldset class="form-field form-field--group">
+                        <legend class="sr-only">Theme</legend>
+                        <div class="form-field__row">
+                            <span class="form-field__label" aria-hidden="true">Theme</span>
+                            <div class="button-group" data-variant="primary">
+                                <label class="button-group__option">
+                                    <input type="radio" name="theme-mode" value="system" checked data-theme-selector>
+                                    <span>System</span>
+                                </label>
+                                <label class="button-group__option">
+                                    <input type="radio" name="theme-mode" value="light" data-theme-selector>
+                                    <span>Light</span>
+                                </label>
+                                <label class="button-group__option">
+                                    <input type="radio" name="theme-mode" value="dark" data-theme-selector>
+                                    <span>Dark</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--color" for="primary-color">
+                        <span class="form-field__label">Primary color</span>
+                        <input class="form-control form-control--color" id="primary-color" type="color" value="#1a44cc">
+                        <output class="form-field__output" id="primary-color-value" for="primary-color">#1a44cc</output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="control-radius">
+                        <span class="form-field__label">Control radius</span>
+                        <input class="form-control form-control--range" id="control-radius" type="range" min="0"
+                            max="24" step="1" value="4" data-css-variable="--radius-control" data-css-unit="px">
+                        <output class="form-field__output" id="control-radius-value" for="control-radius">4px</output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--suffix" for="root-font-scale">
+                        <span class="form-field__label">Font scale</span>
+                        <input class="form-control form-control--number" id="root-font-scale" type="number" min="75"
+                            max="150" step="5" value="100" aria-label="Font scale percentage"
+                            data-css-variable="--root-font-scale" data-css-unit="%">
+                        <span class="form-field__suffix">%</span>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--select" for="font-family">
+                        <span class="form-field__label">Font family</span>
+                        <select class="form-control form-control--select" id="font-family"
+                            data-css-variable="--font-family-base">
+                            <option value="">Default</option>
+                            <option value="system-ui, sans-serif">System UI</option>
+                            <option value='Georgia, "Times New Roman", serif'>Serif</option>
+                            <option value="var(--font-family-monospace)">Monospace</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
         </div>
         <nav>
             <ol>
@@ -162,25 +237,27 @@
 
                 <h3>Buttons</h3>
                 <button>Button</button>
-                <button class="hover">Hover</button>
-                <button class="active">Active</button>
+                <button class="is-hovered">Hover</button>
+                <button class="is-active">Active</button>
                 <button disabled>Disabled</button>
-                <button class="focus">Focus</button>
-                <button class="hover focus">Hover + Focus</button>
-                <button class="active focus">Active + Focus</button>
-                <button class="transparent">Transparent</button>
-                <button class="outline">Outline</button>
-                <button class="fill">Fill</button>
+                <button class="is-focused">Focus</button>
+                <button class="is-hovered is-focused">Hover + Focus</button>
+                <button class="is-active is-focused">Active + Focus</button>
+                <button class="is-transparent">Transparent</button>
+                <button class="is-outline">Outline</button>
+                <button class="is-filled">Fill</button>
 
                 <h4>Dynamic color button</h4>
-                <label for="dynamic-button-color">Choose a button color</label>
-                <input id="dynamic-button-color" type="color" value="#1a44cc">
-                <div id="dynamic-button-demo">
-                    <button type="button" class="button--dynamic">Button</button>
-                    <button type="button" class="button--dynamic hover">Hover preview</button>
-                    <button type="button" class="button--dynamic active">Pressed preview</button>
-                    <button type="button" class="button--dynamic focus">Focus preview</button>
-                    <button type="button" class="button--dynamic" disabled>Disabled</button>
+                <div data-color-preview>
+                    <label for="dynamic-button-color">Choose a button color</label>
+                    <input id="dynamic-button-color" type="color" value="#1a44cc" data-color-preview-input>
+                    <div class="dynamic-button-demo">
+                        <button type="button" class="button button--custom-color">Button</button>
+                        <button type="button" class="button button--custom-color is-hovered">Hover preview</button>
+                        <button type="button" class="button button--custom-color is-active">Pressed preview</button>
+                        <button type="button" class="button button--custom-color is-focused">Focus preview</button>
+                        <button type="button" class="button button--custom-color" disabled>Disabled</button>
+                    </div>
                 </div>
 
                 <h3>Text Inputs</h3>
@@ -342,11 +419,11 @@
             </details>
 
             <h3>Dialog</h3>
-            <button onclick="document.getElementById('dialog').showModal()">Open Dialog</button>
+            <button type="button" data-dialog-open="#dialog">Open Dialog</button>
             <dialog id="dialog">
                 <h3>Dialog Box</h3>
                 <p>This is a modal dialog element.</p>
-                <button onclick="document.getElementById('dialog').close()">Close</button>
+                <button type="button" data-dialog-close>Close</button>
             </dialog>
         </section>
 
@@ -401,7 +478,7 @@
             <p style="color: var(--background-color);">action — links, buttons</p>
             <p style="color: var(--background-color);">hover — hovered interactive</p>
             <p style="color: var(--outline-color);">focus — focused interactive</p>
-            <p class="active" style="color: var(--background-color);">active — pressed interactive</p>
+            <p class="is-active" style="color: var(--background-color);">active — pressed interactive</p>
             <p style="color: var(--color);">visited — visited links</p>
             <p style="color: var(--color);">disabled — gray</p>
 
@@ -453,93 +530,12 @@
         <p><small>&lt;noscript&gt; would appear here if JS is disabled</small></p>
         <noscript>JavaScript is disabled.</noscript>
     </footer>
-    <script>
-        function getCurrentTheme() {
-            const root = document.documentElement;
-            return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        }
-
-        function syncThemeToggleIcon() {
-            const btn = document.getElementById('theme-toggle');
-            if (!btn) {
-                return;
-            }
-
-            btn.textContent = getCurrentTheme() === 'dark' ? '\u2600' : '\u263e';
-        }
-
-        function toggleTheme() {
-            const root = document.documentElement;
-            const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
-
-            root.setAttribute('data-theme', nextTheme);
-            syncThemeToggleIcon();
-        }
-
-        const dynamicButtonColor = document.getElementById('dynamic-button-color');
-        const dynamicButtonDemo = document.getElementById('dynamic-button-demo');
-
-        function getColorLuminance(color) {
-            const [red, green, blue] = [1, 3, 5]
-                .map((offset) => Number.parseInt(color.slice(offset, offset + 2), 16) / 255)
-                .map((channel) =>
-                    channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4
-                );
-
-            return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
-        }
-
-        function getContrastingTextColor(color) {
-            const luminance = getColorLuminance(color);
-            const blackContrast = (luminance + 0.05) / 0.05;
-            const whiteContrast = 1.05 / (luminance + 0.05);
-
-            return blackContrast >= whiteContrast ? '#000000' : '#ffffff';
-        }
-
-        function mixColors(color, target, amount) {
-            const channels = [1, 3, 5].map((offset) => {
-                const start = Number.parseInt(color.slice(offset, offset + 2), 16);
-                const end = Number.parseInt(target.slice(offset, offset + 2), 16);
-                return Math.round(start + (end - start) * amount).toString(16).padStart(2, '0');
-            });
-
-            return `#${channels.join('')}`;
-        }
-
-        function updateDynamicButtonColor() {
-            const color = dynamicButtonColor.value;
-            const stateColor = getColorLuminance(color) > 0.179 ? '#000000' : '#ffffff';
-            const hoverColor = mixColors(color, stateColor, 0.12);
-            const activeColor = mixColors(color, stateColor, 0.24);
-
-            dynamicButtonDemo.style.setProperty('--button-bg', color);
-            dynamicButtonDemo.style.setProperty('--button-text', getContrastingTextColor(color));
-            dynamicButtonDemo.style.setProperty('--button-hover-bg', hoverColor);
-            dynamicButtonDemo.style.setProperty('--button-hover-text', getContrastingTextColor(hoverColor));
-            dynamicButtonDemo.style.setProperty('--button-active-bg', activeColor);
-            dynamicButtonDemo.style.setProperty('--button-active-text', getContrastingTextColor(activeColor));
-        }
-
-        dynamicButtonColor.addEventListener('input', updateDynamicButtonColor);
-        updateDynamicButtonColor();
-
-        const controlRadius = document.getElementById('control-radius');
-        const controlRadiusValue = document.getElementById('control-radius-value');
-
-        function updateControlRadius() {
-            const isPill = controlRadius.value === controlRadius.max;
-            const radius = isPill ? '9999px' : `${controlRadius.value}px`;
-
-            document.documentElement.style.setProperty('--radius-control', radius);
-            controlRadiusValue.value = isPill ? 'Pill' : radius;
-            controlRadiusValue.textContent = isPill ? 'Pill' : radius;
-        }
-
-        controlRadius.addEventListener('input', updateControlRadius);
-        updateControlRadius();
-        syncThemeToggleIcon();
-    </script>
+    <script src="js/components/floating-panel.js"></script>
+    <script src="js/components/css-variable-control.js"></script>
+    <script src="js/components/dialog-controls.js"></script>
+    <script src="js/utilities/color.js"></script>
+    <script src="js/components/color-preview.js"></script>
+    <script src="js/examples/appearance-demo.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,39 @@
 # Default Styles
-In this project, I've included an HTML file with (almost) all the elements, for testing purposes. 
 
-I want to decide here how I want some elements to be styled by default. Then use it for all my other projects. The first step is to have it look the same in all user agents, by maybe resetting all their behaviors. Then make the page accessible; make it responsive and add dark mode. 
+A framework-free collection of reusable CSS foundations and UI components, with `index.html` serving as a visual reference and demo page.
 
-The goal is to be able to include all types of data; small and big images, short and long paragraphs, small and large tables, etc. 
+## Reusable layers
 
-Idea: Organize CSS by dividing HTML in levels, where first level is that where block elements decide the layout of the page. Then, the other levels will be each of these block elements. I think I'm already doing the first thing with the "webpage-template" repo, and the second one with "web-components" repo. 
+- `css/tokens.css` defines design tokens such as colors, spacing, typography, and radii.
+- `css/base/` contains reset, normalization, theme, accessibility, and semantic element styles.
+- `css/components/` contains reusable button, button-group, form-field, form-control, floating-panel, and settings-panel styles. `css/components.css` collects them.
+- `js/components/` contains behavior attached through generic `data-*` attributes, including floating panels, theme selection, dialog controls, color previews, and CSS-variable controls.
+- `js/utilities/` contains shared helpers used by components and examples.
+- `js/examples/` and `examples/` contain page-specific demo behavior and presentation.
 
-The page is organized into landmarks:
-- Banner
-- Main
-- Aside
-- Complementary
-- Contentinfo
+Include `index.css` for the shared CSS foundation. Load only the component scripts needed by a page, after its markup; `theme-selector.js` is loaded in the document head to apply the system theme before first paint. The color preview component requires `js/utilities/color.js`.
 
-Then every other element is part of these landmarks.
+Component styling uses generic classes such as `.button-group`, `.form-field`, and `.floating-panel`; behavior uses attributes such as `data-floating-panel`, `data-theme-selector`, and `data-css-variable`. Component variants are opt-in through modifier classes or `data-*` attributes.
+
+Components are framework-free and can be copied into a project. An npm package can be added later once the public APIs and packaging needs are established.
+
+`index.html` demonstrates semantic text, links, tables, forms, interactive elements, media, and the appearance controls.
+
+For example, a floating panel can be used with its generic classes and behavior attributes:
+
+```html
+<div class="floating-panel" data-floating-panel>
+    <button class="floating-panel__trigger" data-floating-panel-trigger
+        aria-controls="panel-content" aria-expanded="false">
+        Open
+    </button>
+    <section class="floating-panel__content" id="panel-content"
+        data-floating-panel-content aria-hidden="true" inert>
+        <header class="floating-panel__header" data-floating-panel-drag-handle>
+            Panel
+        </header>
+        Content
+    </section>
+</div>
+<script src="js/components/floating-panel.js"></script>
+```

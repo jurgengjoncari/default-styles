@@ -1,0 +1,49 @@
+.button-group {
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    width: 100%;
+    overflow: hidden;
+    border: var(--border-width-thin) solid var(--color-subtle);
+    border-radius: var(--radius-control);
+}
+
+.button-group__option {
+    position: relative;
+    display: block;
+    min-width: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-group__option + .button-group__option {
+    border-inline-start: var(--border-width-thin) solid var(--color-subtle);
+}
+
+.button-group__option input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.button-group__option > span {
+    display: block;
+    padding: var(--size-xxs) var(--size-xs);
+}
+
+.button-group[data-variant="primary"] input:checked + span {
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+}
+
+.button-group__option:focus-within {
+    outline: var(--border-width-thick) solid var(--outline-color);
+    outline-offset: var(--size-3xs);
+    z-index: 1;
+}

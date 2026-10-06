@@ -11,7 +11,8 @@ body {
 }
 
 /* Focus Styles - Ensure keyboard navigation is visible */
-:focus-visible, .focus {
+:focus-visible,
+.is-focused {
     outline: var(--border-width-thick) solid var(--outline-color);
     outline-offset: var(--size-3xs);
 }

@@ -1,0 +1,90 @@
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
+select,
+textarea {
+    border: var(--border-width-thin) solid var(--color-subtle);
+    border-radius: var(--radius-control);
+    transition: border-color 0.2s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea,
+button {
+    padding-inline: var(--size-md);
+}
+
+label {
+    display: block;
+}
+
+[type="checkbox"] + label,
+[type="radio"] + label {
+    display: inline;
+}
+
+input[type="color"] {
+    padding: var(--size-sm);
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: var(--radius-round);
+}
+
+.form-control--color {
+    justify-self: end;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0;
+}
+
+.form-control--select {
+    width: 100%;
+    min-width: 0;
+    padding: var(--size-xxs) var(--size-xs);
+    font: inherit;
+}
+
+.form-control--range {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 1.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.form-control--number {
+    box-sizing: border-box;
+    justify-self: end;
+    width: 4.5rem;
+    min-width: 0;
+    text-align: end;
+}
+
+input.form-control--number:not([type="checkbox"]):not([type="radio"]):not([type="color"]) {
+    padding: var(--size-xxs);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+meter,
+progress {
+    accent-color: var(--blue-text);
+}
+
+::placeholder {
+    color: var(--color-subtle);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-color: var(--background-color);
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: var(--red-text);
+}

@@ -1,0 +1,18 @@
+.dynamic-button-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-xs);
+}
+
+.demo-settings-icon path,
+.demo-settings-icon circle {
+    stroke: var(--color-emphasis);
+}
+
+.demo-settings-icon path {
+    fill: none;
+}
+
+.demo-settings-icon circle {
+    fill: var(--background-color);
+}

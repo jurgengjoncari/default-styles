@@ -1,0 +1,93 @@
+.floating-panel {
+    position: fixed;
+    inset-block-end: var(--size-md);
+    inset-inline-end: var(--size-md);
+    z-index: 100;
+    display: grid;
+    width: min(var(--floating-panel-width, 24rem), calc(100vw - 2 * var(--size-md)));
+    pointer-events: none;
+}
+
+.floating-panel__trigger {
+    grid-area: 1 / 1;
+    justify-self: end;
+    align-self: end;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: var(--size-sm);
+    cursor: grab;
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: bottom right;
+    visibility: visible;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s;
+    pointer-events: auto;
+    touch-action: none;
+}
+
+.floating-panel__trigger:active,
+.floating-panel__header:active {
+    cursor: grabbing;
+}
+
+.floating-panel__trigger svg {
+    display: block;
+}
+
+.floating-panel__content {
+    grid-area: 1 / 1;
+    justify-self: end;
+    align-self: end;
+    width: 100%;
+    padding: var(--size-sm);
+    border: var(--border-width-thin) solid var(--color-subtle);
+    border-radius: var(--radius-control);
+    background-color: color-mix(in srgb, var(--background-color) 82%, transparent);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: var(--frosty-glass);
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transform-origin: bottom right;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.floating-panel.is-open .floating-panel__content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.floating-panel.is-open .floating-panel__trigger {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    visibility: hidden;
+    transition-delay: 0s, 0s, 0.2s;
+}
+
+.floating-panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-block-end: var(--size-xs);
+    border-block-end: var(--border-width-thin) solid var(--color-subtle);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+.floating-panel__header svg {
+    flex: none;
+}
+
+.floating-panel__trigger,
+.floating-panel__content {
+    transition-duration: var(--component-transition-duration, 0.2s);
+}

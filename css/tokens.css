@@ -1,12 +1,18 @@
 :root {
+    font-size: var(--root-font-scale, 100%);
 
     /* 🎨 Colors — grayscale */
     --color-gray: #767676;
 
     color-scheme: light;
 
+    --primary-color: #1a44cc;
+    --primary-color-contrast: #ffffff;
+    --primary-text-light: #1a44cc;
+    --primary-text-dark: #6b8aff;
+
     /* 🎨 Colors — Accent text (WCAG AA 4.5:1+ on white) */
-    --blue-text: #1a44cc;
+    --blue-text: var(--primary-text-light);
     --cyan-text: #0a6b6b;
     --green-text: #15703a;
     --yellow-text: #7c6400;
@@ -14,7 +20,7 @@
     --magenta-text: #99198a;
 
     /* 🎨 Colors — Accent backgrounds (pair with dark text) */
-    --blue-bg: #dce5ff;
+    --blue-bg: color-mix(in srgb, var(--primary-color) 15%, white);
     --cyan-bg: #d5f5f5;
     --green-bg: #dcfce7;
     --yellow-bg: #fef9c3;
@@ -25,7 +31,7 @@
         color-scheme: dark;
 
         /* Accent text (WCAG AA 4.5:1+ on black) */
-        --blue-text: #6b8aff;
+        --blue-text: var(--primary-text-dark);
         --cyan-text: #5ce0d0;
         --green-text: #4ade80;
         --yellow-text: #facc15;
@@ -33,7 +39,7 @@
         --magenta-text: #e879f9;
 
         /* Accent backgrounds (dark tints, pair with light text) */
-        --blue-bg: #172554;
+        --blue-bg: color-mix(in srgb, var(--primary-color) 25%, black);
         --cyan-bg: #0a2e2e;
         --green-bg: #052e16;
         --yellow-bg: #352a04;

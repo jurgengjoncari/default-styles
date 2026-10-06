@@ -1,0 +1,91 @@
+body {
+    font-size: var(--font-size-md);
+    color: var(--color);
+    background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-emphasis);
+}
+
+a {
+    color: var(--color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-hover));
+}
+
+a:active {
+    color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-active));
+}
+
+code,
+kbd,
+samp,
+pre {
+    background-color: var(--color-surface);
+}
+
+code {
+    color: var(--magenta-text);
+}
+
+table {
+    border-color: var(--color-subtle);
+}
+
+th {
+    background-color: var(--color-surface);
+    color: var(--color-emphasis);
+}
+
+th,
+td {
+    padding: var(--size-sm);
+    border-color: var(--color-subtle);
+}
+
+hr {
+    border: none;
+    height: var(--border-width-thin);
+    background-color: var(--color-subtle);
+}
+
+blockquote {
+    border-left: var(--border-width-thicker) solid var(--color-subtle);
+    padding: var(--size-sm) var(--size-md);
+    color: var(--color-muted);
+}
+
+fieldset {
+    border-color: var(--color-subtle);
+}
+
+dialog[open] {
+    background-color: var(--color-surface);
+    border-color: var(--color-subtle);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.error,
+[role="alert"] {
+    border-left: var(--border-width-thicker) solid var(--red-text);
+    padding: var(--size-sm) var(--size-md);
+    margin: var(--size-md) 0;
+    background-color: var(--red-bg);
+    color: var(--red-text);
+}

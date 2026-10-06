@@ -1,0 +1,4 @@
+body,
+body *:not(:where(svg, svg *)) {
+    all: unset;
+}

@@ -1,0 +1,60 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+    border-radius: var(--radius-control);
+    background-color: var(--color-surface);
+    backdrop-filter: blur(8px);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:not(:disabled):hover,
+button.is-hovered:not(:disabled),
+.button:not(:disabled):hover,
+.button.is-hovered:not(:disabled),
+input[type="button"]:not(:disabled):hover,
+input[type="reset"]:not(:disabled):hover,
+input[type="submit"]:not(:disabled):hover,
+.button.is-hovered:not(:disabled) {
+    background-color: color-mix(in oklch, var(--color-surface), var(--color-emphasis) var(--interaction-hover));
+}
+
+button:not(:disabled):active,
+button.is-active:not(:disabled),
+.button:not(:disabled):active,
+.button.is-active:not(:disabled),
+input[type="button"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active,
+input[type="submit"]:not(:disabled):active,
+.button.is-active:not(:disabled) {
+    background-color: color-mix(in oklch, var(--color-surface), transparent var(--interaction-active));
+}
+
+button.is-outline,
+.button.is-outline,
+.is-outline:not(button) {
+    border: var(--border-width-thin) solid var(--color);
+}
+
+.button--custom-color {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button--custom-color:not(:disabled):hover,
+.button--custom-color.is-hovered:not(:disabled) {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.button--custom-color:not(:disabled):active,
+.button--custom-color.is-active:not(:disabled) {
+    background-color: var(--button-active-bg);
+    color: var(--button-active-text);
+}
+
+.button--custom-color:disabled {
+    opacity: 0.55;
+}
