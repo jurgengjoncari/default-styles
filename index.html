@@ -20,7 +20,14 @@
 <body>
     <header>
         <h1>Default Styles</h1>
-        <button onclick="toggleTheme()" id="theme-toggle" aria-label="Toggle dark mode">☾</button>
+        <div class="header-controls">
+            <button onclick="toggleTheme()" id="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            <label id="control-radius-label" for="control-radius">
+                Control radius
+                <input id="control-radius" type="range" min="0" max="25" step="1" value="4">
+                <output id="control-radius-value" for="control-radius">4px</output>
+            </label>
+        </div>
         <nav>
             <ol>
                 <li><a href="#text">Text</a></li>
@@ -516,6 +523,21 @@
 
         dynamicButtonColor.addEventListener('input', updateDynamicButtonColor);
         updateDynamicButtonColor();
+
+        const controlRadius = document.getElementById('control-radius');
+        const controlRadiusValue = document.getElementById('control-radius-value');
+
+        function updateControlRadius() {
+            const isPill = controlRadius.value === controlRadius.max;
+            const radius = isPill ? '9999px' : `${controlRadius.value}px`;
+
+            document.documentElement.style.setProperty('--radius-control', radius);
+            controlRadiusValue.value = isPill ? 'Pill' : radius;
+            controlRadiusValue.textContent = isPill ? 'Pill' : radius;
+        }
+
+        controlRadius.addEventListener('input', updateControlRadius);
+        updateControlRadius();
         syncThemeToggleIcon();
     </script>
 </body>

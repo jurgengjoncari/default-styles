@@ -43,7 +43,25 @@ textarea {
 input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
 select,
 textarea {
-    border-radius: var(--radius-xs);
+    border-radius: var(--radius-control);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--size-md);
+}
+
+#control-radius-label {
+    display: flex;
+    align-items: center;
+    gap: var(--size-sm);
+}
+
+#control-radius {
+    width: 8rem;
+    padding: 0;
 }
 
 button,
@@ -51,7 +69,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-    border-radius: var(--radius-xs);
+    border-radius: var(--radius-control);
     background-color: var(--color-surface);
     backdrop-filter: blur(8px);
     transition: background-color 0.2s ease, border-color 0.2s ease;

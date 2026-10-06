@@ -113,6 +113,7 @@
     --radius-xl: 1.625rem;
     --radius-xxl: 2.625rem;
     --radius-round: 9999px;
+    --radius-control: var(--radius-xs);
 
     --border-width-none: 0;
     --border-width-thin: 0.0625rem;
