@@ -57,9 +57,11 @@ input[type="color"]:focus-visible {
 }
 
 select {
+    appearance: auto;
+    -webkit-appearance: auto;
     width: 100%;
     min-width: 0;
-    padding: var(--size-xxs) var(--size-xs);
+    padding: var(--size-sm);
     font: inherit;
 }
 
@@ -73,12 +75,14 @@ input[type="range"] {
 }
 
 input[type="number"] {
+    appearance: auto;
+    -webkit-appearance: auto;
     box-sizing: border-box;
     justify-self: end;
     width: 4.5rem;
     min-width: 0;
     text-align: end;
-    padding: var(--size-xxs);
+    padding: var(--size-xs) var(--size-sm);
 }
 
 input[type="checkbox"],
@@ -87,6 +91,17 @@ input[type="range"],
 meter,
 progress {
     accent-color: var(--blue-text);
+}
+
+progress,
+meter {
+    appearance: auto;
+    -webkit-appearance: auto;
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    height: var(--size-sm);
+    margin-block: var(--size-xxs) var(--size-md);
 }
 
 ::placeholder {
