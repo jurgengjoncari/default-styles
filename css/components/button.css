@@ -1,8 +1,7 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"],
-.button {
+input[type="submit"] {
     border-radius: var(--radius-control);
     background-color: var(--color-surface);
     backdrop-filter: blur(8px);
@@ -11,28 +10,21 @@ input[type="submit"],
 
 button:not(:disabled):hover,
 button.is-hovered:not(:disabled),
-.button:not(:disabled):hover,
-.button.is-hovered:not(:disabled),
 input[type="button"]:not(:disabled):hover,
 input[type="reset"]:not(:disabled):hover,
-input[type="submit"]:not(:disabled):hover,
-.button.is-hovered:not(:disabled) {
+input[type="submit"]:not(:disabled):hover {
     background-color: color-mix(in oklch, var(--color-surface), var(--color-emphasis) var(--interaction-hover));
 }
 
 button:not(:disabled):active,
 button.is-active:not(:disabled),
-.button:not(:disabled):active,
-.button.is-active:not(:disabled),
 input[type="button"]:not(:disabled):active,
 input[type="reset"]:not(:disabled):active,
-input[type="submit"]:not(:disabled):active,
-.button.is-active:not(:disabled) {
+input[type="submit"]:not(:disabled):active {
     background-color: color-mix(in oklch, var(--color-surface), transparent var(--interaction-active));
 }
 
 button.is-outline,
-.button.is-outline,
 .is-outline:not(button) {
     border: var(--border-width-thin) solid var(--color);
 }

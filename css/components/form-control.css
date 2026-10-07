@@ -6,7 +6,7 @@ textarea {
     transition: border-color 0.2s ease;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="number"]):not([type="range"]),
 select,
 textarea,
 button {
@@ -33,6 +33,7 @@ input[type="color"] {
     border: 0;
     border-radius: var(--radius-control);
     background-color: var(--color-control-value, transparent);
+    justify-self: end;
     cursor: pointer;
 }
 
@@ -55,19 +56,14 @@ input[type="color"]:focus-visible {
     outline-offset: 2px;
 }
 
-.form-control--color {
-    justify-self: end;
-    padding: 0;
-}
-
-.form-control--select {
+select {
     width: 100%;
     min-width: 0;
     padding: var(--size-xxs) var(--size-xs);
     font: inherit;
 }
 
-.form-control--range {
+input[type="range"] {
     display: block;
     width: 100%;
     min-width: 0;
@@ -76,15 +72,12 @@ input[type="color"]:focus-visible {
     padding: 0;
 }
 
-.form-control--number {
+input[type="number"] {
     box-sizing: border-box;
     justify-self: end;
     width: 4.5rem;
     min-width: 0;
     text-align: end;
-}
-
-input.form-control--number:not([type="checkbox"]):not([type="radio"]):not([type="color"]) {
     padding: var(--size-xxs);
 }
 

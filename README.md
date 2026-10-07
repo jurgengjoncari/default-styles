@@ -13,6 +13,8 @@ A framework-free collection of reusable CSS foundations and UI components, with 
 
 Include `index.css` for the shared CSS foundation. Load only the component scripts needed by a page, after its markup; `theme-selector.js` is loaded in the document head to apply the system theme before first paint. The color preview component requires `js/utilities/color.js`.
 
+Base styles apply to semantic HTML elements and control types automatically, so common buttons, lists, and form controls do not need presentation classes. Use component classes when opting into a composed layout or feature, and demo/state classes only for variants that are not the default.
+
 Component styling uses generic classes such as `.button-group`, `.form-field`, and `.floating-panel`; behavior uses attributes such as `data-floating-panel`, `data-theme-selector`, and `data-css-variable`. Component variants are opt-in through modifier classes or `data-*` attributes.
 
 Components are framework-free and can be copied into a project. An npm package can be added later once the public APIs and packaging needs are established.

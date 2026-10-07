@@ -68,14 +68,14 @@
                 <div class="settings-panel__item">
                     <label class="form-field form-field--color" for="primary-color">
                         <span class="form-field__label">Primary color</span>
-                        <input class="form-control form-control--color" id="primary-color" type="color" value="#1a44cc">
+                        <input id="primary-color" type="color" value="#1a44cc">
                         <output class="form-field__output" id="primary-color-value" for="primary-color">#1a44cc</output>
                     </label>
                 </div>
                 <div class="settings-panel__item">
                     <label class="form-field" for="control-radius">
                         <span class="form-field__label">Control radius</span>
-                        <input class="form-control form-control--range" id="control-radius" type="range" min="0"
+                        <input id="control-radius" type="range" min="0"
                             max="24" step="1" value="4" data-css-variable="--radius-control" data-css-unit="px">
                         <output class="form-field__output" id="control-radius-value" for="control-radius">4px</output>
                     </label>
@@ -83,7 +83,7 @@
                 <div class="settings-panel__item">
                     <label class="form-field form-field--suffix" for="root-font-scale">
                         <span class="form-field__label">Font scale</span>
-                        <input class="form-control form-control--number" id="root-font-scale" type="number" min="75"
+                        <input id="root-font-scale" type="number" min="75"
                             max="150" step="5" value="100" aria-label="Font scale percentage"
                             data-css-variable="--root-font-scale" data-css-unit="%">
                         <span class="form-field__suffix">%</span>
@@ -92,7 +92,7 @@
                 <div class="settings-panel__item">
                     <label class="form-field form-field--select" for="font-family">
                         <span class="form-field__label">Font family</span>
-                        <select class="form-control form-control--select" id="font-family"
+                        <select id="font-family"
                             data-css-variable="--font-family-base">
                             <option value="">Default</option>
                             <option value="system-ui, sans-serif">System UI</option>
@@ -267,11 +267,11 @@
                     <label for="dynamic-button-color">Choose a button color</label>
                     <input id="dynamic-button-color" type="color" value="#1a44cc" data-color-preview-input>
                     <div class="dynamic-button-demo">
-                        <button type="button" class="button button--custom-color">Button</button>
-                        <button type="button" class="button button--custom-color is-hovered">Hover preview</button>
-                        <button type="button" class="button button--custom-color is-active">Pressed preview</button>
-                        <button type="button" class="button button--custom-color is-focused">Focus preview</button>
-                        <button type="button" class="button button--custom-color" disabled>Disabled</button>
+                        <button type="button" class="button--custom-color">Button</button>
+                        <button type="button" class="button--custom-color is-hovered">Hover preview</button>
+                        <button type="button" class="button--custom-color is-active">Pressed preview</button>
+                        <button type="button" class="button--custom-color is-focused">Focus preview</button>
+                        <button type="button" class="button--custom-color" disabled>Disabled</button>
                     </div>
                 </div>
 
@@ -383,7 +383,7 @@
 
                 <h3>Other Inputs</h3>
                 <label for="color">Color</label>
-                <input id="color" type="color">
+                <input id="color" type="color" value="#1a44cc">
 
                 <label for="file">File</label>
                 <input id="file" type="file">
