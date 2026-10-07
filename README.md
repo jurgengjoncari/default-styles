@@ -7,7 +7,7 @@ A framework-free collection of reusable CSS foundations and UI components, with 
 - `css/tokens.css` defines design tokens such as colors, spacing, typography, and radii.
 - `css/base/` contains reset, normalization, theme, accessibility, and semantic element styles.
 - `css/components/` contains reusable button, button-group, form-field, form-control, floating-panel, and settings-panel styles. `css/components.css` collects them.
-- `js/components/` contains behavior attached through generic `data-*` attributes, including floating panels, theme selection, dialog controls, color previews, and CSS-variable controls.
+- `js/components/` contains reusable behavior, including floating panels, theme selection, dialog controls, color controls and previews, and CSS-variable controls.
 - `js/utilities/` contains shared helpers used by components and examples.
 - `js/examples/` and `examples/` contain page-specific demo behavior and presentation.
 

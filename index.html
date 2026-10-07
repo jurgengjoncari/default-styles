@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h1>Default Styles</h1>
+        <!-- <h1>Default Styles</h1> -->
         <div class="floating-panel" data-floating-panel>
             <button type="button" id="floating-panel-trigger" class="floating-panel__trigger"
                 data-floating-panel-trigger aria-controls="settings-panel"
@@ -119,9 +119,6 @@
     <main>
         <!-- Text Content -->
         <section id="text">
-            <h2>Text Content</h2>
-
-            <h3>Headings</h3>
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
             <h3>Heading 3</h3>
@@ -129,16 +126,15 @@
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
 
-            <h3>Paragraph</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate
+                This is a paragraph with some sample text. The paragraphs don't extend more than 80 characters per line for readability. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam enim beatae temporibus atque voluptate
                 cum, nisi exercitationem veniam expedita reprehenderit hic ipsa ullam voluptatum pariatur architecto
                 odio aliquid voluptas laborum?
                 <br><br>
                 This is text with line breaks above using the &lt;br&gt; element.
             </p>
 
-            <h3>Inline Semantics</h3>
+            <!-- <h3>Inline Semantics</h3> -->
             <p>
                 <strong>Strong</strong> ·
                 <em>Emphasis</em> ·
@@ -165,7 +161,7 @@
                 <span>Span</span>
             </p>
 
-            <h3>Lists</h3>
+            <!-- <h3>Lists</h3> -->
             <ul>
                 <li>Unordered list item</li>
                 <li>Another item</li>
@@ -182,7 +178,7 @@
                 <dd>Definition Description</dd>
             </dl>
 
-            <h3>Block Text</h3>
+            <!-- <h3>Block Text</h3> -->
             <blockquote>Blockquote — quoted text from another source</blockquote>
             <pre>this
     is
@@ -194,7 +190,7 @@
 
         <!-- Links -->
         <section id="links">
-            <h2>Links</h2>
+            <!-- <h2>Links</h2> -->
             <p>
                 <a href="https://example.com">Normal link (likely visited)</a> ·
                 <a href="https://example.com/never-visited-abc123">Unvisited link</a> ·
@@ -206,7 +202,7 @@
 
         <!-- Tables -->
         <section id="tables">
-            <h2>Tables</h2>
+            <!-- <h2>Tables</h2> -->
             <table>
                 <caption>Table caption</caption>
                 <thead>
@@ -232,7 +228,7 @@
 
         <!-- Forms -->
         <section id="forms">
-            <h2>Forms</h2>
+            <!-- <h2>Forms</h2> -->
             <form action="post">
 
                 <h3>Buttons</h3>
@@ -406,8 +402,6 @@
 
         <!-- Interactive Elements -->
         <section id="interactive">
-            <h2>Interactive Elements</h2>
-
             <h3>Details / Summary</h3>
             <details>
                 <summary>Closed — click to expand</summary>
@@ -418,7 +412,7 @@
                 <p>This content is visible by default.</p>
             </details>
 
-            <h3>Dialog</h3>
+            <!-- <h3>Dialog</h3> -->
             <button type="button" data-dialog-open="#dialog">Open Dialog</button>
             <dialog id="dialog">
                 <h3>Dialog Box</h3>
@@ -429,7 +423,7 @@
 
         <!-- Media -->
         <section id="media">
-            <h2>Media</h2>
+            <!-- <h2>Media</h2> -->
 
             <figure>
                 <img src="./dummy-profile-pic-male.jpg" alt="Dummy profile picture">
@@ -440,22 +434,22 @@
                 <img src="./dummy-profile-pic-male.jpg" alt="Picture element">
             </picture>
 
-            <h3>Video</h3>
+            <!-- <h3>Video</h3> -->
             <video controls width="320" height="240">
                 <source src="movie.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
 
-            <h3>Audio</h3>
+            <!-- <h3>Audio</h3> -->
             <audio controls>
                 <source src="audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
 
-            <h3>Canvas</h3>
+            <!-- <h3>Canvas</h3> -->
             <canvas id="canvas" width="320" height="240">Your browser does not support the canvas element.</canvas>
 
-            <h3>SVG</h3>
+            <!-- <h3>SVG</h3> -->
             <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="100" cy="100" r="80" fill="#3333FF" />
                 <circle cx="80" cy="80" r="20" fill="#ffffff" />
@@ -466,7 +460,7 @@
 
         <!-- Contrast Levels -->
         <section id="contrast">
-            <h2>Contrast Levels</h2>
+            <!-- <h2>Contrast Levels</h2> -->
             <p style="color: var(--color-surface);">surface (10%) — subtle backgrounds only</p>
             <p style="color: var(--color);">disabled (25%) — de-emphasized, WCAG-exempt</p>
             <p style="color: var(--color-subtle);">subtle (40%) — borders, placeholders</p>
@@ -474,7 +468,7 @@
             <p style="color: var(--color);">default (70%) — body text</p>
             <p style="color: var(--color-emphasis);">emphasis (90%) — headings, important</p>
 
-            <h3>Interactive Colors</h3>
+            <!-- <h3>Interactive Colors</h3> -->
             <p style="color: var(--background-color);">action — links, buttons</p>
             <p style="color: var(--background-color);">hover — hovered interactive</p>
             <p style="color: var(--outline-color);">focus — focused interactive</p>
@@ -482,7 +476,7 @@
             <p style="color: var(--color);">visited — visited links</p>
             <p style="color: var(--color);">disabled — gray</p>
 
-            <h3>Accent Colors</h3>
+            <!-- <h3>Accent Colors</h3> -->
             <table>
                 <thead>
                     <tr>
@@ -521,7 +515,7 @@
     </main>
 
     <aside>
-        <h2>Aside</h2>
+        <!-- <h2>Aside</h2> -->
         <p>Sidebar content</p>
     </aside>
 
@@ -531,6 +525,7 @@
         <noscript>JavaScript is disabled.</noscript>
     </footer>
     <script src="js/components/floating-panel.js"></script>
+    <script src="js/components/color-control.js"></script>
     <script src="js/components/css-variable-control.js"></script>
     <script src="js/components/dialog-controls.js"></script>
     <script src="js/utilities/color.js"></script>

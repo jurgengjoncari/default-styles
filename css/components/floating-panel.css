@@ -14,8 +14,8 @@
     align-self: end;
     display: grid;
     place-items: center;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: var(--size-touch-target);
+    height: var(--size-touch-target);
     padding: var(--size-sm);
     cursor: grab;
     opacity: 1;

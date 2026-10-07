@@ -61,6 +61,7 @@
     --size-lg: 1.625rem;
     --size-xl: 2.625rem;
     --size-xxl: 4.25rem;
+    --size-touch-target: 2.75rem;
 
     /* ✍️ Typography */
     --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,

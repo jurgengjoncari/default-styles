@@ -87,7 +87,7 @@ textarea {
     border-width: 0;
 }
 
-/* Touch target size - minimum 44x44px for touch devices */
+/* Keep common controls comfortably targetable on touch devices. */
 input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
 select,
 textarea,
