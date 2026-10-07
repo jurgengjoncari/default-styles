@@ -13,19 +13,24 @@
 
         function updatePreview() {
             const color = input.value;
-            const stateColor = colorUtilities.getLuminance(color) > 0.179 ? '#000000' : '#ffffff';
-            const hoverColor = colorUtilities.mix(color, stateColor, 0.12);
-            const activeColor = colorUtilities.mix(color, stateColor, 0.24);
+            const backgroundColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--background-color')
+                .trim();
 
             preview.style.setProperty('--button-bg', color);
             preview.style.setProperty('--button-text', colorUtilities.getContrastingTextColor(color));
-            preview.style.setProperty('--button-hover-bg', hoverColor);
-            preview.style.setProperty('--button-hover-text', colorUtilities.getContrastingTextColor(hoverColor));
-            preview.style.setProperty('--button-active-bg', activeColor);
-            preview.style.setProperty('--button-active-text', colorUtilities.getContrastingTextColor(activeColor));
+            preview.style.setProperty(
+                '--button-accessible-color',
+                colorUtilities.getAccessibleAccent(color, backgroundColor, 7)
+            );
         }
 
         input.addEventListener('input', updatePreview);
         updatePreview();
+
+        new MutationObserver(updatePreview).observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        });
     }
 })();

@@ -251,27 +251,60 @@
             <form action="post">
 
                 <h3>Buttons</h3>
-                <button>Button</button>
-                <button class="is-hovered">Hover</button>
-                <button class="is-active">Active</button>
-                <button disabled>Disabled</button>
-                <button class="is-focused">Focus</button>
-                <button class="is-hovered is-focused">Hover + Focus</button>
-                <button class="is-active is-focused">Active + Focus</button>
-                <button class="is-transparent">Transparent</button>
-                <button class="is-outline">Outline</button>
-                <button class="is-filled">Fill</button>
+                <div class="button-demo">
+                    <h4>States</h4>
+                    <div class="button-demo__row">
+                        <button>Default</button>
+                        <button class="is-hovered">Hover</button>
+                        <button class="is-active">Pressed</button>
+                        <button class="is-focused">Focus</button>
+                        <button class="is-hovered is-focused">Hover + focus</button>
+                        <button class="is-active is-focused">Pressed + focus</button>
+                        <button disabled>Disabled</button>
+                    </div>
+                    <h4>Styles</h4>
+                    <div class="button-demo__row">
+                        <button class="is-transparent">Transparent</button>
+                        <button class="is-outline">Outline</button>
+                        <button class="is-filled">Filled</button>
+                    </div>
+                </div>
 
                 <h4>Dynamic color button</h4>
                 <div data-color-preview>
                     <label for="dynamic-button-color">Choose a button color</label>
                     <input id="dynamic-button-color" type="color" value="#1a44cc" data-color-preview-input>
+                    <h5>Semi-transparent</h5>
                     <div class="dynamic-button-demo">
                         <button type="button" class="button--custom-color">Button</button>
                         <button type="button" class="button--custom-color is-hovered">Hover preview</button>
                         <button type="button" class="button--custom-color is-active">Pressed preview</button>
                         <button type="button" class="button--custom-color is-focused">Focus preview</button>
                         <button type="button" class="button--custom-color" disabled>Disabled</button>
+                    </div>
+                    <h5>Filled</h5>
+                    <div class="dynamic-button-demo">
+                        <button type="button" class="button--custom-color is-filled">Button</button>
+                        <button type="button" class="button--custom-color is-filled is-hovered">Hover preview</button>
+                        <button type="button" class="button--custom-color is-filled is-active">Pressed preview</button>
+                        <button type="button" class="button--custom-color is-filled is-focused">Focus preview</button>
+                        <button type="button" class="button--custom-color is-filled" disabled>Disabled</button>
+                    </div>
+                    <h5>Outline</h5>
+                    <div class="dynamic-button-demo">
+                        <button type="button" class="button--custom-color is-outline">Button</button>
+                        <button type="button" class="button--custom-color is-outline is-hovered">Hover preview</button>
+                        <button type="button" class="button--custom-color is-outline is-active">Pressed preview</button>
+                        <button type="button" class="button--custom-color is-outline is-focused">Focus preview</button>
+                        <button type="button" class="button--custom-color is-outline" disabled>Disabled</button>
+                    </div>
+                    <h5>Transparent</h5>
+                    <div class="dynamic-button-demo">
+                        <button type="button" class="button--custom-color is-transparent">Button</button>
+                        <button type="button" class="button--custom-color is-transparent is-hovered">Hover preview</button>
+                        <button type="button" class="button--custom-color is-transparent is-active">Pressed preview</button>
+                        <button type="button" class="button--custom-color is-transparent is-focused">Focus preview</button>
+                        <button type="button" class="button--custom-color is-transparent" disabled>Disabled</button>
                     </div>
                 </div>
 

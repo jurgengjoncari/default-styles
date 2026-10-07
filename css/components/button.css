@@ -2,6 +2,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+    --color-surface: color-mix(in srgb, var(--color-surface-color) var(--color-surface-strength), transparent);
     border-radius: var(--radius-control);
     background-color: var(--color-surface);
     backdrop-filter: blur(8px);
@@ -30,21 +31,24 @@ button.is-outline,
 }
 
 .button--custom-color {
-    background-color: var(--button-bg);
-    color: var(--button-text);
+    --color-surface-color: var(--button-bg);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.button--custom-color:not(:disabled):hover,
-.button--custom-color.is-hovered:not(:disabled) {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-text);
+.button--custom-color.is-filled {
+    --color-surface-color: var(--button-bg);
+    --color-surface-strength: 100%;
+    color: var(--button-text);
 }
 
-.button--custom-color:not(:disabled):active,
-.button--custom-color.is-active:not(:disabled) {
-    background-color: var(--button-active-bg);
-    color: var(--button-active-text);
+.button--custom-color.is-transparent,
+.button--custom-color.is-outline {
+    --color-emphasis: var(--button-bg);
+    color: var(--button-accessible-color);
+}
+
+.button--custom-color.is-outline {
+    border-color: var(--button-accessible-color);
 }
 
 .button--custom-color:disabled {

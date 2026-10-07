@@ -33,8 +33,8 @@
         return (lighter + 0.05) / (darker + 0.05);
     }
 
-    function getAccessibleAccent(color, background) {
-        if (getContrastRatio(color, background) >= 4.5) {
+    function getAccessibleAccent(color, background, minimumContrast = 4.5) {
+        if (getContrastRatio(color, background) >= minimumContrast) {
             return color;
         }
 
@@ -45,7 +45,7 @@
         for (let iteration = 0; iteration < 12; iteration += 1) {
             const middle = (low + high) / 2;
             const candidate = mix(color, target, middle);
-            if (getContrastRatio(candidate, background) >= 4.5) {
+            if (getContrastRatio(candidate, background) >= minimumContrast) {
                 high = middle;
             } else {
                 low = middle;
