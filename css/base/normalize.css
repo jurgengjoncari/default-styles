@@ -142,6 +142,7 @@ menu,
 ol,
 ul {
     display: block;
+    list-style-type: revert;
 }
 
 menu li,

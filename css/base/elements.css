@@ -26,6 +26,50 @@ a:active {
     color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-active));
 }
 
+ul,
+ol,
+menu {
+    margin-block: var(--size-md);
+    padding-inline-start: var(--size-lg);
+
+    ul,
+    ol,
+    menu {
+        margin-block: var(--size-xxs);
+    }
+}
+
+li + li {
+    margin-block-start: var(--size-xxs);
+}
+
+nav {
+    ul,
+    ol,
+    menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li + li {
+        margin-block-start: 0;
+    }
+}
+
+dl {
+    margin-block: var(--size-md);
+
+    dt {
+        font-weight: var(--font-weight-bold);
+    }
+
+    dd {
+        margin-inline-start: var(--size-lg);
+        margin-block-end: var(--size-sm);
+    }
+}
+
 code,
 kbd,
 samp,
