@@ -1,6 +1,7 @@
 {
   "name": "@jurgengjoncari/default-styles",
   "version": "0.1.0",
+  "type": "module",
   "description": "Framework-free CSS foundations and optional UI behavior for testing and reuse.",
   "files": [
     "README.md",
@@ -11,6 +12,7 @@
   ],
   "exports": {
     "./style.css": "./index.css",
+    "./appearance-settings": "./js/components/appearance-settings.js",
     "./css/*": "./css/*",
     "./js/components/*": "./js/components/*",
     "./js/utilities/*": "./js/utilities/*"

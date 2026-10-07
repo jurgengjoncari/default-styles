@@ -1,5 +1,9 @@
-(function () {
-    for (const panel of document.querySelectorAll('[data-floating-panel]')) {
+export function initializeFloatingPanels(root = document) {
+    const panels = root instanceof Element && root.matches('[data-floating-panel]')
+        ? [root, ...root.querySelectorAll('[data-floating-panel]')]
+        : root.querySelectorAll('[data-floating-panel]');
+
+    for (const panel of panels) {
         const trigger = panel.querySelector('[data-floating-panel-trigger]');
         const content = panel.querySelector('[data-floating-panel-content]');
         const dragHandles = [
@@ -122,4 +126,6 @@
         window.addEventListener('resize', keepPanelInViewport);
         new ResizeObserver(keepPanelInViewport).observe(panel);
     }
-})();
+}
+
+initializeFloatingPanels();

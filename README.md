@@ -20,6 +20,20 @@ Add the app's own styles after this import. The package keeps the shared baselin
 
 For apps that use dependency update automation, configure it to update this dependency so baseline improvements can be proposed without manually checking for changes.
 
+## Add the appearance panel
+
+The optional appearance panel lets you tune an app while viewing it. It creates its own controls, so you do not need to copy markup or load separate helper scripts.
+
+Keep the CSS foundation import from above, then import the panel once from your browser-side JavaScript entry point:
+
+```js
+import "@jurgengjoncari/default-styles/appearance-settings";
+```
+
+The panel can switch between system, light, and dark themes; change the primary color, corner radius, border width, font scale, and font family. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+
+The panel is optional. Without that JavaScript import, the CSS foundation still works as the shared baseline.
+
 ## What's included
 
 - `css/tokens.css`: shared colors, spacing, typography, and radii.
