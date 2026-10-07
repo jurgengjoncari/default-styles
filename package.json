@@ -1,16 +1,33 @@
 {
-  "name": "default-styles",
-  "version": "1.0.0",
-  "description": "In this project, I've included an HTML file with (almost) all the elements, for testing purposes.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@jurgengjoncari/default-styles",
+  "version": "0.1.0",
+  "description": "Framework-free CSS foundations and optional UI behavior for testing and reuse.",
+  "files": [
+    "README.md",
+    "index.css",
+    "css",
+    "js/components",
+    "js/utilities"
+  ],
+  "exports": {
+    "./style.css": "./index.css",
+    "./css/*": "./css/*",
+    "./js/components/*": "./js/components/*",
+    "./js/utilities/*": "./js/utilities/*"
   },
+  "sideEffects": [
+    "**/*.css",
+    "./js/**/*.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jurgengjoncari/default-styles.git"
   },
-  "keywords": [],
+  "keywords": [
+    "css",
+    "design-system",
+    "framework-free"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
