@@ -11,14 +11,14 @@ h4,
 h5,
 h6 {
     color: var(--color-emphasis);
-    margin-block: var(--size-sm) var(--size-none);
+    margin-block: var(--size-sm) var(--size-sm);
 }
 
 p,
 blockquote,
 pre,
 address {
-    margin-block: var(--size-md);
+    margin-block: var(--size-sm);
 }
 
 a {

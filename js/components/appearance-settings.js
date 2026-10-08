@@ -65,16 +65,7 @@ function createAppearancePanel() {
         <button type="button" class="floating-panel__trigger"
             data-floating-panel-trigger aria-controls="default-styles-appearance-content"
             aria-expanded="false" aria-label="Open appearance settings">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
-                <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor"
-                    stroke-width="1.6" stroke-linecap="round" />
-                <circle cx="9" cy="6" r="2" fill="var(--background-color)" stroke="currentColor"
-                    stroke-width="1.6" />
-                <circle cx="15" cy="12" r="2" fill="var(--background-color)" stroke="currentColor"
-                    stroke-width="1.6" />
-                <circle cx="11" cy="18" r="2" fill="var(--background-color)" stroke="currentColor"
-                    stroke-width="1.6" />
-            </svg>
+            <span class="floating-panel__icon" aria-hidden="true"></span>
         </button>
         <div class="floating-panel__content settings-panel" id="default-styles-appearance-content"
             data-floating-panel-content aria-hidden="true" inert>
