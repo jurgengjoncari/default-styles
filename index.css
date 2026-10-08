@@ -1,6 +1,6 @@
 @import "css/tokens.css";
 @import "css/base/reset.css";
-@import "css/base/normalize.css";
+@import "css/base/normalize/normalize.css";
 @import "css/base/theme.css";
 @import "css/base/accessibility.css";
 @import "css/base/elements.css";

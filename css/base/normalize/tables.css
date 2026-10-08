@@ -1,0 +1,34 @@
+/* Tables */
+table {
+    display: table;
+    
+    caption {
+        display: table-caption;
+        text-align: left;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+    
+    tbody {
+        display: table-row-group;
+    }
+    
+    tfoot {
+        display: table-footer-group;
+    }
+    
+    tr {
+        display: table-row;
+    }
+    
+    th,
+    td {
+        display: table-cell;
+    }
+    
+    th {
+        font-weight: bold;
+    }
+}

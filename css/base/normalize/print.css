@@ -1,0 +1,22 @@
+/* Print styles */
+@media print {
+    :root {
+        color-scheme: light;
+        --background-color: #ffffff;
+        --color: #000000;
+        --color-emphasis: #000000;
+        --color-subtle: #666666;
+        --color-muted: #444444;
+        --color-surface: #f0f0f0;
+    }
+
+    .skip-to-main,
+    .floating-panel {
+        display: none;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        color: var(--color-muted);
+    }
+}

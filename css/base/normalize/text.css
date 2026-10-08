@@ -1,0 +1,59 @@
+/* Text semantics */
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: var(--font-family-monospace), ui-monospace;
+}
+
+pre {
+    white-space: pre;
+    overflow: auto;
+    display: block;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+dfn, cite, em, i, var {
+    font-style: italic;
+}
+
+del, s {
+    text-decoration: line-through;
+}
+
+ins, u {
+    text-decoration: underline;
+}
+
+bdo {
+    unicode-bidi: bidi-override;
+}

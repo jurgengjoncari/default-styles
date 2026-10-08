@@ -1,0 +1,27 @@
+/* Lists */
+menu,
+ol,
+ul {
+    display: block;
+    list-style-type: revert;
+}
+
+menu li,
+ol li,
+ul li {
+    display: list-item;
+}
+
+/* Definition lists */
+dl {
+    display: block;
+}
+
+dl dt {
+    display: block;
+    font-weight: bold;
+}
+
+dl dd {
+    display: block;
+}

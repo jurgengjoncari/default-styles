@@ -1,0 +1,58 @@
+@import './headings.css';
+@import './text.css';
+@import './media.css';
+@import './lists.css';
+@import './tables.css';
+@import './form.css';
+@import './print.css';
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    font-family: var(--font-family-base), sans-serif;
+}
+
+div, main, footer, article, section, aside, form, nav, h1, h2, h3, h4, h5, h6, p, blockquote {
+    display: block;
+}
+
+
+a:not(:disabled) {
+    cursor: pointer;
+}
+q {
+    quotes: "“" "”" "‘" "’";
+}
+
+/* Other */
+template, [hidden]{
+    display: none;
+}
+
+noscript {
+    display: block;
+}
+
+script {
+    display: none;
+}
+
+dialog {
+    display: none;
+}
+
+dialog[open] {
+    display: block;
+    position: fixed;
+    margin: auto;
+    box-shadow: var(--shadow-lg);
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: fit-content;
+    height: fit-content;
+}
