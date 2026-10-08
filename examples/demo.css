@@ -8,12 +8,6 @@
     display: grid;
     justify-items: start;
     gap: var(--size-xs);
-    margin-block: var(--size-md);
-}
-
-.button-demo h4,
-[data-color-preview] h5 {
-    margin: 0;
 }
 
 .button-demo__row {

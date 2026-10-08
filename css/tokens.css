@@ -53,15 +53,15 @@
 
     /* 📏 Sizing */
     --size-none: 0;
-    --size-3xs: 0.125rem;
-    --size-xxs: 0.25rem;
-    --size-xs: 0.375rem;
-    --size-sm: 0.625rem;
-    --size-md: 1rem;
-    --size-lg: 1.625rem;
-    --size-xl: 2.625rem;
-    --size-xxl: 4.25rem;
-    --size-touch-target: 2.75rem;
+    --size-3xs: 0.125em;
+    --size-xxs: 0.25em;
+    --size-xs: 0.375em;
+    --size-sm: 0.625em;
+    --size-md: 1em;
+    --size-lg: 1.625em;
+    --size-xl: 2.625em;
+    --size-xxl: 4.25em;
+    --size-touch-target: 2.75em;
 
     /* ✍️ Typography */
     --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,

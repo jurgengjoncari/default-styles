@@ -11,7 +11,7 @@ h4,
 h5,
 h6 {
     color: var(--color-emphasis);
-    margin-block: var(--size-lg) var(--size-sm);
+    margin-block: var(--size-sm) var(--size-none);
 }
 
 p,
