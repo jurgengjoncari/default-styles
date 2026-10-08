@@ -60,19 +60,18 @@ button, input[type="file"] {
     width: fit-content;
 }
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+    
+    &:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
 }
 
 fieldset {
@@ -108,11 +107,11 @@ fieldset {
 
 [type="number"] {
     text-align: end;
-}
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-    height: auto;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        height: auto;
+    }
 }
 
 [type="file"] {
