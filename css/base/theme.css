@@ -1,10 +1,11 @@
 /* Semantic Color Tokens — accent colors + dark mode overrides */
 :root {
     /* Text track */
+    --surface-transparency-scale: 1;
     --background-color: #ffffff;
     --color: rgba(0, 0, 0, 0.70);
     --color-surface-color: #000000;
-    --color-surface-strength: 10%;
+    --color-surface-strength: calc(10% * var(--surface-transparency-scale));
     --color-surface: color-mix(in srgb, var(--color-surface-color) var(--color-surface-strength), transparent);
     --color-subtle: rgba(0, 0, 0, 0.40);
     --color-muted: rgba(0, 0, 0, 0.55);
@@ -29,7 +30,7 @@
         --background-color: #000000;
         --color: rgba(255, 255, 255, 0.70);
         --color-surface-color: #ffffff;
-        --color-surface-strength: 20%;
+        --color-surface-strength: calc(20% * var(--surface-transparency-scale));
         --color-surface: color-mix(in srgb, var(--color-surface-color) var(--color-surface-strength), transparent);
         --color-subtle: rgba(255, 255, 255, 0.40);
         --color-muted: rgba(255, 255, 255, 0.55);

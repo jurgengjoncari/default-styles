@@ -119,6 +119,14 @@ function createAppearancePanel() {
                 </label>
             </div>
             <div class="settings-panel__item">
+                <label class="form-field" for="default-styles-surface-transparency">
+                    <span class="form-field__label">Transparency</span>
+                    <input id="default-styles-surface-transparency" type="range"
+                        min="0" max="200" step="5" value="100">
+                    <output class="form-field__output" for="default-styles-surface-transparency">100%</output>
+                </label>
+            </div>
+            <div class="settings-panel__item">
                 <label class="form-field" for="default-styles-font-scale">
                     <span class="form-field__label">Font scale</span>
                     <input id="default-styles-font-scale" type="number"
@@ -189,6 +197,12 @@ function createAppearancePanel() {
             return;
         }
 
+        if (control.id === 'default-styles-surface-transparency') {
+            root.style.setProperty('--surface-transparency-scale', Number(control.value) / 100);
+            panel.querySelector('output[for="default-styles-surface-transparency"]').textContent =
+                `${control.value}%`;
+            return;
+        }
         const variableById = {
             'default-styles-control-radius': ['--radius-control', 'px'],
             'default-styles-border-width': ['--border-width-thin', 'px'],
