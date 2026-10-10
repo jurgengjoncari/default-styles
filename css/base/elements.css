@@ -12,6 +12,7 @@ h5,
 h6 {
     color: var(--color-emphasis);
     margin-block: var(--size-sm) var(--size-sm);
+    line-height: var(--line-height-tight)
 }
 
 p,
