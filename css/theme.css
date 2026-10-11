@@ -58,13 +58,3 @@
         }
     }
 }
-
-@layer theme {
-    :root a:visited {
-        --color: #4040bf;
-    }
-
-    :root[data-theme="dark"] a:visited {
-        --color: #a0a0ff;
-    }
-}
