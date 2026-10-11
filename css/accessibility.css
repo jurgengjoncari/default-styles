@@ -29,23 +29,7 @@
         outline: var(--border-width-thick) solid var(--outline-color);
         outline-offset: var(--size-3xs);
     }
-
-    /* Skip to Main Content Link */
-    .skip-to-main {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--background-color);
-        color: var(--color-emphasis);
-        padding: var(--size-sm);
-        z-index: 100;
-    }
-
-    .skip-to-main:focus {
-        top: 0;
-    }
-
-    /* High Contrast Mode Support */
+/* High Contrast Mode Support */
     @media (prefers-contrast: more) {
         :root {
             --color: #000000;

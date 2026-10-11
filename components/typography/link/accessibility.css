@@ -1,0 +1,16 @@
+@layer accessibility {
+    /* Reveal the skip link when keyboard-focused. */
+    .skip-to-main {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--background-color);
+        color: var(--color-emphasis);
+        padding: var(--size-sm);
+        z-index: 100;
+    }
+
+    .skip-to-main:focus {
+        top: 0;
+    }
+}

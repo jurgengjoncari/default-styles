@@ -1,0 +1,14 @@
+@layer normalize {
+    code,
+    kbd,
+    samp,
+    pre {
+        font-family: var(--font-family-monospace), ui-monospace;
+    }
+
+    pre {
+        white-space: pre;
+        overflow: auto;
+        display: block;
+    }
+}

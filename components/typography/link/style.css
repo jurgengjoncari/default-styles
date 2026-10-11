@@ -1,0 +1,17 @@
+@import "./normalize.css";
+@import "./accessibility.css";
+
+@layer component {
+    a {
+        color: var(--color);
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-hover));
+    }
+
+    a:active {
+        color: color-mix(in oklch, var(--color), var(--color-emphasis) var(--interaction-active));
+    }
+}

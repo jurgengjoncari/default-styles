@@ -1,0 +1,5 @@
+@layer normalize {
+    a:not(:disabled) {
+        cursor: pointer;
+    }
+}

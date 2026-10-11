@@ -44,10 +44,6 @@
             & textarea:disabled {
                 --color: var(--color-gray);
             }
-
-            & a:visited {
-                --color: #a0a0ff;
-            }
         }
 
         .is-transparent,
@@ -60,5 +56,15 @@
             --color-surface-strength: 100%;
             color: var(--background-color);
         }
+    }
+}
+
+@layer theme {
+    :root a:visited {
+        --color: #4040bf;
+    }
+
+    :root[data-theme="dark"] a:visited {
+        --color: #a0a0ff;
     }
 }

@@ -1,0 +1,11 @@
+@import "./normalize.css";
+
+@layer component {
+    hr {
+        display: block;
+        border: none;
+        height: var(--border-width-thin);
+        margin-block: var(--size-lg);
+        background-color: var(--color-subtle);
+    }
+}

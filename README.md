@@ -30,8 +30,8 @@ The panel is optional. Without that JavaScript import, the CSS foundation still 
 
 - css/style.css is the complete stylesheet entry point used by the demo and package.
 - App-wide tokens, reset, normalization, theme, accessibility, and print rules live at the root of css/. The body defaults are in css/style.css.
-- Component folders live beside css/. Each component keeps its style.css with a separate normalize.css when it needs component-specific normalization. A component may also have an accessibility.css for rules specific to that component. Cascade layers order reset, normalization, tokens, theme, base, shared, component, accessibility, and print. App/demo styles remain unlayered so they can override the library.
-- Related components are nested by context: button styles are under form/button/, and the floating panel and appearance settings are under dialog/.
+- Component folders live under components/. Each component keeps its style.css with a separate normalize.css when it needs component-specific normalization. A component may also have an accessibility.css for rules specific to that component. Typography is grouped under components/typography/, with heading, link, code, blockquote, and separator subcomponents. Cascade layers order reset, normalization, tokens, theme, base, shared, component, accessibility, and print. App/demo styles remain unlayered so they can override the library.
+- Related components are nested by context: button styles are under components/form/button/, and the floating panel and appearance settings are under components/dialog/.
 - index.css forwards to css/style.css to preserve the package stylesheet entry point.
 - index.html is a demo page for checking the baseline and developing styles.
 

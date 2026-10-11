@@ -1,9 +1,9 @@
-import { getAccessibleAccent, getContrastingTextColor } from '../../../js/utilities/color/contrast.js';
-import { mix } from '../../../js/utilities/color/mix.js';
+import { getAccessibleAccent, getContrastingTextColor } from '../../../../js/utilities/color/contrast.js';
+import { mix } from '../../../../js/utilities/color/mix.js';
 import {
     getCssColorAsHex,
     getCssLengthInPixels
-} from '../../../js/utilities/style-values.js';
+} from '../../../../js/utilities/style-values.js';
 
 const root = document.documentElement;
 

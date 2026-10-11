@@ -40,8 +40,8 @@
         width: 20px;
         height: 20px;
         background-color: currentColor;
-        -webkit-mask: url("../../assets/appearance-settings.svg") center / contain no-repeat;
-        mask: url("../../assets/appearance-settings.svg") center / contain no-repeat;
+        -webkit-mask: url("../../../assets/appearance-settings.svg") center / contain no-repeat;
+        mask: url("../../../assets/appearance-settings.svg") center / contain no-repeat;
     }
 
     .floating-panel__content {

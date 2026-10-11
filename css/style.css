@@ -5,14 +5,14 @@
 @import "./tokens.css";
 @import "./theme.css";
 
-@import "../typography/style.css";
-@import "../list/style.css";
-@import "../navigation/style.css";
-@import "../table/style.css";
-@import "../media/style.css";
-@import "../details/style.css";
-@import "../form/style.css";
-@import "../dialog/style.css";
+@import "../components/typography/style.css";
+@import "../components/list/style.css";
+@import "../components/navigation/style.css";
+@import "../components/table/style.css";
+@import "../components/media/style.css";
+@import "../components/details/style.css";
+@import "../components/form/style.css";
+@import "../components/dialog/style.css";
 
 @import "./accessibility.css";
 @import "./print.css";

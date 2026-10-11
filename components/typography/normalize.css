@@ -1,33 +1,4 @@
 @layer normalize {
-    /* Heading normalization */
-    h1 {
-        font-size: var(--font-size-display);
-    }
-
-    h2 {
-        font-size: var(--font-size-4xl);
-    }
-
-    h3 {
-        font-size: var(--font-size-3xl);
-    }
-
-    h4 {
-        font-size: var(--font-size-xxl);
-    }
-
-    h5 {
-        font-size: var(--font-size-xl);
-    }
-
-    h6 {
-        font-size: var(--font-size-lg);
-    }
-
-    hr {
-        overflow: visible;
-    }
-
     /* Text semantics */
     abbr[title] {
         border-bottom: none;
@@ -37,19 +8,6 @@
     b,
     strong {
         font-weight: bolder;
-    }
-
-    code,
-    kbd,
-    samp,
-    pre {
-        font-family: var(--font-family-monospace), ui-monospace;
-    }
-
-    pre {
-        white-space: pre;
-        overflow: auto;
-        display: block;
     }
 
     small {
@@ -96,7 +54,6 @@
     h6,
     p,
     blockquote,
-    pre,
     address {
         display: block;
     }

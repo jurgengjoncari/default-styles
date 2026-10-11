@@ -1,0 +1,15 @@
+@import "./normalize.css";
+@import "./heading/style.css";
+@import "./link/style.css";
+@import "./code/style.css";
+@import "./blockquote/style.css";
+@import "./separator/style.css";
+
+@layer component {
+    p,
+    blockquote,
+    pre,
+    address {
+        margin-block: var(--size-sm);
+    }
+}

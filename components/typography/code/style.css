@@ -1,0 +1,14 @@
+@import "./normalize.css";
+
+@layer component {
+    code,
+    kbd,
+    samp,
+    pre {
+        background-color: var(--color-surface);
+    }
+
+    code {
+        color: var(--magenta-text);
+    }
+}

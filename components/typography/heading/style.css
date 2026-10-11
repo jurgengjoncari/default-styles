@@ -1,0 +1,14 @@
+@import "./normalize.css";
+
+@layer component {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-emphasis);
+        margin-block: var(--size-sm) var(--size-sm);
+        line-height: var(--line-height-tight);
+    }
+}
