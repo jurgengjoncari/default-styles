@@ -116,8 +116,6 @@ const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-radius', (control, panel) =>
         updateCssVariable(control, panel, '--radius-control', 'px')],
-    ['default-styles-border-width', (control, panel) =>
-        updateCssVariable(control, panel, '--border-width-thin', 'px')],
     ['default-styles-font-scale', (control, panel) =>
         updateCssVariable(control, panel, '--root-font-scale', '%')],
     ['default-styles-font-family', updateFontFamily]
@@ -196,7 +194,6 @@ export function bindAppearanceControls(panel) {
 
     initializePrimaryColor(panel);
     initializeLengthControl(panel, 'default-styles-control-radius', '--radius-control', 4);
-    initializeLengthControl(panel, 'default-styles-border-width', '--border-width-thin', 1);
 
     const computedRoot = getComputedStyle(root);
     /* Archived transparency cap initialization:
