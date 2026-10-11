@@ -1,0 +1,10 @@
+@layer component {
+    select {
+        appearance: auto;
+        -webkit-appearance: auto;
+        width: 100%;
+        min-width: 0;
+        padding: var(--size-sm);
+        font: inherit;
+    }
+}

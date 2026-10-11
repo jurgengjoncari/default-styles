@@ -1,0 +1,61 @@
+@import "./normalize.css";
+@import "./accessibility.css";
+@import "./fieldset/style.css";
+@import "./label/style.css";
+@import "./input/style.css";
+@import "./select/style.css";
+@import "./button/style.css";
+@import "./feedback/style.css";
+@import "./field/style.css";
+
+@layer shared {
+    /* Shared control surfaces */
+    input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+    select,
+    textarea {
+        border: var(--border-width-thin) solid var(--color-subtle);
+        border-radius: var(--radius-control);
+        transition: border-color 0.2s ease;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="number"]):not([type="range"]),
+    select,
+    textarea,
+    button {
+        padding-inline: var(--size-md);
+    }
+
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="range"],
+    meter,
+    progress {
+        accent-color: var(--blue-text);
+    }
+
+    progress,
+    meter {
+        appearance: auto;
+        -webkit-appearance: auto;
+        display: block;
+        width: 100%;
+        max-width: 40rem;
+        height: var(--size-sm);
+        margin-block: var(--size-xxs) var(--size-md);
+    }
+
+    ::placeholder {
+        color: var(--color-subtle);
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        border-color: var(--background-color);
+    }
+
+    input:invalid,
+    textarea:invalid {
+        border-color: var(--red-text);
+    }
+}

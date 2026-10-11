@@ -1,153 +1,155 @@
-:root {
-    font-size: var(--root-font-scale, 100%);
+@layer tokens {
+    :root {
+        font-size: var(--root-font-scale, 100%);
 
-    /* 🎨 Colors — grayscale */
-    --color-gray: #767676;
+        /* 🎨 Colors — grayscale */
+        --color-gray: #767676;
 
-    color-scheme: light;
+        color-scheme: light;
 
-    --primary-color: #1a44cc;
-    --primary-color-contrast: #ffffff;
-    --primary-text-light: #1a44cc;
-    --primary-text-dark: #6b8aff;
+        --primary-color: #1a44cc;
+        --primary-color-contrast: #ffffff;
+        --primary-text-light: #1a44cc;
+        --primary-text-dark: #6b8aff;
 
-    /* 🎨 Colors — Accent text (WCAG AA 4.5:1+ on white) */
-    --blue-text: var(--primary-text-light);
-    --cyan-text: #0a6b6b;
-    --green-text: #15703a;
-    --yellow-text: #7c6400;
-    --red-text: #c42020;
-    --magenta-text: #99198a;
+        /* 🎨 Colors — Accent text (WCAG AA 4.5:1+ on white) */
+        --blue-text: var(--primary-text-light);
+        --cyan-text: #0a6b6b;
+        --green-text: #15703a;
+        --yellow-text: #7c6400;
+        --red-text: #c42020;
+        --magenta-text: #99198a;
 
-    /* 🎨 Colors — Accent backgrounds (pair with dark text) */
-    --blue-bg: color-mix(in srgb, var(--primary-color) 15%, white);
-    --cyan-bg: #d5f5f5;
-    --green-bg: #dcfce7;
-    --yellow-bg: #fef9c3;
-    --red-bg: #fee2e2;
-    --magenta-bg: #fae8ff;
+        /* 🎨 Colors — Accent backgrounds (pair with dark text) */
+        --blue-bg: color-mix(in srgb, var(--primary-color) 15%, white);
+        --cyan-bg: #d5f5f5;
+        --green-bg: #dcfce7;
+        --yellow-bg: #fef9c3;
+        --red-bg: #fee2e2;
+        --magenta-bg: #fae8ff;
 
-    &[data-theme="dark"] {
-        color-scheme: dark;
+        &[data-theme="dark"] {
+            color-scheme: dark;
 
-        /* Accent text (WCAG AA 4.5:1+ on black) */
-        --blue-text: var(--primary-text-dark);
-        --cyan-text: #5ce0d0;
-        --green-text: #4ade80;
-        --yellow-text: #facc15;
-        --red-text: #f87171;
-        --magenta-text: #e879f9;
+            /* Accent text (WCAG AA 4.5:1+ on black) */
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: #5ce0d0;
+            --green-text: #4ade80;
+            --yellow-text: #facc15;
+            --red-text: #f87171;
+            --magenta-text: #e879f9;
 
-        /* Accent backgrounds (dark tints, pair with light text) */
-        --blue-bg: color-mix(in srgb, var(--primary-color) 25%, black);
-        --cyan-bg: #0a2e2e;
-        --green-bg: #052e16;
-        --yellow-bg: #352a04;
-        --red-bg: #450a0a;
-        --magenta-bg: #3b0740;
+            /* Accent backgrounds (dark tints, pair with light text) */
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, black);
+            --cyan-bg: #0a2e2e;
+            --green-bg: #052e16;
+            --yellow-bg: #352a04;
+            --red-bg: #450a0a;
+            --magenta-bg: #3b0740;
+        }
+
+        /* 🎯 Interaction */
+        --interaction-hover: 15%;
+        --interaction-active: 30%;
+
+        /* 📏 Sizing */
+        --size-none: 0;
+        --size-3xs: 0.125em;
+        --size-xxs: 0.25em;
+        --size-xs: 0.375em;
+        --size-sm: 0.625em;
+        --size-md: 1em;
+        --size-lg: 1.625em;
+        --size-xl: 2.625em;
+        --size-xxl: 4.25em;
+        --size-touch-target: 2.75em;
+
+        /* ✍️ Typography */
+        --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,
+            /* macOS 10.11-10.12 */ -apple-system,
+            /* Windows 6+ */ "Segoe UI",
+            /* Android 4+ */ "Roboto",
+            /* Ubuntu 10.10+ */ "Ubuntu",
+            /* Gnome 3+ */ "Cantarell",
+            /* KDE Plasma 5+ */ "Noto Sans",
+            /* fallback */ sans-serif,
+            /* macOS emoji */ "Apple Color Emoji",
+            /* Windows emoji */ "Segoe UI Emoji",
+            /* Windows emoji */ "Segoe UI Symbol",
+            /* Linux emoji */ "Noto Color Emoji";
+
+        --font-family-monospace: ui-monospace,
+            /* macOS 10.10+ */ "Menlo",
+            /* Windows 6+ */ "Consolas",
+            /* Android 4+ */ "Roboto Mono",
+            /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+            /* KDE Plasma 5+ */ "Noto Mono",
+            /* KDE Plasma 4+ */ "Oxygen Mono",
+            /* Linux/OpenOffice fallback */ "Liberation Mono",
+            /* fallback */ monospace,
+            /* macOS emoji */ "Apple Color Emoji",
+            /* Windows emoji */ "Segoe UI Emoji",
+            /* Windows emoji */ "Segoe UI Symbol",
+            /* Linux emoji */ "Noto Color Emoji";
+
+        --font-size-xs: 0.64rem;
+        --font-size-sm: 0.8rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.25rem;
+        --font-size-xl: 1.563rem;
+        --font-size-xxl: 1.953rem;
+        --font-size-3xl: 2.441rem;
+        --font-size-4xl: 3.052rem;
+        --font-size-display: 3.815rem;
+
+        --font-weight-light: 300;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-bold: 700;
+
+        --line-height-tight: 1.25;
+        --line-height-medium: 1.5;
+        --line-height-loose: 1.75;
+
+        /* ⬜ Borders */
+        --radius-none: 0;
+        --radius-xxs: 0.125rem;
+        --radius-xs: 0.25rem;
+        --radius-s: 0.375rem;
+        --radius-md: 0.625rem;
+        --radius-lg: 1rem;
+        --radius-xl: 1.625rem;
+        --radius-xxl: 2.625rem;
+        --radius-round: 9999px;
+        --radius-control: var(--radius-xs);
+
+        --border-width-none: 0;
+        --border-width-thin: 0.0625rem;
+        --border-width-thick: 0.125rem;
+        --border-width-thicker: 0.25rem;
+
+        --border-style-solid: solid;
+        --border-style-dotted: dotted;
+        --border-style-dashed: dashed;
+
+        /* 🌑 Shadows */
+        --shadow-color: rgba(0, 0, 0, 0.25);
+        --shadow-color-strong: rgba(0, 0, 0, 0.35);
+        --shadow-sm: 0 0.0625rem 0.1875rem var(--shadow-color);
+        --shadow-md: 0 0.125rem 0.375rem var(--shadow-color-strong), 0 0.0625rem 0.1875rem var(--shadow-color);
+        --shadow-lg: 0 0.25rem 0.75rem var(--shadow-color-strong), 0 0.125rem 0.375rem var(--shadow-color);
+
+        &[data-theme="dark"] {
+            --shadow-color: rgba(0, 0, 0, 0.50);
+            --shadow-color-strong: rgba(0, 0, 0, 0.70);
+        }
+
+        --frosty-glass: blur(20px);
+
+        /* Breakpoints */
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
     }
-
-    /* 🎯 Interaction */
-    --interaction-hover: 15%;
-    --interaction-active: 30%;
-
-    /* 📏 Sizing */
-    --size-none: 0;
-    --size-3xs: 0.125em;
-    --size-xxs: 0.25em;
-    --size-xs: 0.375em;
-    --size-sm: 0.625em;
-    --size-md: 1em;
-    --size-lg: 1.625em;
-    --size-xl: 2.625em;
-    --size-xxl: 4.25em;
-    --size-touch-target: 2.75em;
-
-    /* ✍️ Typography */
-    --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,
-        /* macOS 10.11-10.12 */ -apple-system,
-        /* Windows 6+ */ "Segoe UI",
-        /* Android 4+ */ "Roboto",
-        /* Ubuntu 10.10+ */ "Ubuntu",
-        /* Gnome 3+ */ "Cantarell",
-        /* KDE Plasma 5+ */ "Noto Sans",
-        /* fallback */ sans-serif,
-        /* macOS emoji */ "Apple Color Emoji",
-        /* Windows emoji */ "Segoe UI Emoji",
-        /* Windows emoji */ "Segoe UI Symbol",
-        /* Linux emoji */ "Noto Color Emoji";
-
-    --font-family-monospace: ui-monospace,
-        /* macOS 10.10+ */ "Menlo",
-        /* Windows 6+ */ "Consolas",
-        /* Android 4+ */ "Roboto Mono",
-        /* Ubuntu 10.10+ */ "Ubuntu Monospace",
-        /* KDE Plasma 5+ */ "Noto Mono",
-        /* KDE Plasma 4+ */ "Oxygen Mono",
-        /* Linux/OpenOffice fallback */ "Liberation Mono",
-        /* fallback */ monospace,
-        /* macOS emoji */ "Apple Color Emoji",
-        /* Windows emoji */ "Segoe UI Emoji",
-        /* Windows emoji */ "Segoe UI Symbol",
-        /* Linux emoji */ "Noto Color Emoji";
-
-    --font-size-xs: 0.64rem;
-    --font-size-sm: 0.8rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 1.563rem;
-    --font-size-xxl: 1.953rem;
-    --font-size-3xl: 2.441rem;
-    --font-size-4xl: 3.052rem;
-    --font-size-display: 3.815rem;
-
-    --font-weight-light: 300;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
-
-    --line-height-tight: 1.25;
-    --line-height-medium: 1.5;
-    --line-height-loose: 1.75;
-
-    /* ⬜ Borders */
-    --radius-none: 0;
-    --radius-xxs: 0.125rem;
-    --radius-xs: 0.25rem;
-    --radius-s: 0.375rem;
-    --radius-md: 0.625rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.625rem;
-    --radius-xxl: 2.625rem;
-    --radius-round: 9999px;
-    --radius-control: var(--radius-xs);
-
-    --border-width-none: 0;
-    --border-width-thin: 0.0625rem;
-    --border-width-thick: 0.125rem;
-    --border-width-thicker: 0.25rem;
-
-    --border-style-solid: solid;
-    --border-style-dotted: dotted;
-    --border-style-dashed: dashed;
-
-    /* 🌑 Shadows */
-    --shadow-color: rgba(0, 0, 0, 0.25);
-    --shadow-color-strong: rgba(0, 0, 0, 0.35);
-    --shadow-sm: 0 0.0625rem 0.1875rem var(--shadow-color);
-    --shadow-md: 0 0.125rem 0.375rem var(--shadow-color-strong), 0 0.0625rem 0.1875rem var(--shadow-color);
-    --shadow-lg: 0 0.25rem 0.75rem var(--shadow-color-strong), 0 0.125rem 0.375rem var(--shadow-color);
-
-    &[data-theme="dark"] {
-        --shadow-color: rgba(0, 0, 0, 0.50);
-        --shadow-color-strong: rgba(0, 0, 0, 0.70);
-    }
-
-    --frosty-glass: blur(20px);
-
-    /* Breakpoints */
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
 }

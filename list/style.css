@@ -1,0 +1,37 @@
+@import "./normalize.css";
+
+
+
+@layer component {
+    /* Lists */
+    ul,
+    ol,
+    menu {
+        margin-block: 0 var(--size-md);
+        padding-inline-start: var(--size-lg);
+
+        ul,
+        ol,
+        menu {
+            margin-block: var(--size-xxs) 0;
+        }
+    }
+
+    li + li {
+        margin-block-start: var(--size-xxs);
+    }
+
+    /* Definition lists */
+    dl {
+        margin-block-end: var(--size-md);
+
+        dt {
+            font-weight: var(--font-weight-bold);
+        }
+
+        dd {
+            margin-inline-start: var(--size-lg);
+            margin-block-end: var(--size-sm);
+        }
+    }
+}

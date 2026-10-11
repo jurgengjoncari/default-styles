@@ -1,0 +1,7 @@
+@layer normalize {
+    [type="search"],
+    [type="search"]::-webkit-search-decoration {
+        appearance: auto;
+        -webkit-appearance: auto;
+    }
+}

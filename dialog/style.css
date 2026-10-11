@@ -1,0 +1,19 @@
+@import "./normalize.css";
+@import "./floating-panel/style.css";
+
+
+
+@layer component {
+    dialog[open] {
+        background-color: var(--color-surface);
+        border-color: var(--color-subtle);
+    }
+
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    :root[data-theme="dark"] dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}

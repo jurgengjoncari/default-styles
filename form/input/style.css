@@ -1,0 +1,5 @@
+@import "./color/style.css";
+@import "./number/style.css";
+@import "./range/style.css";
+@import "./file/style.css";
+@import "./search/style.css";

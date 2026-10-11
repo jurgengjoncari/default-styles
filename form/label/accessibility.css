@@ -1,0 +1,6 @@
+@layer accessibility {
+    label[data-required]::after {
+        content: " *";
+        color: var(--red-text);
+    }
+}

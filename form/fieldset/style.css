@@ -1,0 +1,9 @@
+@import "./normalize.css";
+
+
+
+@layer component {
+    fieldset {
+        border-color: var(--color-subtle);
+    }
+}

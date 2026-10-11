@@ -1,0 +1,26 @@
+@layer reset, normalize, tokens, theme, base, shared, component, accessibility, print;
+
+@import "./reset.css";
+@import "./normalize.css";
+@import "./tokens.css";
+@import "./theme.css";
+
+@import "../typography/style.css";
+@import "../list/style.css";
+@import "../navigation/style.css";
+@import "../table/style.css";
+@import "../media/style.css";
+@import "../details/style.css";
+@import "../form/style.css";
+@import "../dialog/style.css";
+
+@import "./accessibility.css";
+@import "./print.css";
+
+@layer base {
+    body {
+        font-size: var(--font-size-md);
+        color: var(--color);
+        background-color: var(--background-color);
+    }
+}

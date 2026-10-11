@@ -1,0 +1,16 @@
+@import "./normalize.css";
+
+
+
+@layer component {
+    input[type="number"] {
+        appearance: auto;
+        -webkit-appearance: auto;
+        box-sizing: border-box;
+        justify-self: end;
+        width: 4.5rem;
+        min-width: 0;
+        text-align: end;
+        padding: var(--size-xs) var(--size-sm);
+    }
+}

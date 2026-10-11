@@ -1,0 +1,6 @@
+@layer accessibility {
+    input[type="color"]:focus-visible {
+        outline: var(--border-width-thick) solid var(--primary-color);
+        outline-offset: 2px;
+    }
+}

@@ -1,0 +1,37 @@
+@layer normalize {
+    /* Document-wide normalization */
+    body * {
+        box-sizing: border-box;
+    }
+
+    body {
+        display: block;
+        font-family: var(--font-family-base), sans-serif;
+    }
+
+    div,
+    main,
+    footer,
+    article,
+    section,
+    aside {
+        display: block;
+    }
+
+    template,
+    [hidden] {
+        display: none;
+    }
+
+    noscript {
+        display: block;
+    }
+
+    script {
+        display: none;
+    }
+
+    a:not(:disabled) {
+        cursor: pointer;
+    }
+}

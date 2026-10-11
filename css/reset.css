@@ -1,0 +1,6 @@
+@layer reset {
+    body,
+    body *:not(:where(svg, svg *, input[type="color"])) {
+        all: unset;
+    }
+}

@@ -1,0 +1,14 @@
+@import "./accessibility.css";
+
+
+
+@layer component {
+    label {
+        display: block;
+    }
+
+    [type="checkbox"] + label,
+    [type="radio"] + label {
+        display: inline;
+    }
+}

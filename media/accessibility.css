@@ -1,0 +1,7 @@
+@layer accessibility {
+    /* Keep native media controls comfortably targetable on touch devices. */
+    audio[controls]::-webkit-media-controls-play-button,
+    audio[controls]::-webkit-media-controls-mute-button {
+        padding: var(--size-sm);
+    }
+}

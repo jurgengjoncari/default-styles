@@ -1,0 +1,10 @@
+@layer normalize {
+    /* Media */
+    img {
+        border-style: none;
+    }
+
+    picture {
+        display: contents;
+    }
+}

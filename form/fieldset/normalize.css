@@ -1,0 +1,12 @@
+@layer normalize {
+    fieldset {
+        display: block;
+        padding: 0.35em 0.75em 0.625em;
+
+        legend {
+            max-width: 100%;
+            white-space: normal;
+            display: table;
+        }
+    }
+}

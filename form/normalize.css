@@ -1,0 +1,91 @@
+@layer normalize {
+    /* Shared form-control normalization */
+    button,
+    input,
+    select,
+    textarea {
+        font-size: 100%;
+    }
+
+    ::placeholder {
+        opacity: 1;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+        cursor: pointer;
+        appearance: button;
+        -webkit-appearance: button;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    [type="text"],
+    [type="search"],
+    [type="url"],
+    [type="tel"],
+    [type="email"],
+    [type="password"],
+    textarea {
+        cursor: text;
+    }
+
+    button,
+    input {
+        overflow: visible;
+    }
+
+    button,
+    select {
+        text-transform: none;
+    }
+
+    button,
+    input,
+    select,
+    input[type="file"]::-webkit-file-upload-button {
+        font-family: inherit;
+        letter-spacing: inherit;
+        font-size: 100%;
+    }
+
+    button, input[type="file"] {
+        width: fit-content;
+    }
+
+    [type="checkbox"] {
+        appearance: checkbox;
+        -webkit-appearance: checkbox;
+    }
+
+    [type="radio"] {
+        appearance: radio;
+        -webkit-appearance: radio;
+    }
+
+    [type="checkbox"], [type="radio"] {
+        cursor: pointer;
+        width: 1em;
+        height: 1em;
+        position: relative;
+    }
+
+    .select-wrapper {
+        position: relative;
+    }
+
+    progress,
+    meter,
+    input[type="range"] {
+        appearance: auto;
+        -webkit-appearance: auto;
+    }
+
+    form {
+        display: block;
+    }
+}

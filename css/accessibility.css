@@ -1,0 +1,103 @@
+/* Reduced motion is an important override, so put it in the earliest layer. */
+@layer reset {
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer accessibility {
+    /* App-wide accessibility */
+    body {
+        line-height: var(--line-height-medium);
+    }
+
+    /* Text selection visibility */
+    ::selection {
+        background-color: var(--color-emphasis);
+        color: var(--background-color);
+    }
+
+    /* Keyboard focus visibility */
+    :focus-visible,
+    .is-focused {
+        outline: var(--border-width-thick) solid var(--outline-color);
+        outline-offset: var(--size-3xs);
+    }
+
+    /* Skip to Main Content Link */
+    .skip-to-main {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--background-color);
+        color: var(--color-emphasis);
+        padding: var(--size-sm);
+        z-index: 100;
+    }
+
+    .skip-to-main:focus {
+        top: 0;
+    }
+
+    /* High Contrast Mode Support */
+    @media (prefers-contrast: more) {
+        :root {
+            --color: #000000;
+            --color-subtle: #000000;
+            --color-muted: #000000;
+            --color-emphasis: #000000;
+            --color-surface: #e0e0e0;
+            --color-surface-color: #e0e0e0;
+            --color-surface-strength: 100%;
+            --background-color: #ffffff;
+        }
+
+        :root[data-theme="dark"] {
+            --color: #ffffff;
+            --color-subtle: #ffffff;
+            --color-muted: #ffffff;
+            --color-emphasis: #ffffff;
+            --color-surface: #333333;
+            --color-surface-color: #333333;
+            --color-surface-strength: 100%;
+            --background-color: #000000;
+        }
+    }
+
+    /* Visually hide content for screen readers only */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /* Keep readable line lengths */
+    p,
+    blockquote,
+    pre,
+    code,
+    ol,
+    ul,
+    menu,
+    dl,
+    input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+    select,
+    textarea,
+    fieldset,
+    progress,
+    meter {
+        max-width: 80ch;
+    }
+}

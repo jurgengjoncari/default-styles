@@ -1,0 +1,20 @@
+@import "./normalize.css";
+
+
+
+@layer component {
+    table {
+        border-color: var(--color-subtle);
+    }
+
+    th {
+        background-color: var(--color-surface);
+        color: var(--color-emphasis);
+    }
+
+    th,
+    td {
+        padding: var(--size-sm);
+        border-color: var(--color-subtle);
+    }
+}

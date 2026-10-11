@@ -1,0 +1,13 @@
+@layer normalize {
+    [type="file"] {
+        border: 0;
+        height: auto;
+        appearance: auto;
+        -webkit-appearance: auto;
+    }
+
+    ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+    }
+}

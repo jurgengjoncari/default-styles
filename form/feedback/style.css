@@ -1,0 +1,10 @@
+@layer component {
+    .error,
+    [role="alert"] {
+        border-left: var(--border-width-thicker) solid var(--red-text);
+        padding: var(--size-sm) var(--size-md);
+        margin: var(--size-md) 0;
+        background-color: var(--red-bg);
+        color: var(--red-text);
+    }
+}

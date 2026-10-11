@@ -1,0 +1,19 @@
+@import "./normalize.css";
+
+
+
+@layer component {
+    nav {
+        ul,
+        ol,
+        menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li + li {
+            margin-block-start: 0;
+        }
+    }
+}

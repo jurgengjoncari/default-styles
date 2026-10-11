@@ -1,0 +1,9 @@
+@layer normalize {
+    details {
+        display: block;
+
+        summary {
+            display: list-item;
+        }
+    }
+}
