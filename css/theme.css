@@ -51,7 +51,7 @@
 
         .is-filled {
             --color-surface: var(--color-emphasis);
-            --color-surface-strength: 100%;
+            --color-surface-strength: 90%;
             color: var(--background-color);
         }
     }
