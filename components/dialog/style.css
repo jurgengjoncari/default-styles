@@ -5,7 +5,7 @@
 
 @layer component {
     dialog[open] {
-        background-color: var(--color-surface);
+        background-color: var(--color-surface-fill);
         border-color: var(--color-subtle);
     }
 

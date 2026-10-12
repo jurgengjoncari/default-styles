@@ -5,7 +5,7 @@
     kbd,
     samp,
     pre {
-        background-color: var(--color-surface);
+        background-color: var(--color-surface-fill);
     }
 
     code {

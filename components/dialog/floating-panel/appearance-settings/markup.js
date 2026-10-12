@@ -56,16 +56,14 @@ export function createAppearancePanelElement() {
                     <output class="form-field__output" for="default-styles-control-radius">4px</output>
                 </label>
             </div>
-            <!-- Archived transparency control:
             <div class="settings-panel__item">
                 <label class="form-field" for="default-styles-surface-transparency">
                     <span class="form-field__label">Surface strength</span>
                     <input id="default-styles-surface-transparency" type="range"
-                        min="0" max="20" step="1" value="10">
+                        min="0" max="100" step="1" value="10">
                     <output class="form-field__output" for="default-styles-surface-transparency">10%</output>
                 </label>
             </div>
-            -->
             <div class="settings-panel__item">
                 <label class="form-field" for="default-styles-font-scale">
                     <span class="form-field__label">Font scale</span>
