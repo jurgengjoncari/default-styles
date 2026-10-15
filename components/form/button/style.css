@@ -7,22 +7,22 @@
     input[type="button"],
     input[type="reset"],
     input[type="submit"] {
-        --color-surface: color-mix(in srgb, var(--color-surface-color) var(--color-surface-strength), transparent);
+        --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
         border-radius: var(--radius-control);
-        background-color: var(--color-surface);
+        background-color: var(--color-surface-fill);
         backdrop-filter: var(--frosty-glass);
         transition: background-color 0.2s ease, border-color 0.2s ease;
 
         /* Hover States */
         &:not(:disabled):hover,
         &.is-hovered:not(:disabled) {
-            background-color: color-mix(in oklch, var(--color-surface), var(--color-emphasis) var(--interaction-hover));
+            background-color: color-mix(in oklch, var(--color-surface-fill), var(--color-emphasis) var(--interaction-hover));
         }
 
         /* Active States */
         &:not(:disabled):active,
         &.is-active:not(:disabled) {
-            background-color: color-mix(in oklch, var(--color-surface), transparent var(--interaction-active));
+            background-color: color-mix(in oklch, var(--color-surface-fill), transparent var(--interaction-active));
         }
 
         /* Outline Modifier */
@@ -33,6 +33,6 @@
 
     /* Keep the utility class variant for non-button elements */
     .is-outline:not(button) {
-        border: var(--border-width-thin) solid var(--color);
+        border: var(--border-width-thin) solid color-mix(in srgb, var(--color) 85%, transparent);
     }
 }

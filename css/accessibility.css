@@ -37,7 +37,7 @@
             --color-muted: #000000;
             --color-emphasis: #000000;
             --color-surface: #e0e0e0;
-            --color-surface-color: #e0e0e0;
+            --color-surface-fill: #e0e0e0;
             --color-surface-strength: 100%;
             --background-color: #ffffff;
         }
@@ -48,7 +48,7 @@
             --color-muted: #ffffff;
             --color-emphasis: #ffffff;
             --color-surface: #333333;
-            --color-surface-color: #333333;
+            --color-surface-fill: #333333;
             --color-surface-strength: 100%;
             --background-color: #000000;
         }

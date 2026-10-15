@@ -12,7 +12,8 @@
     /* Shared control surfaces */
     input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
     select,
-    textarea {
+    textarea,
+    .input {
         border: var(--border-width-thin) solid var(--color-subtle);
         border-radius: var(--radius-control);
         transition: border-color 0.2s ease;
@@ -21,6 +22,7 @@
     input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="number"]):not([type="range"]),
     select,
     textarea,
+    .input,
     button {
         padding-inline: var(--size-md);
     }

@@ -8,7 +8,7 @@
     }
 
     th {
-        background-color: var(--color-surface);
+        background-color: var(--color-surface-fill);
         color: var(--color-emphasis);
     }
 

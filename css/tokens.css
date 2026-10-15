@@ -7,6 +7,8 @@
 
         color-scheme: light;
 
+        --color-surface-strength: var(--color-surface-strength-control, 10%);
+
         --primary-color: #1a44cc;
         --primary-color-contrast: #ffffff;
         --primary-text-light: #1a44cc;

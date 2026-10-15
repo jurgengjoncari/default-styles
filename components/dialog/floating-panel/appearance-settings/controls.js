@@ -55,7 +55,7 @@ function getMaximumSurfaceStrength(maximumLayers = 3, minimumContrast = 4.5) {
     const styles = getComputedStyle(root);
     const background = parseCssColor(styles.getPropertyValue('--background-color'));
     const foreground = parseCssColor(styles.getPropertyValue('--color'));
-    const surface = parseCssColor(styles.getPropertyValue('--color-surface-color'));
+    const surface = parseCssColor(styles.getPropertyValue('--color-surface'));
     if (!background || !foreground || !surface) {
         return 0;
     }
@@ -116,6 +116,8 @@ const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-radius', (control, panel) =>
         updateCssVariable(control, panel, '--radius-control', 'px')],
+    ['default-styles-surface-transparency', (control, panel) =>
+        updateCssVariable(control, panel, '--color-surface-strength-control', '%')],
     ['default-styles-font-scale', (control, panel) =>
         updateCssVariable(control, panel, '--root-font-scale', '%')],
     ['default-styles-font-family', updateFontFamily]
@@ -140,14 +142,6 @@ function updateAppearance(panel, event) {
         return;
     }
 
-    /* Archived transparency event handler:
-        if (control.id === 'default-styles-surface-transparency') {
-            root.style.setProperty('--surface-strength-adjusted', control.value + '%');
-            panel.querySelector('output[for="default-styles-surface-transparency"]').textContent =
-                control.value + '%';
-            return;
-        }
-        */
 
     controlHandlers.get(control.id)?.(control, panel);
 }
@@ -168,6 +162,14 @@ function initializeLengthControl(panel, controlId, property, fallback) {
     setOutput(panel, control.id, value + 'px');
 }
 
+function initializeSurfaceStrength(panel, computedRoot) {
+    const control = panel.querySelector('#default-styles-surface-transparency');
+    const strength = Number.parseFloat(
+        computedRoot.getPropertyValue('--color-surface-strength')
+    );
+    control.value = Number.isFinite(strength) ? strength : 10;
+    setOutput(panel, control.id, control.value + '%');
+}
 function initializeFontScale(panel, computedRoot) {
     const control = panel.querySelector('#default-styles-font-scale');
     const currentScale = Number.parseFloat(

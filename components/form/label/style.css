@@ -3,12 +3,12 @@
 
 
 @layer component {
-    label {
+    /* label {
         display: block;
     }
 
     [type="checkbox"] + label,
     [type="radio"] + label {
         display: inline;
-    }
+    } */
 }

@@ -9,6 +9,8 @@
             --color-subtle: #666666;
             --color-muted: #444444;
             --color-surface: #f0f0f0;
+            --color-surface-fill: #f0f0f0;
+            --color-surface-strength: 100%;
         }
 
         .skip-to-main,
