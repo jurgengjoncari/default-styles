@@ -1,0 +1,26 @@
+@layer variant {
+    .button--custom-color {
+        --color-surface-color: var(--button-bg);
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &.is-filled {
+            --color-surface-color: var(--button-bg);
+            --color-surface-strength: 100%;
+            color: var(--button-text);
+        }
+
+        &.is-transparent,
+        &.is-outline {
+            --color-emphasis: var(--button-bg);
+            color: var(--button-accessible-color);
+        }
+
+        &.is-outline {
+            border-color: var(--button-accessible-color);
+        }
+
+        &:disabled {
+            opacity: 0.55;
+        }
+    }
+}

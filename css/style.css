@@ -1,4 +1,4 @@
-@layer reset, normalize, tokens, theme, base, shared, component, accessibility, print;
+@layer reset, normalize, tokens, theme, base, shared, component, variant, accessibility, print;
 
 @import "./reset.css";
 @import "./normalize.css";

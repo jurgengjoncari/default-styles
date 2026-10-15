@@ -1,7 +1,5 @@
 @import "./accessibility.css";
 
-
-
 @layer component {
     .button-group {
         display: grid;
