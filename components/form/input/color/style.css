@@ -1,7 +1,5 @@
 @import "./accessibility.css";
 
-
-
 @layer component {
     input[type="color"] {
         appearance: none;

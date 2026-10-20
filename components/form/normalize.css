@@ -11,19 +11,6 @@
         opacity: 1;
     }
 
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"] {
-        cursor: pointer;
-        appearance: button;
-        -webkit-appearance: button;
-
-        &:disabled {
-            cursor: not-allowed;
-        }
-    }
-
     [type="text"],
     [type="search"],
     [type="url"],

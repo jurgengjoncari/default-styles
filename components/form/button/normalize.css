@@ -3,7 +3,15 @@
     input[type="button"],
     input[type="reset"],
     input[type="submit"] {
+        cursor: pointer;
+        appearance: button;
+        -webkit-appearance: button;
+
         text-align: center;
+
+        &:disabled {
+            cursor: not-allowed;
+        }
 
         /* Remove Firefox inner padding and borders */
         &::-moz-focus-inner {

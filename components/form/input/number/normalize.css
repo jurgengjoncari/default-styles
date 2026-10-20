@@ -1,8 +1,4 @@
 @layer normalize {
-    [type="number"] {
-        text-align: end;
-    }
-
     [type="number"]::-webkit-inner-spin-button,
     [type="number"]::-webkit-outer-spin-button {
         height: auto;
