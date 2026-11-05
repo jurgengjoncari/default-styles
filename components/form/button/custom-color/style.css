@@ -1,10 +1,9 @@
 @layer variant {
     .button--custom-color {
-        --color-surface-color: var(--button-bg);
         transition: background-color 0.2s ease, color 0.2s ease;
 
         &.is-filled {
-            --color-surface-color: var(--button-bg);
+            --color-surface: var(--button-bg);
             --color-surface-strength: 100%;
             color: var(--button-text);
         }
