@@ -55,4 +55,19 @@
             color: var(--primary-color-contrast);
         }
     }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+            color-scheme: dark;
+
+            --background-color: #000000;
+            --color: rgba(255, 255, 255, 0.70);
+            --color-surface: #ffffff;
+            --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --color-subtle: rgba(255, 255, 255, 0.40);
+            --color-muted: rgba(255, 255, 255, 0.55);
+            --color-emphasis: rgba(255, 255, 255, 0.90);
+            --outline-color: rgba(255, 255, 255, 1);
+        }
+    }
 }

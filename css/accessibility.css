@@ -54,6 +54,19 @@
         }
     }
 
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+            --color: #ffffff;
+            --color-subtle: #ffffff;
+            --color-muted: #ffffff;
+            --color-emphasis: #ffffff;
+            --color-surface: #333333;
+            --color-surface-fill: #333333;
+            --color-surface-strength: 100%;
+            --background-color: #000000;
+        }
+    }
+
     /* Visually hide content for screen readers only */
     .sr-only {
         position: absolute;

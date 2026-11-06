@@ -154,4 +154,27 @@
         --breakpoint-lg: 992px;
         --breakpoint-xl: 1200px;
     }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+            color-scheme: dark;
+
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: #5ce0d0;
+            --green-text: #4ade80;
+            --yellow-text: #facc15;
+            --red-text: #f87171;
+            --magenta-text: #e879f9;
+
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, black);
+            --cyan-bg: #0a2e2e;
+            --green-bg: #052e16;
+            --yellow-bg: #352a04;
+            --red-bg: #450a0a;
+            --magenta-bg: #3b0740;
+
+            --shadow-color: rgba(0, 0, 0, 0.50);
+            --shadow-color-strong: rgba(0, 0, 0, 0.70);
+        }
+    }
 }
