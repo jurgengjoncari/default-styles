@@ -36,3 +36,162 @@ The panel is optional. Without that JavaScript import, the CSS foundation still 
 - index.html is a demo page for checking the baseline and developing styles.
 
 The shared styles apply to semantic elements and common control types. Add classes for your app's own visual design and for optional composed patterns; the demo's appearance controls are only for testing.
+
+## Tokens and classes
+
+Custom properties used by the styles (including component and demo properties), grouped by purpose:
+
+- **Base colors:**
+  - `background-color`
+  - `color`
+  - `color-gray`
+  - `color-emphasis`
+  - `color-subtle`
+  - `color-muted`
+  - `outline-color`
+- **Surfaces:**
+  - `color-surface`
+  - `color-surface-fill`
+  - `color-surface-strength`
+  - `color-surface-strength-control`
+  - `surface-strength-adjusted`
+  - `surface-strength-base`
+- **Primary colors:**
+  - `primary-color`
+  - `primary-color-contrast`
+  - `primary-text-light`
+  - `primary-text-dark`
+- **Accent colors:**
+  - `blue-text`
+  - `cyan-text`
+  - `green-text`
+  - `yellow-text`
+  - `red-text`
+  - `magenta-text`
+- **Accent backgrounds:**
+  - `blue-bg`
+  - `cyan-bg`
+  - `green-bg`
+  - `yellow-bg`
+  - `red-bg`
+  - `magenta-bg`
+- **Button colors:**
+  - `button-bg`
+  - `button-text`
+  - `button-accessible-color`
+- **Font families:**
+  - `font-family-base`
+  - `font-family-monospace`
+- **Font sizes:**
+  - `font-size-xs`
+  - `font-size-sm`
+  - `font-size-md`
+  - `font-size-lg`
+  - `font-size-xl`
+  - `font-size-xxl`
+  - `font-size-3xl`
+  - `font-size-4xl`
+  - `font-size-display`
+- **Font weights:**
+  - `font-weight-light`
+  - `font-weight-normal`
+  - `font-weight-medium`
+  - `font-weight-bold`
+- **Line heights:**
+  - `line-height-tight`
+  - `line-height-medium`
+  - `line-height-loose`
+- **Spacing:**
+  - `size-none`
+  - `size-3xs`
+  - `size-xxs`
+  - `size-xs`
+  - `size-sm`
+  - `size-md`
+  - `size-lg`
+  - `size-xl`
+  - `size-xxl`
+  - `size-touch-target`
+- **Breakpoints and layout:**
+  - `breakpoint-sm`
+  - `breakpoint-md`
+  - `breakpoint-lg`
+  - `breakpoint-xl`
+  - `floating-panel-width`
+  - `root-font-scale`
+- **Border widths:**
+  - `border-width-none`
+  - `border-width-thin`
+  - `border-width-thick`
+  - `border-width-thicker`
+- **Border styles:**
+  - `border-style-solid`
+  - `border-style-dotted`
+  - `border-style-dashed`
+- **Radii:**
+  - `radius-none`
+  - `radius-xxs`
+  - `radius-xs`
+  - `radius-s`
+  - `radius-md`
+  - `radius-lg`
+  - `radius-xl`
+  - `radius-xxl`
+  - `radius-round`
+  - `radius-control`
+- **Effects and interaction:**
+  - `component-transition-duration`
+  - `frosty-glass`
+  - `interaction-hover`
+  - `interaction-active`
+- **Shadows:**
+  - `shadow-color`
+  - `shadow-color-strong`
+  - `shadow-sm`
+  - `shadow-md`
+  - `shadow-lg`
+
+Classes used by the project:
+
+- **Floating panel:**
+  - `floating-panel`
+  - `floating-panel__trigger`
+  - `floating-panel__icon`
+  - `floating-panel__content`
+  - `floating-panel__header`
+- **Settings panel:**
+  - `settings-panel`
+  - `settings-panel__item`
+- **Form fields:**
+  - `form-field`
+  - `form-field--group`
+  - `form-field--color`
+  - `form-field--select`
+  - `form-field--suffix`
+  - `form-field__row`
+  - `form-field__label`
+  - `form-field__output`
+  - `form-field__suffix`
+- **Buttons and controls:**
+  - `button-group`
+  - `button-group__option`
+  - `button--custom-color`
+  - `select-wrapper`
+  - `input`
+- **States:**
+  - `is-open`
+  - `is-active`
+  - `is-filled`
+  - `is-focused`
+  - `is-hovered`
+  - `is-outline`
+  - `is-transparent`
+  - `error`
+- **Accessibility:**
+  - `sr-only`
+  - `skip-to-main`
+- **Demo:**
+  - `button-demo`
+  - `button-demo__row`
+  - `dynamic-button-demo`
+  - `demo-settings-icon`
