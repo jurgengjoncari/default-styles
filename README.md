@@ -41,7 +41,9 @@ The shared styles apply to semantic elements and common control types. Add class
 
 Custom properties used by the styles (including component and demo properties), grouped by purpose:
 
-- **Base colors:**
+<details>
+<summary>Base colors</summary>
+
   - `background-color`
   - `color`
   - `color-gray`
@@ -49,40 +51,68 @@ Custom properties used by the styles (including component and demo properties), 
   - `color-subtle`
   - `color-muted`
   - `outline-color`
-- **Surfaces:**
+
+</details>
+<details>
+<summary>Surfaces</summary>
+
   - `color-surface`
   - `color-surface-fill`
   - `color-surface-strength`
   - `color-surface-strength-control`
   - `surface-strength-adjusted`
   - `surface-strength-base`
-- **Primary colors:**
+
+</details>
+<details>
+<summary>Primary colors</summary>
+
   - `primary-color`
   - `primary-color-contrast`
   - `primary-text-light`
   - `primary-text-dark`
-- **Accent colors:**
+
+</details>
+<details>
+<summary>Accent colors</summary>
+
   - `blue-text`
   - `cyan-text`
   - `green-text`
   - `yellow-text`
   - `red-text`
   - `magenta-text`
-- **Accent backgrounds:**
+
+</details>
+<details>
+<summary>Accent backgrounds</summary>
+
   - `blue-bg`
   - `cyan-bg`
   - `green-bg`
   - `yellow-bg`
   - `red-bg`
   - `magenta-bg`
-- **Button colors:**
+
+</details>
+<details>
+<summary>Button colors</summary>
+
   - `button-bg`
   - `button-text`
   - `button-accessible-color`
-- **Font families:**
+
+</details>
+<details>
+<summary>Font families</summary>
+
   - `font-family-base`
   - `font-family-monospace`
-- **Font sizes:**
+
+</details>
+<details>
+<summary>Font sizes</summary>
+
   - `font-size-xs`
   - `font-size-sm`
   - `font-size-md`
@@ -92,16 +122,28 @@ Custom properties used by the styles (including component and demo properties), 
   - `font-size-3xl`
   - `font-size-4xl`
   - `font-size-display`
-- **Font weights:**
+
+</details>
+<details>
+<summary>Font weights</summary>
+
   - `font-weight-light`
   - `font-weight-normal`
   - `font-weight-medium`
   - `font-weight-bold`
-- **Line heights:**
+
+</details>
+<details>
+<summary>Line heights</summary>
+
   - `line-height-tight`
   - `line-height-medium`
   - `line-height-loose`
-- **Spacing:**
+
+</details>
+<details>
+<summary>Spacing</summary>
+
   - `size-none`
   - `size-3xs`
   - `size-xxs`
@@ -112,23 +154,39 @@ Custom properties used by the styles (including component and demo properties), 
   - `size-xl`
   - `size-xxl`
   - `size-touch-target`
-- **Breakpoints and layout:**
+
+</details>
+<details>
+<summary>Breakpoints and layout</summary>
+
   - `breakpoint-sm`
   - `breakpoint-md`
   - `breakpoint-lg`
   - `breakpoint-xl`
   - `floating-panel-width`
   - `root-font-scale`
-- **Border widths:**
+
+</details>
+<details>
+<summary>Border widths</summary>
+
   - `border-width-none`
   - `border-width-thin`
   - `border-width-thick`
   - `border-width-thicker`
-- **Border styles:**
+
+</details>
+<details>
+<summary>Border styles</summary>
+
   - `border-style-solid`
   - `border-style-dotted`
   - `border-style-dashed`
-- **Radii:**
+
+</details>
+<details>
+<summary>Radii</summary>
+
   - `radius-none`
   - `radius-xxs`
   - `radius-xs`
@@ -139,30 +197,50 @@ Custom properties used by the styles (including component and demo properties), 
   - `radius-xxl`
   - `radius-round`
   - `radius-control`
-- **Effects and interaction:**
+
+</details>
+<details>
+<summary>Effects and interaction</summary>
+
   - `component-transition-duration`
   - `frosty-glass`
   - `interaction-hover`
   - `interaction-active`
-- **Shadows:**
+
+</details>
+<details>
+<summary>Shadows</summary>
+
   - `shadow-color`
   - `shadow-color-strong`
   - `shadow-sm`
   - `shadow-md`
   - `shadow-lg`
 
+</details>
+
 Classes used by the project:
 
-- **Floating panel:**
+<details>
+<summary>Floating panel</summary>
+
   - `floating-panel`
   - `floating-panel__trigger`
   - `floating-panel__icon`
   - `floating-panel__content`
   - `floating-panel__header`
-- **Settings panel:**
+
+</details>
+<details>
+<summary>Settings panel</summary>
+
   - `settings-panel`
   - `settings-panel__item`
-- **Form fields:**
+
+</details>
+<details>
+<summary>Form fields</summary>
+
   - `form-field`
   - `form-field--group`
   - `form-field--color`
@@ -172,13 +250,21 @@ Classes used by the project:
   - `form-field__label`
   - `form-field__output`
   - `form-field__suffix`
-- **Buttons and controls:**
+
+</details>
+<details>
+<summary>Buttons and controls</summary>
+
   - `button-group`
   - `button-group__option`
   - `button--custom-color`
   - `select-wrapper`
   - `input`
-- **States:**
+
+</details>
+<details>
+<summary>States</summary>
+
   - `is-open`
   - `is-active`
   - `is-filled`
@@ -187,11 +273,21 @@ Classes used by the project:
   - `is-outline`
   - `is-transparent`
   - `error`
-- **Accessibility:**
+
+</details>
+<details>
+<summary>Accessibility</summary>
+
   - `sr-only`
   - `skip-to-main`
-- **Demo:**
+
+</details>
+<details>
+<summary>Demo</summary>
+
   - `button-demo`
   - `button-demo__row`
   - `dynamic-button-demo`
   - `demo-settings-icon`
+
+</details>
