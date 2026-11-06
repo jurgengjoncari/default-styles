@@ -42,7 +42,14 @@ The shared styles apply to semantic elements and common control types. Add class
 Custom properties used by the styles (including component and demo properties), grouped by purpose:
 
 <details>
+<summary>Colors</summary>
+
+<blockquote>
+
+<details>
 <summary>Base colors</summary>
+
+<blockquote>
 
   - `background-color`
   - `color`
@@ -52,9 +59,12 @@ Custom properties used by the styles (including component and demo properties), 
   - `color-muted`
   - `outline-color`
 
+</blockquote>
 </details>
 <details>
 <summary>Surfaces</summary>
+
+<blockquote>
 
   - `color-surface`
   - `color-surface-fill`
@@ -63,18 +73,24 @@ Custom properties used by the styles (including component and demo properties), 
   - `surface-strength-adjusted`
   - `surface-strength-base`
 
+</blockquote>
 </details>
 <details>
 <summary>Primary colors</summary>
+
+<blockquote>
 
   - `primary-color`
   - `primary-color-contrast`
   - `primary-text-light`
   - `primary-text-dark`
 
+</blockquote>
 </details>
 <details>
 <summary>Accent colors</summary>
+
+<blockquote>
 
   - `blue-text`
   - `cyan-text`
@@ -83,9 +99,12 @@ Custom properties used by the styles (including component and demo properties), 
   - `red-text`
   - `magenta-text`
 
+</blockquote>
 </details>
 <details>
 <summary>Accent backgrounds</summary>
+
+<blockquote>
 
   - `blue-bg`
   - `cyan-bg`
@@ -94,24 +113,41 @@ Custom properties used by the styles (including component and demo properties), 
   - `red-bg`
   - `magenta-bg`
 
+</blockquote>
 </details>
 <details>
 <summary>Button colors</summary>
+
+<blockquote>
 
   - `button-bg`
   - `button-text`
   - `button-accessible-color`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
+<summary>Typography</summary>
+
+<blockquote>
+
+<details>
 <summary>Font families</summary>
+
+<blockquote>
 
   - `font-family-base`
   - `font-family-monospace`
 
+</blockquote>
 </details>
 <details>
 <summary>Font sizes</summary>
+
+<blockquote>
 
   - `font-size-xs`
   - `font-size-sm`
@@ -123,26 +159,43 @@ Custom properties used by the styles (including component and demo properties), 
   - `font-size-4xl`
   - `font-size-display`
 
+</blockquote>
 </details>
 <details>
 <summary>Font weights</summary>
+
+<blockquote>
 
   - `font-weight-light`
   - `font-weight-normal`
   - `font-weight-medium`
   - `font-weight-bold`
 
+</blockquote>
 </details>
 <details>
 <summary>Line heights</summary>
+
+<blockquote>
 
   - `line-height-tight`
   - `line-height-medium`
   - `line-height-loose`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
+<summary>Sizing and layout</summary>
+
+<blockquote>
+
+<details>
 <summary>Spacing</summary>
+
+<blockquote>
 
   - `size-none`
   - `size-3xs`
@@ -155,9 +208,12 @@ Custom properties used by the styles (including component and demo properties), 
   - `size-xxl`
   - `size-touch-target`
 
+</blockquote>
 </details>
 <details>
 <summary>Breakpoints and layout</summary>
+
+<blockquote>
 
   - `breakpoint-sm`
   - `breakpoint-md`
@@ -166,26 +222,43 @@ Custom properties used by the styles (including component and demo properties), 
   - `floating-panel-width`
   - `root-font-scale`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
+<summary>Borders</summary>
+
+<blockquote>
+
+<details>
 <summary>Border widths</summary>
+
+<blockquote>
 
   - `border-width-none`
   - `border-width-thin`
   - `border-width-thick`
   - `border-width-thicker`
 
+</blockquote>
 </details>
 <details>
 <summary>Border styles</summary>
+
+<blockquote>
 
   - `border-style-solid`
   - `border-style-dotted`
   - `border-style-dashed`
 
+</blockquote>
 </details>
 <details>
 <summary>Radii</summary>
+
+<blockquote>
 
   - `radius-none`
   - `radius-xxs`
@@ -198,18 +271,32 @@ Custom properties used by the styles (including component and demo properties), 
   - `radius-round`
   - `radius-control`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
+<summary>Effects</summary>
+
+<blockquote>
+
+<details>
 <summary>Effects and interaction</summary>
+
+<blockquote>
 
   - `component-transition-duration`
   - `frosty-glass`
   - `interaction-hover`
   - `interaction-active`
 
+</blockquote>
 </details>
 <details>
 <summary>Shadows</summary>
+
+<blockquote>
 
   - `shadow-color`
   - `shadow-color-strong`
@@ -217,12 +304,23 @@ Custom properties used by the styles (including component and demo properties), 
   - `shadow-md`
   - `shadow-lg`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 
 Classes used by the project:
 
 <details>
+<summary>Components</summary>
+
+<blockquote>
+
+<details>
 <summary>Floating panel</summary>
+
+<blockquote>
 
   - `floating-panel`
   - `floating-panel__trigger`
@@ -230,16 +328,22 @@ Classes used by the project:
   - `floating-panel__content`
   - `floating-panel__header`
 
+</blockquote>
 </details>
 <details>
 <summary>Settings panel</summary>
 
+<blockquote>
+
   - `settings-panel`
   - `settings-panel__item`
 
+</blockquote>
 </details>
 <details>
 <summary>Form fields</summary>
+
+<blockquote>
 
   - `form-field`
   - `form-field--group`
@@ -251,9 +355,12 @@ Classes used by the project:
   - `form-field__output`
   - `form-field__suffix`
 
+</blockquote>
 </details>
 <details>
 <summary>Buttons and controls</summary>
+
+<blockquote>
 
   - `button-group`
   - `button-group__option`
@@ -261,9 +368,20 @@ Classes used by the project:
   - `select-wrapper`
   - `input`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
+<summary>States and accessibility</summary>
+
+<blockquote>
+
+<details>
 <summary>States</summary>
+
+<blockquote>
 
   - `is-open`
   - `is-active`
@@ -274,20 +392,30 @@ Classes used by the project:
   - `is-transparent`
   - `error`
 
+</blockquote>
 </details>
 <details>
 <summary>Accessibility</summary>
 
+<blockquote>
+
   - `sr-only`
   - `skip-to-main`
 
+</blockquote>
+</details>
+
+</blockquote>
 </details>
 <details>
 <summary>Demo</summary>
+
+<blockquote>
 
   - `button-demo`
   - `button-demo__row`
   - `dynamic-button-demo`
   - `demo-settings-icon`
 
+</blockquote>
 </details>
