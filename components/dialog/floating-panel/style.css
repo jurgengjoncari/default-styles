@@ -50,10 +50,7 @@
         align-self: end;
         width: 100%;
         padding: var(--size-sm);
-        border: var(--border-width-thin) solid var(--color-subtle);
-        border-radius: var(--radius-control);
-        background-color: color-mix(in srgb, var(--background-color) 82%, transparent);
-        box-shadow: var(--shadow-md);
+        background-color: var(--color-surface-fill);
         backdrop-filter: var(--frosty-glass);
         opacity: 0;
         pointer-events: none;

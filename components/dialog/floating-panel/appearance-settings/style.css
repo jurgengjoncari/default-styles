@@ -13,4 +13,8 @@
         width: 100%;
         min-height: var(--size-touch-target);
     }
+
+    .settings-panel__item[data-default-styles-update][hidden] {
+        display: none;
+    }
 }

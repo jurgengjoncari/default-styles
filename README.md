@@ -58,6 +58,7 @@ Custom properties used by the styles (including component and demo properties), 
   - `color-subtle`
   - `color-muted`
   - `outline-color`
+  - `dialog-backdrop-color`
 
 </blockquote>
 </details>

@@ -84,6 +84,11 @@ export function createAppearancePanelElement() {
                     </select>
                 </label>
             </div>
+            <div class="settings-panel__item" data-default-styles-update hidden>
+                <button type="button" data-default-styles-update-button>
+                    Update available
+                </button>
+            </div>
         </div>
     `;
 
