@@ -50,9 +50,9 @@
         }
 
         .is-filled {
-            --color-surface: var(--primary-color);
+            --color-surface: var(--color-emphasis);
             --color-surface-strength: 100%;
-            color: var(--primary-color-contrast);
+            color: var(--background-color);
         }
     }
 
@@ -68,6 +68,7 @@
             --color-muted: rgba(255, 255, 255, 0.55);
             --color-emphasis: rgba(255, 255, 255, 0.90);
             --outline-color: rgba(255, 255, 255, 1);
+
         }
     }
 }
