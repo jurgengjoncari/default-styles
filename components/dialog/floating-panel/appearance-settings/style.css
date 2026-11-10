@@ -23,10 +23,6 @@
         margin: 0;
     }
 
-    .settings-panel__group > legend {
-        font-weight: var(--font-weight-bold);
-    }
-
     .settings-panel__item[data-default-styles-update][hidden] {
         display: none;
     }

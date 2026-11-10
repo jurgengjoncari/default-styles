@@ -3,7 +3,17 @@
 
 
 @layer component {
-    fieldset {
+    /* fieldset {
+        border-width: var(--border-width-thin);
+        border-style: solid;
         border-color: var(--color-subtle);
+        border-radius: var(--radius-surface);
+    } */
+
+    legend {
+        color: var(--color);
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-tight);
     }
 }
