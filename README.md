@@ -307,17 +307,6 @@ Custom properties used by the styles (including component and demo properties), 
 
   - `shadow-color`
   - `shadow-color-strong`
-  - `shadow-offset-none`
-  - `shadow-offset-sm`
-  - `shadow-offset-md`
-  - `shadow-offset-lg`
-  - `blur-xs`
-  - `blur-sm`
-  - `blur-md`
-  - `blur-lg`
-  - `blur-xl`
-  - `shadow-sm`
-  - `shadow-md`
   - `shadow-lg`
 
 </blockquote>

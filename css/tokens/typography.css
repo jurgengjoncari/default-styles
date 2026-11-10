@@ -1,7 +1,5 @@
 @layer tokens {
     :root {
-        font-size: var(--root-font-scale, 100%);
-
         --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,
             /* macOS 10.11-10.12 */ -apple-system,
             /* Windows 6+ */ "Segoe UI",

@@ -11,12 +11,5 @@
         --blur-md: 0.5rem; /* 8px */
         --blur-lg: 0.8125rem; /* 13px */
         --blur-xl: 1.3125rem; /* 21px */
-
-        --shadow-sm: var(--shadow-offset-none) var(--shadow-offset-sm) var(--blur-xs) var(--shadow-color);
-        --shadow-md: var(--shadow-offset-none) var(--shadow-offset-md) var(--blur-sm) var(--shadow-color-strong),
-            var(--shadow-offset-none) var(--shadow-offset-sm) var(--blur-xs) var(--shadow-color);
-        --shadow-lg: var(--shadow-offset-none) var(--shadow-offset-lg) var(--blur-md) var(--shadow-color-strong),
-            var(--shadow-offset-none) var(--shadow-offset-md) var(--blur-sm) var(--shadow-color);
-        --frosty-glass: blur(var(--blur-xl));
     }
 }
