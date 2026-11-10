@@ -143,6 +143,17 @@ const controlHandlers = new Map([
         updateCssVariable(control, panel, '--color-surface-strength-control', '%')],
     ['default-styles-font-scale', (control, panel) =>
         updateCssVariable(control, panel, '--root-font-scale', '%')],
+    ['default-styles-text-spacing', (control) =>
+        root.toggleAttribute('data-default-styles-text-spacing', control.checked)],
+    ['default-styles-reduced-motion', (control) =>
+        root.toggleAttribute('data-default-styles-reduced-motion', control.checked)],
+    ['default-styles-high-contrast', (control) => {
+        if (control.checked) {
+            root.setAttribute('data-default-styles-contrast', 'more');
+        } else {
+            root.removeAttribute('data-default-styles-contrast');
+        }
+    }],
     ['default-styles-font-family', updateFontFamily]
 ]);
 
@@ -238,6 +249,15 @@ function initializeFontFamily(panel, computedRoot) {
     }
 }
 
+function initializeTestingControls(panel) {
+    panel.querySelector('#default-styles-text-spacing').checked =
+        root.hasAttribute('data-default-styles-text-spacing');
+    panel.querySelector('#default-styles-reduced-motion').checked =
+        root.hasAttribute('data-default-styles-reduced-motion');
+    panel.querySelector('#default-styles-high-contrast').checked =
+        root.getAttribute('data-default-styles-contrast') === 'more';
+}
+
 export function bindAppearanceControls(panel) {
     panel.addEventListener('input', (event) => updateAppearance(panel, event));
     panel.addEventListener('change', (event) => updateAppearance(panel, event));
@@ -265,4 +285,5 @@ export function bindAppearanceControls(panel) {
     */
     initializeFontScale(panel, computedRoot);
     initializeFontFamily(panel, computedRoot);
+    initializeTestingControls(panel);
 }

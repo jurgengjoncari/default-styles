@@ -19,7 +19,7 @@ export function createAppearancePanelElement() {
                 <span>Appearance settings</span>
             </div>
             <fieldset class="settings-panel__group">
-                <legend>Personalization</legend>
+                <legend>Testing</legend>
                 <div class="settings-panel__item">
                     <fieldset class="form-field form-field--group">
                         <legend class="sr-only">Theme</legend>
@@ -43,6 +43,36 @@ export function createAppearancePanelElement() {
                         </div>
                     </fieldset>
                 </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--toggle" for="default-styles-text-spacing">
+                        <span class="form-field__label">Text spacing</span>
+                        <input id="default-styles-text-spacing" type="checkbox">
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--toggle" for="default-styles-reduced-motion">
+                        <span class="form-field__label">Reduced motion</span>
+                        <input id="default-styles-reduced-motion" type="checkbox">
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--toggle" for="default-styles-high-contrast">
+                        <span class="form-field__label">Higher contrast</span>
+                        <input id="default-styles-high-contrast" type="checkbox">
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-font-scale">
+                        <span class="form-field__label">Font scale</span>
+                        <input id="default-styles-font-scale" type="number"
+                            min="75" max="200" step="5" value="100"
+                            aria-label="Font scale percentage">
+                        <output class="form-field__output" for="default-styles-font-scale">100%</output>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset class="settings-panel__group">
+                <legend>Personalization</legend>
                 <div class="settings-panel__item">
                     <label class="form-field form-field--color" for="default-styles-primary-color">
                         <span class="form-field__label">Primary color</span>
@@ -83,18 +113,6 @@ export function createAppearancePanelElement() {
                             <option value='Georgia, "Times New Roman", serif'>Serif</option>
                             <option value="var(--font-family-monospace)">Monospace</option>
                         </select>
-                    </label>
-                </div>
-            </fieldset>
-            <fieldset class="settings-panel__group">
-                <legend>Testing</legend>
-                <div class="settings-panel__item">
-                    <label class="form-field" for="default-styles-font-scale">
-                        <span class="form-field__label">Font scale</span>
-                        <input id="default-styles-font-scale" type="number"
-                            min="75" max="150" step="5" value="100"
-                            aria-label="Font scale percentage">
-                        <output class="form-field__output" for="default-styles-font-scale">100%</output>
                     </label>
                 </div>
             </fieldset>

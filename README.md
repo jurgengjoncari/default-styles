@@ -22,7 +22,7 @@ Import the panel once from your browser-side JavaScript entry point:
 
     import "@jurgengjoncari/default-styles/appearance-settings";
 
-The panel can switch between system, light, and dark themes; change the primary color, control and surface radii, border width, font scale, and font family. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+The panel can switch between system, light, and dark themes for testing; change the primary color, control and surface radii, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
 The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference.
 

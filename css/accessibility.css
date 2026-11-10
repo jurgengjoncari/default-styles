@@ -7,7 +7,18 @@
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
         }
+    }
+
+    :root[data-default-styles-reduced-motion],
+    :root[data-default-styles-reduced-motion] *,
+    :root[data-default-styles-reduced-motion] *::before,
+    :root[data-default-styles-reduced-motion] *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
@@ -28,6 +39,40 @@
     .is-focused {
         outline: var(--border-width-thick) solid var(--outline-color);
         outline-offset: var(--size-3xs);
+    }
+
+    /* Test WCAG text-spacing overrides against page content. */
+    :root[data-default-styles-text-spacing] * {
+        line-height: 1.5 !important;
+        letter-spacing: 0.12em !important;
+        word-spacing: 0.16em !important;
+    }
+
+    :root[data-default-styles-text-spacing] p {
+        margin-block-end: 2em !important;
+    }
+
+    /* In-page equivalent of prefers-contrast: more for visual checks. */
+    :root[data-default-styles-contrast="more"] {
+        --color: #000000 !important;
+        --color-subtle: #000000 !important;
+        --color-muted: #000000 !important;
+        --color-emphasis: #000000 !important;
+        --color-surface: #e0e0e0 !important;
+        --color-surface-fill: #e0e0e0 !important;
+        --color-surface-strength: 100% !important;
+        --background-color: #ffffff !important;
+    }
+
+    :root[data-default-styles-contrast="more"][data-theme="dark"] {
+        --color: #ffffff !important;
+        --color-subtle: #ffffff !important;
+        --color-muted: #ffffff !important;
+        --color-emphasis: #ffffff !important;
+        --color-surface: #333333 !important;
+        --color-surface-fill: #333333 !important;
+        --color-surface-strength: 100% !important;
+        --background-color: #000000 !important;
     }
 /* High Contrast Mode Support */
     @media (prefers-contrast: more) {

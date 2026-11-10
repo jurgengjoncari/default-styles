@@ -49,7 +49,9 @@
         justify-self: end;
         align-self: end;
         width: 100%;
+        max-height: calc(100vh - 2 * var(--size-md));
         padding: var(--size-sm);
+        overflow-y: auto;
         background-color: var(--color-surface-fill);
         border-radius: var(--radius-surface);
         backdrop-filter: var(--frosty-glass);

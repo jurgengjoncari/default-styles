@@ -33,6 +33,14 @@
         grid-template-columns: 8em minmax(0, 1fr);
     }
 
+    .form-field--toggle {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .form-field--toggle .form-field__label {
+        white-space: normal;
+    }
+
     .form-field--suffix {
         grid-template-columns: 8em minmax(0, 1fr) auto;
     }
