@@ -19,6 +19,8 @@
         --color-gray: var(--color-neutral-600);
         --color-surface-strength: var(--color-surface-strength-control, 10%);
 
+        --shadow-color: var(--color-black-alpha-25);
+        --shadow-color-strong: var(--color-black-alpha-35);
         --dialog-backdrop-color: var(--color-black-alpha-50);
         --primary-color: var(--color-blue-700);
         --primary-color-contrast: var(--color-white);
@@ -65,6 +67,8 @@
             --color-emphasis: var(--color-white-alpha-90);
             --outline-color: var(--color-white);
 
+            --shadow-color: var(--color-black-alpha-50);
+            --shadow-color-strong: var(--color-black-alpha-70);
             --dialog-backdrop-color: var(--color-black-alpha-80);
 
             /* Accent text (WCAG AA 4.5:1+ on black) */
@@ -115,6 +119,8 @@
             --color-muted: var(--color-white-alpha-55);
             --color-emphasis: var(--color-white-alpha-90);
             --outline-color: var(--color-white);
+            --shadow-color: var(--color-black-alpha-50);
+            --shadow-color-strong: var(--color-black-alpha-70);
             --dialog-backdrop-color: var(--color-black-alpha-80);
 
             /* Accent text (WCAG AA 4.5:1+ on black) */
