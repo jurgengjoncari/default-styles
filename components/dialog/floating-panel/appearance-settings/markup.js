@@ -18,80 +18,86 @@ export function createAppearancePanelElement() {
             <div class="floating-panel__header" data-floating-panel-drag-handle aria-hidden="true">
                 <span>Appearance settings</span>
             </div>
-            <div class="settings-panel__item">
-                <fieldset class="form-field form-field--group">
-                    <legend class="sr-only">Theme</legend>
-                    <div class="form-field__row">
-                        <span class="form-field__label" aria-hidden="true">Theme</span>
-                        <div class="button-group" data-variant="primary">
-                            <label class="button-group__option">
-                                <input type="radio" name="default-styles-theme-mode"
-                                    value="system" checked>
-                                <span>System</span>
-                            </label>
-                            <label class="button-group__option">
-                                <input type="radio" name="default-styles-theme-mode" value="light">
-                                <span>Light</span>
-                            </label>
-                            <label class="button-group__option">
-                                <input type="radio" name="default-styles-theme-mode" value="dark">
-                                <span>Dark</span>
-                            </label>
+            <fieldset class="settings-panel__group">
+                <legend>Personalization</legend>
+                <div class="settings-panel__item">
+                    <fieldset class="form-field form-field--group">
+                        <legend class="sr-only">Theme</legend>
+                        <div class="form-field__row">
+                            <span class="form-field__label" aria-hidden="true">Theme</span>
+                            <div class="button-group" data-variant="primary">
+                                <label class="button-group__option">
+                                    <input type="radio" name="default-styles-theme-mode"
+                                        value="system" checked>
+                                    <span>System</span>
+                                </label>
+                                <label class="button-group__option">
+                                    <input type="radio" name="default-styles-theme-mode" value="light">
+                                    <span>Light</span>
+                                </label>
+                                <label class="button-group__option">
+                                    <input type="radio" name="default-styles-theme-mode" value="dark">
+                                    <span>Dark</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                </fieldset>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field form-field--color" for="default-styles-primary-color">
-                    <span class="form-field__label">Primary color</span>
-                    <input id="default-styles-primary-color" type="color" value="#1a44cc">
-                    <output class="form-field__output" for="default-styles-primary-color">#1a44cc</output>
-                </label>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field" for="default-styles-control-radius">
-                    <span class="form-field__label">Control radius</span>
-                    <input id="default-styles-control-radius" type="range"
-                        min="0" max="0" step="1" value="0">
-                    <output class="form-field__output" for="default-styles-control-radius"></output>
-                </label>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field" for="default-styles-surface-radius">
-                    <span class="form-field__label">Surface radius</span>
-                    <input id="default-styles-surface-radius" type="range"
-                        min="0" max="0" step="1" value="0">
-                    <output class="form-field__output" for="default-styles-surface-radius"></output>
-                </label>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field" for="default-styles-surface-transparency">
-                    <span class="form-field__label">Surface strength</span>
-                    <input id="default-styles-surface-transparency" type="range"
-                        min="0" max="100" step="1" value="10">
-                    <output class="form-field__output" for="default-styles-surface-transparency">10%</output>
-                </label>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field" for="default-styles-font-scale">
-                    <span class="form-field__label">Font scale</span>
-                    <input id="default-styles-font-scale" type="number"
-                        min="75" max="150" step="5" value="100"
-                        aria-label="Font scale percentage">
-                    <output class="form-field__output" for="default-styles-font-scale">100%</output>
-                </label>
-            </div>
-            <div class="settings-panel__item">
-                <label class="form-field form-field--select" for="default-styles-font-family">
-                    <span class="form-field__label">Font family</span>
-                    <select id="default-styles-font-family">
-                        <option value="">Default</option>
-                        <option value="system-ui, sans-serif">System UI</option>
-                        <option value='Georgia, "Times New Roman", serif'>Serif</option>
-                        <option value="var(--font-family-monospace)">Monospace</option>
-                    </select>
-                </label>
-            </div>
+                    </fieldset>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--color" for="default-styles-primary-color">
+                        <span class="form-field__label">Primary color</span>
+                        <input id="default-styles-primary-color" type="color" value="#1a44cc">
+                        <output class="form-field__output" for="default-styles-primary-color">#1a44cc</output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-control-radius">
+                        <span class="form-field__label">Control radius</span>
+                        <input id="default-styles-control-radius" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-control-radius"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-surface-radius">
+                        <span class="form-field__label">Surface radius</span>
+                        <input id="default-styles-surface-radius" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-surface-radius"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-surface-transparency">
+                        <span class="form-field__label">Surface strength</span>
+                        <input id="default-styles-surface-transparency" type="range"
+                            min="0" max="100" step="1" value="10">
+                        <output class="form-field__output" for="default-styles-surface-transparency">10%</output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field form-field--select" for="default-styles-font-family">
+                        <span class="form-field__label">Font family</span>
+                        <select id="default-styles-font-family">
+                            <option value="">Default</option>
+                            <option value="system-ui, sans-serif">System UI</option>
+                            <option value='Georgia, "Times New Roman", serif'>Serif</option>
+                            <option value="var(--font-family-monospace)">Monospace</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset class="settings-panel__group">
+                <legend>Testing</legend>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-font-scale">
+                        <span class="form-field__label">Font scale</span>
+                        <input id="default-styles-font-scale" type="number"
+                            min="75" max="150" step="5" value="100"
+                            aria-label="Font scale percentage">
+                        <output class="form-field__output" for="default-styles-font-scale">100%</output>
+                    </label>
+                </div>
+            </fieldset>
             <div class="settings-panel__item" data-default-styles-update hidden>
                 <button type="button" data-default-styles-update-button>
                     Update available

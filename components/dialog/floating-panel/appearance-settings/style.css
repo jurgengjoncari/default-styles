@@ -14,6 +14,19 @@
         min-height: var(--size-touch-target);
     }
 
+    .settings-panel__group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .settings-panel__group > legend {
+        font-weight: var(--font-weight-bold);
+    }
+
     .settings-panel__item[data-default-styles-update][hidden] {
         display: none;
     }
