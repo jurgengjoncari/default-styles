@@ -52,8 +52,8 @@ export function createAppearancePanelElement() {
                 <label class="form-field" for="default-styles-control-radius">
                     <span class="form-field__label">Corner radius</span>
                     <input id="default-styles-control-radius" type="range"
-                        min="0" max="24" step="1" value="4">
-                    <output class="form-field__output" for="default-styles-control-radius">4px</output>
+                        min="0" max="0" step="1" value="0">
+                    <output class="form-field__output" for="default-styles-control-radius"></output>
                 </label>
             </div>
             <div class="settings-panel__item">

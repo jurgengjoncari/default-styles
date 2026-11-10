@@ -1,3 +1,4 @@
+import tokens from '../../../../css/tokens.json' with { type: 'json' };
 import { getAccessibleAccent, getContrastingTextColor } from '../../../../js/utilities/color/contrast.js';
 import { mix } from '../../../../js/utilities/color/mix.js';
 import {
@@ -6,6 +7,7 @@ import {
 } from '../../../../js/utilities/style-values.js';
 
 const root = document.documentElement;
+const radiusTokens = Object.entries(tokens.radius).map(([label, value]) => ({ label, value }));
 
 /* Archived transparency cap experiment:
 function parseCssColor(color) {
@@ -104,6 +106,22 @@ function updateCssVariable(control, panel, variable, unit) {
     setOutput(panel, control.id, value);
 }
 
+function getRadiusTokenSize(token, rootFontSize) {
+    const value = Number.parseFloat(token.value);
+    return token.value.endsWith('rem') ? value * rootFontSize : value;
+}
+
+function updateControlRadius(control, panel) {
+    const token = radiusTokens[Number(control.value)];
+    if (!token) {
+        return;
+    }
+
+    root.style.setProperty('--radius-control', `var(--radius-${token.label})`);
+    control.setAttribute('aria-valuetext', token.label);
+    setOutput(panel, control.id, token.label);
+}
+
 function updateFontFamily(control) {
     if (control.value) {
         root.style.setProperty('--font-family-base', control.value);
@@ -114,8 +132,7 @@ function updateFontFamily(control) {
 
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
-    ['default-styles-control-radius', (control, panel) =>
-        updateCssVariable(control, panel, '--radius-control', 'px')],
+    ['default-styles-control-radius', updateControlRadius],
     ['default-styles-surface-transparency', (control, panel) =>
         updateCssVariable(control, panel, '--color-surface-strength-control', '%')],
     ['default-styles-font-scale', (control, panel) =>
@@ -162,6 +179,27 @@ function initializeLengthControl(panel, controlId, property, fallback) {
     setOutput(panel, control.id, value + 'px');
 }
 
+function initializeRadiusControl(panel) {
+    const control = panel.querySelector('#default-styles-control-radius');
+    control.min = 0;
+    control.max = radiusTokens.length - 1;
+    control.step = 1;
+
+    const rootFontSize = Number.parseFloat(getComputedStyle(root).fontSize);
+    const currentValue = getCssLengthInPixels(root, '--radius-control',
+        getRadiusTokenSize(radiusTokens[0], rootFontSize));
+    const selectedIndex = radiusTokens.reduce((closestIndex, token, index) =>
+        Math.abs(getRadiusTokenSize(token, rootFontSize) - currentValue)
+            < Math.abs(getRadiusTokenSize(radiusTokens[closestIndex], rootFontSize) - currentValue)
+            ? index
+            : closestIndex, 0);
+    control.value = selectedIndex;
+
+    const selectedToken = radiusTokens[selectedIndex];
+    control.setAttribute('aria-valuetext', selectedToken.label);
+    setOutput(panel, control.id, selectedToken.label);
+}
+
 function initializeSurfaceStrength(panel, computedRoot) {
     const control = panel.querySelector('#default-styles-surface-transparency');
     const strength = Number.parseFloat(
@@ -195,7 +233,7 @@ export function bindAppearanceControls(panel) {
     panel.addEventListener('change', (event) => updateAppearance(panel, event));
 
     initializePrimaryColor(panel);
-    initializeLengthControl(panel, 'default-styles-control-radius', '--radius-control', 4);
+    initializeRadiusControl(panel);
 
     const computedRoot = getComputedStyle(root);
     /* Archived transparency cap initialization:
