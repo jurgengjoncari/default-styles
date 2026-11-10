@@ -22,7 +22,7 @@ Import the panel once from your browser-side JavaScript entry point:
 
     import "@jurgengjoncari/default-styles/appearance-settings";
 
-The panel can switch between system, light, and dark themes; change the primary color, corner radius, border width, font scale, and font family. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+The panel can switch between system, light, and dark themes; change the primary color, control and surface radii, border width, font scale, and font family. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
 The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference.
 
@@ -261,16 +261,22 @@ Custom properties used by the styles (including component and demo properties), 
 
 <blockquote>
 
-  - `radius-none`
-  - `radius-xxs`
-  - `radius-xs`
-  - `radius-s`
-  - `radius-md`
-  - `radius-lg`
-  - `radius-xl`
-  - `radius-xxl`
-  - `radius-round`
+  - `radius-control-none`
+  - `radius-control-xs`
+  - `radius-control-s`
+  - `radius-control-md`
+  - `radius-control-lg`
+  - `radius-control-xl`
+  - `radius-control-round`
+  - `radius-surface-none`
+  - `radius-surface-xs`
+  - `radius-surface-s`
+  - `radius-surface-md`
+  - `radius-surface-lg`
+  - `radius-surface-xl`
+  - `radius-surface-xxl`
   - `radius-control`
+  - `radius-surface`
 
 </blockquote>
 </details>

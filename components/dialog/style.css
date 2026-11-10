@@ -7,6 +7,7 @@
     dialog[open] {
         background-color: var(--color-surface-fill);
         border-color: var(--color-subtle);
+        border-radius: var(--radius-surface);
     }
 
     dialog::backdrop {

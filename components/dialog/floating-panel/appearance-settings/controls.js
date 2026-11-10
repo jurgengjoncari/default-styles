@@ -7,7 +7,10 @@ import {
 } from '../../../../js/utilities/style-values.js';
 
 const root = document.documentElement;
-const radiusTokens = Object.entries(tokens.radius).map(([label, value]) => ({ label, value }));
+const radiusTokens = Object.fromEntries(Object.entries(tokens.radius).map(([role, options]) => [
+    role,
+    Object.entries(options).map(([label, value]) => ({ label, value }))
+]));
 
 /* Archived transparency cap experiment:
 function parseCssColor(color) {
@@ -108,16 +111,18 @@ function updateCssVariable(control, panel, variable, unit) {
 
 function getRadiusTokenSize(token, rootFontSize) {
     const value = Number.parseFloat(token.value);
-    return token.value.endsWith('rem') ? value * rootFontSize : value;
+    return token.value.endsWith('em') || token.value.endsWith('rem')
+        ? value * rootFontSize
+        : value;
 }
 
-function updateControlRadius(control, panel) {
-    const token = radiusTokens[Number(control.value)];
+function updateRadius(control, panel, role) {
+    const token = radiusTokens[role][Number(control.value)];
     if (!token) {
         return;
     }
 
-    root.style.setProperty('--radius-control', `var(--radius-${token.label})`);
+    root.style.setProperty(`--radius-${role}`, `var(--radius-${role}-${token.label})`);
     control.setAttribute('aria-valuetext', token.label);
     setOutput(panel, control.id, token.label);
 }
@@ -132,7 +137,8 @@ function updateFontFamily(control) {
 
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
-    ['default-styles-control-radius', updateControlRadius],
+    ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
+    ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
     ['default-styles-surface-transparency', (control, panel) =>
         updateCssVariable(control, panel, '--color-surface-strength-control', '%')],
     ['default-styles-font-scale', (control, panel) =>
@@ -180,24 +186,28 @@ function initializeLengthControl(panel, controlId, property, fallback) {
 }
 
 function initializeRadiusControl(panel) {
-    const control = panel.querySelector('#default-styles-control-radius');
-    control.min = 0;
-    control.max = radiusTokens.length - 1;
-    control.step = 1;
-
     const rootFontSize = Number.parseFloat(getComputedStyle(root).fontSize);
-    const currentValue = getCssLengthInPixels(root, '--radius-control',
-        getRadiusTokenSize(radiusTokens[0], rootFontSize));
-    const selectedIndex = radiusTokens.reduce((closestIndex, token, index) =>
-        Math.abs(getRadiusTokenSize(token, rootFontSize) - currentValue)
-            < Math.abs(getRadiusTokenSize(radiusTokens[closestIndex], rootFontSize) - currentValue)
-            ? index
-            : closestIndex, 0);
-    control.value = selectedIndex;
+    ['control', 'surface'].forEach((role) => {
+        const control = panel.querySelector(`#default-styles-${role}-radius`);
+        const options = radiusTokens[role];
+        const property = `--radius-${role}`;
+        control.min = 0;
+        control.max = options.length - 1;
+        control.step = 1;
 
-    const selectedToken = radiusTokens[selectedIndex];
-    control.setAttribute('aria-valuetext', selectedToken.label);
-    setOutput(panel, control.id, selectedToken.label);
+        const currentValue = getCssLengthInPixels(root, property,
+            getRadiusTokenSize(options[0], rootFontSize));
+        const selectedIndex = options.reduce((closestIndex, token, index) =>
+            Math.abs(getRadiusTokenSize(token, rootFontSize) - currentValue)
+                < Math.abs(getRadiusTokenSize(options[closestIndex], rootFontSize) - currentValue)
+                ? index
+                : closestIndex, 0);
+        control.value = selectedIndex;
+
+        const selectedToken = options[selectedIndex];
+        control.setAttribute('aria-valuetext', selectedToken.label);
+        setOutput(panel, control.id, selectedToken.label);
+    });
 }
 
 function initializeSurfaceStrength(panel, computedRoot) {

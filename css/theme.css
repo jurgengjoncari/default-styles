@@ -1,7 +1,8 @@
 @layer theme {
     /* Semantic Color Tokens — accent colors + dark mode overrides */
     :root {
-        --radius-control: var(--radius-xs);
+        --radius-control: var(--radius-control-md);
+        --radius-surface: var(--radius-surface-md);
 
         /* Text track */
         /* Transparency experiment: --surface-strength-base: 10%; */

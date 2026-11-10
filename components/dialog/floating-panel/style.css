@@ -51,6 +51,7 @@
         width: 100%;
         padding: var(--size-sm);
         background-color: var(--color-surface-fill);
+        border-radius: var(--radius-surface);
         backdrop-filter: var(--frosty-glass);
         opacity: 0;
         pointer-events: none;
