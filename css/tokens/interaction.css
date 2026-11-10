@@ -1,0 +1,6 @@
+@layer tokens {
+    :root {
+        --interaction-hover: 15%;
+        --interaction-active: 30%;
+    }
+}

@@ -1,0 +1,49 @@
+@layer tokens {
+    :root {
+        --font-family-base: "Helvetica Neue", Helvetica, Arial, system-ui,
+            /* macOS 10.11-10.12 */ -apple-system,
+            /* Windows 6+ */ "Segoe UI",
+            /* Android 4+ */ "Roboto",
+            /* Ubuntu 10.10+ */ "Ubuntu",
+            /* Gnome 3+ */ "Cantarell",
+            /* KDE Plasma 5+ */ "Noto Sans",
+            /* fallback */ sans-serif,
+            /* macOS emoji */ "Apple Color Emoji",
+            /* Windows emoji */ "Segoe UI Emoji",
+            /* Windows emoji */ "Segoe UI Symbol",
+            /* Linux emoji */ "Noto Color Emoji";
+
+        --font-family-monospace: ui-monospace,
+            /* macOS 10.10+ */ "Menlo",
+            /* Windows 6+ */ "Consolas",
+            /* Android 4+ */ "Roboto Mono",
+            /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+            /* KDE Plasma 5+ */ "Noto Mono",
+            /* KDE Plasma 4+ */ "Oxygen Mono",
+            /* Linux/OpenOffice fallback */ "Liberation Mono",
+            /* fallback */ monospace,
+            /* macOS emoji */ "Apple Color Emoji",
+            /* Windows emoji */ "Segoe UI Emoji",
+            /* Windows emoji */ "Segoe UI Symbol",
+            /* Linux emoji */ "Noto Color Emoji";
+
+        --font-size-xs: 0.64rem;
+        --font-size-sm: 0.8rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.25rem;
+        --font-size-xl: 1.563rem;
+        --font-size-xxl: 1.953rem;
+        --font-size-3xl: 2.441rem;
+        --font-size-4xl: 3.052rem;
+        --font-size-display: 3.815rem;
+
+        --font-weight-light: 300;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-bold: 700;
+
+        --line-height-tight: 1.25;
+        --line-height-medium: 1.5;
+        --line-height-loose: 1.75;
+    }
+}

@@ -1,4 +1,4 @@
-import tokens from '../../../../css/tokens.json' with { type: 'json' };
+import tokens from '../../../../css/tokens/tokens.json' with { type: 'json' };
 import { getAccessibleAccent, getContrastingTextColor } from '../../../../js/utilities/color/contrast.js';
 import { mix } from '../../../../js/utilities/color/mix.js';
 import {

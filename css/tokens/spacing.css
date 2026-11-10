@@ -1,0 +1,14 @@
+@layer tokens {
+    :root {
+        --size-none: 0;
+        --size-3xs: 0.125em;
+        --size-xxs: 0.25em;
+        --size-xs: 0.375em;
+        --size-sm: 0.625em;
+        --size-md: 1em;
+        --size-lg: 1.625em;
+        --size-xl: 2.625em;
+        --size-xxl: 4.25em;
+        --size-touch-target: 2.75em;
+    }
+}

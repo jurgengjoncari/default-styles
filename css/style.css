@@ -2,7 +2,7 @@
 
 @import "./reset.css";
 @import "./normalize.css";
-@import "./tokens.css";
+@import "./tokens/tokens.css";
 @import "./theme.css";
 
 @import "../components/typography/style.css";

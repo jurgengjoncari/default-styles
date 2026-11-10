@@ -1,0 +1,28 @@
+@layer tokens {
+    :root {
+        --radius-control-none: 0;
+        --radius-control-xs: 0.125em;
+        --radius-control-s: 0.25em;
+        --radius-control-md: 0.375em;
+        --radius-control-lg: 0.625em;
+        --radius-control-xl: 1em;
+        --radius-control-round: 9999px;
+
+        --radius-surface-none: 0;
+        --radius-surface-xs: 0.25rem;
+        --radius-surface-s: 0.375rem;
+        --radius-surface-md: 0.625rem;
+        --radius-surface-lg: 1rem;
+        --radius-surface-xl: 1.625rem;
+        --radius-surface-xxl: 2.625rem;
+
+        --border-width-none: 0;
+        --border-width-thin: 0.0625rem;
+        --border-width-thick: 0.125rem;
+        --border-width-thicker: 0.25rem;
+
+        --border-style-solid: solid;
+        --border-style-dotted: dotted;
+        --border-style-dashed: dashed;
+    }
+}
