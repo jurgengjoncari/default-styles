@@ -1,19 +1,45 @@
 @layer theme {
     /* Semantic Color Tokens — accent colors + dark mode overrides */
     :root {
+        color-scheme: light;
+
         --radius-control: var(--radius-control-md);
         --radius-surface: var(--radius-surface-md);
 
         /* Text track */
         /* Transparency experiment: --surface-strength-base: 10%; */
-        --background-color: #ffffff;
-        --color: rgba(0, 0, 0, 0.70);
-        --color-surface: #000000;
+        --background-color: var(--color-white);
+        --color: var(--color-black-alpha-70);
+        --color-surface: var(--color-black);
         --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-        --color-subtle: rgba(0, 0, 0, 0.40);
-        --color-muted: rgba(0, 0, 0, 0.55);
-        --color-emphasis: rgba(0, 0, 0, 0.90);
-        --outline-color: rgba(0, 0, 0, 1);
+        --color-subtle: var(--color-black-alpha-40);
+        --color-muted: var(--color-black-alpha-55);
+        --color-emphasis: var(--color-black-alpha-90);
+        --outline-color: var(--color-black);
+        --color-gray: var(--color-neutral-600);
+        --color-surface-strength: var(--color-surface-strength-control, 10%);
+
+        --dialog-backdrop-color: var(--color-black-alpha-50);
+        --primary-color: var(--color-blue-700);
+        --primary-color-contrast: var(--color-white);
+        --primary-text-light: var(--color-blue-700);
+        --primary-text-dark: var(--color-blue-400);
+
+        /* Accent text (WCAG AA 4.5:1+ on white) */
+        --blue-text: var(--primary-text-light);
+        --cyan-text: var(--color-cyan-800);
+        --green-text: var(--color-green-800);
+        --yellow-text: var(--color-yellow-800);
+        --red-text: var(--color-red-700);
+        --magenta-text: var(--color-magenta-800);
+
+        /* Accent backgrounds (pair with dark text) */
+        --blue-bg: color-mix(in srgb, var(--primary-color) 15%, var(--color-white));
+        --cyan-bg: var(--color-cyan-100);
+        --green-bg: var(--color-green-100);
+        --yellow-bg: var(--color-yellow-100);
+        --red-bg: var(--color-red-100);
+        --magenta-bg: var(--color-magenta-100);
 
         & button:disabled,
         & input:disabled,
@@ -23,21 +49,39 @@
         }
 
         & a:visited {
-            --color: #4040bf;
+            --color: var(--color-blue-600);
         }
 
         &[data-theme="dark"] {
             color-scheme: dark;
 
             /* Text track */
-            --background-color: #000000;
-            --color: rgba(255, 255, 255, 0.70);
-            --color-surface: #ffffff;
+            --background-color: var(--color-black);
+            --color: var(--color-white-alpha-70);
+            --color-surface: var(--color-white);
             --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-            --color-subtle: rgba(255, 255, 255, 0.40);
-            --color-muted: rgba(255, 255, 255, 0.55);
-            --color-emphasis: rgba(255, 255, 255, 0.90);
-            --outline-color: rgba(255, 255, 255, 1);
+            --color-subtle: var(--color-white-alpha-40);
+            --color-muted: var(--color-white-alpha-55);
+            --color-emphasis: var(--color-white-alpha-90);
+            --outline-color: var(--color-white);
+
+            --dialog-backdrop-color: var(--color-black-alpha-80);
+
+            /* Accent text (WCAG AA 4.5:1+ on black) */
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: var(--color-cyan-400);
+            --green-text: var(--color-green-400);
+            --yellow-text: var(--color-yellow-400);
+            --red-text: var(--color-red-300);
+            --magenta-text: var(--color-magenta-400);
+
+            /* Accent backgrounds (dark tints, pair with light text) */
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, var(--color-black));
+            --cyan-bg: var(--color-cyan-950);
+            --green-bg: var(--color-green-950);
+            --yellow-bg: var(--color-yellow-950);
+            --red-bg: var(--color-red-950);
+            --magenta-bg: var(--color-magenta-950);
 
             & button:disabled,
             & input:disabled,
@@ -63,15 +107,31 @@
         :root:not([data-theme]) {
             color-scheme: dark;
 
-            --background-color: #000000;
-            --color: rgba(255, 255, 255, 0.70);
-            --color-surface: #ffffff;
+            --background-color: var(--color-black);
+            --color: var(--color-white-alpha-70);
+            --color-surface: var(--color-white);
             --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-            --color-subtle: rgba(255, 255, 255, 0.40);
-            --color-muted: rgba(255, 255, 255, 0.55);
-            --color-emphasis: rgba(255, 255, 255, 0.90);
-            --outline-color: rgba(255, 255, 255, 1);
+            --color-subtle: var(--color-white-alpha-40);
+            --color-muted: var(--color-white-alpha-55);
+            --color-emphasis: var(--color-white-alpha-90);
+            --outline-color: var(--color-white);
+            --dialog-backdrop-color: var(--color-black-alpha-80);
 
+            /* Accent text (WCAG AA 4.5:1+ on black) */
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: var(--color-cyan-400);
+            --green-text: var(--color-green-400);
+            --yellow-text: var(--color-yellow-400);
+            --red-text: var(--color-red-300);
+            --magenta-text: var(--color-magenta-400);
+
+            /* Accent backgrounds (dark tints, pair with light text) */
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, var(--color-black));
+            --cyan-bg: var(--color-cyan-950);
+            --green-bg: var(--color-green-950);
+            --yellow-bg: var(--color-yellow-950);
+            --red-bg: var(--color-red-950);
+            --magenta-bg: var(--color-magenta-950);
         }
     }
 }
