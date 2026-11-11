@@ -1,2 +1,9 @@
 @import "./normalize.css";
 @import "./accessibility.css";
+
+@layer component {
+    .inline {
+        height: 1em;
+        vertical-align: middle;
+    }
+}
