@@ -8,9 +8,9 @@
         --radius-surface: var(--radius-surface-md);
 
         /* Effects used by the theme */
-        --shadow-lg: 0 0.25rem 0.5rem var(--shadow-color-strong),
-            0 0.125rem 0.3125rem var(--shadow-color);
-        --frosty-glass: blur(1.3125rem);
+        --shadow-lg: 0 var(--shadow-offset-lg) var(--blur-md) var(--shadow-color-strong),
+            0 var(--shadow-offset-md) var(--blur-sm) var(--shadow-color);
+        --frosty-glass: blur(var(--blur-xl));
 
         /* Text track */
         /* Transparency experiment: --surface-strength-base: 10%; */
