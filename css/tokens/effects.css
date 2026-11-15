@@ -6,6 +6,14 @@
         --shadow-offset-md: 0.125rem; /* 2px */
         --shadow-offset-lg: 0.25rem; /* 4px */
 
+        --shadow-spread-none: 0;
+        --shadow-spread-xs: 0.03125rem; /* 0.5px */
+        --shadow-spread-sm: 0.0625rem; /* 1px */
+        --shadow-spread-md: 0.125rem; /* 2px */
+        --shadow-spread-lg: 0.1875rem; /* 3px */
+        --shadow-spread-xl: 0.25rem; /* 4px */
+
+        --blur-none: 0;
         --blur-xs: 0.1875rem; /* 3px */
         --blur-sm: 0.3125rem; /* 5px */
         --blur-md: 0.5rem; /* 8px */

@@ -22,7 +22,7 @@ Import the panel once from your browser-side JavaScript entry point:
 
     import "@jurgengjoncari/default-styles/appearance-settings";
 
-The panel can switch between system, light, and dark themes for testing; change the primary color, control and surface radii, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+The panel can switch between system, light, and dark themes for testing; change the primary color, control and surface radii, shadow offsets, blur, and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
 The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference.
 
@@ -307,7 +307,31 @@ Custom properties used by the styles (including component and demo properties), 
 
   - `shadow-color`
   - `shadow-color-strong`
-  - `shadow-lg`
+  - `shadow-offset-none`
+  - `shadow-offset-sm`
+  - `shadow-offset-md`
+  - `shadow-offset-lg`
+  - `shadow-spread-none`
+  - `shadow-spread-xs`
+  - `shadow-spread-sm`
+  - `shadow-spread-md`
+  - `shadow-spread-lg`
+  - `shadow-spread-xl`
+  - `blur-none`
+  - `blur-xs`
+  - `blur-sm`
+  - `blur-md`
+  - `blur-lg`
+  - `blur-xl`
+  - `shadow-control-offset`
+  - `shadow-control-blur`
+  - `shadow-control-spread`
+  - `shadow-control`
+  - `shadow-control-inset`
+  - `shadow-surface-offset`
+  - `shadow-surface-blur`
+  - `shadow-surface-spread`
+  - `shadow-surface`
 
 </blockquote>
 </details>

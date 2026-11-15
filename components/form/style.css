@@ -10,12 +10,13 @@
 
 @layer shared {
     /* Shared control surfaces */
-    input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+    input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]):not([type="file"]):not([type="button"]):not([type="reset"]):not([type="submit"]),
     select,
     textarea,
     .input {
         border: var(--border-width-thin) solid var(--color-subtle);
         border-radius: var(--radius-control);
+        box-shadow: var(--shadow-control-inset);
         transition: border-color 0.2s ease;
     }
 

@@ -41,6 +41,15 @@
 }
 
 @layer accessibility {
+    :disabled,
+    [readonly] {
+        box-shadow: none;
+    }
+
+    .button-group:has(:disabled) {
+        box-shadow: none;
+    }
+
     input,
     textarea,
     select {

@@ -97,6 +97,54 @@ export function createAppearancePanelElement() {
                     </label>
                 </div>
                 <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-control-shadow">
+                        <span class="form-field__label">Control shadow offset</span>
+                        <input id="default-styles-control-shadow" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-control-shadow"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-control-shadow-blur">
+                        <span class="form-field__label">Control shadow blur</span>
+                        <input id="default-styles-control-shadow-blur" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-control-shadow-blur"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-control-shadow-spread">
+                        <span class="form-field__label">Control shadow spread</span>
+                        <input id="default-styles-control-shadow-spread" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-control-shadow-spread"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-surface-shadow">
+                        <span class="form-field__label">Surface shadow offset</span>
+                        <input id="default-styles-surface-shadow" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-surface-shadow"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-surface-shadow-blur">
+                        <span class="form-field__label">Surface shadow blur</span>
+                        <input id="default-styles-surface-shadow-blur" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-surface-shadow-blur"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
+                    <label class="form-field" for="default-styles-surface-shadow-spread">
+                        <span class="form-field__label">Surface shadow spread</span>
+                        <input id="default-styles-surface-shadow-spread" type="range"
+                            min="0" max="0" step="1" value="0">
+                        <output class="form-field__output" for="default-styles-surface-shadow-spread"></output>
+                    </label>
+                </div>
+                <div class="settings-panel__item">
                     <label class="form-field" for="default-styles-surface-transparency">
                         <span class="form-field__label">Surface strength</span>
                         <input id="default-styles-surface-transparency" type="range"

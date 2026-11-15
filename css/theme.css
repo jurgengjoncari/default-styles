@@ -7,10 +7,35 @@
         --radius-control: var(--radius-control-md);
         --radius-surface: var(--radius-surface-md);
 
-        /* Effects used by the theme */
-        --shadow-lg: 0 var(--shadow-offset-lg) var(--blur-md) var(--shadow-color-strong),
-            0 var(--shadow-offset-md) var(--blur-sm) var(--shadow-color);
-        --frosty-glass: blur(var(--blur-xl));
+        /* Shadows */
+        --shadow-control-offset: var(--shadow-offset-none);
+        --shadow-control-blur: var(--blur-xs);
+        --shadow-control-spread: var(--shadow-spread-xs);
+        --shadow-control:
+            var(--shadow-control-offset) /* offset-x: horizontal */
+            var(--shadow-control-offset) /* offset-y: vertical */
+            var(--shadow-control-blur) /* softness */
+            var(--shadow-control-spread) /* size expansion */
+            var(--shadow-color) /* shadow color */;
+        --shadow-control-inset:
+            inset /* draw inside the border */
+            var(--shadow-control-offset) /* offset-x: horizontal */
+            var(--shadow-control-offset) /* offset-y: vertical */
+            var(--shadow-control-blur) /* softness */
+            var(--shadow-control-spread) /* size expansion */
+            var(--shadow-color) /* shadow color */;
+
+        --shadow-surface-offset: var(--shadow-offset-none);
+        --shadow-surface-blur: var(--blur-lg);
+        --shadow-surface-spread: var(--shadow-spread-sm);
+        --shadow-surface:
+            var(--shadow-surface-offset) /* offset-x: centered horizontally */
+            var(--shadow-surface-offset) /* offset-y: centered vertically */
+            var(--shadow-surface-blur) /* softness */
+            var(--shadow-surface-spread) /* size expansion */
+            var(--shadow-color-strong) /* stronger shadow color */;
+
+        --frosty-glass: blur(1.3125rem);
 
         /* Text track */
         /* Transparency experiment: --surface-strength-base: 10%; */

@@ -11,6 +11,10 @@ const radiusTokens = Object.fromEntries(Object.entries(tokens.radius).map(([role
     role,
     Object.entries(options).map(([label, value]) => ({ label, value }))
 ]));
+const shadowTokens = Object.fromEntries(Object.entries(tokens.shadow).map(([dimension, options]) => [
+    dimension,
+    Object.entries(options).map(([label, value]) => ({ label, value }))
+]));
 
 /* Archived transparency cap experiment:
 function parseCssColor(color) {
@@ -127,6 +131,17 @@ function updateRadius(control, panel, role) {
     setOutput(panel, control.id, token.label);
 }
 
+function updateShadow(control, panel, role, dimension) {
+    const token = shadowTokens[dimension][Number(control.value)];
+    if (!token) {
+        return;
+    }
+
+    root.style.setProperty(`--shadow-${role}-${dimension}`, token.value);
+    control.setAttribute('aria-valuetext', token.label);
+    setOutput(panel, control.id, token.label);
+}
+
 function updateFontFamily(control) {
     if (control.value) {
         root.style.setProperty('--font-family-base', control.value);
@@ -139,6 +154,12 @@ const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
     ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
+    ['default-styles-control-shadow', (control, panel) => updateShadow(control, panel, 'control', 'offset')],
+    ['default-styles-control-shadow-blur', (control, panel) => updateShadow(control, panel, 'control', 'blur')],
+    ['default-styles-control-shadow-spread', (control, panel) => updateShadow(control, panel, 'control', 'spread')],
+    ['default-styles-surface-shadow', (control, panel) => updateShadow(control, panel, 'surface', 'offset')],
+    ['default-styles-surface-shadow-blur', (control, panel) => updateShadow(control, panel, 'surface', 'blur')],
+    ['default-styles-surface-shadow-spread', (control, panel) => updateShadow(control, panel, 'surface', 'spread')],
     ['default-styles-surface-transparency', (control, panel) =>
         updateCssVariable(control, panel, '--color-surface-strength-control', '%')],
     ['default-styles-font-scale', (control, panel) =>
@@ -221,6 +242,31 @@ function initializeRadiusControl(panel) {
     });
 }
 
+function initializeShadowControl(panel) {
+    const computedRoot = getComputedStyle(root);
+    ['control', 'surface'].forEach((role) => {
+        ['offset', 'blur', 'spread'].forEach((dimension) => {
+            const controlId = dimension === 'offset'
+                ? `default-styles-${role}-shadow`
+                : `default-styles-${role}-shadow-${dimension}`;
+            const control = panel.querySelector(`#${controlId}`);
+            const options = shadowTokens[dimension];
+            const currentValue = computedRoot.getPropertyValue(`--shadow-${role}-${dimension}`).trim();
+            const selectedIndex = options.findIndex((token) =>
+                computedRoot.getPropertyValue(token.value.slice(4, -1)).trim() === currentValue);
+
+            control.min = 0;
+            control.max = options.length - 1;
+            control.step = 1;
+            control.value = selectedIndex === -1 ? 0 : selectedIndex;
+
+            const selectedToken = options[control.value];
+            control.setAttribute('aria-valuetext', selectedToken.label);
+            setOutput(panel, control.id, selectedToken.label);
+        });
+    });
+}
+
 function initializeSurfaceStrength(panel, computedRoot) {
     const control = panel.querySelector('#default-styles-surface-transparency');
     const strength = Number.parseFloat(
@@ -264,6 +310,7 @@ export function bindAppearanceControls(panel) {
 
     initializePrimaryColor(panel);
     initializeRadiusControl(panel);
+    initializeShadowControl(panel);
 
     const computedRoot = getComputedStyle(root);
     /* Archived transparency cap initialization:
