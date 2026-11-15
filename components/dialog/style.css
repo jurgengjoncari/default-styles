@@ -5,6 +5,8 @@
 
 @layer component {
     .dialog-panel {
+        padding-block: var(--padding-surface-block);
+        padding-inline: var(--padding-surface-inline);
         background-color: var(--color-surface-fill);
         border-radius: var(--radius-surface);
         box-shadow: var(--shadow-surface);

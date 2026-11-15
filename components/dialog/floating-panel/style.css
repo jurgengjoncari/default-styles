@@ -19,7 +19,8 @@
         place-items: center;
         width: var(--size-touch-target);
         height: var(--size-touch-target);
-        padding: var(--size-sm);
+        padding-block: var(--padding-surface-block);
+        padding-inline: var(--padding-surface-inline);
         cursor: grab;
         opacity: 1;
         transform: scale(1);
