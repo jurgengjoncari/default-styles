@@ -4,13 +4,30 @@
 
 
 @layer component {
-    dialog[open] {
+    .dialog-panel {
         background-color: var(--color-surface-fill);
-        border-color: var(--color-subtle);
         border-radius: var(--radius-surface);
+        box-shadow: var(--shadow-surface);
+        backdrop-filter: var(--frosty-glass);
+    }
+
+    dialog.dialog-panel {
+        background-color: color-mix(
+            in srgb,
+            color-mix(
+                in srgb,
+                var(--color-surface) var(--color-surface-strength),
+                var(--background-color)
+            ) var(--dialog-surface-opacity),
+            transparent
+        );
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     dialog::backdrop {
         background-color: var(--dialog-backdrop-color);
+        backdrop-filter: var(--frosty-glass);
+        -webkit-backdrop-filter: var(--frosty-glass);
     }
 }

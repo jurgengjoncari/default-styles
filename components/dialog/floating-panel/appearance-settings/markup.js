@@ -13,7 +13,7 @@ export function createAppearancePanelElement() {
             aria-expanded="false" aria-label="Open appearance settings">
             <span class="floating-panel__icon" aria-hidden="true"></span>
         </button>
-        <div class="floating-panel__content settings-panel" id="default-styles-appearance-content"
+        <div class="floating-panel__content dialog-panel settings-panel" id="default-styles-appearance-content"
             data-floating-panel-content aria-hidden="true" inert>
             <div class="floating-panel__header" data-floating-panel-drag-handle aria-hidden="true">
                 <span>Appearance settings</span>

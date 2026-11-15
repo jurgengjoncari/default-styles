@@ -52,10 +52,6 @@
         max-height: calc(100vh - 2 * var(--size-md));
         padding: var(--size-sm);
         overflow-y: auto;
-        background-color: var(--color-surface-fill);
-        border-radius: var(--radius-surface);
-        box-shadow: var(--shadow-surface);
-        backdrop-filter: var(--frosty-glass);
         opacity: 0;
         pointer-events: none;
         transform: scale(0.8);

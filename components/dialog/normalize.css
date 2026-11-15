@@ -7,7 +7,6 @@
         display: block;
         position: fixed;
         margin: auto;
-        box-shadow: var(--shadow-surface);
         inset-block-start: 0;
         inset-block-end: 0;
         inset-inline-start: 0;

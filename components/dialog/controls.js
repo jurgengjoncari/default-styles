@@ -1,4 +1,21 @@
 (function () {
+    function moveAppearancePanelIntoDialog(dialog) {
+        const panel = document.querySelector('[data-default-styles-appearance]');
+        if (!panel || dialog.contains(panel)) {
+            return;
+        }
+
+        const originalParent = panel.parentNode;
+        const originalNextSibling = panel.nextSibling;
+        dialog.append(panel);
+
+        dialog.addEventListener('close', () => {
+            if (originalParent) {
+                originalParent.insertBefore(panel, originalNextSibling);
+            }
+        }, { once: true });
+    }
+
     function getDialog(element, selector) {
         const dialog = selector ? document.querySelector(selector) : element.closest('dialog');
         if (!(dialog instanceof HTMLDialogElement)) {
@@ -14,7 +31,9 @@
 
         const openControl = event.target.closest('[data-dialog-open]');
         if (openControl) {
-            getDialog(openControl, openControl.dataset.dialogOpen).showModal();
+            const dialog = getDialog(openControl, openControl.dataset.dialogOpen);
+            moveAppearancePanelIntoDialog(dialog);
+            dialog.showModal();
             return;
         }
 
