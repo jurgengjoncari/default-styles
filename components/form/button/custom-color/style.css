@@ -14,8 +14,9 @@
             color: var(--button-accessible-color);
         }
 
+        &.is-transparent,
         &.is-outline {
-            border-color: var(--button-accessible-color);
+            --button-border-color: var(--button-accessible-color);
         }
 
         &:disabled {

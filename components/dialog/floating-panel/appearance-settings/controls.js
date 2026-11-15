@@ -113,6 +113,13 @@ function updateCssVariable(control, panel, variable, unit) {
     setOutput(panel, control.id, value);
 }
 
+function updateControlBorder(control) {
+    root.style.setProperty(
+        '--border-control-width',
+        control.checked ? 'var(--border-width-thin)' : 'var(--border-width-none)'
+    );
+}
+
 function getRadiusTokenSize(token, rootFontSize) {
     const value = Number.parseFloat(token.value);
     return token.value.endsWith('em') || token.value.endsWith('rem')
@@ -152,6 +159,7 @@ function updateFontFamily(control) {
 
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
+    ['default-styles-control-border', updateControlBorder],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
     ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
     ['default-styles-control-shadow', (control, panel) => updateShadow(control, panel, 'control', 'offset')],
@@ -207,6 +215,11 @@ function initializePrimaryColor(panel) {
     control.value = getCssColorAsHex(root, '--primary-color', control.value);
     control.style.setProperty('--color-control-value', control.value);
     setOutput(panel, control.id, control.value);
+}
+
+function initializeControlBorder(panel) {
+    const control = panel.querySelector('#default-styles-control-border');
+    control.checked = getCssLengthInPixels(root, '--border-control-width', 0) > 0;
 }
 
 function initializeLengthControl(panel, controlId, property, fallback) {
@@ -309,6 +322,7 @@ export function bindAppearanceControls(panel) {
     panel.addEventListener('change', (event) => updateAppearance(panel, event));
 
     initializePrimaryColor(panel);
+    initializeControlBorder(panel);
     initializeRadiusControl(panel);
     initializeShadowControl(panel);
 

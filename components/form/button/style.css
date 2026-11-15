@@ -8,8 +8,11 @@
     input[type="reset"],
     input[type="submit"] {
         --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+        --button-background-color: var(--color-surface-fill);
         border-radius: var(--radius-control);
-        background-color: var(--color-surface-fill);
+        border: var(--border-control-width) solid var(--button-border-color, var(--button-background-color));
+        background-color: var(--button-background-color);
+        background-clip: padding-box;
         box-shadow: none;
         backdrop-filter: var(--frosty-glass);
         transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
@@ -17,20 +20,25 @@
         /* Hover States */
         &:not(:disabled):hover,
         &.is-hovered:not(:disabled) {
-            background-color: color-mix(in oklch, var(--color-surface-fill), var(--color-emphasis) var(--interaction-hover));
+            --button-background-color: color-mix(in oklch, var(--color-surface-fill), var(--color-emphasis) var(--interaction-hover));
+            background-color: var(--button-background-color);
+            border-color: var(--button-border-color, var(--button-background-color));
             box-shadow: var(--shadow-control);
         }
 
         /* Active States */
         &:not(:disabled):active,
         &.is-active:not(:disabled) {
-            background-color: color-mix(in oklch, var(--color-surface-fill), transparent var(--interaction-active));
+            --button-background-color: color-mix(in oklch, var(--color-surface-fill), transparent var(--interaction-active));
+            background-color: var(--button-background-color);
+            border-color: var(--button-border-color, var(--button-background-color));
             box-shadow: var(--shadow-control-inset);
         }
 
-        /* Outline Modifier */
+        /* Unfilled buttons use text color for their optional border. */
+        &.is-transparent,
         &.is-outline {
-            border: var(--border-width-thin) solid var(--color);
+            --button-border-color: var(--color);
         }
     }
 

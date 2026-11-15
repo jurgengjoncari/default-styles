@@ -6,6 +6,7 @@
 
         --radius-control: var(--radius-control-md);
         --radius-surface: var(--radius-surface-md);
+        --border-control-width: var(--border-width-thin);
 
         /* Shadows */
         --shadow-control-offset: var(--shadow-offset-none);

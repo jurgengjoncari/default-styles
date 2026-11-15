@@ -7,7 +7,7 @@
         grid-auto-flow: column;
         width: 100%;
         overflow: hidden;
-        border: var(--border-width-thin) solid var(--color-subtle);
+        border: var(--border-control-width) solid var(--color-subtle);
         border-radius: var(--radius-control);
         box-shadow: none;
         transition: box-shadow 0.2s ease;
@@ -30,7 +30,7 @@
     }
 
     .button-group__option + .button-group__option {
-        border-inline-start: var(--border-width-thin) solid var(--color-subtle);
+        border-inline-start: var(--border-control-width) solid var(--color-subtle);
     }
 
     .button-group__option input {
