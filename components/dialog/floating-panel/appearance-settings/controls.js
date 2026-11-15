@@ -15,6 +15,16 @@ const shadowTokens = Object.fromEntries(Object.entries(tokens.shadow).map(([dime
     dimension,
     Object.entries(options).map(([label, value]) => ({ label, value }))
 ]));
+const controlPaddingTokens = {
+    default: {
+        block: 'var(--size-xs)',
+        inline: 'var(--size-sm)'
+    },
+    expanded: {
+        block: 'var(--size-sm)',
+        inline: 'var(--size-md)'
+    }
+};
 
 /* Archived transparency cap experiment:
 function parseCssColor(color) {
@@ -120,6 +130,15 @@ function updateControlBorder(control) {
     );
 }
 
+function updateControlPadding(control) {
+    const tokensForSize = control.checked
+        ? controlPaddingTokens.expanded
+        : controlPaddingTokens.default;
+
+    root.style.setProperty('--padding-block', tokensForSize.block);
+    root.style.setProperty('--padding-inline', tokensForSize.inline);
+}
+
 function getRadiusTokenSize(token, rootFontSize) {
     const value = Number.parseFloat(token.value);
     return token.value.endsWith('em') || token.value.endsWith('rem')
@@ -160,6 +179,7 @@ function updateFontFamily(control) {
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-border', updateControlBorder],
+    ['default-styles-padding', updateControlPadding],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
     ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
     ['default-styles-control-shadow', (control, panel) => updateShadow(control, panel, 'control', 'offset')],
@@ -220,6 +240,13 @@ function initializePrimaryColor(panel) {
 function initializeControlBorder(panel) {
     const control = panel.querySelector('#default-styles-control-border');
     control.checked = getCssLengthInPixels(root, '--border-control-width', 0) > 0;
+}
+
+function initializeControlPadding(panel) {
+    const control = panel.querySelector('#default-styles-padding');
+    const currentBlock = getCssLengthInPixels(root, '--padding-block', 0);
+    const expandedBlock = getCssLengthInPixels(root, '--size-sm', 0);
+    control.checked = Math.abs(currentBlock - expandedBlock) < 0.01;
 }
 
 function initializeLengthControl(panel, controlId, property, fallback) {
@@ -323,6 +350,7 @@ export function bindAppearanceControls(panel) {
 
     initializePrimaryColor(panel);
     initializeControlBorder(panel);
+    initializeControlPadding(panel);
     initializeRadiusControl(panel);
     initializeShadowControl(panel);
 

@@ -4,7 +4,8 @@
         -webkit-appearance: auto;
         width: 100%;
         min-width: 0;
-        padding: var(--size-sm);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
         font: inherit;
     }
 }

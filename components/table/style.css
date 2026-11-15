@@ -14,7 +14,8 @@
 
     th,
     td {
-        padding: var(--size-sm);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
         border-color: var(--color-subtle);
     }
 }

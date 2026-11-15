@@ -87,6 +87,12 @@ export function createAppearancePanelElement() {
                     </label>
                 </div>
                 <div class="settings-panel__item">
+                    <label class="form-field form-field--toggle" for="default-styles-padding">
+                        <span class="form-field__label">Larger padding</span>
+                        <input id="default-styles-padding" type="checkbox">
+                    </label>
+                </div>
+                <div class="settings-panel__item">
                     <label class="form-field" for="default-styles-control-radius">
                         <span class="form-field__label">Control radius</span>
                         <input id="default-styles-control-radius" type="range"

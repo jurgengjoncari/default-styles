@@ -1,7 +1,8 @@
 @layer component {
     blockquote {
         border-left: var(--border-width-thicker) solid var(--color-subtle);
-        padding: var(--size-sm) var(--size-md);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
         color: var(--color-muted);
     }
 }

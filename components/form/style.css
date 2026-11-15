@@ -25,7 +25,8 @@
     textarea,
     .input,
     button {
-        padding-inline: var(--size-md);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
     }
 
     input[type="checkbox"],

@@ -1,4 +1,4 @@
-@layer shared {
+@layer accessibility {
     /* Shared form-control behavior and touch targets */
     button,
     input,
@@ -30,7 +30,8 @@
     textarea,
     output,
     button {
-        padding: var(--size-sm);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
     }
 
     input[type="checkbox"],
@@ -38,9 +39,7 @@
         min-height: auto;
         min-width: auto;
     }
-}
 
-@layer accessibility {
     :disabled,
     [readonly] {
         box-shadow: none;

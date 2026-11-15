@@ -2,7 +2,8 @@
     .error,
     [role="alert"] {
         border-left: var(--border-width-thicker) solid var(--red-text);
-        padding: var(--size-sm) var(--size-md);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
         margin: var(--size-md) 0;
         background-color: var(--red-bg);
         color: var(--red-text);

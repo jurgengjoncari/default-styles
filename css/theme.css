@@ -7,6 +7,8 @@
         --radius-control: var(--radius-control-md);
         --radius-surface: var(--radius-surface-md);
         --border-control-width: var(--border-width-thin);
+        --padding-block: var(--size-xs);
+        --padding-inline: var(--size-sm);
 
         /* Shadows */
         --shadow-control-offset: var(--shadow-offset-none);

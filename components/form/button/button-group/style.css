@@ -47,7 +47,8 @@
 
     .button-group__option > span {
         display: block;
-        padding: var(--size-xxs) var(--size-xs);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
     }
 
     .button-group[data-variant="primary"] input:checked + span {

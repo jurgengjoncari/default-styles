@@ -8,6 +8,7 @@
         -webkit-appearance: auto;
         min-width: 0;
         text-align: end;
-        padding: var(--size-xs) var(--size-sm);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
     }
 }
