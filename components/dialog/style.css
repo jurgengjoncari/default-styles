@@ -1,36 +1,27 @@
 @import "./normalize.css";
 @import "./floating-panel/style.css";
 
-
-
 @layer component {
     .dialog-panel {
         padding-block: var(--padding-surface-block);
         padding-inline: var(--padding-surface-inline);
-        background-color: var(--color-surface-fill);
-        border: var(--border-width-thin) solid var(--surface-border-color, transparent);
+        background-color: var(--surface-bg, var(--color-surface-fill));
+        border: var(--surface-border-width, 0) solid var(--surface-border-color, transparent);
         border-radius: var(--radius-surface);
-        box-shadow: var(--shadow-surface);
-        backdrop-filter: var(--frosty-glass);
+        box-shadow: var(--surface-shadow, none);
+        backdrop-filter: var(--surface-backdrop-filter, none);
+        -webkit-backdrop-filter: var(--surface-backdrop-filter, none);
     }
 
     dialog.dialog-panel {
-        background-color: color-mix(
-            in srgb,
-            color-mix(
-                in srgb,
-                var(--color-surface) var(--color-surface-strength),
-                var(--background-color)
-            ) var(--dialog-surface-opacity),
-            transparent
-        );
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+        background-color: var(--surface-bg, var(--color-surface-fill));
+        backdrop-filter: var(--surface-backdrop-filter, none);
+        -webkit-backdrop-filter: var(--surface-backdrop-filter, none);
     }
 
     dialog::backdrop {
         background-color: var(--dialog-backdrop-color);
-        backdrop-filter: var(--frosty-glass);
-        -webkit-backdrop-filter: var(--frosty-glass);
+        backdrop-filter: var(--surface-backdrop-filter, none);
+        -webkit-backdrop-filter: var(--surface-backdrop-filter, none);
     }
 }

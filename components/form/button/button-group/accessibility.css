@@ -1,7 +1,8 @@
 @layer accessibility {
     .button-group__option:focus-within {
-        outline: var(--border-width-thick) solid var(--outline-color);
-        outline-offset: var(--size-3xs);
+        outline: var(--focus-outline, none);
+        outline-offset: var(--focus-outline-offset, var(--size-3xs));
+        box-shadow: var(--focus-shadow, none);
         z-index: 1;
     }
 }

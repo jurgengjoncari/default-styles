@@ -18,9 +18,11 @@
         --radius-surface-xxl: 4.25rem;
 
         --border-width-none: 0;
-        --border-width-thin: 0.0625rem;
-        --border-width-thick: 0.125rem;
-        --border-width-thicker: 0.25rem;
+        --border-width-hairline: 0.5px;
+        --border-width-thin: 0.5px;
+        --border-width-regular: 0.0625rem; /* 1px */
+        --border-width-thick: 0.125rem; /* 2px */
+        --border-width-thicker: 0.25rem; /* 4px */
 
         --border-style-solid: solid;
         --border-style-dotted: dotted;

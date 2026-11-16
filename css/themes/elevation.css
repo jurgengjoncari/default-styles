@@ -1,0 +1,57 @@
+@layer theme {
+    /*
+     * Elevation Theme Style:
+     * Emulates optical physics where elevation corresponds to distance from the canvas
+     * towards the viewer on a digital display.
+     *
+     * - Level -1: Recessed / Inset (inputs, pressed controls)
+     * - Level  0: Canvas (off-white / off-black background)
+     * - Level  1: Resting control surface (buttons, cards)
+     * - Level  2: Lifted / Hover (hovered controls)
+     * - Level  3: High elevation (dialogs, floating panels)
+     */
+    :root:not([data-theme-style]),
+    :root[data-theme-style~="elevation"] {
+        --background-color: var(--surface-elevation-0);
+        --input-background-color: var(--surface-elevation--1);
+
+        /* Control surface elevation */
+        --control-bg: var(--surface-elevation-1);
+        --control-bg-hover: var(--surface-elevation-2);
+        --control-bg-active: var(--surface-elevation-pressed);
+
+        /* Control shadows */
+        --control-shadow: var(--shadow-elevation-1);
+        --control-shadow-hover: var(--shadow-elevation-2);
+        --control-shadow-active: var(--shadow-elevation--1);
+        --control-shadow-inset: var(--shadow-elevation--1);
+
+        /* Tactile depression on press */
+        --control-transform-active: scale(0.96);
+
+        /* Dialog & surface elevation */
+        --surface-bg: var(--surface-elevation-3);
+        --surface-shadow: var(--shadow-elevation-3);
+
+        /* Glassmorphism optical diffusion */
+        --control-backdrop-filter: var(--frosty-glass);
+        --surface-backdrop-filter: var(--frosty-glass);
+
+        /* Focus ambient glow */
+        --focus-shadow: var(--shadow-elevation-focus);
+    }
+
+    :root[data-theme="dark"]:not([data-theme-style]),
+    :root[data-theme="dark"][data-theme-style~="elevation"] {
+        --background-color: var(--surface-elevation-0);
+        --input-background-color: var(--surface-elevation--1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]):not([data-theme-style]),
+        :root:not([data-theme])[data-theme-style~="elevation"] {
+            --background-color: var(--surface-elevation-0);
+            --input-background-color: var(--surface-elevation--1);
+        }
+    }
+}

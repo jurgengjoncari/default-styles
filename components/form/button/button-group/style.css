@@ -7,17 +7,17 @@
         grid-auto-flow: column;
         width: 100%;
         overflow: hidden;
-        border: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
+        border: var(--control-border-width, 0) solid var(--control-border-color, transparent);
         border-radius: var(--radius-control);
-        box-shadow: var(--shadow-control);
+        box-shadow: var(--control-shadow, none);
         transition: box-shadow 0.2s ease;
 
         &:hover {
-            box-shadow: var(--shadow-control-hover);
+            box-shadow: var(--control-shadow-hover, none);
         }
 
         &:has(input:active) {
-            box-shadow: var(--shadow-control-inset);
+            box-shadow: var(--control-shadow-active, none);
         }
     }
 
@@ -30,7 +30,7 @@
     }
 
     .button-group__option + .button-group__option {
-        border-inline-start: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
+        border-inline-start: var(--control-border-width, 0) solid var(--control-border-color, transparent);
     }
 
     .button-group__option input {

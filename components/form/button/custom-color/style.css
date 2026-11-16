@@ -1,17 +1,53 @@
 @layer variant {
     .button--custom-color {
-        transition: background-color 0.2s ease, color 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.12s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.2s ease;
 
         &.is-filled {
-            --color-surface: var(--button-bg);
-            --color-surface-strength: 100%;
+            /* Lower the resting light/saturation slightly so hover can reach full brilliance */
+            --current-button-bg: color-mix(in oklch, var(--button-bg) 85%, var(--background-color));
+            background-color: var(--current-button-bg);
             color: var(--button-text);
+
+            &:not(:disabled):hover,
+            &.is-hovered:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) 15%);
+            }
+
+            &:not(:disabled):active,
+            &.is-active:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) 15%);
+            }
+        }
+
+        &:not(.is-filled):not(.is-transparent):not(.is-outline) {
+            /* Default button with custom color tint */
+            color: var(--button-accessible-color, var(--color));
+
+            &:not(:disabled):hover,
+            &.is-hovered:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) 80%);
+            }
+
+            &:not(:disabled):active,
+            &.is-active:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) 10%);
+            }
         }
 
         &.is-transparent,
         &.is-outline {
-            --color-emphasis: var(--button-bg);
             color: var(--button-accessible-color);
+            border-color: var(--button-bg);
+
+            &:not(:disabled):hover,
+            &.is-hovered:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg) 12%, transparent);
+            }
+
+            &:not(:disabled):active,
+            &.is-active:not(:disabled) {
+                background-color: color-mix(in oklch, var(--button-bg) 24%, transparent);
+            }
         }
 
         &:disabled {

@@ -132,9 +132,9 @@ function updateControlBorder(control) {
 
 function updateThemeStyle(control, panel) {
     const themeStyleControls = [
-        panel.querySelector('#default-styles-theme-depth'),
+        panel.querySelector('#default-styles-theme-elevation'),
         panel.querySelector('#default-styles-theme-outline')
-    ];
+    ].filter(Boolean);
     let activeControls = themeStyleControls.filter((themeStyleControl) =>
         themeStyleControl.checked
     );
@@ -145,7 +145,7 @@ function updateThemeStyle(control, panel) {
     }
 
     root.setAttribute('data-theme-style', activeControls.map((themeStyleControl) =>
-        themeStyleControl.id.endsWith('-depth') ? 'depth' : 'outline'
+        themeStyleControl.id.endsWith('-elevation') ? 'elevation' : 'outline'
     ).join(' '));
 
     themeStyleControls.forEach((themeStyleControl) => {
@@ -202,7 +202,7 @@ function updateFontFamily(control) {
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-border', updateControlBorder],
-    ['default-styles-theme-depth', updateThemeStyle],
+    ['default-styles-theme-elevation', updateThemeStyle],
     ['default-styles-theme-outline', updateThemeStyle],
     ['default-styles-padding', updateControlPadding],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
@@ -370,25 +370,27 @@ function initializeTestingControls(panel) {
 }
 
 function initializeThemeStyle(panel) {
-    const availableThemeStyles = new Set(['depth', 'outline']);
+    const availableThemeStyles = new Set(['elevation', 'outline']);
     const configuredThemeStyles = root.getAttribute('data-theme-style');
     const activeThemeStyles = new Set(
         configuredThemeStyles
             ? configuredThemeStyles.split(/\s+/).filter((themeStyle) =>
                 availableThemeStyles.has(themeStyle)
             )
-            : ['depth']
+            : ['elevation']
     );
     if (activeThemeStyles.size === 0) {
-        activeThemeStyles.add('depth');
+        activeThemeStyles.add('elevation');
     }
 
-    panel.querySelector('#default-styles-theme-depth').checked =
-        activeThemeStyles.has('depth');
+    const elevationControl = panel.querySelector('#default-styles-theme-elevation');
+    if (elevationControl) {
+        elevationControl.checked = activeThemeStyles.has('elevation');
+    }
     panel.querySelector('#default-styles-theme-outline').checked =
         activeThemeStyles.has('outline');
     updateThemeStyle(
-        panel.querySelector('#default-styles-theme-depth'),
+        elevationControl,
         panel
     );
 }

@@ -1,1 +1,22 @@
 @import "./normalize.css";
+
+@layer component {
+    details {
+        border: var(--surface-border-width, 0) solid var(--surface-border-color, transparent);
+        border-radius: var(--radius-control);
+        background-color: var(--control-bg, transparent);
+        box-shadow: var(--control-shadow, none);
+        padding-block: var(--padding-block);
+        padding-inline: var(--padding-inline);
+        transition: box-shadow 0.2s ease, background-color 0.2s ease;
+
+        &[open] {
+            box-shadow: var(--surface-shadow, none);
+        }
+
+        summary {
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+}

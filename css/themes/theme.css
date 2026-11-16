@@ -13,64 +13,94 @@
         --padding-surface-block: var(--size-lg);
         --padding-surface-inline: var(--size-lg);
 
-        /* Shadows */
+        /* Baseline Control and Surface Defaults (Flat / unlayered fallbacks) */
+        --control-border-width: 0;
+        --control-border-color: transparent;
+        --surface-border-width: 0;
+        --surface-border-color: transparent;
+        --control-shadow: none;
+        --control-shadow-hover: none;
+        --control-shadow-active: none;
+        --control-shadow-inset: none;
+        --surface-shadow: none;
+        --control-backdrop-filter: none;
+        --surface-backdrop-filter: none;
+        --control-transform: scale(1);
+        --control-transform-hover: scale(1);
+        --control-transform-active: scale(0.96);
+        --focus-outline: none;
+        --focus-outline-offset: var(--size-3xs);
+        --focus-shadow: none;
+
+        /* Shadows (Dynamic token mappings for customizer controls - isotropic/no offset) */
         --shadow-control-offset: var(--shadow-offset-none);
         --shadow-control-blur: var(--blur-xs);
         --shadow-control-spread: var(--shadow-spread-xs);
         --shadow-control:
-            var(--shadow-control-offset) /* offset-x: horizontal */
-            var(--shadow-control-offset) /* offset-y: vertical */
-            var(--shadow-control-blur) /* softness */
-            var(--shadow-control-spread) /* size expansion */
-            var(--shadow-color) /* shadow color */;
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-control-spread)
+            var(--shadow-color);
         --shadow-control-hover:
-            var(--shadow-control-hover-offset) /* offset-x: horizontal */
-            var(--shadow-control-hover-offset) /* offset-y: vertical */
-            var(--shadow-control-hover-blur) /* softness */
-            var(--shadow-control-hover-spread) /* size expansion */
-            var(--shadow-color) /* shadow color */;
+            0 0
+            var(--shadow-control-hover-blur)
+            var(--shadow-control-hover-spread)
+            var(--shadow-color);
         --shadow-control-unfilled-hover:
-            var(--shadow-control-offset) /* offset-x: horizontal */
-            var(--shadow-control-offset) /* offset-y: vertical */
-            var(--shadow-control-blur) /* softness */
-            var(--shadow-spread-none) /* smaller hover spread */
-            var(--shadow-color) /* shadow color */;
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-spread-none)
+            var(--shadow-color);
         --shadow-control-inset:
-            inset /* draw inside the border */
-            var(--shadow-control-offset) /* offset-x: horizontal */
-            var(--shadow-control-offset) /* offset-y: vertical */
-            var(--shadow-control-blur) /* softness */
-            var(--shadow-control-spread) /* size expansion */
-            var(--shadow-color) /* shadow color */;
+            inset
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-control-spread)
+            var(--shadow-color);
         --shadow-control-focus:
-            var(--shadow-offset-none)
-            var(--shadow-offset-none)
+            0 0
             var(--blur-lg)
             var(--shadow-spread-none)
             var(--color-gray);
         --shadow-control-unfilled-active:
-            inset /* draw inside the border */
-            var(--shadow-control-offset) /* offset-x: horizontal */
-            var(--shadow-control-offset) /* offset-y: vertical */
-            var(--shadow-control-blur) /* softness */
-            var(--shadow-spread-none) /* smaller pressed spread */
-            var(--shadow-color) /* shadow color */;
+            inset
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-spread-none)
+            var(--shadow-color);
 
         --shadow-surface-offset: var(--shadow-offset-none);
         --shadow-surface-blur: var(--blur-lg);
         --shadow-surface-spread: var(--shadow-spread-sm);
         --shadow-surface:
-            var(--shadow-surface-offset) /* offset-x: centered horizontally */
-            var(--shadow-surface-offset) /* offset-y: centered vertically */
-            var(--shadow-surface-blur) /* softness */
-            var(--shadow-surface-spread) /* size expansion */
-            var(--shadow-color-strong) /* stronger shadow color */;
+            0 0
+            var(--shadow-surface-blur)
+            var(--shadow-surface-spread)
+            var(--shadow-color-strong);
 
         --frosty-glass: blur(1.3125rem);
 
-        /* Text track */
-        /* Transparency experiment: --surface-strength-base: 10%; */
-        --background-color: var(--color-white);
+        /* Canvas & Physics-based Elevation Surfaces (Light mode) */
+        --background-color: var(--color-off-white);
+        --surface-elevation-0: var(--color-off-white);
+        --surface-elevation--1: var(--color-neutral-100);
+        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 35%);
+        --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 25%);
+        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+        --surface-elevation-pressed: var(--surface-elevation--1);
+
+        --control-bg: var(--surface-elevation-1);
+        --control-bg-hover: var(--surface-elevation-2);
+        --control-bg-active: var(--surface-elevation-pressed);
+        --input-background-color: var(--surface-elevation--1);
+        --surface-bg: var(--surface-elevation-3);
+
+        /* Balanced filled surface (not harsh pitch black) */
+        --control-filled-bg: color-mix(in oklch, var(--color-neutral-900) 75%, var(--background-color));
+        --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
+        --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) 15%);
+        --filled-text-color: var(--color-white);
+
         --color: var(--color-black-alpha-70);
         --color-surface: var(--color-black);
         --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
@@ -120,8 +150,26 @@
         &[data-theme="dark"] {
             color-scheme: dark;
 
-            /* Text track */
-            --background-color: var(--color-black);
+            /* Canvas & Physics-based Elevation Surfaces (Dark mode) */
+            --background-color: var(--color-off-black);
+            --surface-elevation-0: var(--color-off-black);
+            --surface-elevation--1: var(--color-neutral-950);
+            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
+            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
+            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --surface-elevation-pressed: var(--surface-elevation--1);
+
+            --control-bg: var(--surface-elevation-1);
+            --control-bg-hover: var(--surface-elevation-2);
+            --control-bg-active: var(--surface-elevation-pressed);
+            --input-background-color: var(--surface-elevation--1);
+            --surface-bg: var(--surface-elevation-3);
+
+            --control-filled-bg: color-mix(in oklch, var(--color-white) 80%, var(--background-color));
+            --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
+            --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) 15%);
+            --filled-text-color: var(--color-black);
+
             --color: var(--color-white-alpha-70);
             --color-surface: var(--color-white);
             --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
@@ -174,7 +222,25 @@
         :root:not([data-theme]) {
             color-scheme: dark;
 
-            --background-color: var(--color-black);
+            --background-color: var(--color-off-black);
+            --surface-elevation-0: var(--color-off-black);
+            --surface-elevation--1: var(--color-neutral-950);
+            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
+            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
+            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --surface-elevation-pressed: var(--surface-elevation--1);
+
+            --control-bg: var(--surface-elevation-1);
+            --control-bg-hover: var(--surface-elevation-2);
+            --control-bg-active: var(--surface-elevation-pressed);
+            --input-background-color: var(--surface-elevation--1);
+            --surface-bg: var(--surface-elevation-3);
+
+            --control-filled-bg: color-mix(in oklch, var(--color-white) 80%, var(--background-color));
+            --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
+            --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) 15%);
+            --filled-text-color: var(--color-black);
+
             --color: var(--color-white-alpha-70);
             --color-surface: var(--color-white);
             --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
@@ -186,7 +252,6 @@
             --shadow-color-strong: var(--color-black-alpha-70);
             --dialog-backdrop-color: var(--color-black-alpha-80);
 
-            /* Accent text (WCAG AA 4.5:1+ on black) */
             --blue-text: var(--primary-text-dark);
             --cyan-text: var(--color-cyan-400);
             --green-text: var(--color-green-400);
@@ -194,7 +259,6 @@
             --red-text: var(--color-red-300);
             --magenta-text: var(--color-magenta-400);
 
-            /* Accent backgrounds (dark tints, pair with light text) */
             --blue-bg: color-mix(in srgb, var(--primary-color) 25%, var(--color-black));
             --cyan-bg: var(--color-cyan-950);
             --green-bg: var(--color-green-950);

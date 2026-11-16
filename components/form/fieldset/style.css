@@ -1,19 +1,20 @@
 @import "./normalize.css";
 
-
-
 @layer component {
-    /* fieldset {
-        border-width: var(--border-width-thin);
-        border-style: solid;
-        border-color: var(--color-subtle);
+    fieldset {
+        border: var(--surface-border-width, 0) solid var(--surface-border-color, transparent);
         border-radius: var(--radius-surface);
-    } */
+        padding-block: var(--padding-surface-block);
+        padding-inline: var(--padding-surface-inline);
+        box-shadow: var(--surface-shadow, none);
+        background-color: var(--surface-bg, transparent);
+    }
 
     legend {
         color: var(--color);
         font-size: var(--font-size-md);
         font-weight: var(--font-weight-bold);
         line-height: var(--line-height-tight);
+        padding-inline: var(--size-xs);
     }
 }

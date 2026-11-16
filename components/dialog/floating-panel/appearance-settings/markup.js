@@ -49,9 +49,9 @@ export function createAppearancePanelElement() {
                         <div class="form-field__row">
                             <span class="form-field__label" aria-hidden="true">Theme style</span>
                             <div>
-                                <label class="form-field form-field--toggle" for="default-styles-theme-depth">
-                                    <span class="form-field__label">Depth</span>
-                                    <input id="default-styles-theme-depth" type="checkbox"
+                                <label class="form-field form-field--toggle" for="default-styles-theme-elevation">
+                                    <span class="form-field__label">Elevation</span>
+                                    <input id="default-styles-theme-elevation" type="checkbox"
                                         aria-describedby="default-styles-theme-style-help">
                                 </label>
                                 <label class="form-field form-field--toggle" for="default-styles-theme-outline">

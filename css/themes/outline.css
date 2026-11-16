@@ -1,29 +1,71 @@
 @layer theme {
+    /*
+     * Outline Theme Style:
+     * Focuses on structural line definition, crisp borders, and geometric tactile micro-interactions.
+     */
     :root[data-theme-style~="outline"] {
+        --control-border-width: var(--border-control-width, var(--border-width-thin));
         --control-border-color: var(--color-subtle);
+        --surface-border-width: var(--border-width-thin);
         --surface-border-color: var(--color-subtle);
-        --button-border-color-default: var(--color-subtle);
+
+        /* Focus outline indicator */
+        --focus-outline: var(--border-width-thick) solid var(--outline-color);
+        --focus-outline-offset: var(--size-3xs);
+
+        /* Physical tactile feedback via geometric scale */
+        --control-transform: scale(1);
+        --control-transform-hover: scale(1.04);
+        --control-transform-active: scale(0.95);
     }
 
-    :root[data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+    /* Pure Outline Mode (without elevation): stark white/black canvas and opaque surfaces */
+    :root[data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
         --background-color: var(--color-white);
-        --button-background-color-default: var(--background-color);
-        --input-background-color: var(--background-color);
-        --shadow-control: none;
-        --shadow-control-hover: none;
-        --shadow-control-unfilled-hover: none;
-        --shadow-control-inset: none;
-        --shadow-control-unfilled-active: none;
-        --shadow-surface: none;
+        --surface-elevation-0: var(--color-white);
+        --surface-elevation--1: var(--color-white);
+        --surface-elevation-1: var(--color-white);
+        --surface-elevation-2: var(--color-white);
+        --surface-elevation-3: var(--color-white);
+        --surface-elevation-pressed: var(--color-white);
+
+        --control-bg: var(--color-white);
+        --input-background-color: var(--color-white);
+        --surface-bg: var(--color-white);
+
+        /* Opaque dialogs and controls — no glassmorphism */
+        --control-backdrop-filter: none;
+        --surface-backdrop-filter: none;
+        --frosty-glass: none;
     }
 
-    :root[data-theme="dark"][data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+    :root[data-theme="dark"][data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
         --background-color: var(--color-black);
+        --surface-elevation-0: var(--color-black);
+        --surface-elevation--1: var(--color-black);
+        --surface-elevation-1: var(--color-black);
+        --surface-elevation-2: var(--color-black);
+        --surface-elevation-3: var(--color-black);
+        --surface-elevation-pressed: var(--color-black);
+
+        --control-bg: var(--color-black);
+        --input-background-color: var(--color-black);
+        --surface-bg: var(--color-black);
     }
 
     @media (prefers-color-scheme: dark) {
-        :root:not([data-theme])[data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+        :root:not([data-theme])[data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
             --background-color: var(--color-black);
+            --surface-elevation-0: var(--color-black);
+            --surface-elevation--1: var(--color-black);
+            --surface-elevation-1: var(--color-black);
+            --surface-elevation-2: var(--color-black);
+            --surface-elevation-3: var(--color-black);
+            --surface-elevation-pressed: var(--color-black);
+
+            --control-bg: var(--color-black);
+            --input-background-color: var(--color-black);
+            --surface-bg: var(--color-black);
         }
     }
 }

@@ -34,22 +34,18 @@
         color: var(--background-color);
     }
 
-    /* Keyboard focus visibility */
-    :focus-visible,
-    .is-focused {
-        outline: var(--border-width-thick) solid var(--outline-color);
-        outline-offset: var(--size-3xs);
+    /* Keyboard focus visibility — composable union of outline and elevation glow */
+    :focus-visible:not(:invalid),
+    .is-focused:not(:invalid) {
+        outline: var(--focus-outline, var(--border-width-thick) solid var(--outline-color));
+        outline-offset: var(--focus-outline-offset, var(--size-3xs));
+        box-shadow: var(--focus-shadow, none);
     }
 
-    :root:not([data-theme-style~="outline"]) :focus-visible:not(:invalid),
-    :root:not([data-theme-style~="outline"]) .is-focused:not(:invalid) {
-        outline: none;
-        box-shadow: var(--shadow-control-focus);
-    }
-
-    :root:not([data-theme-style~="outline"]) .button-group__option:focus-within {
-        outline: none;
-        box-shadow: var(--shadow-control-focus);
+    .button-group__option:focus-within {
+        outline: var(--focus-outline, none);
+        outline-offset: var(--focus-outline-offset, var(--size-3xs));
+        box-shadow: var(--focus-shadow, none);
     }
 
     /* Test WCAG text-spacing overrides against page content. */

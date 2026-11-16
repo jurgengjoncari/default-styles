@@ -14,11 +14,11 @@
     select,
     textarea,
     .input {
-        border: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
+        border: var(--control-border-width, 0) solid var(--control-border-color, transparent);
         border-radius: var(--radius-control);
         background-color: var(--input-background-color, transparent);
-        box-shadow: var(--shadow-control-inset);
-        transition: border-color 0.2s ease;
+        box-shadow: var(--control-shadow-inset, none);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="number"]):not([type="range"]),
@@ -31,7 +31,20 @@
     }
 
     input[type="checkbox"],
-    input[type="radio"],
+    input[type="radio"] {
+        accent-color: var(--primary-color);
+        cursor: pointer;
+        transition: transform 0.1s ease;
+
+        &:not(:disabled):hover {
+            transform: var(--control-transform-hover, scale(1.08));
+        }
+
+        &:not(:disabled):active {
+            transform: var(--control-transform-active, scale(0.92));
+        }
+    }
+
     input[type="range"],
     meter,
     progress {
