@@ -3,7 +3,9 @@
 @import "./reset.css";
 @import "./normalize.css";
 @import "./tokens/tokens.css";
-@import "./theme.css";
+@import "./themes/theme.css";
+@import "./themes/depth.css";
+@import "./themes/outline.css";
 
 @import "../components/typography/style.css";
 @import "../components/list/style.css";

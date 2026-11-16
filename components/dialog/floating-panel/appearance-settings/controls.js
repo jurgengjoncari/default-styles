@@ -130,6 +130,29 @@ function updateControlBorder(control) {
     );
 }
 
+function updateThemeStyle(control, panel) {
+    const themeStyleControls = [
+        panel.querySelector('#default-styles-theme-depth'),
+        panel.querySelector('#default-styles-theme-outline')
+    ];
+    let activeControls = themeStyleControls.filter((themeStyleControl) =>
+        themeStyleControl.checked
+    );
+
+    if (activeControls.length === 0) {
+        control.checked = true;
+        activeControls = [control];
+    }
+
+    root.setAttribute('data-theme-style', activeControls.map((themeStyleControl) =>
+        themeStyleControl.id.endsWith('-depth') ? 'depth' : 'outline'
+    ).join(' '));
+
+    themeStyleControls.forEach((themeStyleControl) => {
+        themeStyleControl.disabled = themeStyleControl.checked && activeControls.length === 1;
+    });
+}
+
 function updateControlPadding(control) {
     const tokensForSize = control.checked
         ? controlPaddingTokens.expanded
@@ -179,6 +202,8 @@ function updateFontFamily(control) {
 const controlHandlers = new Map([
     ['default-styles-primary-color', updatePrimaryColor],
     ['default-styles-control-border', updateControlBorder],
+    ['default-styles-theme-depth', updateThemeStyle],
+    ['default-styles-theme-outline', updateThemeStyle],
     ['default-styles-padding', updateControlPadding],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
     ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
@@ -344,12 +369,37 @@ function initializeTestingControls(panel) {
         root.getAttribute('data-default-styles-contrast') === 'more';
 }
 
+function initializeThemeStyle(panel) {
+    const availableThemeStyles = new Set(['depth', 'outline']);
+    const configuredThemeStyles = root.getAttribute('data-theme-style');
+    const activeThemeStyles = new Set(
+        configuredThemeStyles
+            ? configuredThemeStyles.split(/\s+/).filter((themeStyle) =>
+                availableThemeStyles.has(themeStyle)
+            )
+            : ['depth']
+    );
+    if (activeThemeStyles.size === 0) {
+        activeThemeStyles.add('depth');
+    }
+
+    panel.querySelector('#default-styles-theme-depth').checked =
+        activeThemeStyles.has('depth');
+    panel.querySelector('#default-styles-theme-outline').checked =
+        activeThemeStyles.has('outline');
+    updateThemeStyle(
+        panel.querySelector('#default-styles-theme-depth'),
+        panel
+    );
+}
+
 export function bindAppearanceControls(panel) {
     panel.addEventListener('input', (event) => updateAppearance(panel, event));
     panel.addEventListener('change', (event) => updateAppearance(panel, event));
 
     initializePrimaryColor(panel);
     initializeControlBorder(panel);
+    initializeThemeStyle(panel);
     initializeControlPadding(panel);
     initializeRadiusControl(panel);
     initializeShadowControl(panel);

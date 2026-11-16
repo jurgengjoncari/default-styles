@@ -23,12 +23,37 @@
             var(--shadow-control-blur) /* softness */
             var(--shadow-control-spread) /* size expansion */
             var(--shadow-color) /* shadow color */;
+        --shadow-control-hover:
+            var(--shadow-control-hover-offset) /* offset-x: horizontal */
+            var(--shadow-control-hover-offset) /* offset-y: vertical */
+            var(--shadow-control-hover-blur) /* softness */
+            var(--shadow-control-hover-spread) /* size expansion */
+            var(--shadow-color) /* shadow color */;
+        --shadow-control-unfilled-hover:
+            var(--shadow-control-offset) /* offset-x: horizontal */
+            var(--shadow-control-offset) /* offset-y: vertical */
+            var(--shadow-control-blur) /* softness */
+            var(--shadow-spread-none) /* smaller hover spread */
+            var(--shadow-color) /* shadow color */;
         --shadow-control-inset:
             inset /* draw inside the border */
             var(--shadow-control-offset) /* offset-x: horizontal */
             var(--shadow-control-offset) /* offset-y: vertical */
             var(--shadow-control-blur) /* softness */
             var(--shadow-control-spread) /* size expansion */
+            var(--shadow-color) /* shadow color */;
+        --shadow-control-focus:
+            var(--shadow-offset-none)
+            var(--shadow-offset-none)
+            var(--blur-lg)
+            var(--shadow-spread-none)
+            var(--color-gray);
+        --shadow-control-unfilled-active:
+            inset /* draw inside the border */
+            var(--shadow-control-offset) /* offset-x: horizontal */
+            var(--shadow-control-offset) /* offset-y: vertical */
+            var(--shadow-control-blur) /* softness */
+            var(--shadow-spread-none) /* smaller pressed spread */
             var(--shadow-color) /* shadow color */;
 
         --shadow-surface-offset: var(--shadow-offset-none);

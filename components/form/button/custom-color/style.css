@@ -14,11 +14,6 @@
             color: var(--button-accessible-color);
         }
 
-        &.is-transparent,
-        &.is-outline {
-            --button-border-color: var(--button-accessible-color);
-        }
-
         &:disabled {
             opacity: 0.55;
         }

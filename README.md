@@ -22,14 +22,14 @@ Import the panel once from your browser-side JavaScript entry point:
 
     import "@jurgengjoncari/default-styles/appearance-settings";
 
-The panel can switch between system, light, and dark themes for testing; change the primary color, control and surface radii, shadow offsets, blur, and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+The panel can switch between system, light, and dark color themes and between the depth and outline theme styles for testing; change the primary color, control and surface radii, shadow offsets, blur, and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. At least one theme style must remain enabled, and both can be enabled together. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
-The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference.
+The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference and uses the depth theme style by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference. Set `data-theme-style="outline"` for the outline style, `data-theme-style="depth"` for depth, or `data-theme-style="depth outline"` to combine them. The depth theme uses softly elevated surfaces, recessed inputs, and shadow-based focus states; Outline uses visible borders, focus outlines, and no shadows. The theme style is independent of the light/dark color theme.
 
 ## Project structure
 
 - css/style.css is the complete stylesheet entry point used by the demo and package.
-- App-wide tokens, reset, normalization, theme, accessibility, and print rules live at the root of css/. The body defaults are in css/style.css.
+- App-wide tokens, reset, normalization, accessibility, and print rules live at the root of css/. The shared theme and the depth and outline theme styles live in css/themes/. The body defaults are in css/style.css.
 - Component folders live under components/. Each component keeps its style.css with a separate normalize.css when it needs component-specific normalization. A component may also have an accessibility.css for rules specific to that component. Typography is grouped under components/typography/, with heading, link, code, blockquote, and separator subcomponents. Cascade layers order reset, normalization, tokens, theme, base, shared, component, accessibility, and print. App/demo styles remain unlayered so they can override the library.
 - Related components are nested by context: button styles are under components/form/button/, and the floating panel and appearance settings are under components/dialog/.
 - index.css forwards to css/style.css to preserve the package stylesheet entry point.
@@ -59,6 +59,19 @@ Custom properties used by the styles (including component and demo properties), 
   - `color-muted`
   - `outline-color`
   - `dialog-backdrop-color`
+
+</blockquote>
+</details>
+<details>
+<summary>Neutral palette</summary>
+
+<blockquote>
+
+  - `color-neutral-50`
+  - `color-neutral-100`
+  - `color-neutral-600`
+  - `color-neutral-900`
+  - `color-neutral-950`
 
 </blockquote>
 </details>
@@ -311,6 +324,9 @@ Custom properties used by the styles (including component and demo properties), 
   - `shadow-offset-sm`
   - `shadow-offset-md`
   - `shadow-offset-lg`
+  - `shadow-control-hover-offset`
+  - `shadow-control-hover-blur`
+  - `shadow-control-hover-spread`
   - `shadow-spread-none`
   - `shadow-spread-xs`
   - `shadow-spread-sm`
@@ -327,7 +343,10 @@ Custom properties used by the styles (including component and demo properties), 
   - `shadow-control-blur`
   - `shadow-control-spread`
   - `shadow-control`
+  - `shadow-control-hover`
+  - `shadow-control-unfilled-hover`
   - `shadow-control-inset`
+  - `shadow-control-unfilled-active`
   - `shadow-surface-offset`
   - `shadow-surface-blur`
   - `shadow-surface-spread`

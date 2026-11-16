@@ -8,37 +8,63 @@
     input[type="reset"],
     input[type="submit"] {
         --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-        --button-background-color: var(--color-surface-fill);
+        --button-background-color: var(--button-background-color-default, var(--color-surface-fill));
         border-radius: var(--radius-control);
-        border: var(--border-control-width) solid var(--button-border-color, var(--button-background-color));
+        border: var(--border-control-width) solid var(
+            --button-border-color,
+            var(--button-border-color-default, var(--button-background-color))
+        );
         background-color: var(--button-background-color);
         background-clip: padding-box;
-        box-shadow: none;
+        box-shadow: var(--button-shadow, var(--shadow-control));
         backdrop-filter: var(--frosty-glass);
         transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 
         /* Hover States */
         &:not(:disabled):hover,
         &.is-hovered:not(:disabled) {
-            --button-background-color: color-mix(in oklch, var(--color-surface-fill), var(--color-emphasis) var(--interaction-hover));
+            --button-background-color: color-mix(in oklch, var(--button-background-color-default, var(--color-surface-fill)), var(--color-white) var(--interaction-hover));
             background-color: var(--button-background-color);
-            border-color: var(--button-border-color, var(--button-background-color));
-            box-shadow: var(--shadow-control);
+            border-color: var(--button-border-color, var(--button-border-color-default, var(--button-background-color)));
+            box-shadow: var(--button-shadow-hover, var(--shadow-control-hover));
+        }
+
+        &.is-transparent:not(:disabled):hover,
+        &.is-transparent.is-hovered:not(:disabled),
+        &.is-outline:not(:disabled):hover,
+        &.is-outline.is-hovered:not(:disabled) {
+            --button-background-color: var(--button-background-color-default);
+            background-color: var(--button-background-color);
         }
 
         /* Active States */
         &:not(:disabled):active,
         &.is-active:not(:disabled) {
-            --button-background-color: color-mix(in oklch, var(--color-surface-fill), transparent var(--interaction-active));
+            --button-background-color: color-mix(in oklch, var(--button-background-color-default, var(--color-surface-fill)), var(--color-emphasis) var(--interaction-active));
             background-color: var(--button-background-color);
-            border-color: var(--button-border-color, var(--button-background-color));
-            box-shadow: var(--shadow-control-inset);
+            border-color: var(--button-border-color, var(--button-border-color-default, var(--button-background-color)));
+            box-shadow: var(--button-shadow-active, var(--shadow-control-inset));
         }
 
-        /* Unfilled buttons use text color for their optional border. */
+        &.is-transparent:not(:disabled):active,
+        &.is-outline:not(:disabled):active,
+        &.is-transparent.is-active:not(:disabled),
+        &.is-outline.is-active:not(:disabled) {
+            --button-background-color: color-mix(in oklch, var(--color-surface-fill), transparent var(--interaction-active));
+            background-color: var(--button-background-color);
+        }
+
         &.is-transparent,
         &.is-outline {
-            --button-border-color: var(--color);
+            --button-background-color-default: var(--color-surface-fill);
+            --button-border-color: transparent;
+            --button-shadow: none;
+            --button-shadow-hover: var(--shadow-control-unfilled-hover);
+            --button-shadow-active: var(--shadow-control-unfilled-active);
+        }
+
+        &.is-filled {
+            --button-background-color-default: var(--color-surface-fill);
         }
     }
 

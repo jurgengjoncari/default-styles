@@ -14,8 +14,9 @@
     select,
     textarea,
     .input {
-        border: var(--border-control-width) solid var(--color-subtle);
+        border: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
         border-radius: var(--radius-control);
+        background-color: var(--input-background-color, transparent);
         box-shadow: var(--shadow-control-inset);
         transition: border-color 0.2s ease;
     }

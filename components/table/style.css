@@ -4,7 +4,7 @@
 
 @layer component {
     table {
-        border-color: var(--color-subtle);
+        border-color: var(--surface-border-color, var(--color-subtle));
     }
 
     th {
@@ -16,6 +16,6 @@
     td {
         padding-block: var(--padding-block);
         padding-inline: var(--padding-inline);
-        border-color: var(--color-subtle);
+        border-color: var(--surface-border-color, var(--color-subtle));
     }
 }

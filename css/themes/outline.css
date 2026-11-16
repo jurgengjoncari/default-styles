@@ -1,0 +1,29 @@
+@layer theme {
+    :root[data-theme-style~="outline"] {
+        --control-border-color: var(--color-subtle);
+        --surface-border-color: var(--color-subtle);
+        --button-border-color-default: var(--color-subtle);
+    }
+
+    :root[data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+        --background-color: var(--color-white);
+        --button-background-color-default: var(--background-color);
+        --input-background-color: var(--background-color);
+        --shadow-control: none;
+        --shadow-control-hover: none;
+        --shadow-control-unfilled-hover: none;
+        --shadow-control-inset: none;
+        --shadow-control-unfilled-active: none;
+        --shadow-surface: none;
+    }
+
+    :root[data-theme="dark"][data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+        --background-color: var(--color-black);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme])[data-theme-style~="outline"]:not([data-theme-style~="depth"]) {
+            --background-color: var(--color-black);
+        }
+    }
+}

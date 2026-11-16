@@ -8,6 +8,7 @@
         padding-block: var(--padding-surface-block);
         padding-inline: var(--padding-surface-inline);
         background-color: var(--color-surface-fill);
+        border: var(--border-width-thin) solid var(--surface-border-color, transparent);
         border-radius: var(--radius-surface);
         box-shadow: var(--shadow-surface);
         backdrop-filter: var(--frosty-glass);

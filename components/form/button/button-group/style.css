@@ -7,13 +7,13 @@
         grid-auto-flow: column;
         width: 100%;
         overflow: hidden;
-        border: var(--border-control-width) solid var(--color-subtle);
+        border: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
         border-radius: var(--radius-control);
-        box-shadow: none;
+        box-shadow: var(--shadow-control);
         transition: box-shadow 0.2s ease;
 
         &:hover {
-            box-shadow: var(--shadow-control);
+            box-shadow: var(--shadow-control-hover);
         }
 
         &:has(input:active) {
@@ -30,7 +30,7 @@
     }
 
     .button-group__option + .button-group__option {
-        border-inline-start: var(--border-control-width) solid var(--color-subtle);
+        border-inline-start: var(--border-control-width) solid var(--control-border-color, var(--color-subtle));
     }
 
     .button-group__option input {
@@ -49,6 +49,7 @@
         display: block;
         padding-block: var(--padding-block);
         padding-inline: var(--padding-inline);
+        background-color: var(--color-surface-fill);
     }
 
     .button-group[data-variant="primary"] input:checked + span {

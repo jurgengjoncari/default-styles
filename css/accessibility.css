@@ -41,6 +41,17 @@
         outline-offset: var(--size-3xs);
     }
 
+    :root:not([data-theme-style~="outline"]) :focus-visible:not(:invalid),
+    :root:not([data-theme-style~="outline"]) .is-focused:not(:invalid) {
+        outline: none;
+        box-shadow: var(--shadow-control-focus);
+    }
+
+    :root:not([data-theme-style~="outline"]) .button-group__option:focus-within {
+        outline: none;
+        box-shadow: var(--shadow-control-focus);
+    }
+
     /* Test WCAG text-spacing overrides against page content. */
     :root[data-default-styles-text-spacing] * {
         line-height: 1.5 !important;

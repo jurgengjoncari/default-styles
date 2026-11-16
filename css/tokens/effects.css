@@ -5,7 +5,9 @@
         --shadow-offset-sm: 0.0625rem; /* 1px */
         --shadow-offset-md: 0.125rem; /* 2px */
         --shadow-offset-lg: 0.25rem; /* 4px */
-
+        --shadow-control-hover-offset: var(--shadow-offset-sm);
+        --shadow-control-hover-blur: var(--blur-sm);
+        --shadow-control-hover-spread: var(--shadow-spread-sm);
         --shadow-spread-none: 0;
         --shadow-spread-xs: 0.03125rem; /* 0.5px */
         --shadow-spread-sm: 0.0625rem; /* 1px */

@@ -44,6 +44,29 @@ export function createAppearancePanelElement() {
                     </fieldset>
                 </div>
                 <div class="settings-panel__item">
+                    <fieldset class="form-field form-field--group">
+                        <legend class="sr-only">Theme style</legend>
+                        <div class="form-field__row">
+                            <span class="form-field__label" aria-hidden="true">Theme style</span>
+                            <div>
+                                <label class="form-field form-field--toggle" for="default-styles-theme-depth">
+                                    <span class="form-field__label">Depth</span>
+                                    <input id="default-styles-theme-depth" type="checkbox"
+                                        aria-describedby="default-styles-theme-style-help">
+                                </label>
+                                <label class="form-field form-field--toggle" for="default-styles-theme-outline">
+                                    <span class="form-field__label">Outline</span>
+                                    <input id="default-styles-theme-outline" type="checkbox"
+                                        aria-describedby="default-styles-theme-style-help">
+                                </label>
+                                <span class="sr-only" id="default-styles-theme-style-help">
+                                    Keep at least one theme style enabled. Both may be enabled together.
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="settings-panel__item">
                     <label class="form-field form-field--toggle" for="default-styles-text-spacing">
                         <span class="form-field__label">Text spacing</span>
                         <input id="default-styles-text-spacing" type="checkbox">
