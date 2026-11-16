@@ -13,22 +13,15 @@
         --focus-outline: var(--border-width-thick) solid var(--outline-color);
         --focus-outline-offset: var(--size-3xs);
 
-        /* Physical tactile feedback via geometric scale */
+        /* Tactile interaction scaling */
         --control-transform: scale(1);
-        --control-transform-hover: scale(1.04);
-        --control-transform-active: scale(0.95);
+        --control-transform-hover: scale(1.02);
+        --control-transform-active: scale(0.97);
     }
 
     /* Pure Outline Mode (without elevation): stark white/black canvas and opaque surfaces */
     :root[data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
         --background-color: var(--color-white);
-        --surface-elevation-0: var(--color-white);
-        --surface-elevation--1: var(--color-white);
-        --surface-elevation-1: var(--color-white);
-        --surface-elevation-2: var(--color-white);
-        --surface-elevation-3: var(--color-white);
-        --surface-elevation-pressed: var(--color-white);
-
         --control-bg: var(--color-white);
         --input-background-color: var(--color-white);
         --surface-bg: var(--color-white);
@@ -41,13 +34,6 @@
 
     :root[data-theme="dark"][data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
         --background-color: var(--color-black);
-        --surface-elevation-0: var(--color-black);
-        --surface-elevation--1: var(--color-black);
-        --surface-elevation-1: var(--color-black);
-        --surface-elevation-2: var(--color-black);
-        --surface-elevation-3: var(--color-black);
-        --surface-elevation-pressed: var(--color-black);
-
         --control-bg: var(--color-black);
         --input-background-color: var(--color-black);
         --surface-bg: var(--color-black);
@@ -56,13 +42,6 @@
     @media (prefers-color-scheme: dark) {
         :root:not([data-theme])[data-theme-style~="outline"]:not([data-theme-style~="elevation"]) {
             --background-color: var(--color-black);
-            --surface-elevation-0: var(--color-black);
-            --surface-elevation--1: var(--color-black);
-            --surface-elevation-1: var(--color-black);
-            --surface-elevation-2: var(--color-black);
-            --surface-elevation-3: var(--color-black);
-            --surface-elevation-pressed: var(--color-black);
-
             --control-bg: var(--color-black);
             --input-background-color: var(--color-black);
             --surface-bg: var(--color-black);

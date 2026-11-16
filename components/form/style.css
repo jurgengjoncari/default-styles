@@ -33,16 +33,12 @@
     input[type="checkbox"],
     input[type="radio"] {
         accent-color: var(--primary-color);
-        cursor: pointer;
-        transition: transform 0.1s ease;
+    }
 
-        &:not(:disabled):hover {
-            transform: var(--control-transform-hover, scale(1.08));
-        }
-
-        &:not(:disabled):active {
-            transform: var(--control-transform-active, scale(0.92));
-        }
+    input[type="checkbox"]:disabled,
+    input[type="radio"]:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 
     input[type="range"],
@@ -51,25 +47,8 @@
         accent-color: var(--blue-text);
     }
 
-    progress,
-    meter {
-        appearance: auto;
-        -webkit-appearance: auto;
-        display: block;
-        width: 100%;
-        max-width: 40rem;
-        height: var(--size-sm);
-        margin-block: var(--size-xxs) var(--size-md);
-    }
-
     ::placeholder {
         color: var(--color-subtle);
-    }
-
-    input:not([type="checkbox"]):not([type="radio"]):focus-visible,
-    select:focus-visible,
-    textarea:focus-visible {
-        border-color: var(--background-color);
     }
 
     input:invalid,

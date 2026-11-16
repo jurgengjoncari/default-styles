@@ -26,6 +26,36 @@ The panel can switch between system, light, and dark color themes and between th
 
 The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference and uses the elevation theme style by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference. Set `data-theme-style="outline"` for the outline style, `data-theme-style="elevation"` for elevation, or `data-theme-style="elevation outline"` to combine them as an additive union. The elevation theme uses physics-based optical lighting across a 5-level scale (levels -1 to 3), off-white and off-black canvases, softly elevated surfaces, recessed inputs, and shadow-based focus states; Outline uses visible borders, geometric micro-interactions, focus outlines, and no shadows. When combined, both elevation shadows and outlines harmonize cleanly. The theme style is independent of the light/dark color theme.
 
+## Macro Attributes & Classes
+
+Instead of atomic/nuclear utility classes, this library uses a few high-impact HTML attributes and macro classes that produce consistent, system-wide visual changes:
+
+### Root Attributes
+
+Set these on `<html>` (or any container section) to control broad visual architecture:
+
+| Attribute | Values | Description |
+|---|---|---|
+| `data-theme` | `"light"`, `"dark"` | Overrides system preference. Without elevation, light mode is pure white (`#ffffff`) and dark mode is pure black (`#000000`). |
+| `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells (darker in light mode, sunken in dark mode) with inset shadows. Buttons and surfaces float with zero borders. |
+| | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, opaque surfaces without glassmorphism, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
+| | `"elevation outline"` | **Additive Union:** Combines both elevation shadows/glows and hairline borders together seamlessly. |
+| `data-default-styles-contrast` | `"more"` | Emulates WCAG high-contrast mode with forced maximum contrast. |
+| `data-default-styles-text-spacing` | (present) | Emulates WCAG text-spacing override rules. |
+
+### Component Macro Classes
+
+Apply these directly to native elements to switch their visual archetype:
+
+- **Button archetypes:**
+  - `<button>`: Standard control surface.
+  - `<button class="is-filled">`: High-emphasis filled button (calibrated slate surface in light mode, elevated white in dark mode; never pitch black).
+  - `<button class="is-outline">`: Ghost button with transparent background and hairline border.
+  - `<button class="is-transparent">`: Borderless flat text button.
+  - `<div class="button-group">`: Connected segmented controls with unified borders and shadows.
+- **Surface containers:**
+  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Transforms any container into a floating card with surface elevation, rounded corners, and responsive backdrop filters.
+
 ## Project structure
 
 - css/style.css is the complete stylesheet entry point used by the demo and package.

@@ -6,8 +6,6 @@
         border-radius: var(--radius-surface);
         padding-block: var(--padding-surface-block);
         padding-inline: var(--padding-surface-inline);
-        box-shadow: var(--surface-shadow, none);
-        background-color: var(--surface-bg, transparent);
     }
 
     legend {

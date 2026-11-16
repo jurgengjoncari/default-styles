@@ -14,15 +14,16 @@
         background-clip: padding-box;
         box-shadow: var(--button-shadow, var(--control-shadow));
         backdrop-filter: var(--control-backdrop-filter, none);
+        transform-origin: center;
         transform: var(--control-transform, scale(1));
-        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.12s cubic-bezier(0.2, 0, 0.2, 1);
+        transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
 
         /* Hover States (Relative lighter shade & tactile expansion) */
         &:not(:disabled):hover,
         &.is-hovered:not(:disabled) {
             background-color: var(--button-bg-hover, color-mix(in oklch, var(--current-button-bg), var(--color-white) 18%));
             box-shadow: var(--button-shadow-hover, var(--control-shadow-hover));
-            transform: var(--control-transform-hover, scale(1.04));
+            transform: var(--control-transform-hover, scale(1.02));
         }
 
         /* Active / Pressed States (Relative deeper shade & tactile depression) */
@@ -30,12 +31,13 @@
         &.is-active:not(:disabled) {
             background-color: var(--button-bg-active, color-mix(in oklch, var(--current-button-bg), var(--color-black) 12%));
             box-shadow: var(--button-shadow-active, var(--control-shadow-active));
-            transform: var(--control-transform-active, scale(0.95));
+            transform: var(--control-transform-active, scale(0.97));
         }
 
         &.is-transparent {
             --current-button-bg: transparent;
             background-color: transparent;
+            border: none;
             box-shadow: none;
 
             &:not(:disabled):hover,
@@ -70,6 +72,7 @@
         &.is-filled {
             --current-button-bg: var(--button-bg, var(--control-filled-bg));
             background-color: var(--current-button-bg);
+            border-color: var(--current-button-bg);
             color: var(--filled-text-color, var(--color-white));
 
             &:not(:disabled):hover,

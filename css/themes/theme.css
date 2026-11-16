@@ -26,13 +26,19 @@
         --control-backdrop-filter: none;
         --surface-backdrop-filter: none;
         --control-transform: scale(1);
-        --control-transform-hover: scale(1);
-        --control-transform-active: scale(0.96);
+        --control-transform-hover: scale(1.02);
+        --control-transform-active: scale(0.97);
         --focus-outline: none;
         --focus-outline-offset: var(--size-3xs);
         --focus-shadow: none;
 
-        /* Shadows (Dynamic token mappings for customizer controls - isotropic/no offset) */
+        /* Baseline Canvas & Surfaces (Pure white in light mode when elevation is not applied) */
+        --background-color: var(--color-white);
+        --control-bg: var(--color-surface-fill);
+        --input-background-color: transparent;
+        --surface-bg: var(--color-white);
+
+        /* Shadows (Dynamic token mappings for customizer controls) */
         --shadow-control-offset: var(--shadow-offset-none);
         --shadow-control-blur: var(--blur-xs);
         --shadow-control-spread: var(--shadow-spread-xs);
@@ -43,8 +49,8 @@
             var(--shadow-color);
         --shadow-control-hover:
             0 0
-            var(--shadow-control-hover-blur)
-            var(--shadow-control-hover-spread)
+            var(--shadow-control-hover-blur, var(--blur-sm))
+            var(--shadow-control-hover-spread, var(--shadow-spread-sm))
             var(--shadow-color);
         --shadow-control-unfilled-hover:
             0 0
@@ -79,21 +85,6 @@
             var(--shadow-color-strong);
 
         --frosty-glass: blur(1.3125rem);
-
-        /* Canvas & Physics-based Elevation Surfaces (Light mode) */
-        --background-color: var(--color-off-white);
-        --surface-elevation-0: var(--color-off-white);
-        --surface-elevation--1: var(--color-neutral-100);
-        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 35%);
-        --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 25%);
-        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-        --surface-elevation-pressed: var(--surface-elevation--1);
-
-        --control-bg: var(--surface-elevation-1);
-        --control-bg-hover: var(--surface-elevation-2);
-        --control-bg-active: var(--surface-elevation-pressed);
-        --input-background-color: var(--surface-elevation--1);
-        --surface-bg: var(--surface-elevation-3);
 
         /* Balanced filled surface (not harsh pitch black) */
         --control-filled-bg: color-mix(in oklch, var(--color-neutral-900) 75%, var(--background-color));
@@ -150,20 +141,11 @@
         &[data-theme="dark"] {
             color-scheme: dark;
 
-            /* Canvas & Physics-based Elevation Surfaces (Dark mode) */
-            --background-color: var(--color-off-black);
-            --surface-elevation-0: var(--color-off-black);
-            --surface-elevation--1: var(--color-neutral-950);
-            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
-            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-            --surface-elevation-pressed: var(--surface-elevation--1);
-
-            --control-bg: var(--surface-elevation-1);
-            --control-bg-hover: var(--surface-elevation-2);
-            --control-bg-active: var(--surface-elevation-pressed);
-            --input-background-color: var(--surface-elevation--1);
-            --surface-bg: var(--surface-elevation-3);
+            /* Baseline Canvas & Surfaces (Pure black in dark mode when elevation is not applied) */
+            --background-color: var(--color-black);
+            --control-bg: var(--color-surface-fill);
+            --input-background-color: transparent;
+            --surface-bg: var(--color-black);
 
             --control-filled-bg: color-mix(in oklch, var(--color-white) 80%, var(--background-color));
             --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
@@ -222,19 +204,10 @@
         :root:not([data-theme]) {
             color-scheme: dark;
 
-            --background-color: var(--color-off-black);
-            --surface-elevation-0: var(--color-off-black);
-            --surface-elevation--1: var(--color-neutral-950);
-            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
-            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-            --surface-elevation-pressed: var(--surface-elevation--1);
-
-            --control-bg: var(--surface-elevation-1);
-            --control-bg-hover: var(--surface-elevation-2);
-            --control-bg-active: var(--surface-elevation-pressed);
-            --input-background-color: var(--surface-elevation--1);
-            --surface-bg: var(--surface-elevation-3);
+            --background-color: var(--color-black);
+            --control-bg: var(--color-surface-fill);
+            --input-background-color: transparent;
+            --surface-bg: var(--color-black);
 
             --control-filled-bg: color-mix(in oklch, var(--color-white) 80%, var(--background-color));
             --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);

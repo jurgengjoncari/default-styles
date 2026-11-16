@@ -2,38 +2,18 @@
 
 @layer component {
     table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        border: var(--surface-border-width, 0) solid var(--surface-border-color, transparent);
-        border-radius: var(--radius-surface);
-        box-shadow: var(--surface-shadow, none);
-        background-color: var(--surface-bg, transparent);
-        overflow: hidden;
+        border-color: var(--surface-border-color, var(--color-subtle));
     }
 
     th {
-        background-color: var(--control-bg, var(--color-surface-fill));
+        background-color: var(--color-surface-fill);
         color: var(--color-emphasis);
-        font-weight: var(--font-weight-bold);
-        text-align: start;
-        border-block-end: var(--control-border-width, 0) solid var(--control-border-color, transparent);
     }
 
     th,
     td {
         padding-block: var(--padding-block);
         padding-inline: var(--padding-inline);
-        border-inline-end: var(--control-border-width, 0) solid var(--control-border-color, transparent);
-        border-block-end: var(--control-border-width, 0) solid var(--control-border-color, transparent);
-    }
-
-    th:last-child,
-    td:last-child {
-        border-inline-end: none;
-    }
-
-    tbody tr:last-child td {
-        border-block-end: none;
+        border-color: var(--surface-border-color, var(--color-subtle));
     }
 }
