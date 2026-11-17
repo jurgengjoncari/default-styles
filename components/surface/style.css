@@ -2,6 +2,5 @@
     .surface {
         background-color: transparent;
         border: 0 solid transparent;
-        border-radius: var(--radius-surface);
     }
 }

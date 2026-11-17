@@ -68,8 +68,8 @@ Apply these directly to native elements to switch their visual archetype:
   - `<button class="is-transparent">`: Borderless flat text button.
   - `<div class="button-group">`: Connected segmented controls with unified borders and shadows.
 - **Surface containers:**
-  - `<div class="surface">`: Reusable themed surface with rounded corners and no padding. Elevation gives it a semi-transparent fill and shadow; Outline keeps it transparent with a border; combining both applies the fill, shadow, and border.
-  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Dialog-specific padded surface with theme-colored fill in Outline and backdrop filtering where enabled. Existing markup remains supported.
+  - `<div class="surface">`: Reusable themed surface with no padding or built-in rounded corners. Elevation gives it a semi-transparent fill and shadow; Outline keeps it transparent with a border; combining both applies the fill, shadow, and border.
+  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Dialog-specific padded, rounded surface with theme-colored fill in Outline and backdrop filtering where enabled. Existing markup remains supported.
 
 ## Project structure
 
