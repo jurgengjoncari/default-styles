@@ -37,7 +37,7 @@ Set these on `<html>` to control broad visual architecture:
 | Attribute | Values | Description |
 |---|---|---|
 | `data-theme` | `"light"`, `"dark"` | Overrides system preference. Without elevation, light mode is pure white (`#ffffff`) and dark mode is pure black (`#000000`). |
-| `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells with inset shadows. Surface fills move toward white in light mode and black in dark mode; shadows add depth. |
+| `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Surfaces use levels `-3` through `3`, moving about `0.8%` in OKLCH lightness per step; shadow blur increases by `3px` per step. Light mode raises toward white and dark mode toward black. |
 | | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, transparent generic surfaces, opaque theme-colored dialogs, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
 | | `"elevation outline"` | **Additive Union:** Combines semi-transparent elevated surfaces and shadows with hairline borders. |
 | `data-control-padding` | `"default"`, `"expanded"` | Sets global control padding. The default uses extra-small block and small inline spacing; expanded uses small block and medium inline spacing. |
@@ -68,8 +68,8 @@ Apply these directly to native elements to switch their visual archetype:
   - `<button class="is-transparent">`: Borderless flat text button.
   - `<div class="button-group">`: Connected segmented controls with unified borders and shadows.
 - **Surface containers:**
-  - `<div class="surface">`: Reusable themed surface with padding and rounded corners. Elevation gives it a semi-transparent fill and shadow; Outline keeps it transparent with a border; combining both applies the fill, shadow, and border.
-  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Dialog-specific surface with theme-colored fill in Outline and backdrop filtering where enabled. Existing markup remains supported.
+  - `<div class="surface">`: Reusable themed surface with rounded corners and no padding. Elevation gives it a semi-transparent fill and shadow; Outline keeps it transparent with a border; combining both applies the fill, shadow, and border.
+  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Dialog-specific padded surface with theme-colored fill in Outline and backdrop filtering where enabled. Existing markup remains supported.
 
 ## Project structure
 
