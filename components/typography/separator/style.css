@@ -4,7 +4,7 @@
     hr {
         display: block;
         border: none;
-        height: var(--border-width-thin);
+        height: var(--border-width-sm);
         margin-block: var(--size-lg);
         background-color: var(--color-subtle);
     }

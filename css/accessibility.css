@@ -37,7 +37,7 @@
     /* Keyboard focus visibility — composable union of outline and elevation glow */
     :focus-visible:not(:invalid),
     .is-focused:not(:invalid) {
-        outline: var(--focus-outline, var(--border-width-thick) solid var(--outline-color));
+        outline: var(--focus-outline, var(--border-width-md) solid var(--outline-color));
         outline-offset: var(--focus-outline-offset, var(--size-3xs));
         box-shadow: var(--focus-shadow, none);
     }

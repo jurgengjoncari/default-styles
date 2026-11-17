@@ -55,7 +55,7 @@
             --current-button-bg: transparent;
             background-color: transparent;
             box-shadow: none;
-            border-width: var(--border-control-width, var(--border-width-thin));
+            border-width: var(--border-control-width, var(--border-width-sm));
             border-color: var(--control-border-color, var(--color-subtle));
 
             &:not(:disabled):hover,
@@ -89,6 +89,6 @@
 
     /* Utility class variant for non-button elements */
     .is-outline:not(button) {
-        border: var(--border-width-thin) solid color-mix(in srgb, var(--color) 85%, transparent);
+        border: var(--border-control-width, var(--border-width-xs)) solid color-mix(in srgb, var(--color) 85%, transparent);
     }
 }

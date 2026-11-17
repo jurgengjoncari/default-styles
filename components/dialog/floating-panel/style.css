@@ -83,7 +83,7 @@
         justify-content: space-between;
         width: 100%;
         padding-block-end: var(--size-xs);
-        border-block-end: var(--border-width-thin) solid var(--surface-border-color, var(--color-subtle));
+        border-block-end: var(--border-width-sm) solid var(--surface-border-color, var(--color-subtle));
         cursor: grab;
         touch-action: none;
         user-select: none;

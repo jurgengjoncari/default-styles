@@ -50,7 +50,7 @@ Apply these directly to native elements to switch their visual archetype:
 - **Button archetypes:**
   - `<button>`: Standard control surface.
   - `<button class="is-filled">`: High-emphasis filled button (calibrated slate surface in light mode, elevated white in dark mode; never pitch black).
-  - `<button class="is-outline">`: Ghost button with transparent background and hairline border.
+  - `<button class="is-outline">`: Ghost button with transparent background and a hairline border.
   - `<button class="is-transparent">`: Borderless flat text button.
   - `<div class="button-group">`: Connected segmented controls with unified borders and shadows.
 - **Surface containers:**
@@ -281,10 +281,11 @@ Custom properties used by the styles (including component and demo properties), 
 
 <blockquote>
 
-  - `border-width-none`
-  - `border-width-thin`
-  - `border-width-thick`
-  - `border-width-thicker`
+  - `border-width-none` (`0px`)
+  - `border-width-xs` (`0.5px`)
+  - `border-width-sm` (`1px`)
+  - `border-width-md` (`2px`)
+  - `border-width-lg` (`4px`)
 
 </blockquote>
 </details>

@@ -126,7 +126,7 @@ function updateCssVariable(control, panel, variable, unit) {
 function updateControlBorder(control) {
     root.style.setProperty(
         '--border-control-width',
-        control.checked ? 'var(--border-width-thin)' : 'var(--border-width-none)'
+        control.checked ? 'var(--border-width-xs)' : 'var(--border-width-none)'
     );
 }
 

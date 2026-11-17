@@ -17,12 +17,11 @@
         --radius-surface-xl: 2.625rem;
         --radius-surface-xxl: 4.25rem;
 
-        --border-width-none: 0;
-        --border-width-hairline: 0.5px;
-        --border-width-thin: 0.5px;
-        --border-width-regular: 0.0625rem; /* 1px */
-        --border-width-thick: 0.125rem; /* 2px */
-        --border-width-thicker: 0.25rem; /* 4px */
+        --border-width-none: 0px;
+        --border-width-xs: 0.5px;
+        --border-width-sm: 1px;
+        --border-width-md: 2px;
+        --border-width-lg: 4px;
 
         --border-style-solid: solid;
         --border-style-dotted: dotted;

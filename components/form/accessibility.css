@@ -53,7 +53,7 @@
     textarea,
     select {
         &:invalid:focus-visible {
-            outline: var(--border-width-thin) solid var(--red-text);
+            outline: var(--border-width-sm) solid var(--red-text);
         }
     }
 }
