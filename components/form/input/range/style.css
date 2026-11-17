@@ -1,10 +1,6 @@
 @layer component {
     input[type="range"] {
-        display: block;
-        width: 100%;
         min-width: 0;
         height: 1.25rem;
-        margin: 0;
-        padding: 0;
     }
 }
