@@ -32,7 +32,7 @@ Instead of atomic/nuclear utility classes, this library uses a few high-impact H
 
 ### Root Attributes
 
-Set these on `<html>` (or any container section) to control broad visual architecture:
+Set these on `<html>` to control broad visual architecture:
 
 | Attribute | Values | Description |
 |---|---|---|
@@ -40,8 +40,22 @@ Set these on `<html>` (or any container section) to control broad visual archite
 | `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells (darker in light mode, sunken in dark mode) with inset shadows. Buttons and surfaces float with zero borders. |
 | | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, opaque surfaces without glassmorphism, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
 | | `"elevation outline"` | **Additive Union:** Combines both elevation shadows/glows and hairline borders together seamlessly. |
+| `data-control-padding` | `"default"`, `"expanded"` | Sets global control padding. The default uses extra-small block and small inline spacing; expanded uses small block and medium inline spacing. |
+| `data-control-radius` | `"none"`, `"xs"`, `"s"`, `"md"`, `"lg"`, `"xl"`, `"round"` | Sets the global control corner radius using the matching radius token. |
+| `data-surface-radius` | `"none"`, `"xxs"`, `"xs"`, `"s"`, `"md"`, `"lg"`, `"xl"`, `"xxl"` | Sets the global surface corner radius using the matching radius token. |
 | `data-default-styles-contrast` | `"more"` | Emulates WCAG high-contrast mode with forced maximum contrast. |
 | `data-default-styles-text-spacing` | (present) | Emulates WCAG text-spacing override rules. |
+
+For example, set the color theme, visual style, and global control/surface sizing directly in the document markup:
+
+```html
+<html lang="en"
+    data-theme="dark"
+    data-theme-style="outline"
+    data-control-padding="expanded"
+    data-control-radius="lg"
+    data-surface-radius="xl">
+```
 
 ### Component Macro Classes
 
