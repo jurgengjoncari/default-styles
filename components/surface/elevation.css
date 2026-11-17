@@ -1,0 +1,7 @@
+@layer component {
+    :root:not([data-theme-style]) .surface,
+    :root[data-theme-style~="elevation"] .surface {
+        background-color: var(--surface-elevation-3);
+        box-shadow: var(--shadow-elevation-3);
+    }
+}

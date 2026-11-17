@@ -1,0 +1,10 @@
+@layer component {
+    .surface {
+        padding-block: var(--padding-surface-block);
+        padding-inline: var(--padding-surface-inline);
+        background-color: transparent;
+        border: 0 solid transparent;
+        border-radius: var(--radius-surface);
+        box-shadow: none;
+    }
+}

@@ -24,7 +24,7 @@ Import the panel once from your browser-side JavaScript entry point:
 
 The panel can switch between system, light, and dark color themes and between the elevation and outline theme styles for testing; change the primary color, control and surface radii, shadow offsets, blur, and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. At least one theme style must remain enabled, and both can be enabled together. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
-The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference and uses the elevation theme style by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference. Set `data-theme-style="outline"` for the outline style, `data-theme-style="elevation"` for elevation, or `data-theme-style="elevation outline"` to combine them as an additive union. The elevation theme uses physics-based optical lighting across a 5-level scale (levels -1 to 3), off-white and off-black canvases, softly elevated surfaces, recessed inputs, and shadow-based focus states; Outline uses visible borders, geometric micro-interactions, focus outlines, and no shadows. When combined, both elevation shadows and outlines harmonize cleanly. The theme style is independent of the light/dark color theme.
+The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference and uses the elevation theme style by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference. Set `data-theme-style="outline"` for the outline style, `data-theme-style="elevation"` for elevation, or `data-theme-style="elevation outline"` to combine them as an additive union. The elevation theme uses physics-based optical lighting across a 5-level scale (levels -1 to 3), off-white and off-black canvases, semi-transparent elevated surfaces, recessed inputs, and shadow-based focus states; Outline uses visible borders, geometric micro-interactions, focus outlines, and no shadows. Generic surfaces stay transparent in Outline, while dialogs use an opaque theme-colored fill. When combined, surfaces retain elevation's translucency and shadow while gaining Outline's border. The theme style is independent of the light/dark color theme.
 
 ## Macro Attributes & Classes
 
@@ -38,8 +38,8 @@ Set these on `<html>` to control broad visual architecture:
 |---|---|---|
 | `data-theme` | `"light"`, `"dark"` | Overrides system preference. Without elevation, light mode is pure white (`#ffffff`) and dark mode is pure black (`#000000`). |
 | `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells (darker in light mode, sunken in dark mode) with inset shadows. Buttons and surfaces float with zero borders. |
-| | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, opaque surfaces without glassmorphism, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
-| | `"elevation outline"` | **Additive Union:** Combines both elevation shadows/glows and hairline borders together seamlessly. |
+| | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, transparent generic surfaces, opaque theme-colored dialogs, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
+| | `"elevation outline"` | **Additive Union:** Combines semi-transparent elevated surfaces and shadows with hairline borders. |
 | `data-control-padding` | `"default"`, `"expanded"` | Sets global control padding. The default uses extra-small block and small inline spacing; expanded uses small block and medium inline spacing. |
 | `data-control-radius` | `"none"`, `"xs"`, `"s"`, `"md"`, `"lg"`, `"xl"`, `"round"` | Sets the global control corner radius using the matching radius token. |
 | `data-surface-radius` | `"none"`, `"xxs"`, `"xs"`, `"s"`, `"md"`, `"lg"`, `"xl"`, `"xxl"` | Sets the global surface corner radius using the matching radius token. |
@@ -68,12 +68,13 @@ Apply these directly to native elements to switch their visual archetype:
   - `<button class="is-transparent">`: Borderless flat text button.
   - `<div class="button-group">`: Connected segmented controls with unified borders and shadows.
 - **Surface containers:**
-  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Transforms any container into a floating card with surface elevation, rounded corners, and responsive backdrop filters.
+  - `<div class="surface">`: Reusable themed surface with padding and rounded corners. Elevation gives it a semi-transparent fill and shadow; Outline keeps it transparent with a border; combining both applies the fill, shadow, and border.
+  - `<div class="dialog-panel">` or `<dialog class="dialog-panel">`: Dialog-specific surface with theme-colored fill in Outline and backdrop filtering where enabled. Existing markup remains supported.
 
 ## Project structure
 
 - css/style.css is the complete stylesheet entry point used by the demo and package.
-- App-wide tokens, reset, normalization, accessibility, and print rules live at the root of css/. The shared theme and the elevation and outline theme styles live in css/themes/. The body defaults are in css/style.css.
+- App-wide tokens, reset, normalization, accessibility, and print rules live at the root of css/. Shared theme rules live in css/themes/. Surface-specific elevation and outline variants live alongside the surface component; body defaults are in css/style.css.
 - Component folders live under components/. Each component keeps its style.css with a separate normalize.css when it needs component-specific normalization. A component may also have an accessibility.css for rules specific to that component. Typography is grouped under components/typography/, with heading, link, code, blockquote, and separator subcomponents. Cascade layers order reset, normalization, tokens, theme, base, shared, component, accessibility, and print. App/demo styles remain unlayered so they can override the library.
 - Related components are nested by context: button styles are under components/form/button/, and the floating panel and appearance settings are under components/dialog/.
 - index.css forwards to css/style.css to preserve the package stylesheet entry point.

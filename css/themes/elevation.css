@@ -27,7 +27,7 @@
         --surface-elevation--1: color-mix(in oklch, var(--color-off-white) 90%, var(--color-black));
         --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 35%);
         --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 25%);
-        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
         --surface-elevation-pressed: var(--surface-elevation--1);
 
         /* Control surface elevation */
@@ -68,7 +68,7 @@
         --surface-elevation--1: color-mix(in oklch, var(--color-off-black) 90%, var(--color-black));
         --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
         --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
         --surface-elevation-pressed: var(--surface-elevation--1);
 
         --control-bg: var(--surface-elevation-1);
@@ -86,7 +86,7 @@
             --surface-elevation--1: color-mix(in oklch, var(--color-off-black) 90%, var(--color-black));
             --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
             --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
             --surface-elevation-pressed: var(--surface-elevation--1);
 
             --control-bg: var(--surface-elevation-1);

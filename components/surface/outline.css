@@ -1,0 +1,11 @@
+@layer component {
+    :root[data-theme-style~="outline"] .surface {
+        border: var(--surface-border-width, var(--border-width-xs)) solid
+            var(--surface-border-color, var(--color-subtle));
+    }
+
+    :root[data-theme-style~="outline"]:not([data-theme-style~="elevation"]) .surface {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}

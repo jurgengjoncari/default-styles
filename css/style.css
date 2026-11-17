@@ -14,6 +14,9 @@
 @import "../components/media/style.css";
 @import "../components/details/style.css";
 @import "../components/form/style.css";
+@import "../components/surface/style.css";
+@import "../components/surface/elevation.css";
+@import "../components/surface/outline.css";
 @import "../components/dialog/style.css";
 
 @import "./accessibility.css";
