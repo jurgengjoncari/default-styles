@@ -37,7 +37,7 @@ Set these on `<html>` to control broad visual architecture:
 | Attribute | Values | Description |
 |---|---|---|
 | `data-theme` | `"light"`, `"dark"` | Overrides system preference. Without elevation, light mode is pure white (`#ffffff`) and dark mode is pure black (`#000000`). |
-| `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells (darker in light mode, sunken in dark mode) with inset shadows. Buttons and surfaces float with zero borders. |
+| `data-theme-style` | `"elevation"` | **Elevation Theme (default):** Physics-based ambient elevation on an off-white/off-black canvas. Inputs and checkboxes are recessed wells with inset shadows. Surface fills move toward white in light mode and black in dark mode; shadows add depth. |
 | | `"outline"` | **Outline Theme:** Architectural stark white/black canvas, transparent generic surfaces, opaque theme-colored dialogs, razor-sharp hairline borders (`0.5px`), and tactile scale animations on hover/press. |
 | | `"elevation outline"` | **Additive Union:** Combines semi-transparent elevated surfaces and shadows with hairline borders. |
 | `data-control-padding` | `"default"`, `"expanded"` | Sets global control padding. The default uses extra-small block and small inline spacing; expanded uses small block and medium inline spacing. |

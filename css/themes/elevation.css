@@ -22,12 +22,13 @@
 
         /* Elevation Canvas & Surfaces (Light mode) */
         --background-color: var(--color-off-white);
+        --surface-elevation-fill-color: var(--color-white);
         --surface-elevation-0: var(--color-off-white);
         /* Recessed well: noticeably darker than off-white canvas */
         --surface-elevation--1: color-mix(in oklch, var(--color-off-white) 90%, var(--color-black));
-        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 35%);
+        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 75%);
         --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 25%);
-        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
+        --surface-elevation-3: color-mix(in srgb, var(--surface-elevation-fill-color) var(--surface-elevation-opacity), transparent);
         --surface-elevation-pressed: var(--surface-elevation--1);
 
         /* Control surface elevation */
@@ -63,12 +64,13 @@
     :root[data-theme="dark"][data-theme-style~="elevation"] {
         /* Elevation Canvas & Surfaces (Dark mode) */
         --background-color: var(--color-off-black);
+        --surface-elevation-fill-color: var(--color-black);
         --surface-elevation-0: var(--color-off-black);
         /* Sunken well: subtly deeper than off-black canvas, NOT pitch black */
         --surface-elevation--1: color-mix(in oklch, var(--color-off-black) 90%, var(--color-black));
-        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
-        --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-        --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
+        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-black) 8%);
+        --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-black) 20%);
+        --surface-elevation-3: color-mix(in srgb, var(--surface-elevation-fill-color) var(--surface-elevation-opacity), transparent);
         --surface-elevation-pressed: var(--surface-elevation--1);
 
         --control-bg: var(--surface-elevation-1);
@@ -82,11 +84,12 @@
         :root:not([data-theme]):not([data-theme-style]),
         :root:not([data-theme])[data-theme-style~="elevation"] {
             --background-color: var(--color-off-black);
+            --surface-elevation-fill-color: var(--color-black);
             --surface-elevation-0: var(--color-off-black);
             --surface-elevation--1: color-mix(in oklch, var(--color-off-black) 90%, var(--color-black));
-            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-white) 8%);
-            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-white) 20%);
-            --surface-elevation-3: color-mix(in srgb, var(--color-surface) var(--surface-elevation-opacity), transparent);
+            --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--color-black) 8%);
+            --surface-elevation-2: color-mix(in oklch, var(--surface-elevation-1), var(--color-black) 20%);
+            --surface-elevation-3: color-mix(in srgb, var(--surface-elevation-fill-color) var(--surface-elevation-opacity), transparent);
             --surface-elevation-pressed: var(--surface-elevation--1);
 
             --control-bg: var(--surface-elevation-1);
