@@ -39,7 +39,6 @@
         --surface-bg: var(--color-white);
 
         /* Shadows (Dynamic token mappings for customizer controls) */
-        --shadow-control-offset: var(--shadow-offset-none);
         --shadow-control-blur: var(--blur-xs);
         --shadow-control-spread: var(--shadow-spread-xs);
         --shadow-control:
@@ -75,7 +74,6 @@
             var(--shadow-spread-none)
             var(--shadow-color);
 
-        --shadow-surface-offset: var(--shadow-offset-none);
         --shadow-surface-blur: var(--blur-lg);
         --shadow-surface-spread: var(--shadow-spread-sm);
         --shadow-surface:

@@ -1,11 +1,5 @@
 @layer tokens {
     :root {
-        /* Primitive Shadow Offset Scales */
-        --shadow-offset-none: 0;
-        --shadow-offset-sm: 0.0625rem; /* 1px */
-        --shadow-offset-md: 0.125rem; /* 2px */
-        --shadow-offset-lg: 0.25rem; /* 4px */
-
         /* Primitive Shadow Spread Scales */
         --shadow-spread-none: 0;
         --shadow-spread-xs: 0.03125rem; /* 0.5px */

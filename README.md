@@ -22,7 +22,7 @@ Import the panel once from your browser-side JavaScript entry point:
 
     import "@jurgengjoncari/default-styles/appearance-settings";
 
-The panel can switch between system, light, and dark color themes and between the elevation and outline theme styles for testing; change the primary color, control and surface radii, shadow offsets, blur, and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. At least one theme style must remain enabled, and both can be enabled together. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
+The panel can switch between system, light, and dark color themes and between the elevation and outline theme styles for testing; change the primary color, control and surface radii, shadow blur and spread, surface strength, font scale (up to 200%), and font family; and emulate increased text spacing, reduced motion, and higher contrast. At least one theme style must remain enabled, and both can be enabled together. Changes apply live to that page and are temporary; reloading restores the app's defaults. The primary color's text variants are adjusted for contrast automatically.
 
 The panel is optional. Without that JavaScript import, the CSS foundation follows the browser's light/dark preference and uses the elevation theme style by default. Set `data-theme="light"` or `data-theme="dark"` on the document root to override the system preference. Set `data-theme-style="outline"` for the outline style, `data-theme-style="elevation"` for elevation, or `data-theme-style="elevation outline"` to combine them as an additive union. The elevation theme uses physics-based optical lighting across a 5-level scale (levels -1 to 3), off-white and off-black canvases, semi-transparent elevated surfaces, recessed inputs, and shadow-based focus states; Outline uses visible borders, geometric micro-interactions, focus outlines, and no shadows. Generic surfaces stay transparent in Outline, while dialogs use an opaque theme-colored fill. When combined, surfaces retain elevation's translucency and shadow while gaining Outline's border. The theme style is independent of the light/dark color theme.
 
@@ -366,11 +366,6 @@ Custom properties used by the styles (including component and demo properties), 
 
   - `shadow-color`
   - `shadow-color-strong`
-  - `shadow-offset-none`
-  - `shadow-offset-sm`
-  - `shadow-offset-md`
-  - `shadow-offset-lg`
-  - `shadow-control-hover-offset`
   - `shadow-control-hover-blur`
   - `shadow-control-hover-spread`
   - `shadow-spread-none`
@@ -385,7 +380,6 @@ Custom properties used by the styles (including component and demo properties), 
   - `blur-md`
   - `blur-lg`
   - `blur-xl`
-  - `shadow-control-offset`
   - `shadow-control-blur`
   - `shadow-control-spread`
   - `shadow-control`
@@ -393,7 +387,6 @@ Custom properties used by the styles (including component and demo properties), 
   - `shadow-control-unfilled-hover`
   - `shadow-control-inset`
   - `shadow-control-unfilled-active`
-  - `shadow-surface-offset`
   - `shadow-surface-blur`
   - `shadow-surface-spread`
   - `shadow-surface`

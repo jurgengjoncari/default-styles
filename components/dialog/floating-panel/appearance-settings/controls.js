@@ -207,10 +207,8 @@ const controlHandlers = new Map([
     ['default-styles-padding', updateControlPadding],
     ['default-styles-control-radius', (control, panel) => updateRadius(control, panel, 'control')],
     ['default-styles-surface-radius', (control, panel) => updateRadius(control, panel, 'surface')],
-    ['default-styles-control-shadow', (control, panel) => updateShadow(control, panel, 'control', 'offset')],
     ['default-styles-control-shadow-blur', (control, panel) => updateShadow(control, panel, 'control', 'blur')],
     ['default-styles-control-shadow-spread', (control, panel) => updateShadow(control, panel, 'control', 'spread')],
-    ['default-styles-surface-shadow', (control, panel) => updateShadow(control, panel, 'surface', 'offset')],
     ['default-styles-surface-shadow-blur', (control, panel) => updateShadow(control, panel, 'surface', 'blur')],
     ['default-styles-surface-shadow-spread', (control, panel) => updateShadow(control, panel, 'surface', 'spread')],
     ['default-styles-surface-transparency', (control, panel) =>
@@ -310,10 +308,8 @@ function initializeRadiusControl(panel) {
 function initializeShadowControl(panel) {
     const computedRoot = getComputedStyle(root);
     ['control', 'surface'].forEach((role) => {
-        ['offset', 'blur', 'spread'].forEach((dimension) => {
-            const controlId = dimension === 'offset'
-                ? `default-styles-${role}-shadow`
-                : `default-styles-${role}-shadow-${dimension}`;
+        ['blur', 'spread'].forEach((dimension) => {
+            const controlId = `default-styles-${role}-shadow-${dimension}`;
             const control = panel.querySelector(`#${controlId}`);
             const options = shadowTokens[dimension];
             const currentValue = computedRoot.getPropertyValue(`--shadow-${role}-${dimension}`).trim();
