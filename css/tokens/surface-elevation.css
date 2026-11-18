@@ -1,0 +1,12 @@
+@layer tokens {
+    :root {
+        --surface-elevation-mix--3: 30%;
+        --surface-elevation-mix--2: 20%;
+        --surface-elevation-mix--1: 10%;
+        --surface-elevation-mix-0: 0%;
+        --surface-elevation-mix-1: 10%;
+        --surface-elevation-mix-2: 20%;
+        --surface-elevation-mix-3: 30%;
+        --surface-elevation-opacity: 60%;
+    }
+}

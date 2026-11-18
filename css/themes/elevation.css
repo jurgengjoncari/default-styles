@@ -1,62 +1,64 @@
 @layer theme {
-    /*
-     * Elevation Theme Style:
-     * Emulates optical physics where elevation corresponds to distance from the canvas
-     * towards the viewer on a digital display.
-     *
-     * Surface levels move about 0.8% in OKLCH lightness per step. Mix weights
-     * vary by theme to keep the visual step consistent. Shadow blur increases
-     * by one 3px step per level.
-     * - Levels -3 to -1: Recessed surfaces
-     * - Level  0: Canvas
-     * - Levels  1 to 3: Raised surfaces
-     */
     :root:not([data-theme-style]),
     :root[data-theme-style~="elevation"] {
-        /* Elevation shadow scale; negative levels are inset. */
-        --shadow-elevation-step: var(--blur-xs);
-        --shadow-elevation-step-2: calc(var(--shadow-elevation-step) + var(--shadow-elevation-step));
-        --shadow-elevation-step-3: calc(var(--shadow-elevation-step-2) + var(--shadow-elevation-step));
-        --shadow-elevation--3: inset 0 0 var(--shadow-elevation-step-3) 0 var(--shadow-color);
-        --shadow-elevation--2: inset 0 0 var(--shadow-elevation-step-2) 0 var(--shadow-color);
-        --shadow-elevation--1: inset 0 0 var(--shadow-elevation-step) 0 var(--shadow-color);
-        --shadow-elevation-0: none;
-        --shadow-elevation-1: 0 0 var(--shadow-elevation-step) 0 var(--shadow-color);
-        --shadow-elevation-2: 0 0 var(--shadow-elevation-step-2) 0 var(--shadow-color);
-        --shadow-elevation-3: 0 0 var(--shadow-elevation-step-3) 0 var(--shadow-color);
-        --shadow-elevation-focus: 0 0 var(--blur-md) var(--shadow-spread-none) var(--color-gray);
-
-        /* Light mode: raised surfaces move toward white, recessed toward black. */
         --background-color: var(--color-off-white);
-        --surface-elevation-raised-color: var(--color-white);
-        --surface-elevation-raised-step: 29%;
-        --surface-elevation-raised-step-2: calc(var(--surface-elevation-raised-step) + var(--surface-elevation-raised-step));
-        --surface-elevation-raised-step-3: calc(var(--surface-elevation-raised-step-2) + var(--surface-elevation-raised-step));
-        --surface-elevation-recessed-color: var(--color-black);
-        --surface-elevation-recessed-step: 1%;
-        --surface-elevation-recessed-step-2: calc(var(--surface-elevation-recessed-step) + var(--surface-elevation-recessed-step));
-        --surface-elevation-recessed-step-3: calc(var(--surface-elevation-recessed-step-2) + var(--surface-elevation-recessed-step));
-        --surface-elevation-0: var(--background-color);
-        --surface-elevation--3: color-mix(in oklch, var(--background-color), var(--surface-elevation-recessed-color) var(--surface-elevation-recessed-step-3));
-        --surface-elevation--2: color-mix(in oklch, var(--background-color), var(--surface-elevation-recessed-color) var(--surface-elevation-recessed-step-2));
-        --surface-elevation--1: color-mix(in oklch, var(--background-color), var(--surface-elevation-recessed-color) var(--surface-elevation-recessed-step));
-        --surface-elevation-1: color-mix(in oklch, var(--background-color), var(--surface-elevation-raised-color) var(--surface-elevation-raised-step));
-        --surface-elevation-2: color-mix(in oklch, var(--background-color), var(--surface-elevation-raised-color) var(--surface-elevation-raised-step-2));
-        --surface-elevation-3: color-mix(in oklch, var(--background-color), var(--surface-elevation-raised-color) var(--surface-elevation-raised-step-3));
-        --surface-elevation-pressed: var(--surface-elevation--1);
+        --surface-elevation-negative-color: var(--color-black);
+        --surface-elevation-positive-color: var(--color-white);
+        --surface-elevation--3:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-negative-color) var(--surface-elevation-mix--3)
+            );
+        --surface-elevation--2:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-negative-color) var(--surface-elevation-mix--2)
+            );
+        --surface-elevation--1:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-negative-color) var(--surface-elevation-mix--1)
+            );
+        --surface-elevation-0:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-positive-color) var(--surface-elevation-mix-0)
+            );
+        --surface-elevation-1:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-positive-color) var(--surface-elevation-mix-1)
+            );
+        --surface-elevation-2:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-positive-color) var(--surface-elevation-mix-2)
+            );
+        --surface-elevation-3:
+            color-mix(
+                in oklch,
+                var(--background-color),
+                var(--surface-elevation-positive-color) var(--surface-elevation-mix-3)
+            );
 
         /* Control surface elevation */
         --control-bg: var(--surface-elevation-1);
         --control-bg-hover: var(--surface-elevation-2);
-        --control-bg-active: var(--surface-elevation-pressed);
+        --control-bg-active: var(--surface-elevation--1);
         --input-background-color: var(--surface-elevation--1);
         --surface-bg: color-mix(in srgb, var(--surface-elevation-3) var(--surface-elevation-opacity), transparent);
 
         /* Control shadows */
-        --control-shadow: var(--shadow-elevation-1);
-        --control-shadow-hover: var(--shadow-elevation-2);
-        --control-shadow-active: var(--shadow-elevation--1);
-        --control-shadow-inset: var(--shadow-elevation--1);
+        --control-shadow: var(--shadow-control);
+        --control-shadow-hover: var(--shadow-control-hover);
+        --control-shadow-active: var(--shadow-control-unfilled-active);
+        --control-shadow-inset: var(--shadow-control-inset);
 
         /* Tactile interaction scaling */
         --control-transform: scale(1);
@@ -64,33 +66,29 @@
         --control-transform-active: scale(0.97);
 
         /* Dialog & surface elevation */
-        --surface-shadow: var(--shadow-elevation-3);
+        --surface-shadow: var(--shadow-surface);
 
         /* Glassmorphism optical diffusion */
         --control-backdrop-filter: var(--frosty-glass);
         --surface-backdrop-filter: var(--frosty-glass);
 
         /* Focus ambient glow */
-        --focus-shadow: var(--shadow-elevation-focus);
+        --focus-shadow: var(--shadow-control-focus);
     }
 
     :root[data-theme="dark"]:not([data-theme-style]),
     :root[data-theme="dark"][data-theme-style~="elevation"] {
         --background-color: var(--color-off-black);
-        --surface-elevation-raised-color: var(--color-black);
-        --surface-elevation-raised-step: 3.2%;
-        --surface-elevation-recessed-color: var(--color-white);
-        --surface-elevation-recessed-step: 1.1%;
+        --surface-elevation-negative-color: var(--color-white);
+        --surface-elevation-positive-color: var(--color-black);
     }
 
     @media (prefers-color-scheme: dark) {
         :root:not([data-theme]):not([data-theme-style]),
         :root:not([data-theme])[data-theme-style~="elevation"] {
             --background-color: var(--color-off-black);
-            --surface-elevation-raised-color: var(--color-black);
-            --surface-elevation-raised-step: 3.2%;
-            --surface-elevation-recessed-color: var(--color-white);
-            --surface-elevation-recessed-step: 1.1%;
+            --surface-elevation-negative-color: var(--color-white);
+            --surface-elevation-positive-color: var(--color-black);
         }
     }
 }

@@ -93,7 +93,6 @@
         --color: var(--color-black-alpha-70);
         --color-surface: var(--color-black);
         --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
-        --surface-elevation-opacity: 60%;
         --dialog-surface-opacity: var(--surface-elevation-opacity);
         --color-subtle: var(--color-black-alpha-40);
         --color-muted: var(--color-black-alpha-55);

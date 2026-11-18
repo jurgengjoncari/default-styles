@@ -2,6 +2,6 @@
     :root:not([data-theme-style]) .surface,
     :root[data-theme-style~="elevation"] .surface {
         background-color: var(--surface-elevation-1);
-        box-shadow: var(--shadow-elevation-1);
+        box-shadow: var(--shadow-surface);
     }
 }
