@@ -60,11 +60,6 @@
         --control-shadow-active: var(--shadow-control-unfilled-active);
         --control-shadow-inset: var(--shadow-control-inset);
 
-        /* Tactile interaction scaling */
-        --control-transform: scale(1);
-        --control-transform-hover: scale(1.02);
-        --control-transform-active: scale(0.97);
-
         /* Dialog & surface elevation */
         --surface-shadow: var(--shadow-surface);
 

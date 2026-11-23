@@ -1,0 +1,9 @@
+@layer tokens {
+    :root {
+        --scale-smallest: scale(0.9);
+        --scale-smaller: scale(0.97);
+        --scale: scale(1);
+        --scale-bigger: scale(1.02);
+        --scale-biggest: scale(1.1);
+    }
+}

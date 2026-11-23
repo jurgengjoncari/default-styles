@@ -356,6 +356,11 @@ Custom properties used by the styles (including component and demo properties), 
   - `frosty-glass`
   - `interaction-hover`
   - `interaction-active`
+  - `scale-smallest`
+  - `scale-smaller`
+  - `scale`
+  - `scale-bigger`
+  - `scale-biggest`
 
 </blockquote>
 </details>

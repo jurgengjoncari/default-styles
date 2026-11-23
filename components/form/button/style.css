@@ -15,7 +15,7 @@
         box-shadow: var(--button-shadow, var(--control-shadow));
         backdrop-filter: var(--control-backdrop-filter, none);
         transform-origin: center;
-        transform: var(--control-transform, scale(1));
+        transform: var(--control-transform, var(--scale));
         transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.12s ease;
 
         /* Hover States (Relative lighter shade & tactile expansion) */
@@ -23,7 +23,7 @@
         &.is-hovered:not(:disabled) {
             background-color: var(--button-bg-hover, color-mix(in oklch, var(--current-button-bg), var(--color-white) 18%));
             box-shadow: var(--button-shadow-hover, var(--control-shadow-hover));
-            transform: var(--control-transform-hover, scale(1.02));
+            transform: var(--control-transform-hover, var(--scale-bigger));
         }
 
         /* Active / Pressed States (Relative deeper shade & tactile depression) */
@@ -31,7 +31,7 @@
         &.is-active:not(:disabled) {
             background-color: var(--button-bg-active, color-mix(in oklch, var(--current-button-bg), var(--color-black) 12%));
             box-shadow: var(--button-shadow-active, var(--control-shadow-active));
-            transform: var(--control-transform-active, scale(0.97));
+            transform: var(--control-transform-active, var(--scale-smaller));
         }
 
         &.is-transparent {

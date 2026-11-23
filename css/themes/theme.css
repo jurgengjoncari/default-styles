@@ -25,9 +25,9 @@
         --surface-shadow: none;
         --control-backdrop-filter: none;
         --surface-backdrop-filter: none;
-        --control-transform: scale(1);
-        --control-transform-hover: scale(1.02);
-        --control-transform-active: scale(0.97);
+        --control-transform: var(--scale);
+        --control-transform-hover: var(--scale-bigger);
+        --control-transform-active: var(--scale-smaller);
         --focus-outline: none;
         --focus-outline-offset: var(--size-3xs);
         --focus-shadow: none;
