@@ -189,6 +189,15 @@ Custom properties used by the styles (including component and demo properties), 
 </blockquote>
 </details>
 <details>
+<summary>Opacity and transparency</summary>
+
+<blockquote>
+
+The opacity scale runs from `--transparent` (`0%`) to `--opaque` (`100%`) in `5%` steps. On the transparent side, names state the complementary transparency amount: `--transparency-90` is `10%` opacity. On the opaque side, names state the opacity amount: `--opacity-60` is `60%`. The midpoint is `--semi` (`50%`). These values can be used directly in CSS colors, for example `rgb(0 0 0 / var(--transparency-90))`.
+
+</blockquote>
+</details>
+<details>
 <summary>Typography</summary>
 
 <blockquote>

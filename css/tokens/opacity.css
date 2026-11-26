@@ -1,0 +1,26 @@
+@layer tokens {
+    :root {
+        /* Transparency names describe the inverse of each stored opacity value. */
+        --transparent: 0%;
+        --transparency-95: 5%;
+        --transparency-90: 10%;
+        --transparency-85: 15%;
+        --transparency-80: 20%;
+        --transparency-75: 25%;
+        --transparency-70: 30%;
+        --transparency-65: 35%;
+        --transparency-60: 40%;
+        --transparency-55: 45%;
+        --semi: 50%;
+        --opacity-55: 55%;
+        --opacity-60: 60%;
+        --opacity-65: 65%;
+        --opacity-70: 70%;
+        --opacity-75: 75%;
+        --opacity-80: 80%;
+        --opacity-85: 85%;
+        --opacity-90: 90%;
+        --opacity-95: 95%;
+        --opaque: 100%;
+    }
+}
