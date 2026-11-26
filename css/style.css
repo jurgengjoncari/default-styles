@@ -2,10 +2,12 @@
 
 @import "./reset.css";
 @import "./normalize.css";
-@import "./tokens/tokens.css";
-@import "./themes/theme.css";
-@import "./themes/elevation.css";
-@import "./themes/outline.css";
+
+@import "../tokens/tokens.css";
+
+@import "../themes/theme.css";
+@import "../themes/elevation.css";
+@import "../themes/outline.css";
 
 @import "../components/typography/style.css";
 @import "../components/list/style.css";
