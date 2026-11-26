@@ -1,0 +1,94 @@
+@layer theme {
+    :root {
+        &[data-theme="dark"] {
+            color-scheme: dark;
+
+            /* Baseline Canvas & Surfaces (Pure black in dark mode when elevation is not applied) */
+            --background-color: var(--color-black);
+            --control-bg: var(--color-surface-fill);
+            --input-background-color: transparent;
+            --surface-bg: var(--color-black);
+
+            --control-filled-bg: color-mix(in oklch, var(--color-white) var(--opacity-80), var(--background-color));
+            --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) var(--opacity-18));
+            --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) var(--opacity-15));
+            --filled-text-color: var(--color-black);
+
+            --color: var(--color-white-alpha-70);
+            --color-surface: var(--color-white);
+            --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --color-subtle: var(--color-white-alpha-40);
+            --color-muted: var(--color-white-alpha-55);
+            --color-emphasis: var(--color-white-alpha-90);
+            --outline-color: var(--color-white);
+
+            --shadow-color: var(--color-black-alpha-50);
+            --shadow-color-strong: var(--color-black-alpha-70);
+            --dialog-backdrop-color: var(--color-black-alpha-80);
+
+            /* Accent text (WCAG AA 4.5:1+ on black) */
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: var(--color-cyan-400);
+            --green-text: var(--color-green-400);
+            --yellow-text: var(--color-yellow-400);
+            --red-text: var(--color-red-300);
+            --magenta-text: var(--color-magenta-400);
+
+            /* Accent backgrounds (dark tints, pair with light text) */
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, var(--color-black));
+            --cyan-bg: var(--color-cyan-950);
+            --green-bg: var(--color-green-950);
+            --yellow-bg: var(--color-yellow-950);
+            --red-bg: var(--color-red-950);
+            --magenta-bg: var(--color-magenta-950);
+
+            & button:disabled,
+            & input:disabled,
+            & select:disabled,
+            & textarea:disabled {
+                --color: var(--color-gray);
+            }
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+            color-scheme: dark;
+
+            --background-color: var(--color-black);
+            --control-bg: var(--color-surface-fill);
+            --input-background-color: transparent;
+            --surface-bg: var(--color-black);
+
+            --control-filled-bg: color-mix(in oklch, var(--color-white) 80%, var(--background-color));
+            --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
+            --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) 15%);
+            --filled-text-color: var(--color-black);
+
+            --color: var(--color-white-alpha-70);
+            --color-surface: var(--color-white);
+            --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+            --color-subtle: var(--color-white-alpha-40);
+            --color-muted: var(--color-white-alpha-55);
+            --color-emphasis: var(--color-white-alpha-90);
+            --outline-color: var(--color-white);
+            --shadow-color: var(--color-black-alpha-50);
+            --shadow-color-strong: var(--color-black-alpha-70);
+            --dialog-backdrop-color: var(--color-black-alpha-80);
+
+            --blue-text: var(--primary-text-dark);
+            --cyan-text: var(--color-cyan-400);
+            --green-text: var(--color-green-400);
+            --yellow-text: var(--color-yellow-400);
+            --red-text: var(--color-red-300);
+            --magenta-text: var(--color-magenta-400);
+
+            --blue-bg: color-mix(in srgb, var(--primary-color) 25%, var(--color-black));
+            --cyan-bg: var(--color-cyan-950);
+            --green-bg: var(--color-green-950);
+            --yellow-bg: var(--color-yellow-950);
+            --red-bg: var(--color-red-950);
+            --magenta-bg: var(--color-magenta-950);
+        }
+    }
+}

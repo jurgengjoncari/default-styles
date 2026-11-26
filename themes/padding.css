@@ -1,0 +1,11 @@
+:root {
+    &[data-control-padding="default"] {
+        --padding-block: var(--size-xs);
+        --padding-inline: var(--size-sm);
+    }
+
+    &[data-control-padding="expanded"] {
+        --padding-block: var(--size-sm);
+        --padding-inline: var(--size-md);
+    }
+}

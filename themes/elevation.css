@@ -69,6 +69,75 @@
 
         /* Focus ambient glow */
         --focus-shadow: var(--shadow-control-focus);
+
+                /* Shadows (Dynamic token mappings for customizer controls) */
+        --shadow-control-blur: var(--blur-xs);
+        --shadow-control-spread: var(--shadow-spread-xs);
+        --shadow-control:
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-control-spread)
+            var(--shadow-color);
+        --shadow-control-hover:
+            0 0
+            var(--shadow-control-hover-blur, var(--blur-sm))
+            var(--shadow-control-hover-spread, var(--shadow-spread-sm))
+            var(--shadow-color);
+        --shadow-control-unfilled-hover:
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-spread-none)
+            var(--shadow-color);
+        --shadow-control-inset:
+            inset
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-control-spread)
+            var(--shadow-color);
+        --shadow-control-focus:
+            0 0
+            var(--blur-lg)
+            var(--shadow-spread-none)
+            var(--color-gray);
+        --shadow-control-unfilled-active:
+            inset
+            0 0
+            var(--shadow-control-blur)
+            var(--shadow-spread-none)
+            var(--shadow-color);
+
+        --shadow-surface-blur: var(--blur-lg);
+        --shadow-surface-spread: var(--shadow-spread-sm);
+        --shadow-surface:
+            0 0
+            var(--shadow-surface-blur)
+            var(--shadow-surface-spread)
+            var(--shadow-color-strong);
+
+        /* Balanced filled surface (not harsh pitch black) */
+        --control-filled-bg: color-mix(in oklch, var(--color-neutral-900) 75%, var(--background-color));
+        --control-filled-bg-hover: color-mix(in oklch, var(--control-filled-bg), var(--color-white) 18%);
+        --control-filled-bg-active: color-mix(in oklch, var(--control-filled-bg), var(--color-black) 15%);
+        --filled-text-color: var(--color-white);
+
+        --color: var(--color-black-alpha-70);
+        --color-surface: var(--color-black);
+        --color-surface-fill: color-mix(in srgb, var(--color-surface) var(--color-surface-strength), transparent);
+        --dialog-surface-opacity: var(--surface-elevation-opacity);
+        --color-subtle: var(--color-black-alpha-40);
+        --color-muted: var(--color-black-alpha-55);
+        --color-emphasis: var(--color-black-alpha-90);
+        --outline-color: var(--color-black);
+        --color-gray: var(--color-neutral-600);
+        --color-surface-strength: var(--color-surface-strength-control, 10%);
+
+        --shadow-color: var(--color-black-alpha-25);
+        --shadow-color-strong: var(--color-black-alpha-35);
+        --dialog-backdrop-color: var(--color-black-alpha-50);
+        --primary-color: var(--color-blue-700);
+        --primary-color-contrast: var(--color-white);
+        --primary-text-light: var(--color-blue-700);
+        --primary-text-dark: var(--color-blue-400);
     }
 
     :root[data-theme="dark"]:not([data-theme-style]),

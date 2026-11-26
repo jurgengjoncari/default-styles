@@ -7,10 +7,9 @@
     input[type="button"],
     input[type="reset"],
     input[type="submit"] {
-        --current-button-bg: var(--button-bg, var(--control-bg));
         border-radius: var(--radius-control);
         border: var(--control-border-width, 0) solid var(--control-border-color, transparent);
-        background-color: var(--current-button-bg);
+        background-color: var(var(--color), color-mix(in oklch, var(--color) var(--opacity-80), transparent));
         background-clip: padding-box;
         box-shadow: var(--button-shadow, var(--control-shadow));
         backdrop-filter: var(--control-backdrop-filter, none);
@@ -21,7 +20,7 @@
         /* Hover States (Relative lighter shade & tactile expansion) */
         &:not(:disabled):hover,
         &.is-hovered:not(:disabled) {
-            background-color: var(--button-bg-hover, color-mix(in oklch, var(--current-button-bg), var(--color-white) 18%));
+            background-color: var(--button-bg-hover, color-mix(in oklch, var(--button-bg), var(--color-white) 18%));
             box-shadow: var(--button-shadow-hover, var(--control-shadow-hover));
             transform: var(--control-transform-hover, var(--scale-bigger));
         }
@@ -29,7 +28,7 @@
         /* Active / Pressed States (Relative deeper shade & tactile depression) */
         &:not(:disabled):active,
         &.is-active:not(:disabled) {
-            background-color: var(--button-bg-active, color-mix(in oklch, var(--current-button-bg), var(--color-black) 12%));
+            background-color: var(--button-bg-active, color-mix(in oklch, var(--button-bg), var(--color-black) 12%));
             box-shadow: var(--button-shadow-active, var(--control-shadow-active));
             transform: var(--control-transform-active, var(--scale-smaller));
         }
@@ -42,12 +41,12 @@
 
             &:not(:disabled):hover,
             &.is-hovered:not(:disabled) {
-                background-color: color-mix(in oklch, var(--color-emphasis) 8%, transparent);
+                background-color: color-mix(in oklch, var(--color-emphasis) var(--opacity-10), transparent);
             }
 
             &:not(:disabled):active,
             &.is-active:not(:disabled) {
-                background-color: color-mix(in oklch, var(--color-emphasis) 16%, transparent);
+                background-color: color-mix(in oklch, var(--color-emphasis) var(--opacity-20), transparent);
             }
         }
 
@@ -60,12 +59,12 @@
 
             &:not(:disabled):hover,
             &.is-hovered:not(:disabled) {
-                background-color: color-mix(in oklch, var(--color-emphasis) 8%, transparent);
+                background-color: color-mix(in oklch, var(--color-emphasis) var(--opacity-10), transparent);
             }
 
             &:not(:disabled):active,
             &.is-active:not(:disabled) {
-                background-color: color-mix(in oklch, var(--color-emphasis) 16%, transparent);
+                background-color: color-mix(in oklch, var(--color-emphasis) var(--opacity-20), transparent);
             }
         }
 

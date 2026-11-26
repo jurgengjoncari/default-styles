@@ -1,28 +1,13 @@
-@layer reset, normalize, tokens, theme, base, shared, component, variant, accessibility, print;
+@layer reset, normalize, accessibility, print, tokens, theme, base, shared, component, variant;
 
 @import "./reset.css";
 @import "./normalize.css";
-
-@import "../tokens/tokens.css";
-
-@import "../themes/theme.css";
-@import "../themes/elevation.css";
-@import "../themes/outline.css";
-
-@import "../components/typography/style.css";
-@import "../components/list/style.css";
-@import "../components/navigation/style.css";
-@import "../components/table/style.css";
-@import "../components/media/style.css";
-@import "../components/details/style.css";
-@import "../components/form/style.css";
-@import "../components/surface/style.css";
-@import "../components/surface/elevation.css";
-@import "../components/surface/outline.css";
-@import "../components/dialog/style.css";
-
 @import "./accessibility.css";
 @import "./print.css";
+
+@import "../tokens/tokens.css";
+@import "../themes/style.css";
+@import "../components/style.css";
 
 @layer base {
     body {

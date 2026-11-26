@@ -10,18 +10,18 @@
         --color-neutral-900: var(--color-off-black);
         --color-neutral-950: #161719;
 
-        --color-black-alpha-25: rgba(0, 0, 0, 0.25);
-        --color-black-alpha-35: rgba(0, 0, 0, 0.35);
-        --color-black-alpha-40: rgba(0, 0, 0, 0.40);
-        --color-black-alpha-50: rgba(0, 0, 0, 0.5);
-        --color-black-alpha-55: rgba(0, 0, 0, 0.55);
-        --color-black-alpha-70: rgba(0, 0, 0, 0.70);
-        --color-black-alpha-80: rgba(0, 0, 0, 0.8);
-        --color-black-alpha-90: rgba(0, 0, 0, 0.90);
-        --color-white-alpha-40: rgba(255, 255, 255, 0.40);
-        --color-white-alpha-55: rgba(255, 255, 255, 0.55);
-        --color-white-alpha-70: rgba(255, 255, 255, 0.70);
-        --color-white-alpha-90: rgba(255, 255, 255, 0.90);
+        --color-black-alpha-25: rgba(0, 0, 0, var(--opacity-25));
+        --color-black-alpha-35: rgba(0, 0, 0, var(--opacity-35));
+        --color-black-alpha-40: rgba(0, 0, 0, var(--opacity-40));
+        --color-black-alpha-50: rgba(0, 0, 0, var(--opacity-50));
+        --color-black-alpha-55: rgba(0, 0, 0, var(--opacity-55));
+        --color-black-alpha-70: rgba(0, 0, 0, var(--opacity-70));
+        --color-black-alpha-80: rgba(0, 0, 0, var(--opacity-80));
+        --color-black-alpha-90: rgba(0, 0, 0, var(--opacity-90));
+        --color-white-alpha-40: rgba(255, 255, 255, var(--opacity-40));
+        --color-white-alpha-55: rgba(255, 255, 255, var(--opacity-55));
+        --color-white-alpha-70: rgba(255, 255, 255, var(--opacity-70));
+        --color-white-alpha-90: rgba(255, 255, 255, var(--opacity-90));
 
         --color-blue-400: #6b8aff;
         --color-blue-600: #4040bf;

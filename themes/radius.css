@@ -1,0 +1,63 @@
+@layer theme {
+    :root {
+        &[data-control-radius="none"] {
+            --radius-control: var(--radius-control-none);
+        }
+
+        &[data-control-radius="xs"] {
+            --radius-control: var(--radius-control-xs);
+        }
+
+        &[data-control-radius="s"] {
+            --radius-control: var(--radius-control-s);
+        }
+
+        &[data-control-radius="md"] {
+            --radius-control: var(--radius-control-md);
+        }
+
+        &[data-control-radius="lg"] {
+            --radius-control: var(--radius-control-lg);
+        }
+
+        &[data-control-radius="xl"] {
+            --radius-control: var(--radius-control-xl);
+        }
+
+        &[data-control-radius="round"] {
+            --radius-control: var(--radius-control-round);
+        }
+
+        &[data-surface-radius="none"] {
+            --radius-surface: var(--radius-surface-none);
+        }
+
+        &[data-surface-radius="xxs"] {
+            --radius-surface: var(--radius-surface-xxs);
+        }
+
+        &[data-surface-radius="xs"] {
+            --radius-surface: var(--radius-surface-xs);
+        }
+
+        &[data-surface-radius="s"] {
+            --radius-surface: var(--radius-surface-s);
+        }
+
+        &[data-surface-radius="md"] {
+            --radius-surface: var(--radius-surface-md);
+        }
+
+        &[data-surface-radius="lg"] {
+            --radius-surface: var(--radius-surface-lg);
+        }
+
+        &[data-surface-radius="xl"] {
+            --radius-surface: var(--radius-surface-xl);
+        }
+
+        &[data-surface-radius="xxl"] {
+            --radius-surface: var(--radius-surface-xxl);
+        }
+    }
+}

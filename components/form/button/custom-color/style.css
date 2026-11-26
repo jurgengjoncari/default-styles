@@ -10,12 +10,12 @@
 
             &:not(:disabled):hover,
             &.is-hovered:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) 15%);
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) var(--opacity-15));
             }
 
             &:not(:disabled):active,
             &.is-active:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) 15%);
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) var(--opacity-15));
             }
         }
 
@@ -25,12 +25,12 @@
 
             &:not(:disabled):hover,
             &.is-hovered:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) 80%);
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-white) var(--opacity-80));
             }
 
             &:not(:disabled):active,
             &.is-active:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) 10%);
+                background-color: color-mix(in oklch, var(--button-bg), var(--color-black) var(--opacity-10));
             }
         }
 
@@ -41,12 +41,12 @@
 
             &:not(:disabled):hover,
             &.is-hovered:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg) 12%, transparent);
+                background-color: color-mix(in oklch, var(--button-bg) var(--opacity-15), transparent);
             }
 
             &:not(:disabled):active,
             &.is-active:not(:disabled) {
-                background-color: color-mix(in oklch, var(--button-bg) 24%, transparent);
+                background-color: color-mix(in oklch, var(--button-bg) var(--opacity-25), transparent);
             }
         }
 
